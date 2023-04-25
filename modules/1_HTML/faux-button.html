@@ -1,0 +1,42 @@
+<div role="button" class="button" type="button" tabindex="0" aria-pressed="false">
+  <img alt="icon description" src="./some-icon.svg" />
+  <span class="visually-hidden">open popup</span>
+</div>
+
+<style>
+  div.button {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 69% / 1);
+    padding: 0.5em;
+    border-radius: 0.5em;
+  }
+</style>
+
+<script>
+  const pseudoButton = document.querySelector('div.button');
+  const buttonEvents = [
+    'click',
+    'keydown',
+  ];
+  const buttonKeyCodes = [
+    13,
+    32,
+  ]; // enter & space
+
+  const pseudoButtonHandler = event => {
+    const { type } = event;
+    const shouldTrigger = (type === 'keydown' && buttonKeyCodes.includes(event.keyCode)) || type === 'click';
+
+    if (shouldTrigger) {
+      alert('I\'m a button, I swear! 👀');
+    }
+  };
+
+  buttonEvents.forEach(eventName => {
+    if (!pseudoButton) return;
+
+    pseudoButton.addEventListener(eventName, pseudoButtonHandler);
+  });
+
+
+</script>

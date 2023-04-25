@@ -1,0 +1,20 @@
+<button class="real-button">
+  <img alt="icon description" src="./some-icon.svg" />
+  <span>open popup</span>
+</button>
+
+<style>
+  button {
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const realButton = document.querySelector('.real-button');
+
+  const handleClick = () => {
+    alert('You should see the other guy.');
+  }
+
+  realButton.addEventListener('click', handleClick);
+</script>

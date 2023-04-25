@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+main>section {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  background-image: linear-gradient(138deg, hsl(23, 50%, 70%), hsl(230, 40%, 50%));
+}
+
+main>footer {
+  margin-block: 30vh;
+  background-image: linear-gradient(45deg, hsl(23, 50%, 70%), hsl(115, 40%, 50%));
+}
+
+main > * {
+  border-radius: 0.5em;
+  padding: 1em;
+}
