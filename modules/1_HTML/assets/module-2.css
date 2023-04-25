@@ -1,0 +1,138 @@
+:root {
+  --hue-main: 90;
+  --hue-sub: calc(var(--hue-main) + 120);
+  --hue-accent: calc(var(--hue-main) + 240);
+
+  --saturation-base: 60%;
+  --lightness-base: 37%;
+
+  --color-main: hsl(var(--hue-main), var(--saturation-base), var(--lightness-base));
+  --color-sub: hsl(var(--hue-sub), var(--saturation-base), var(--lightness-base));
+  --color-accent: hsl(var(--hue-accent), var(--saturation-base), var(--lightness-base));
+
+  --transition-default: 400ms;
+  --transition-fast: 200ms;
+  --transition-slow: 800ms;
+}
+
+body {
+  width: min(1440px, 80vw);
+  margin-inline: auto;
+  font-family: sans-serif;
+  background-color: #eee;
+  color: #222;
+}
+
+nav>menu {
+  display: flex;
+  gap: 1em;
+}
+
+a {
+  color: var(--color-sub);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+article:has(section) {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+h1 {
+  position: relative;
+  align-self: center;
+  display: inline-block;
+  color: #000;
+  background: #fff;
+  mix-blend-mode: multiply;
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+h1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(45deg, var(--color-main), var(--color-sub), var(--color-accent));
+  pointer-events: none;
+}
+
+h1::before {
+  mix-blend-mode: screen;
+}
+
+h2 {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+  color: var(--color-sub);
+  transition: background-color var(--transition-default);
+}
+
+h2 code {
+  color: var(--color-accent);
+}
+
+h2:has(code):hover {
+  background-color: var(--color-main);
+}
+
+section>*:not(h2) {
+  width: 100%;
+}
+
+code {
+  background-color:
+}
+
+code::before {
+  content: '<';
+}
+
+code::after {
+  content: '>';
+}
+
+tfoot {
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #eee;
+  }
+
+  :root {
+    --lightness-base: 63%;
+  }
+
+  h1 {
+    background: #000;
+    color: #fff;
+    mix-blend-mode: lighten;
+  }
+
+  h1::before {
+    mix-blend-mode: multiply;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+.accent {
+  background-color: var(--color-accent);
+}
