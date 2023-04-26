@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wideo i audio</title>
+  <link rel="stylesheet" href="./assets/module-2.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <menu>
+        <li>
+          <a href="./tables.html">Tabele</a>
+        </li>
+        <li>
+          <a href="./text-tags.html">Znaczniki tekstu</a>
+        </li>
+        <li>
+          <a href="./special-chars.html">Znaki specjalne</a>
+        </li>
+        <li>
+          <a href="./video-audio.html">Wideo i audio</a>
+        </li>
+      </menu>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1>Wideo i audio</h1>
+      <section>
+        <h2>Tag <code>video</code> - podstawowe</h2>
+        <video src="http://techslides.com/demos/sample-videos/small.webm"
+          poster="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?w=640" width="640" controls autoplay
+          loop preload="auto"></video>
+      </section>
+      <section>
+        <h2>Tag <code>video</code> - rozszerzone</h2>
+        <video poster="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?w=640" width="640" controls>
+          <source src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" />
+          <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
+          <source src="http://techslides.com/demos/sample-videos/small.ogg" type="video/ogg" />
+          Your browser doesn&apos;t support the video element 🙁
+        </video>
+      </section>
+      <section>
+        <h2>Tag <code>audio</code> - podstawowe</h2>
+        <audio src="./assets/audio.ogg" controls autoplay loop preload="auto"></audio>
+      </section>
+      <section>
+        <h2>Tag <code>audio</code> - rozszerzone</h2>
+        <audio controls>
+          <source src="./assets/audio.mp3" type="audio/mpeg" />
+          <source src="./assets/audio.ogg" type="audio/ogg" />
+          Your browser doesn&apos;t support the audio element 🙁
+
+        </audio>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>
