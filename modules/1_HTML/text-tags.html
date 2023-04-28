@@ -53,19 +53,58 @@
             equal image quality, the compressed files will be smaller than PNG and JPEG on average
             by 25%.
           </dd>
+          <dt>SVG</dt>
+          <dd>
+            Vector format
+          </dd>
         </dl>
       </section>
       <section>
         <h2>Znacznik <code>span</code></h2>
         <p>
-          Znacznik <span class="accent">span</span> jest to uniwersalny pojemnik na małą
+          Znacznik <span class="accent">span jest to</span> uniwersalny pojemnik na małą
           zawartość tekstową.
         </p>
       </section>
       <section>
         <h2>Znacznik <code>pre</code></h2>
         <pre>
+ /* CSS: */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #eee;
+  }
+
+  :root {
+    --lightness-base: 63%;
+  }
+
+  h1 {
+    background: #000;
+    color: #fff;
+    mix-blend-mode: lighten;
+  }
+
+  h1::before {
+    mix-blend-mode: multiply;
+  }
+}
+        </pre>
+        <pre>
+// JavaScript + React:
+
+const Component = () => &lt;div&gt;null&lt;/div&gt;;
+        </pre>
+        <p>
           Wyatt resteth here, that quick could never rest;
+          Whose heavenly gifts increased by disdain,
+          And virtue sank the deeper in his breast;
+          Such profit he by envy could obtain.
+        </p>
+        <pre>
+          Wyatt resteth     here, that quick could never rest;
           Whose heavenly gifts increased by disdain,
           And virtue sank the deeper in his breast;
           Such profit he by envy could obtain.
@@ -87,9 +126,11 @@
       </section>
       <section>
         <h2>Znaczniki <code>sub</code> oraz <code>sup</code></h2>
+
         <p>Formula of water - H<sub>2</sub>O</p>
 
-        <p>Total area of the room - 150м<sup>2</sup>.</p>
+        <p>Total area of the room - 150м²<sup>2</sup>.</p>
+        <p>w<sub>x<sup>y</sup></sub></p>
 
         <p>Solve the equation a<sup>3</sup>+a<sup>2</sup>=4</p>
       </section>
