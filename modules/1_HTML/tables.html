@@ -30,6 +30,7 @@
   <main>
     <article>
       <h1>Tabele</h1>
+
       <section>
         <h2>Podstawowa tabela</h2>
         <table>
@@ -60,6 +61,61 @@
             <tr>
               <td colspan="3">&copy; PKP</td>
             </tr>
+          </tfoot>
+        </table>
+      </section>
+      <section>
+        <h2>Tabela z atrybutami <code>colspan</code> i <code>rowspan</code></h2>
+      </section>
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Usługa w chmurze</th>
+            <th colspan="3">Użycie</th>
+          </tr>
+          <tr>
+            <th>Użytkownicy</th>
+            <th>Odwiedzenia</th>
+            <th>Rozmiar</th>
+          </tr>
+        </thead>
+      </table>
+      <section>
+        <h2>Nasza tabela</h2>
+        <table>
+          <caption>Elementy HTML</caption>
+          <thead>
+            <tr>
+              <th>tag</th>
+              <th>przykładowe atrybuty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>img</td>
+              <td>src, alt, width, height</td>
+            </tr>
+            <tr>
+              <td>ul</td>
+              <td>class, id, data-*, style</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>href, target, title*, rel, download</td>
+            </tr>
+            <tr>
+              <td>video</td>
+              <td align="center">src, poster, loop, controls, autoplay, preload</td>
+            </tr>
+            <tr>
+              <td>caption</td>
+              <td>class, id</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <th colspan="2">
+              źródło informacji: czat zooma
+            </th>
           </tfoot>
         </table>
       </section>

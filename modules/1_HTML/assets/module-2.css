@@ -136,3 +136,8 @@ tfoot {
 .accent {
   background-color: var(--color-accent);
 }
+
+table td,
+table th {
+  border: 1px solid white;
+}
