@@ -1,0 +1,38 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+:root {
+  --font-heading: 'Open sans';
+  --color-text: #eee;
+  --color-heading: #bbb;
+
+  --hue-main: 90;
+  --saturation-base: 60%;
+  --lightness-base: 37%;
+
+  --color-example: #980776;
+
+  --hue-sub: calc(var(--hue-main) + 120);
+  --hue-accent: calc(var(--hue-sub) + 480);
+  /* 480 = 120 + 360 */
+
+  --color-main: hsl(var(--hue-main),
+      var(--saturation-base),
+      var(--lightness-base));
+
+  --color-sub: hsl(var(--hue-sub), var(--saturation-base), var(--lightness-base));
+  --color-accent: hsl(var(--hue-accent), var(--saturation-base), var(--lightness-base));
+
+  --transition-default: 400ms;
+  --transition-fast: 200ms;
+  --transition-slow: 800ms;
+}

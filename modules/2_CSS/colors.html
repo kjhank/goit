@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles.css" id="myStyleSheet" />
+  <title>Praca z kolorami</title>
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a></li>
+      <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
+      <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./colors.html">Praca z kolorami</a></li>
+      <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
+    </menu>
+  </nav>
+  <main>
+    <h1>Praca z kolorami</h1>
+    <section>
+      <h2>Kolor tekstu</h2>
+      <pre class="code code--html">
+&lt;p class=&quot;text&quot;&gt;
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+  veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+  cumque fuga facere labore quo id necessitatibus quaerat rerum.
+&lt;/p&gt;
+      </pre>
+      <pre class="code code--css">
+.text {
+  color: tomato;
+}
+      </pre>
+      <p class="text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos libero voluptates animi sequi esse vero, aliquam
+        provident, ab odio magni molestias deleniti veritatis minima adipisci! Aspernatur doloremque officiis
+        repudiandae error!
+      </p>
+    </section>
+    <section>
+      <h2>Kolor tła</h2>
+      <pre class="code code--html">
+&lt;p class=&quot;text&quot;&gt;
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+  veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+  cumque fuga facere labore quo id necessitatibus quaerat rerum.
+&lt;/p&gt;
+      </pre>
+      <pre class="code code-css">
+.text {
+  background-color: tomato;
+  color: white;
+}
+      </pre>
+      <p class="text-background">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quis ipsum voluptatem suscipit excepturi
+        recusandae, exercitationem ratione blanditiis sed natus id aliquam iusto ipsa alias non quam expedita, odio
+        deserunt?
+      </p>
+    </section>
+    <section>
+      <h2>Notacje kolorów</h2>
+      <section>
+        <h3>Subtraktywny zapis RGB: <code>rgb()</code></h3>
+        <pre class="code code-css">
+rgb(czerwony, zielony, niebieski)
+        </pre>
+        <pre class="code code-css">
+<span class="code__comment">/* Czysta czerwień: 255 czerwonego,
+    0 zielonego, 0 niebieskiego */</span>
+p {
+  color: rgb(255, 0, 0);
+}
+        </pre>
+        <pre class="code code-css">
+<span class="code__comment">/* Czysta czerwień: 100% czerwonego,
+  0% zielonego, 0% niebieskiego */</span>
+p {
+  color: rgb(100%, 0%, 0%);
+}
+        </pre>
+        <p class="text-rgb">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda, harum
+          omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
+        </p>
+        <p class="text-rgb-alt">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda, harum
+          omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
+        </p>
+        <p class="text-rgb-alt2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda, harum
+          omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
+        </p>
+      </section>
+      <section>
+        <h3>Zapis szesnastkowy notacji RGB: <code
+            class="inline-code inline-code--rgb">#<span>1c</span><span>e1</span><span>ce</span></code></h3>
+        <pre class="code code--css">
+<span class="code__comment">/* Czysta czerwień: ff (100%) czerwonego,
+   00 (0%) zielonego, 00 (0%) niebieskiego */</span>
+p {
+  color: #ff0000;
+}
+
+<span class="code__comment">/* Czysty zielony kolor: 00 (0%) czerwonego,
+   ff (100%) zielonego, 00 (0%) niebieskiego */</span>
+p {
+  color: #00ff00;
+}
+
+<span class="code__comment">/* Czysty niebieski kolor: 00 (0%) czerwonego,
+   00 (0%) zielonego, ff (100%) niebieskiego */</span>
+p {
+  color: #0000ff;
+}
+        </pre>
+      </section>
+      <section>
+        <h3>Notacja HSL - odcień, nasycenie, jasność</h3>
+        <pre class="code code--css">
+p {
+  color: hsl(420, 69%, 23%);
+}
+        </pre>
+        Więcej: <a
+          href="https://www.merixstudio.com/blog/hsl-color-model/">https://www.merixstudio.com/blog/hsl-color-model/</a>
+        <p class="text-hsl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, esse? Quia autem earum unde illo assumenda
+          velit commodi voluptate omnis quibusdam officiis iste voluptas facere, totam temporibus ducimus labore dolore?
+        </p>
+      </section>
+    </section>
+    <section>
+      <h2>Kanał alfa - przezroczystość koloru</h2>
+      <pre class="code code--css">
+<span class="code__comment">/* Czysty czerwony kolor z przezroczystością 30% */</span>
+p {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+<span class="code__comment">/* Czysty czerwony kolor z przezroczystością 30% */</span>
+p {
+  background-color: rgba(100%, 0%, 0%, 30%);
+}
+
+<span class="code__comment">/* Czysty czerwony kolor z przezroczystością 30% w HEX */</span>
+p {
+  background-color: #ff00004d;
+}
+      </pre>
+
+      <p class="alpha-channel">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In illum temporibus quasi necessitatibus cum dolorem,
+        blanditiis distinctio quae harum nam sed aliquid iure, deleniti aspernatur tempore voluptates deserunt vero
+        maiores.
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>

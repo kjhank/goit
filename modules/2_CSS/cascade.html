@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles.css" id="myStyleSheet" />
+  <title>Kaskada</title>
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a></li>
+      <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
+      <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
+      <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./cascade.html">Kaskada stylów</a></li>
+    </menu>
+  </nav>
+  <main>
+    <h1>Kaskada</h1>
+    <section>
+      <h2>Specyficzność</h2>
+      <ul class="specificity-list" data-action="flippable">
+        <li>inline</li>
+        <li>IDs</li>
+        <li>classes, pseudo-classes, attributes</li>
+        <li>elements, pseudo-elements</li>
+      </ul>
+      <button class="button button--list-flipper" type="button" data-action="flip-sibling">flip 'em</button>
+    </section>
+    <section>
+      <h2>Selektory czwartej rangi: elementy, pseudoelementy</h2>
+      <pre class="code code--html">
+&lt;article&gt;
+  &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;p&gt;
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+  &lt;/p&gt;
+  &lt;a href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
+&lt;/article&gt;
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* Specyficzność - 0 0 0 1 */</span>
+p {
+  color: green;
+}
+
+<span class="code__comment">/* ✅ Specyficzność - 0 0 0 2 */</span>
+article > p {
+  color: orange;
+}
+      </pre>
+
+    </section>
+    <section>
+      <h2>Selektory trzeciej rangi - klasy, pseudoklasy, atrybuty</h2>
+      <pre class="code code--html">
+&lt;article class=&quot;post&quot;&gt;
+  &lt;h1 class=&quot;post-title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;p&gt;
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+  &lt;/p&gt;
+  &lt;a href=&quot;&quot; class=&quot;post-link&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
+&lt;/article&gt;
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* Specyficzność - 0 0 1 0 */</span>
+.post-title {
+  color: green;
+}
+
+<span class="code__comment">/* Specyficzność - 0 0 1 1 */</span>
+.post > h1 {
+  color: red;
+}
+
+<span class="code__comment">/* ✅ Specyficzność - 0 0 2 0 */</span>
+.post > .post-title {
+  color: orange;
+}
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* Specyficzność - 0 0 0 1 */</span>
+a {
+  color: green;
+}
+
+<span class="code__comment">/* Specyficzność - 0 0 1 0 */</span>
+.post-link {
+  color: orange;
+}
+
+<span class="code__comment">/* Specyficzność - 0 0 1 1 */</span>
+a.post-link {
+  color: blue;
+}
+
+<span class="code__comment">/* Specyficzność - 0 0 2 0 */</span>
+.post > .post-link {
+  color: red;
+}
+
+<span class="code__comment">/* ✅ Specyficzność - 0 0 2 1 */</span>
+.post > a.post-link {
+  color: brown;
+}
+      </pre>
+      <article class="post">
+        <h2 class="post-title">Lorem ipsum dolor sit amet</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+          veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+          cumque fuga facere labore quo id necessitatibus quaerat rerum.
+        </p>
+        <a href="" class="post-link">Czytaj więcej...</a>
+      </article>
+    </section>
+    <section>
+      <h2>Selektory drugiej rangi - ID</h2>
+      <pre class="code code--html">
+&lt;article class=&quot;post&quot;&gt;
+  &lt;h1 class=&quot;post-title&quot; id=&quot;title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;p&gt;
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+  &lt;/p&gt;
+  &lt;a href=&quot;&quot; class=&quot;post-link&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
+&lt;/article&gt;
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* Specyficzność - 0 0 1 0 */</span>
+.post-title {
+  color: green;
+}
+
+<span class="code__comment">/* ✅ Specyficzność - 0 1 0 0 */</span>
+#title {
+  color: orange;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Selektory pierwszej rangi - style inline; straszna fujka</h2>
+      <pre class="code code--html">
+&lt;p style=&quot;color: green;&quot;&gt;
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+  veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+  cumque fuga facere labore quo id necessitatibus quaerat rerum.
+&lt;/p&gt;
+      </pre>
+    </section>
+    <section>
+      <h2>Jednakowa specyficzność</h2>
+      <pre class="code code-css">
+<span class="code__comment">/* Trzy selektory elementów o tej samej specyficzności */</span>
+a {
+  color: teal;
+}
+
+a {
+  color: brown;
+}
+
+<span class="code__comment">/* Ponieważ ta reguła jest niżej, do wszystkich linków zostanie zastosowany pomarańczowy kolor tekstu */</span>
+a {
+  color: orange;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Unikanie specyficzności</h2>
+      <pre class="code code--html">
+&lt;article class=&quot;post&quot;&gt;
+  &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;p&gt;
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+  &lt;/p&gt;
+  &lt;a href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
+&lt;/article&gt;
+      </pre>
+      <pre class="code code--css">
+.post {
+  <span class="code__comment">/* Style artykułu */</span>
+}
+
+.post > h1 {
+  <span class="code__comment">/* Style nagłówka */</span>
+}
+
+.post > p {
+  <span class="code__comment">/* Style tekstu */</span>
+}
+
+.post > a {
+  <span class="code__comment">/* Style linku */</span>
+}
+
+.post > a:hover {
+  <span class="code__comment">/* Style linku po najechaniu kursorem */</span>
+}
+      </pre>
+      <pre class="code code--html">
+&lt;article class=&quot;post&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;p class=&quot;text&quot;&gt;
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+  &lt;/p&gt;
+  &lt;a class=&quot;link&quot; href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
+&lt;/article&gt;
+      </pre>
+      <pre class="code code--css">
+.post {
+  <span class="code__comment">/* Style artykułu */</span>
+}
+
+.post > .title {
+  <span class="code__comment">/* Style nagłówka */</span>
+}
+
+.post > .text {
+  <span class="code__comment">/* Style tekstu */</span>
+}
+
+.post > .link {
+  <span class="code__comment">/* Style linku */</span>
+}
+
+.post > .link:hover {
+  <span class="code__comment">/* Style linku po najechaniu kursorem */</span>
+}
+      </pre>
+      <pre class="code code--html">
+&lt;article class=&quot;post&quot;&gt;
+  &lt;h1 class=&quot;post-title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;p class=&quot;post-text&quot;&gt;
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+  &lt;/p&gt;
+  &lt;a href=&quot;&quot; class=&quot;post-link&quot;&gt;Czytaj wi&eogon;cej....&lt;/a&gt;
+&lt;/article&gt;
+      </pre>
+      <pre class="code code--css">
+.post {
+  <span class="code__comment">/* Style artykułu */</span>
+}
+
+.post-title {
+  <span class="code__comment">/* Style nagłówka */</span>
+}
+
+.post-text {
+  <span class="code__comment">/* Style tekstu */</span>
+}
+
+.post-link {
+  <span class="code__comment">/* Style linku */</span>
+}
+
+.post-link:hover {
+  <span class="code__comment">/* Style linku po najechaniu kursorem */</span>
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Słowo kluczowe <code>!important</code>, równie paskudna fujka, ale chociaż czasem przydatna</h2>
+      <pre class="code code--html">
+&lt;p class=&quot;text&quot; id=&quot;text-id&quot;&gt;
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+  veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+  cumque fuga facere labore quo id necessitatibus quaerat rerum.
+&lt;/p&gt;
+      </pre>
+      <pre class="code code--css">
+p {
+  color: orange !important;
+}
+
+p#text-id.text {
+  color: blue;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Dziedziczenie</h2>
+      <pre class="code code--html">
+&lt;article class=&quot;post&quot;&gt;
+  &lt;h1&gt;Popularne w tym miesi&aogon;cu&lt;/h1&gt;
+  &lt;p&gt;
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+  &lt;/p&gt;
+  &lt;a href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
+&lt;/article&gt;
+      </pre>
+      <pre class="code code-css">
+.post {
+  color: green;
+}
+      </pre>
+      <article class="post">
+        <h2>Popularne w tym miesiącu</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+          veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+          cumque fuga facere labore quo id necessitatibus quaerat rerum.
+        </p>
+        <a href="">Czytaj więcej...</a>
+      </article>
+    </section>
+  </main>
+  <script src="./main.js"></script>
+</body>
+
+</html>
