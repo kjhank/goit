@@ -1,0 +1,31 @@
+.text {
+  color: tomato;
+}
+
+.text-background {
+  color: #fff;
+  background-color: tomato;
+}
+
+.text-rgb {
+  color: rgb(70%, 50%, 30%);
+}
+
+.text-rgb-alt {
+  color: #b3804d;
+}
+
+.text-rgb-alt2 {
+  color: rgb(179, 128, 77);
+}
+
+.text-hsl {
+  color: hsl(115, 50%, 70%);
+}
+
+.alpha-channel {
+  position: relative;
+  z-index: 50;
+  margin-block-start: -50%;
+  background-color: #a24db354;
+}

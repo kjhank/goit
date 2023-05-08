@@ -1,0 +1,18 @@
+
+a.example-link {
+  display: block;
+  background-color: rebeccapurple;
+  font-size: 6em;
+}
+
+a.example-link:hover {
+  background-color: tomato;
+}
+
+a.example-link:active {
+  color: red;
+}
+
+a.example-link:focus {
+  background-color: pink;
+}

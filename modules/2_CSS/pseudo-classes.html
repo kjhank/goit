@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles.css" id="myStyleSheet" />
+  <title>Pseudoklasy stanowe</title>
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a></li>
+      <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
+      <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
+      <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
+    </menu>
+  </nav>
+  <main>
+    <h1>Pseudoklasy stanowe</h1>
+    <pre class="code code--css">
+selektor:pseudoklasa {
+  <span class="code__comment">/* Właściwości */</span>
+}
+    </pre>
+    <section>
+      <h2>Pseudoklasa <code>:hover</code></h2>
+      <pre class="code code--html">
+&lt;p&gt;
+  Znale&zacute;&cacute; doskona&lstrok;&aogon; &sacute;ci&aogon;gawk&eogon; do tag&oacute;w mo&zdot;na
+  &lt;a class=&quot;link&quot; href=&quot;https://htmlreference.io&quot;&gt;klikn&aogon;c w link&lt;/a&gt;.
+&lt;/p&gt;
+      </pre>
+      <pre class="code code--css">
+.link {
+  color: teal;
+}
+
+.link:hover {
+  color: tomato;
+}
+      </pre>
+      <pre class="code code--html">
+&lt;ul class=&quot;social-links&quot;&gt;
+  &lt;li&gt;&lt;a class=&quot;link&quot; href=&quot;https://twitter.com&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class=&quot;link&quot; href=&quot;https://www.instagram.com&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class=&quot;link&quot; href=&quot;https://www.facebook.com&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <pre class="code code--css">
+.social-links .link {
+  color: teal;
+}
+
+.social-links .link:hover {
+  color: tomato;
+}
+      </pre>
+      <a href="https://example.com" class="example-link">example.com</a>
+      <p class="example-link">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem omnis fugit soluta error repudiandae sapiente quidem rerum quos quis quaerat maxime odit expedita nam excepturi dolorem vel, laboriosam possimus. Facere?
+      </p>
+    </section>
+    <section>
+      <h2>Pseudoklasa <code>:active</code></h2>
+      <pre class="code code--html">
+&lt;ul class=&quot;social-links&quot;&gt;
+  &lt;li&gt;&lt;a class=&quot;link&quot; href=&quot;https://twitter.com&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class=&quot;link&quot; href=&quot;https://www.instagram.com&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class=&quot;link&quot; href=&quot;https://www.facebook.com&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <pre class="code code-css">
+.social-links .link {
+  color: teal;
+}
+
+.social-links .link:hover,
+.social-links .link:focus {
+  color: orange;
+}
+
+.social-links .link:active {
+  color: red;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Pseudoklasa <code>:visited</code></h2>
+      <pre class="code code--html">
+&lt;ul class=&quot;social-links&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com&quot; class=&quot;link&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.instagram.com&quot; class=&quot;link&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.facebook.com&quot; class=&quot;link&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <pre class="code code--css">
+.social-links .link {
+  color: teal;
+}
+
+.social-links .link:hover,
+.social-links .link:focus {
+  color: orange;
+}
+
+.social-links .link:active {
+  color: red;
+}
+
+.social-links .link:visited {
+  color: green;
+}
+      </pre>
+      <pre class="code code--html">
+&lt;table class=&quot;schedule&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Numer&lt;/th&gt;
+      &lt;th&gt;Trasa&lt;/th&gt;
+      &lt;th&gt;Czas podr&oacute;&zdot;y&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody class=&quot;schedule-body&quot;&gt;
+    &lt;tr&gt;
+      &lt;td&gt;433&lt;/td&gt;
+      &lt;td&gt;Kij&oacute;w - Kowel&lt;/td&gt;
+      &lt;td&gt;5 godzin&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;701&lt;/td&gt;
+      &lt;td&gt;Chark&oacute;w - Dniepr&lt;/td&gt;
+      &lt;td&gt;7 godzin&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;258&lt;/td&gt;
+      &lt;td&gt;Lw&oacute;w - Odessa&lt;/td&gt;
+      &lt;td&gt;4 godziny&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+      </pre>
+      <pre class="code code--css">
+.schedule-body > tr:hover {
+  background-color: tomato;
+  color: white;
+}
+
+<span class="code__comment">/* Ustalanie wyglądu tabeli */</span>
+.schedule {
+  border-collapse: collapse;
+}
+
+.schedule th,
+.schedule td {
+  padding: 8px;
+  border: 1px solid #212121;
+}
+      </pre>
+    </section>
+  </main>
+</body>
+
+</html>

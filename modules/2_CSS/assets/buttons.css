@@ -1,0 +1,18 @@
+.button {
+  cursor: pointer;
+}
+
+.button--list-flipper {
+  border-radius: 0.5em;
+  padding: 0.25em 0.5em;
+  background-color: transparent;
+  color: var(--color-sub);
+  font-size: 2em;
+  border: 2px solid var(--color-main);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.button--list-flipper:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}

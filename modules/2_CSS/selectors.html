@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles.css" id="myStyleSheet" />
+  <title>CSS - selektory</title>
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./selectors.html">Selektory</a></li>
+      <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
+      <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
+      <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
+    </menu>
+  </nav>
+  <main>
+    <h1>CSS - selektory</h1>
+    <section>
+      <h2>Selektor elementu (znacznika)</h2>
+      <pre class="code code--css">
+<span class="code__comment">/* Zastosowane do wszystkich akapitów na stronie */</span>
+p {
+  font-size: 24px;
+}
+
+<span class="code__comment">/* Zastosowane do wszystkich linków na stronie */</span>
+a {
+  text-decoration: none;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Selektor klasy</h2>
+      <pre class="code code--html">
+&lt;h1 class=&quot;title&quot;&gt;Cześć, jestem Mango.&lt;/h1&gt;
+&lt;p class=&quot;text&quot;&gt;
+  Witam na mojej osobistej stronie. Tutaj możesz zobaczyć
+  &lt;a class=&quot;link&quot; href=&quot;&quot;&gt;projekty&lt;/a&gt;.
+&lt;/p&gt;
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* Będzie dotyczyć wszystkich znaczników z klasą title */</span>
+.title {
+  font-weight: 500;
+}
+
+<span class="code__comment">/* Będzie dotyczyć wszystkich znaczników z klasą text */</span>
+.text {
+  color: brown;
+  font-size: 18px;
+}
+
+<span class="code__comment">/* Będzie dotyczyć wszystkich znaczników z klasą link */</span>
+.link {
+  text-decoration: none;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Kompozycja klas</h2>
+      <pre class="code code--html">
+&lt;element class=&quot;value1 value2 value3&quot;&gt;&lt;/element&gt;
+      </pre>
+      <pre class="code code--html">
+&lt;p class=&quot;alert success&quot;&gt;Zakończono doładowanie konta&lt;/p&gt;
+&lt;p class=&quot;alert warning&quot;&gt;Uwaga, taryfy ulegną zmianie&lt;/p&gt;
+&lt;p class=&quot;alert error&quot;&gt;Błąd transakcji&lt;/p&gt;
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* Wspólne style dla wszystkich typów alertów */</span>
+.alert {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+<span class="code__comment">/* Specyficzne style dla każdego typu */</span>
+.success {
+  color: green;
+}
+
+.warning {
+  color: orange;
+}
+
+.error {
+  color: red;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Selektor identyfikatora: <code>#my_id</code></h2>
+      <pre class="code code--html">
+&lt;h1 id=&quot;title&quot;&gt;Nag&lstrok;&oacute;wek strony&lt;/h1&gt;
+      </pre>
+      <pre class="code code--css">
+#title {
+  font-weight: 500;
+  color: orange;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Selektor potomka</h2>
+      <pre class="code code--html">
+&lt;a href=&quot;&quot;&gt;Czytaj nasz blog!&lt;/a&gt;
+
+&lt;ul class=&quot;social-links&quot;&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;&quot;&gt;Twitter&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;&quot;&gt;Instagram&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;&quot;&gt;Facebook&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* ❌ Będzie zastosowane do wszystkich linków w dokumencie */</span>
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+<span class="code__comment">/* ✅ Będzie zastosowane tylko do linków,
+   które znajdują się wewnątrz znacznika z klasą social-links */</span>
+.social-links a {
+  color: blue;
+  text-decoration: none;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Selektor dziecka/bezpośredniego potomka</h2>
+      <pre class="code code--html">
+&lt;ul class=&quot;menu&quot;&gt;
+  &lt;li&gt;
+    Komputery i akcesoria
+    &lt;ul class=&quot;submenu&quot;&gt;
+      &lt;li&gt;Procesory&lt;/li&gt;
+      &lt;li&gt;Monitory&lt;/li&gt;
+      &lt;li&gt;Karty graficzne&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    Artyku&lstrok;y gospodarstwa domowego
+    &lt;ul class=&quot;submenu&quot;&gt;
+      &lt;li&gt;Lod&oacute;wki&lt;/li&gt;
+      &lt;li&gt;Telewizory&lt;/li&gt;
+      &lt;li&gt;Pralki&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    Sprz&eogon;ty gospodarstwa domowego
+    &lt;ul class=&quot;submenu&quot;&gt;
+      &lt;li&gt;Fotele&lt;/li&gt;
+      &lt;li&gt;Materace&lt;/li&gt;
+      &lt;li&gt;Kominki elektryczne&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <pre class="code code--css">
+<span class="code__comment">/* ❌ Nie rozwiązuje problemu */</span>
+.menu li {
+  border: 1px solid tomato;
+}
+
+<span class="code__comment">/* ✅ Dokładnie to, czego potrzeba */</span>
+.menu > li {
+  border: 1px solid tomato;
+}
+      </pre>
+    </section>
+    <section>
+      <h2>Selektor atrybutu</h2>
+      <section>
+        <h3>Istnienie atrybutu niezależnie od wartości: <code>[attribute]</code></h3>
+        <pre class="code code--html">
+&lt;a href=&quot;https://htmlreference.io&quot; title=&quot;Przewodnik po tagach&quot;&gt;
+  htmlreference.io
+&lt;/a&gt;
+
+&lt;a href=&quot;https://cssreference.io&quot; title=&quot;Przewodnik po tagach&quot;&gt;
+  cssreference.io
+&lt;/a&gt;
+
+&lt;a href=&quot;https://www.youtube.com&quot;&gt;YouTube &lt;/a&gt;
+      </pre>
+        <pre class="code code--css">
+a[title] {
+  color: teal;
+}
+      </pre>
+      </section>
+      <section>
+        <h3>Atrybut i jego konkretna wartość: <code>[attribute="value"]</code></h3>
+        <pre class="code code--html">
+&lt;a href=&quot;https://htmlreference.io&quot; title=&quot;Przewodnik po tagach&quot;&gt;
+  htmlreference.io
+&lt;/a&gt;
+
+&lt;a href=&quot;cssreference.io&quot; title=&quot;Przewodnik po stylach&quot;&gt;
+  cssreference.io
+&lt;/a&gt;
+
+&lt;a href=&quot;https://www.youtube.com&quot;&gt;YouTube&lt;/a&gt;
+        </pre>
+        <pre class="code code--css">
+a[href*="htmlreference.io"] {
+  color: teal;
+}
+
+a[href="https://cssreference.io"] {
+  color: orange;
+}
+
+a[href="https://www.youtube.com"] {
+  color: tomato;
+}
+        </pre>
+      </section>
+    </section>
+    <section class="links">
+      <h2>links pseudo-classes</h2>
+      <a href="https://google.com" class="first" style="color: #1ce1ce">foo</a>
+      <a href="http://google.com" class="second">bar</a>
+      <a href="https://google.ca" class="third">baz</a>
+      <a href="https://images.google.com" class="fourth">foobar</a>
+    </section>
+  </main>
+</body>
+
+</html>
