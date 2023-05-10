@@ -1,15 +1,3 @@
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
-h2 {
-  font-family: 'Roboto', sans-serif;
-}
-
-button {
-  cursor: pointer;
-}
-
 :root {
   --font-heading: 'Open sans';
   --color-text: #eee;

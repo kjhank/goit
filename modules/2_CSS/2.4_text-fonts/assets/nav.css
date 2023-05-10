@@ -1,0 +1,31 @@
+.main-navigation {
+  border: max(2px, 0.1vw) solid var(--color-main);
+  border-block-start: none;
+  border-end-end-radius: 1em;
+  border-end-start-radius: 1em;
+  padding: 1em;
+  font-size: clamp(1.2rem, 1vw, 2em);
+}
+
+.main-navigation > menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
+  padding: 0;
+  list-style-type: none;
+}
+
+.main-navigation__item {
+  color: var(--color-main);
+  transition: scale var(--transition-default), color var(--transition-fast);
+}
+
+.main-navigation__item--current {
+  color: var(--color-accent);
+}
+
+.main-navigation__item:hover {
+  color: var(--color-accent);
+  scale: 1.2;
+}

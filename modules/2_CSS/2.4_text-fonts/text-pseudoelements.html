@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudoelementy tekstowe</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Dekoracja tekstu</a></li>
+      <li class="main-navigation__item"><a href="./font-properties.html">Właściwości czcionki</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a
+          href="./text-pseudoelements.html">Pseudoelementy tekstowe</a></li>
+      <li class="main-navigation__item"><a href="./web-fonts.html">Niestandardowe czcionki</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Pseudoelementy tekstowe</h1>
+      <section>
+        <h2>Pseudoelement <code class="code">::first-letter</code></h2>
+        <pre class="code code--css">
+selektor::first-letter {
+  /* wybrane właściwości i wartości */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter */
+}
+      </pre>
+        <code>Current</code>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos a natus veniam corrupti molestias
+          eveniet
+          dicta repellendus sint sit aliquid placeat et, velit ut, amet quae repudiandae quaerat suscipit odio.</p>
+        <code>Spec default</code>
+        <p class="examples-pseudoelements">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iusto, dolorem sit quae iste cum ducimus
+          quibusdam
+          illum pariatur dicta consequuntur quaerat saepe quod iure corrupti repudiandae quo nisi deserunt?</p>
+        <code>color: rebeccapurple;</code>
+        <p class="examples-pseudoelements examples-pseudoelements--1">
+          Lorem ipsum dolor, sit amet
+          consectetur
+          adipisicing elit. Quam in dicta fugiat
+          atque repellendus doloremque! Suscipit quaerat cupiditate saepe modi? Unde quae omnis nobis obcaecati earum
+          velit expedita eligendi qui.</p>
+        <code>border-radius: 0.2em;
+          padding: 0.4em;
+          background-image: linear-gradient(45deg,
+              var(--color-accent),
+              var(--color-main));
+          color: var(--color-neutral-bg);</code>
+        <p class="examples-pseudoelements examples-pseudoelements--2">
+          Lorem ipsum dolor, sit
+          amet
+          consectetur
+          adipisicing elit. Quam in dicta fugiat
+          atque repellendus doloremque! Suscipit quaerat cupiditate saepe modi? Unde quae omnis nobis obcaecati earum
+          velit expedita eligendi qui.</p>
+        <code>font-family: fantasy;</code>
+        <p class="examples-pseudoelements examples-pseudoelements--3">
+          Lorem ipsum dolor, sit amet
+          consectetur
+          adipisicing elit. Quam in dicta fugiat
+          atque repellendus doloremque! Suscipit quaerat cupiditate saepe modi? Unde quae omnis nobis obcaecati earum
+          velit expedita eligendi qui.</p>
+      </section>
+      <section>
+        <h2>Pseudoelement <code>::selection</code></h2>
+        <pre class="code code--css">
+selektor::selection {
+  /* właściwości i wartości */
+  /* tylko color, background-color, text-shadow, text-decoration i kilka własnościowych */
+}
+      </pre>
+        <code>Spec default</code>
+        <p class="examples-pseudoelements">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cum nesciunt
+          dolore ipsa sequi natus consectetur quisquam? Beatae nulla dolor veritatis assumenda rerum. Dolores
+          repellendus soluta debitis quis, corrupti accusamus.</p>
+        <code>background-color: var(--color-sub);
+          color: var(--color-main);
+          text-decoration: overline;</code>
+        <p class="examples-pseudoelements examples-pseudoelements--selection-1">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eveniet cum nesciunt dolore ipsa sequi natus consectetur quisquam? Beatae nulla dolor
+          veritatis assumenda rerum. Dolores repellendus soluta debitis quis, corrupti accusamus.</p>
+        <code>background-color: var(--color-main);
+          text-shadow: -5px 0.5ch var(--color-accent);</code>
+        <p class="examples-pseudoelements examples-pseudoelements--selection-2">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eveniet cum nesciunt dolore ipsa sequi natus consectetur quisquam? Beatae nulla dolor
+          veritatis assumenda rerum. Dolores repellendus soluta debitis quis, corrupti accusamus.</p>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

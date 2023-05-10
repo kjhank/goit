@@ -1,0 +1,89 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('./vars.css');
+@import url('./globals.css');
+@import url('./headings.css');
+@import url('./nav.css');
+@import url('./examples.css');
+@import url('./fonts/open-dyslexic.css');
+
+
+.code {
+  position: relative;
+  isolation: isolate;
+  background-color: #111;
+  color: #eee;
+  border-radius: 1ch;
+}
+
+.code:is(code) {
+  padding-inline: 0.5em;
+}
+
+.code::before {
+  position: absolute;
+  inset: auto 0.5ch 0 auto;
+  z-index: -1;
+  opacity: 0.1;
+  font-size: 2em;
+  text-shadow: none;
+}
+
+.code[class*="--"] {
+  padding-block-start: 2em;
+}
+
+.code--css {
+  text-shadow: 0 0 10px var(--color-accent);
+}
+
+.code--css::before {
+  content: 'CSS';
+  color: var(--color-accent);
+}
+
+.code--html {
+  text-shadow: 0 0 10px var(--color-main);
+}
+
+.code--html::before {
+  content: 'HTML';
+  color: var(--color-main);
+}
+
+.code--js {
+  text-shadow: 0 0 10px var(--color-sub);
+}
+
+.code--js::before {
+  content: 'JS';
+  color: var(--color-accent);
+}
+
+.code>.code__comment {
+  color: #aaa;
+  text-shadow: none;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lightness-base: 63%;
+    --lightness-alt: calc(var(--lightness-base) - 48%);
+  }
+
+  body {
+    background-color: var(--color-neutral-bg);
+    color: var(--color-neutral-fg);
+  }
+
+  h1 {
+    background: #000;
+    color: #fff;
+    mix-blend-mode: lighten;
+  }
+
+  h1::before {
+    mix-blend-mode: multiply;
+  }
+}
