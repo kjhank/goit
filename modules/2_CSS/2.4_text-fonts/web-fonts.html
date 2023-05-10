@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niestandardowe czcionki</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Dekoracja tekstu</a></li>
+      <li class="main-navigation__item"><a href="./font-properties.html">Właściwości czcionki</a></li>
+      <li class="main-navigation__item"><a href="./text-pseudoelements.html">Pseudoelementy tekstowe</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./web-fonts.html">Niestandardowe
+          czcionki</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Niestandardowe czcionki</h1>
+      <section>
+        <h2>Linkowanie fontów</h2>
+        <pre class="code code--css">
+@import url('ścieżka-fontu');
+        </pre>
+        <pre class="code code--html">
+&lt;link
+  href=&quot;&sacute;cie&zdot;ka-fontu&quot;
+  rel=&quot;stylesheet&quot;
+/&gt;
+        </pre>
+        <h2>Używanie fontów</h2>
+        <pre class="code code-css">
+@font-face {
+  font-family: 'Open-Dyslexic';
+  src: local('Open-Dyslexic'),
+      url('subset-Open-Dyslexic.woff2') format('woff2'),
+      url('subset-Open-Dyslexic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+selektor {
+  font-family: 'Open-Dyslexic', sans-serif;
+}
+        </pre>
+        <code>Current</code>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos a natus veniam corrupti molestias
+          eveniet
+          dicta repellendus sint sit aliquid placeat et, velit ut, amet quae repudiandae quaerat suscipit odio.</p>
+        <code>Spec default</code>
+        <p class="examples-webfonts">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iusto, dolorem sit quae iste cum ducimus
+          quibusdam
+          illum pariatur dicta consequuntur quaerat saepe quod iure corrupti repudiandae quo nisi deserunt?</p>
+        <code>font-family: 'Dancing Script', cursive</code>
+        <p class="examples-webfonts examples-webfonts--1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
+          animi ad odit illo est laboriosam sit dolores eos delectus recusandae repudiandae, ratione vero doloribus id,
+          nam sapiente tempora minus fugit!</p>
+        <code>font-family: var(--font-a11y) /* = 'Atkinson Hyperlegible', sans-serif; */</code>
+        <p class="examples-webfonts examples-webfonts--2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Similique iure ex nostrum, maiores delectus expedita. Iusto omnis facilis ex sint accusamus, sed dignissimos
+          totam? Accusantium nihil rem id sit. Aspernatur.</p>
+        <code>font-family: 'Open-Dyslexic', var(--font-a11y);</code>
+        <p class="examples-webfonts examples-webfonts--3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+          omnis dolore totam provident sequi et, necessitatibus impedit dolores nihil voluptates facere minus fugiat
+          placeat quibusdam neque reiciendis repellendus sed corrupti.</p>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+[class^="examples"] {
+  text-decoration: initial;
+  text-transform: initial;
+  text-align: initial;
+  text-indent: initial;
+  line-height: initial;
+  letter-spacing: initial;
+  word-spacing: initial;
+  white-space: initial;
+  font-family: initial;
+  font-weight: initial;
+  font-style: initial;
+}
+
+code:has(+ p) {
+  align-self: flex-start;
+  display: inline-block;
+  margin-block-start: 2em;
+  border: min(2px, 0.1vw) solid var(--color-main);
+  border-radius: 0.25em;
+  padding-inline: 0.25em;
+}
+
+.examples-text-decoration {
+  text-decoration: none;
+  text-decoration-color: var(--color-accent);
+}
+
+.examples-text-decoration--underline {
+  text-decoration-line: underline;
+}
+
+.examples-text-decoration--line-through {
+  text-decoration-line: line-through
+}
+
+.examples-text-decoration--overline {
+  text-decoration-line: overline;
+}
+
+.examples-text-transform {
+  text-transform: none;
+}
+
+.examples-text-transform--uppercase {
+  text-transform: uppercase;
+}
+
+.examples-text-transform--lowercase {
+  text-transform: lowercase;
+}
+
+.examples-text-transform--capitalize {
+  text-transform: capitalize;
+}
+
+.examples-text-align--left {
+  text-align: left;
+}
+
+.examples-text-align--justify {
+  text-align: justify;
+}
+
+.examples-text-align--center {
+  text-align: center;
+}
+
+.examples-text-align--right {
+  text-align: right;
+}
+
+.examples-text-indent--static {
+  text-indent: 2em;
+}
+
+.examples-text-indent--percent {
+  text-indent: 10%;
+}
+
+.examples-line-height--multiplier {
+  line-height: 2.3;
+}
+
+.examples-line-height--static {
+  line-height: 13px;
+}
+
+.examples-line-height--percentage {
+  line-height: 50%;
+}
+
+.examples-line-height--normal {
+  line-height: normal;
+}
+
+.examples-letter-spacing--static {
+  letter-spacing: 5px;
+}
+
+.examples-letter-spacing--normal {
+  letter-spacing: normal;
+}
+
+.examples-word-spacing--static {
+  word-spacing: 5ch;
+}
+
+.examples-word-spacing--normal {
+  word-spacing: normal;
+}
+
+.examples-text-shadow--1 {
+  text-shadow: 1px 1px 2px rebeccapurple;
+}
+
+.examples-text-shadow--2 {
+  text-shadow: #FC0 1px 0 10px;
+}
+
+.examples-text-shadow--3 {
+  text-shadow: #1ce1ce 1px -0.5ex 0.5vh;
+}
+
+.examples-text-shadow--4 {
+  text-shadow: 5px 10px;
+}
+
+.examples-text-shadow--multiple {
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue, 0 0 0.3em pink;
+}
+
+.examples-white-space--nowrap {
+  white-space: nowrap;
+}
+
+.examples-white-space--pre {
+  white-space: pre;
+}
+
+.examples-white-space--pre-wrap {
+  white-space: pre-wrap;
+}
+
+.examples-white-space--normal {
+  white-space: normal;
+}
+
+.examples-font-weight--100 {
+  font-weight: 100
+}
+
+.examples-font-weight--200 {
+  font-weight: 200
+}
+
+.examples-font-weight--300 {
+  font-weight: 300
+}
+
+.examples-font-weight--400 {
+  font-weight: 400
+}
+
+.examples-font-weight--500 {
+  font-weight: 500
+}
+
+.examples-font-weight--600 {
+  font-weight: 600
+}
+
+.examples-font-weight--700 {
+  font-weight: 700
+}
+
+.examples-font-weight--800 {
+  font-weight: 800
+}
+
+.examples-font-weight--900 {
+  font-weight: 900
+}
+
+.examples-font-style--italic {
+  font-style: italic;
+}
+
+.examples-font-style--oblique {
+  font-style: oblique 90deg;
+}
+
+.examples-font-style--normal {
+  font-style: normal;
+}
+
+.examples-pseudoelements--1::first-letter {
+  color: rebeccapurple;
+}
+
+.examples-pseudoelements--2::first-letter {
+  border-radius: 0.2em;
+  padding: 0.4em;
+  background-image: linear-gradient(45deg,
+      var(--color-accent),
+      var(--color-main));
+  color: var(--color-neutral-bg);
+}
+
+.examples-pseudoelements--3::first-letter {
+  font-family: fantasy;
+}
+
+
+.examples-pseudoelements--selection-1::selection {
+  background-color: var(--color-sub);
+  color: var(--color-main);
+  text-decoration: overline;
+}
+
+.examples-pseudoelements--selection-2::selection {
+  background-color: var(--color-main);
+  text-shadow: -5px 0.5ch var(--color-accent);
+}
+
+.examples-webfonts--1 {
+  font-family: 'Dancing Script', cursive;
+}
+
+.examples-webfonts--2 {
+  font-family: var(--font-a11y);
+}
+
+.examples-webfonts--3 {
+  font-family: 'Open-Dyslexic', var(--font-a11y);
+}

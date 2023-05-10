@@ -1,0 +1,37 @@
+:root {
+  --hue-main: 90;
+  --saturation-base: 60%;
+  --lightness-base: 37%;
+  --lightness-alt: calc(var(var(--lightness-base) + 36%));
+
+  --hue-sub: calc(var(--hue-main) + 120);
+  --hue-accent: calc(var(--hue-sub) + 480);
+
+  --color-main: hsl(var(--hue-main),
+      var(--saturation-base),
+      var(--lightness-base));
+  --color-sub: hsl(var(--hue-sub),
+      var(--saturation-base),
+      var(--lightness-base));
+  --color-accent: hsl(var(--hue-accent),
+      var(--saturation-base),
+      var(--lightness-base));
+
+
+
+  --color-neutral-fg: hsl(var(--hue-main),
+      0%,
+      var(--lightness-base));
+  --color-neutral-bg: hsl(var(--hue-main),
+      0%,
+      var(--lightness-alt));
+
+  --transition-default: 400ms;
+  --transition-fast: 200ms;
+  --transition-slow: 800ms;
+
+
+  --font-text: 'Roboto', 'Atkinson Hyperlegible', 'Open Sans', sans-serif;
+  --font-mono: 'Fira Mono', monospace;
+  --font-a11y: 'Atkinson Hyperlegible', sans-serif;
+}
