@@ -6,8 +6,15 @@ h1 {
   background: #fff;
   mix-blend-mode: multiply;
   font-size: clamp(3rem, 4vw + 1rem, 6rem);
+  font-family: var(--font-a11y);
   text-align: center;
 }
+
+/* fujka ↓ nie robimy takich rzeczy na :hover, powodują layout shift */
+/* h1:hover {
+  font-weight: 900;
+  font-family: serif;
+} */
 
 h1::before {
   content: "";

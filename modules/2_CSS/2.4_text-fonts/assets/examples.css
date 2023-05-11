@@ -7,9 +7,6 @@
   letter-spacing: initial;
   word-spacing: initial;
   white-space: initial;
-  font-family: initial;
-  font-weight: initial;
-  font-style: initial;
 }
 
 code:has(+ p) {
@@ -130,6 +127,10 @@ code:has(+ p) {
   text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue, 0 0 0.3em pink;
 }
 
+.examples-text-shadow--5 {
+  text-shadow: 1px 1px limegreen, 1px 1px violet;
+}
+
 .examples-white-space--nowrap {
   white-space: nowrap;
 }
@@ -160,6 +161,10 @@ code:has(+ p) {
 
 .examples-font-weight--400 {
   font-weight: 400
+}
+
+.examples-font-weight--bolder {
+  font-weight: bolder;
 }
 
 .examples-font-weight--500 {
@@ -221,10 +226,11 @@ code:has(+ p) {
 .examples-pseudoelements--selection-2::selection {
   background-color: var(--color-main);
   text-shadow: -5px 0.5ch var(--color-accent);
+  -webkit-text-stroke-color: blue;
 }
 
 .examples-webfonts--1 {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Roboto', 'Open Sans', cursive;
 }
 
 .examples-webfonts--2 {

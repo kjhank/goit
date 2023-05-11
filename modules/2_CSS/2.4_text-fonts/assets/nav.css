@@ -3,7 +3,7 @@
   border-block-start: none;
   border-end-end-radius: 1em;
   border-end-start-radius: 1em;
-  padding: 1em;
+  padding: 1em 2em 3em;
   font-size: clamp(1.2rem, 1vw, 2em);
 }
 
