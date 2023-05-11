@@ -1,0 +1,300 @@
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Bold It';
+    src: local('FONTSPRING DEMO - Nizzoli Bold It Regular'), local('FONTSPRINGDEMO-NizzoliBoldItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliBoldItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliBoldItRegular.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli';
+    src: local('FONTSPRING DEMO - Nizzoli Regular'), local('FONTSPRINGDEMO-NizzoliRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt Bold It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Bold It Regular'), local('FONTSPRINGDEMO-NizzoliAltBoldItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBoldItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBoldItRegular.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli';
+    src: local('FONTSPRING DEMO - Nizzoli Black Regular'), local('FONTSPRINGDEMO-NizzoliBlackRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliBlackRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliBlackRegular.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Black It';
+    src: local('FONTSPRING DEMO - Nizzoli Black It Regular'), local('FONTSPRINGDEMO-NizzoliBlackItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliBlackItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliBlackItRegular.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli';
+    src: local('FONTSPRING DEMO - Nizzoli SemiBold Regular'), local('FONTSPRINGDEMO-NizzoliSemiBoldRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliSemiBoldRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliSemiBoldRegular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli ExtraLight It';
+    src: local('FONTSPRING DEMO - Nizzoli ExtraLight It Regular'), local('FONTSPRINGDEMO-NizzoliExtraLightItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliExtraLightItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliExtraLightItRegular.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli';
+    src: local('FONTSPRING DEMO - Nizzoli Thin Regular'), local('FONTSPRINGDEMO-NizzoliThinRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliThinRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliThinRegular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli It';
+    src: local('FONTSPRING DEMO - Nizzoli It Regular'), local('FONTSPRINGDEMO-NizzoliItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliItRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Light It';
+    src: local('FONTSPRING DEMO - Nizzoli Light It Regular'), local('FONTSPRINGDEMO-NizzoliLightItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliLightItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliLightItRegular.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli';
+    src: local('FONTSPRING DEMO - Nizzoli Light Regular'), local('FONTSPRINGDEMO-NizzoliLightRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliLightRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliLightRegular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Black Regular'), local('FONTSPRINGDEMO-NizzoliAltBlackRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBlackRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBlackRegular.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt';
+    src: local('FONTSPRING DEMO - Nizzoli Alt ExtraLight Regular'), local('FONTSPRINGDEMO-NizzoliAltExtraLightRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltExtraLightRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltExtraLightRegular.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Thin It';
+    src: local('FONTSPRING DEMO - Nizzoli Thin It Regular'), local('FONTSPRINGDEMO-NizzoliThinItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliThinItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliThinItRegular.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli';
+    src: local('FONTSPRING DEMO - Nizzoli Bold Regular'), local('FONTSPRINGDEMO-NizzoliBoldRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliBoldRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliBoldRegular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli';
+    src: local('FONTSPRING DEMO - Nizzoli ExtraLight Regular'), local('FONTSPRINGDEMO-NizzoliExtraLightRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliExtraLightRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliExtraLightRegular.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt Black It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Black It Regular'), local('FONTSPRINGDEMO-NizzoliAltBlackItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBlackItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBlackItRegular.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Bold Regular'), local('FONTSPRINGDEMO-NizzoliAltBoldRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBoldRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltBoldRegular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli SemiBold It';
+    src: local('FONTSPRING DEMO - Nizzoli SemiBold It Regular'), local('FONTSPRINGDEMO-NizzoliSemiBoldItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliSemiBoldItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliSemiBoldItRegular.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt Thin It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Thin It Regular'), local('FONTSPRINGDEMO-NizzoliAltThinItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltThinItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltThinItRegular.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt It Regular'), local('FONTSPRINGDEMO-NizzoliAltItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltItRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt Rd Black It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Rd Black It Regular'), local('FONTSPRINGDEMO-NizzoliAltRdBlackItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltRdBlackItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltRdBlackItRegular.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt';
+    src: local('FONTSPRING DEMO - Nizzoli Alt SemiBold Regular'), local('FONTSPRINGDEMO-NizzoliAltSemiBoldRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltSemiBoldRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltSemiBoldRegular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt Light It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Light It Regular'), local('FONTSPRINGDEMO-NizzoliAltLightItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltLightItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltLightItRegular.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt Rd';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Rd Black Regular'), local('FONTSPRINGDEMO-NizzoliAltRdBlackRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltRdBlackRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltRdBlackRegular.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Thin Regular'), local('FONTSPRINGDEMO-NizzoliAltThinRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltThinRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltThinRegular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Regular'), local('FONTSPRINGDEMO-NizzoliAltRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt ExtraLight It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt ExtraLight It Regular'), local('FONTSPRINGDEMO-NizzoliAltExtraLightItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltExtraLightItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltExtraLightItRegular.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt';
+    src: local('FONTSPRING DEMO - Nizzoli Alt Light Regular'), local('FONTSPRINGDEMO-NizzoliAltLightRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltLightRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltLightRegular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Nizzoli Alt SemiBold It';
+    src: local('FONTSPRING DEMO - Nizzoli Alt SemiBold It Regular'), local('FONTSPRINGDEMO-NizzoliAltSemiBoldItRegular'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltSemiBoldItRegular.woff2') format('woff2'),
+        url('subset-FONTSPRINGDEMO-NizzoliAltSemiBoldItRegular.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+

@@ -6,6 +6,7 @@
 @import url('./nav.css');
 @import url('./examples.css');
 @import url('./fonts/open-dyslexic.css');
+@import url('./fonts/nizzoli/stylesheet.css');
 
 
 .code {
@@ -60,11 +61,10 @@
   color: var(--color-accent);
 }
 
-.code>.code__comment {
+.code > .code__comment {
   color: #aaa;
   text-shadow: none;
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {

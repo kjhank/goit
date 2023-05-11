@@ -17,14 +17,14 @@ main {
   padding: 0 5% 5%;
 }
 
-main>article {
+main > article {
   display: flex;
   flex-direction: column;
   gap: 2em;
   width: 100%;
 }
 
-article>section {
+article > section {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -32,11 +32,11 @@ article>section {
   padding-block: 3em;
 }
 
-article>section:last-of-type {
+article > section:last-of-type {
   border: unset;
 }
 
-section>p {
+section > p {
   max-width: 80ch;
   line-height: 1.5;
 }
