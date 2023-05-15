@@ -1,0 +1,215 @@
+[class^="examples"] {
+  width: initial;
+  height: initial;
+}
+
+code:has(+ p,
+  + pre,
+  + article) {
+  align-self: flex-start;
+  display: inline-block;
+  margin-block-start: 2em;
+  border: min(2px, 0.1vw) solid var(--color-main);
+  border-radius: 0.25em;
+  padding-inline: 0.25em;
+}
+
+.example-wrapper {
+  outline: 2px dashed var(--color-neutral-fg);
+  padding: 1em 2em;
+  backdrop-filter: saturate(200%);
+}
+
+.examples-width-height--length {
+  width: 10ch;
+  height: 70ex;
+}
+
+.examples-width-height--percentage {
+  width: 50%;
+  height: 65%;
+}
+
+.examples-width-height--max-content {
+  width: max-content;
+}
+
+.examples-width-height--fit-content {
+  width: fit-content;
+  /* same as
+  width: auto;
+  min-width: min-content;
+  max-width: max-content;
+   */
+}
+
+.examples-box-sizing {
+  width: 200px;
+  margin-inline: 23px;
+  border: 3px dotted rebeccapurple;
+  outline: none;
+  padding-inline: 23px;
+}
+
+.examples-box-sizing--content-box {
+  box-sizing: content-box;
+}
+
+.examples-geometry-padding--length {
+  padding: 2em 1em 3em;
+}
+
+.examples-geometry-padding--percentage {
+  padding: 5% 10%;
+}
+
+.examples-geometry-margin--collapse > li {
+  margin-block: 2em 3em
+}
+
+.examples-geometry-margin--collapse-escape > li {
+  margin-block-start: 5em;
+}
+
+.examples-geometry-border--top {
+  border-top: 3px dashed rebeccapurple;
+}
+
+.examples-geometry-border--inline-end {
+  border-inline-end: 0.5em groove var(--color-accent);
+}
+
+.examples-geometry-border--block {
+  border-block: 1ex ridge var(--color-main)
+}
+
+.examples-geometry-border-radius {
+  border: medium solid var(--color-main);
+}
+
+.examples-geometry-border-radius--1 {
+  border-radius: 10ex;
+}
+
+.examples-geometry-border-radius--2 {
+  border-radius: 2em 6em;
+}
+
+.examples-geometry-border-radius--3 {
+  border-radius: 2em 3em 5em 8em;
+}
+
+.examples-geometry-border-radius--4 {
+  border-radius: 30px / 70px;
+}
+
+.examples-element-types {
+  width: min(50%, 80ch);
+  outline: 2px solid var(--color-sub);
+}
+
+.examples-element-types--block-centering {
+  margin-inline: auto;
+}
+
+.examples-element-types--container {
+  outline: 2px solid var(--color-sub);
+}
+
+.examples-element-types--container .container {
+  width: min(50vw, 720px);
+  margin-inline: auto;
+  outline: 2px dashed var(--color-accent);
+}
+
+.examples-element-types--container menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2em;
+  list-style-type: none;
+}
+
+.examples-element-types--container a {
+  text-decoration: underline;
+}
+
+.examples-element-types--inline-block {
+  display: inline-block;
+  outline: 2px solid var(--color-sub);
+  padding: 16px 32px;
+}
+
+.examples-element-types--display-none {
+  display: none;
+}
+
+.examples-structural-pseudos {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.examples-structural-pseudos > * {
+  min-width: 50px;
+  min-height: 50px;
+  border: max(2px, 0.1vw) solid var(--color-sub);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+}
+
+.examples-structural-pseudos--first-last > li:first-child,
+.examples-structural-pseudos--first-last > li:last-child {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--not-first > li:not(:first-child) {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--nth-1 > li:nth-child(n+4) {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--nth-2 > li:nth-child(3n+2) {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--nth-negative > li:nth-child(-n+4) {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--nth-even > li:nth-child(even) {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--nth-odd > li:nth-child(odd) {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--nth-of-type-1 > *:nth-of-type(3) {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--only > *:only-child {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--only-type > *:only-of-type {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}
+
+.examples-structural-pseudos--empty > *:empty {
+  border-color: var(--color-accent);
+  scale: 1.2;
+}

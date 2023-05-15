@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typy elementów</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Model blokowy</a></li>
+      <li class="main-navigation__item"><a href="./geometry.html">Geometria elementu</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./element-types.html">Typy elementów</a>
+      </li>
+      <li class="main-navigation__item"><a href="./structural-pseudos.html">Pseudoklasy strukturalne</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Typy elementów</h1>
+      <article class="example-wrapper">
+        <div class="element-types-demo">
+          <div>div</div>
+          <p>p</p>
+          <main>main</main>
+          <p>p</p>
+          <a>a</a>
+          <span>span</span>
+          <h6>h6</h6>
+          <code>code</code>
+          <search>search</search>
+        </div>
+      </article>
+      <section>
+        <h2>Elementy blokowe</h2>
+        <pre class="code code--css code--small">
+.element-types-demo--block > * {
+  display: block;
+}
+        </pre>
+        <article class="example-wrapper">
+          <div class="element-types-demo element-types-demo--block">
+            <div>div</div>
+            <p>p</p>
+            <main>main</main>
+            <p>p</p>
+            <a>a</a>
+            <span>span</span>
+            <h6>h6</h6>
+            <code>code</code>
+            <search>search</search>
+          </div>
+        </article>
+        <section>
+          <h3>Elementy blokowe - środkowanie w "poziomie"</h3>
+          <code>margin-inline: auto</code>
+          <article class="example-wrapper">
+            <p class="examples-element-types examples-element-types--block-centering">Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Voluptates, vel aliquam cupiditate expedita quasi facere excepturi hic
+              assumenda sed asperiores pariatur laudantium quod eveniet dolore cum iste eos rem quos!</p>
+          </article>
+        </section>
+        <section>
+          <h3>Elementy blokowe - kontener (pojemnik)</h3>
+          <pre class="code code--small code--css">
+.container {
+  width: min(50vw, 720px);
+  margin-inline: auto;
+  outline: 2px dashed var(--color-accent);
+}
+          </pre>
+          <article class="example-wrapper">
+            <div class="examples-element-types--container">
+              <nav>
+                <div class="container">
+                  <menu>
+                    <li><a href="#">foo</a></li>
+                    <li><a href="#">bar</a></li>
+                    <li><a href="#">baz</a></li>
+                  </menu>
+                </div>
+              </nav>
+              <main>
+                <div class="container">
+                  <p>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Doloremque, omnis corporis? Fugiat, nobis inventore? Hic ullam vitae dolore
+                    eligendi
+                    enim temporibus adipisci deserunt sed accusantium sit molestiae voluptatum, repudiandae quo natus
+                    sint
+                    placeat saepe impedit asperiores nesciunt quaerat. Similique vitae sequi quas culpa deleniti eaque
+                    incidunt. Dolorem, a. Similique iure natus recusandae sapiente facilis in ad illo dolor modi,
+                    voluptatum
+                    mollitia quis eius earum aliquid. A alias, aperiam provident officiis reprehenderit veniam
+                    asperiores
+                    repellendus doloribus. Exercitationem ipsum eveniet voluptas aperiam?</p>
+                </div>
+              </main>
+              <footer>
+                <div class="container">
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam doloremque aut commodi ab
+                    inventore magni exercitationem fugit placeat beatae a facilis sint, maxime fuga laboriosam delectus
+                    non! Sit, earum! Error consequuntur mollitia excepturi voluptate natus corporis sequi laborum
+                    pariatur assumenda.</p>
+                </div>
+              </footer>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section>
+        <h2>Elementy liniowe</h2>
+        <pre class="code code--css code--small">
+.element-types-demo--inline > * {
+  display: inline;
+  width: 4096px;
+  height: 420em;
+  margin-block: 69ex;
+}
+        </pre>
+        <article class="example-wrapper">
+          <div class="element-types-demo element-types-demo--inline">
+            <div>div</div>
+            <p>p</p>
+            <main>main</main>
+            <p>p</p>
+            <a>a</a>
+            <span>span</span>
+            <h6>h6</h6>
+            <code>code</code>
+            <search>search</search>
+          </div>
+        </article>
+        <section>
+          <h3>Elementy liniowe i <code class="code">padding</code></h3>
+
+          <code>padding-block: 3em</code>
+          <article class="example-wrapper">
+            <div class="element-types-demo element-types-demo--inline element-types-demo--inline-padding">
+              <div>div</div>
+              <p>p</p>
+              <main>main</main>
+              <p>p</p>
+              <a>a</a>
+              <span>span</span>
+              <h6>h6</h6>
+              <code>code</code>
+              <search>search</search>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section>
+        <h2>Elementy liniowo-blokowe: <code class="code">inline-block</code></h2>
+        <pre class="code code--css code--small">
+display: inline-block;
+outline: 2px solid var(--color-sub);
+padding: 16px 32px;
+        </pre>
+        <article class="example-wrapper">
+          <span class="examples-element-types--inline-block">Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Vel, quod hic accusantium sequi magnam id. Modi iste eos suscipit! Minima
+            perspiciatis provident, maiores voluptatem nobis id inventore animi quia dignissimos.</span>
+        </article>
+      </section>
+      <section>
+        <h2>Ukrywanie elementów za pomocą <code class="code">display: none</code></h2>
+        <code>display: none</code>
+        <article class="example-wrapper">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
+            hic ex cum similique quisquam fugit, dolores sed facilis doloremque harum quam esse, consequatur ullam.
+            Nostrum nihil eaque voluptate sed explicabo!</p>
+          <p class="examples-element-types--display-none">Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Vel, quod hic accusantium sequi magnam id. Modi iste eos suscipit! Minima
+            perspiciatis provident, maiores voluptatem nobis id inventore animi quia dignissimos.</p>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

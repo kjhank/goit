@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometria elementu</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Model blokowy</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./geometry.html">Geometria elementu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./element-types.html">Typy elementów</a></li>
+      <li class="main-navigation__item"><a href="./structural-pseudos.html">Pseudoklasy strukturalne</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Geometria elementu</h1>
+      <section>
+        <h2>Właściwość <code class="code">padding</code>
+        </h2>
+        <pre class="code code--css">
+padding: &lt;length&gt; | &lt;percentage&gt;
+        </pre>
+        <p>Odstęp między krawędzią a zawartością elementu. <strong>Uwaga:</strong> procentowa wartość wyliczana jest na
+          podstawie <a href="#footnote-1">liniowego wymiaru<sup>1</sup></a> <em>rodzica</em>, nie elementu, który
+          stylujesz.</p>
+        <pre class="code code--css code--small">
+padding: 1em;
+/* = */
+padding: 1em 1em 1em 1em;
+/* = */
+padding-inline: 1em;
+padding-block: 1em;
+/* = */
+padding-top: 1em;
+padding-right: 1em;
+padding-bottom: 1em;
+padding-left: 1em;
+        </pre>
+        <pre class="code code--css code--small">
+padding: 2em 0.5em;
+/* = */
+padding: 2em 0.5em 2em 0.5em;
+/* = */
+padding-inline: 0.5em;
+padding-block: 2em;
+/* = */
+padding-top: 2em;
+padding-right: 0.5em;
+padding-bottom: 0.5em;
+padding-left: 1em;
+        </pre>
+        <pre class="code code--css code--small">
+padding: 2em 1em 3em;
+/* = */
+padding: 2em 1em 3em 1em;
+/* = */
+padding-inline: 1em;
+padding-block: 2em 3em;
+/* = */
+padding-top: 2em;
+padding-right: 1em;
+padding-bottom: 3em;
+padding-left: 1em;
+        </pre>
+        <code>2em 1em 3em</code>
+        <article class="example-wrapper">
+          <p class="examples-geometry examples-geometry-padding--length">Lorem ipsum dolor sit, amet consectetur
+            adipisicing
+            elit. Sequi ea quae sunt exercitationem voluptate nisi ipsa! Iure hic ipsam natus? Sit cumque ea voluptate
+            excepturi praesentium enim, possimus voluptatum placeat.</p>
+        </article>
+        <code>5% 10%</code>
+        <article class="example-wrapper">
+          <p class="examples-geometry examples-geometry-padding--percentage">Quos asperiores deserunt illum voluptates
+            quam impedit,
+            reprehenderit labore, voluptatum suscipit minima, blanditiis veritatis laborum aut doloremque atque nostrum
+            ea
+            itaque accusantium. Esse quisquam atque quia quae. Ab, dolorem atque?</p>
+        </article>
+        <footer class="footnotes">
+          <h2>Przypisy:</h2>
+          <ol>
+            <li id="footnote-1">
+              <p>liniowy wymiar, czyli w językach poziomych - jak angielski czy polski - szerokość.</p>
+            </li>
+          </ol>
+        </footer>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">margin</code></h2>
+        <pre class="code code--css">
+margin: &lt;length&gt; | &lt;percentage&gt; | auto
+        </pre>
+        <p>Składnia, shorthand i wyliczenia procentowe zachowują się tak samo, jak w przypadku paddingu.</p>
+        <section>
+          <h3>Załamywanie się marginesów, tzw. <em lang="en">margin collapse</em></h3>
+          <p>Jeśli sąsiadujące ze sobą elementy w układzie blokowym mają marginesy, są one załamywane. Oznacza to, że
+            algorytm je porównuje i
+            wybiera jeden - większy - z nich. W poniższym przykładzie elementy nie będą miały 5em marginesu między sobą,
+            tylko 3. Więcej w <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">tym
+              artykule na MDN</a>.</p>
+          <pre class="code code--css code--small">
+ul &gt; li {
+  margin-block: 2em 3em;
+}
+          </pre>
+          <article class="example-wrapper">
+            <ul class="examples-geometry-margin examples-geometry-margin--collapse">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Tempora temporibus dolorem quas sequi.</li>
+              <li>Nisi molestiae assumenda ipsam earum.</li>
+              <li>Quam autem laudantium animi eum.</li>
+            </ul>
+          </article>
+        </section>
+        <section>
+          <h3>"Wypadanie" marginesów</h3>
+          <p>Innym przypadkiem marginesów zachowujących się nieco nieintuicyjnie jest tzw. wypadanie marginesów (również
+            związane z <em lang="en">margin collapsing</em>). Polega ono na tym, że element znajdujący się na "brzegu"
+            elementu w układzie blokowym (czyli pierwszy lub ostatni element) będzie rozpychał się swoim marginesem poza
+            rodzica.</p>
+          <pre class="code code--css code--small">
+ul &gt; li {
+  margin-block-start: 5em;
+}
+          </pre>
+          <article class="example-wrapper">
+            <ul class="examples-geometry-margin examples-geometry-margin--collapse-escape">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Tempora temporibus dolorem quas sequi.</li>
+              <li>Nisi molestiae assumenda ipsam earum.</li>
+              <li>Quam autem laudantium animi eum.</li>
+            </ul>
+          </article>
+        </section>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">border</code></h2>
+        <pre class="code code--css">
+border: border-width border-style border-color
+  | border-style border-color
+  | border-width border-style
+
+border-width: &lt;length&gt; | thin | medium | thick
+border-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset
+border-color: &lt;color&gt;
+        </pre>
+        <section>
+          <h3>Pojedyncze obramowania</h3>
+          <p>Obramowania można nadawać z każdej strony osobno:</p>
+          <code>
+border-top: 3px dashed rebeccapurple
+          </code>
+          <article class="example-wrapper">
+            <p class="examples-geometry-border examples-geometry-border--top">Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Nobis labore at fugiat blanditiis laborum, necessitatibus sequi itaque quod nostrum,
+              modi magnam, quidem voluptas deleniti minima doloremque est placeat consectetur reprehenderit?</p>
+          </article>
+          <code>
+border-inline-end: 0.5em groove var(--color-accent)
+          </code>
+          <article class="example-wrapper">
+            <p class="examples-geometry-border examples-geometry-border--inline-end">Lorem ipsum dolor sit, amet
+              consectetur
+              adipisicing elit. Nobis labore at fugiat blanditiis laborum, necessitatibus sequi itaque quod nostrum,
+              modi magnam, quidem voluptas deleniti minima doloremque est placeat consectetur reprehenderit?</p>
+          </article>
+          <code>
+border-block: 1ex ridge var(--color-main)
+          </code>
+          <article class="example-wrapper">
+            <p class="examples-geometry-border examples-geometry-border--block">Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Quia, libero ab. Corporis saepe veniam distinctio quisquam at hic, deleniti rem vel
+              debitis odio nam rerum modi animi error voluptatum nulla!</p>
+          </article>
+        </section>
+      </section>
+      <section>
+        <h2>Zaokrąglenie obramowania</h2>
+        <pre class="code code--css">
+border-radius: &lt;length&gt; | &lt;percentage&gt;
+
+border-radius: top-left top-right bottom-right bottom-left
+
+border-radius: top-left-and-bottom-right  top-right-and-bottom-left
+
+border-radius: top-left top-right-and-bottom-left bottom-right
+
+border-radius: vertical-radius / horizontal-radius
+        </pre>
+        <code>
+10ex;
+        </code>
+        <article class="example-wrapper">
+          <p class="examples-geometry-border-radius examples-geometry-border-radius--1">Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Temporibus iste quasi voluptate. Odio nobis rem a minima nostrum, repellendus
+            reiciendis iste cum nisi! Id odio excepturi expedita, voluptate inventore assumenda non adipisci commodi,
+            facere sunt sapiente architecto obcaecati nihil veniam necessitatibus porro ex magnam qui quibusdam
+            consequuntur fugiat! A debitis sunt illum omnis vel voluptatibus ipsam placeat ipsa quo? Fugiat?</p>
+        </article>
+        <code>
+2em 6em;
+        </code>
+        <article class="example-wrapper">
+          <p class="examples-geometry-border-radius examples-geometry-border-radius--2">Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Repudiandae possimus obcaecati libero quod maxime omnis itaque eligendi
+            debitis veritatis natus ullam explicabo, vitae dignissimos laborum! Officia officiis accusamus pariatur
+            vero, inventore nobis reprehenderit nostrum eveniet provident, tempore laudantium, voluptatum corrupti cum
+            culpa ea beatae quas! Repellendus voluptate expedita quidem, laudantium pariatur optio rerum cupiditate
+            architecto? Assumenda voluptates dicta, asperiores dolore odio aperiam ratione soluta impedit doloribus
+            officiis modi sit iste tempore illum maiores commodi blanditiis provident! Ab dolor voluptas aspernatur.</p>
+        </article>
+        <code>
+2em 3em 5em 8em;
+        </code>
+        <article class="example-wrapper">
+          <p class="examples-geometry-border-radius examples-geometry-border-radius--3">Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Repudiandae possimus obcaecati libero quod maxime omnis itaque eligendi
+            debitis veritatis natus ullam explicabo, vitae dignissimos laborum! Officia officiis accusamus pariatur
+            vero, inventore nobis reprehenderit nostrum eveniet provident, tempore laudantium, voluptatum corrupti cum
+            culpa ea beatae quas! Repellendus voluptate expedita quidem, laudantium pariatur optio rerum cupiditate
+            architecto? Assumenda voluptates dicta, asperiores dolore odio aperiam ratione soluta impedit doloribus
+            officiis modi sit iste tempore illum maiores commodi blanditiis provident! Ab dolor voluptas aspernatur.</p>
+        </article>
+
+        <code>
+30px / 70px;
+        </code>
+        <article class="example-wrapper">
+          <p class="examples-geometry-border-radius examples-geometry-border-radius--4">Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Ipsum nihil sed eveniet. Minima natus error laudantium est fuga nemo totam
+            doloribus iste. Ea, quae blanditiis! Reprehenderit dignissimos, illo soluta eos iure temporibus repellat sit
+            doloremque fuga ut error ad corrupti dolorem praesentium quas officiis expedita qui dolorum, labore, id
+            repellendus esse saepe quos? Nostrum alias inventore reiciendis voluptate perspiciatis dicta itaque vel
+            asperiores quaerat ea iure, esse facere sequi eum unde quod! Quo ullam quibusdam eveniet animi rerum maxime
+            architecto.</p>
+        </article>
+
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

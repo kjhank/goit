@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model blokowy</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Model blokowy</a></li>
+      <li class="main-navigation__item"><a href="./geometry.html">Geometria elementu</a></li>
+      <li class="main-navigation__item"><a href="./element-types.html">Typy elementów</a></li>
+      <li class="main-navigation__item"><a href="./structural-pseudos.html">Pseudoklasy strukturalne</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Model blokowy</h1>
+      <article class="box-sizing-demo">
+        <div class="box-sizing-demo-margin">
+          margin
+          <div class="box-sizing-demo-border">
+            border
+            <div class="box-sizing-demo-padding">
+              padding
+              <div class="box-sizing-demo-content">
+                content
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <section>
+        <h2>Właściwości <code class="code">width</code> i <code class="code">height</code>
+        </h2>
+        <pre class="code code--css">
+width: &lt;length&gt; | &lt;percentage&gt; | max-content | min-content | fit-content | auto
+height: &lt;length&gt; | &lt;percentage&gt; | max-content | min-content | fit-content | auto
+      </pre>
+        <code>Current</code>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos a natus veniam corrupti molestias
+          eveniet
+          dicta repellendus sint sit aliquid placeat et, velit ut, amet quae repudiandae quaerat suscipit odio.</p>
+        <code>Spec default</code>
+        <p class="examples-width-height">
+          Lorem ipsum dolor, sit amet
+          consectetur adipisicing
+          elit. Quam in dicta fugiat
+          atque repellendus doloremque! Suscipit quaerat cupiditate saepe modi? Unde quae omnis nobis obcaecati earum
+          velit expedita eligendi qui.
+        </p>
+        <code>width: 10ch; height: 70ex</code>
+        <p class="examples-width-height examples-width-height--length">
+          Lorem ipsum dolor, sit
+          amet
+          consectetur
+          adipisicing elit. Quam in dicta fugiat
+          atque repellendus doloremque! Suscipit quaerat cupiditate saepe modi? Unde quae omnis nobis obcaecati earum
+          velit expedita eligendi qui.
+        </p>
+        <code>width: 50%; height: 65%</code>
+        <p class="examples-width-height examples-width-height--percentage">Lorem, ipsum dolor sit amet consectetur
+          adipisicing
+          elit. Dolor impedit amet ratione officia accusantium modi. Nisi amet dolor, impedit temporibus minus quas
+          voluptate quibusdam, ducimus, reprehenderit nesciunt ipsam sint. Consequuntur?</p>
+        <code>max-content</code>
+        <p class="examples-width-height examples-width-height--max-content">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Culpa excepturi accusantium porro ratione sed et minima amet facere commodi suscipit.
+          Debitis deserunt sint et, officiis soluta consequatur reprehenderit sapiente excepturi.</p>
+        <code>min-content</code>
+        <p class="examples-width-height examples-width-height--min-content">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Sint, veritatis ad animi nostrum asperiores inventore amet saepe ea deleniti tenetur
+          possimus laboriosam nisi, enim accusantium dicta! Neque aliquid quasi quia!</p>
+        <code>fit-content</code>
+        <p class="examples-width-height examples-width-height--fit-content">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Sint, veritatis ad animi nostrum asperiores inventore amet saepe ea deleniti tenetur
+          possimus laboriosam nisi, enim accusantium dicta! Neque aliquid quasi quia!</p>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">box-sizing</code></h2>
+        <pre class="code code--css">
+box-sizing: border-box | content-box
+        </pre>
+        <code>content-box</code>
+        <pre class="code code--css code--small">
+box-sizing: content-box;
+width: 200px;
+margin-inline: 23px;
+border: 3px dotted rebeccapurple;
+padding-inline: 23px;
+
+/* node width = width + padding + border-width */
+        </pre>
+        <p class="examples-box-sizing examples-box-sizing--content-box">Lorem ipsum dolor sit amet.</p>
+
+        <code>border-box</code>
+        <pre class="code code--css code--small">
+box-sizing: border-box;
+width: 200px;
+margin-inline: 23px;
+border: 3px dotted rebeccapurple;
+padding-inline: 23px;
+
+/* element width = width*/
+        </pre>
+        <p class="examples-box-sizing examples-box-sizing--border-box">Lorem ipsum dolor sit amet.</p>
+      </section>
+      <section>
+        <h2>Normalize & reset</h2>
+        <section class="iframe-embed">
+          <h3>Normalize</h3>
+          <p><em>Normalizuje</em> style, czyli ujednolica różnice między różnymi domyślnymi stylami przeglądarek (<span
+              lang="en">user agent styles</span>). Np. pozostawia pogrubione fonty na nagłówkach, pochylone fonty w
+            emfazach itd.</p>
+          <iframe height="400" style="width: 100%;" scrolling="no" title="Untitled"
+            src="https://codepen.io/kjhank/embed/wvYxqvw?default-tab=result&theme-id=dark" frameborder="no"
+            loading="lazy" allowtransparency="true" allowfullscreen="true">
+            See the Pen <a href="https://codepen.io/kjhank/pen/wvYxqvw">
+              Untitled</a> by Krzysztof Hankiewicz (<a href="https://codepen.io/kjhank">@kjhank</a>)
+            on <a href="https://codepen.io">CodePen</a>.
+          </iframe>
+        </section>
+        <section class="iframe-embed">
+          <h3>Reset</h3>
+          <p><em>Resetuje</em> style, czyli zasadniczo usuwa wszystkie nadane przez przeglądarke domyślne style.
+            Wszystkie fonty są takie same, strongi nie są pogrubione, sub- czy superscripty nie są pomniejszone i
+            przesunięte</p>
+          <iframe height="300" style="width: 100%;" scrolling="no" title="Normalizer"
+            src="https://codepen.io/kjhank/embed/bGmjrNN?default-tab=result&theme-id=dark" frameborder="no"
+            loading="lazy" allowtransparency="true" allowfullscreen="true">
+            See the Pen <a href="https://codepen.io/kjhank/pen/bGmjrNN">
+              Normalizer</a> by Krzysztof Hankiewicz (<a href="https://codepen.io/kjhank">@kjhank</a>)
+            on <a href="https://codepen.io">CodePen</a>.
+          </iframe>
+        </section>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>
