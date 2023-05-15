@@ -1,0 +1,160 @@
+@import url('./reset.css');
+@import url('../fonts/stylesheet.css');
+@import url('./vars.css');
+@import url('./globals.css');
+@import url('./headings.css');
+@import url('./nav.css');
+@import url('./examples.css');
+@import url('./media.css');
+
+.code {
+  position: relative;
+  isolation: isolate;
+  background-color: #111;
+  color: #eee;
+  border-radius: 1ch;
+}
+
+.code:is(code) {
+  padding-inline: 0.5em;
+}
+
+.code::before {
+  position: absolute;
+  inset: auto 0.5ch 0 auto;
+  z-index: -1;
+  opacity: 0.1;
+  font-size: 2em;
+  text-shadow: none;
+}
+
+.code[class*="--"] {
+  padding-block-start: 2em;
+}
+
+.code--css {
+  text-shadow: 0 0 10px var(--color-accent);
+}
+
+.code--css::before {
+  content: 'CSS';
+  color: var(--color-accent);
+}
+
+.code--html {
+  text-shadow: 0 0 10px var(--color-main);
+}
+
+.code--html::before {
+  content: 'HTML';
+  color: var(--color-main);
+}
+
+.code--js {
+  text-shadow: 0 0 10px var(--color-sub);
+}
+
+.code--js::before {
+  content: 'JS';
+  color: var(--color-accent);
+}
+
+.code > .code__comment {
+  color: #aaa;
+  text-shadow: none;
+}
+
+.code--small {
+  width: fit-content;
+  font-size: 1em;
+}
+
+.box-sizing-demo {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.box-sizing-demo * {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  margin: 1em 1.5em;
+  border: max(3px, 0.2vw) solid var(--color-neutral-fg);
+  border-radius: 0.5em;
+  padding: 1em;
+  text-align: center;
+}
+
+.box-sizing-demo-margin {
+  background-color: hsl(var(--hue-orange), var(--saturation-base), var(--lightness-alt));
+}
+
+.box-sizing-demo-border {
+  background-color: hsl(var(--hue-yellow), var(--saturation-base), var(--lightness-alt));
+}
+
+.box-sizing-demo-padding {
+  background-color: hsl(var(--hue-green), var(--saturation-base), var(--lightness-alt));
+}
+
+.box-sizing-demo-content {
+  background-color: hsl(var(--hue-blue), var(--saturation-base), var(--lightness-alt));
+}
+
+.footnotes {
+  margin-block-start: 3em;
+  border-block-start: max(1px, 0.1vw) solid var(--color-sub);
+  padding-block-start: 3em;
+}
+
+.footnotes h2 {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
+}
+
+.footnotes ol {
+  padding-inline-start: 1em;
+}
+
+.footnotes ol {
+  counter-reset: footnotes;
+}
+
+.footnotes ol > li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1em;
+  counter-increment: footnotes;
+}
+
+.footnotes ol > li::before {
+  content: counter(footnotes) '. ';
+}
+
+.footnotes :target p {
+  background-color: var(--color-accent);
+  color: var(--color-neutral-bg);
+}
+
+.element-types-demo > * {
+  position: relative;
+  display: revert;
+  width: 50px;
+  background-color: var(--color-neutral-bg);
+  color: var(--color-neutral-fg);
+  border: 2px solid var(--color-sub);
+}
+
+.element-types-demo--block > * {
+  display: block;
+}
+
+.element-types-demo--inline > * {
+  display: inline;
+  width: 4096px;
+  height: 420em;
+  margin-block: 69ex;
+}
+
+.element-types-demo--inline-padding > * {
+  padding-block: 2em;
+}
