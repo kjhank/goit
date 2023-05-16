@@ -1,0 +1,126 @@
+@import url('./reset.css');
+@import url('../fonts/stylesheet.css');
+@import url('./vars.css');
+@import url('./globals.css');
+@import url('./headings.css');
+@import url('./nav.css');
+@import url('./examples.css');
+@import url('./media.css');
+
+.code {
+  position: relative;
+  isolation: isolate;
+  background-color: #111;
+  color: #eee;
+  border-radius: 1ch;
+}
+
+.code:is(code) {
+  padding-inline: 0.5em;
+}
+
+.code::before {
+  position: absolute;
+  inset: auto 0.5ch 0 auto;
+  z-index: -1;
+  opacity: 0.1;
+  font-size: 2em;
+  text-shadow: none;
+}
+
+.code[class*="--"] {
+  padding-block-start: 2em;
+}
+
+.code--css {
+  text-shadow: 0 0 10px var(--color-accent);
+}
+
+.code--css::before {
+  content: 'CSS';
+  color: var(--color-accent);
+}
+
+.code--html {
+  text-shadow: 0 0 10px var(--color-main);
+}
+
+.code--html::before {
+  content: 'HTML';
+  color: var(--color-main);
+}
+
+.code--js {
+  text-shadow: 0 0 10px var(--color-sub);
+}
+
+.code--js::before {
+  content: 'JS';
+  color: var(--color-accent);
+}
+
+.code > .code__comment {
+  color: #aaa;
+  text-shadow: none;
+}
+
+.code--small {
+  width: fit-content;
+  font-size: 1em;
+}
+
+.footnotes {
+  margin-block-start: 3em;
+  border-block-start: max(1px, 0.1vw) solid var(--color-sub);
+  padding-block-start: 3em;
+}
+
+.footnotes h2 {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
+}
+
+.footnotes ol {
+  padding-inline-start: 1em;
+}
+
+.footnotes ol {
+  counter-reset: footnotes;
+}
+
+.footnotes ol > li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1em;
+  counter-increment: footnotes;
+}
+
+.footnotes ol > li::before {
+  content: counter(footnotes) '. ';
+}
+
+.footnotes :target p {
+  background-color: var(--color-accent);
+  color: var(--color-neutral-bg);
+}
+
+code:has(+ p,
+  + pre,
+  + article) {
+  align-self: flex-start;
+  display: inline-block;
+  margin-block-start: 2em;
+  border: min(2px, 0.1vw) solid var(--color-main);
+  border-radius: 0.25em;
+  padding-inline: 0.25em;
+}
+
+.example-wrapper {
+  position: relative;
+  outline: 2px dashed var(--color-neutral-fg);
+  padding: 1em 2em;
+  backdrop-filter: saturate(200%);
+}
+
+.example-wrapper:has(.example-label) {
+  padding: 3em 3em 2em;
+}
