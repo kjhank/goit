@@ -4,221 +4,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flexbox - Właściwości kontenera</title>
+  <title>Flexbox - właściwości elementu</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
   <nav class="main-navigation">
     <menu>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Podstawowe koncepcje</a>
+      <li class="main-navigation__item"><a href="./index.html">Podstawowe koncepcje</a>
       </li>
       <li class="main-navigation__item"><a href="./flex-container.html">Właściwości kontenera</a></li>
-      <li class="main-navigation__item"><a href="./flex-items.html">Właściwości elementu</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./flex-items.html">Właściwości
+          elementu</a></li>
     </menu>
   </nav>
   <main>
     <article>
-      <h1>Flexbox - właściwości kontenera</h1>
+      <h1>Flexbox - właściwości elementu</h1>
       <section>
-        <h2>Właściwość <code class="code">display</code></h2>
+        <h2>Właściwość <code class="code">flex-basis</code></h2>
         <pre class="code code--css">
-display: flex | inline-flex;
+flex-basis: auto | &lt;length&gt; | &lt;percentage&gt; | max-content | min-content | fit-content
         </pre>
-        <pre class="code code--html code--small">
-&lt;ul&gt;
-  &lt;li&gt;1&lt;/li&gt;
-  &lt;li&gt;2&lt;/li&gt;
-  &lt;li&gt;3&lt;/li&gt;
-  &lt;li&gt;4&lt;/li&gt;
-  &lt;li&gt;5&lt;/li&gt;
-  &lt;li&gt;6&lt;/li&gt;
-  &lt;li&gt;7&lt;/li&gt;
-  &lt;li&gt;8&lt;/li&gt;
-&lt;/ul&gt;
+        <code>150px</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--basis-1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </article>
+        <code>3em</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--basis-2">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </article>
+        <code>30%</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--basis-3">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">flex-grow</code></h2>
+        <pre class="code code--css">
+flex-grow: &lt;number&gt;
         </pre>
         <pre class="code code--css code--small">
-ul {
-  display: flex;
+li {
+  width: 15%
+}
+
+li:nth-child(2) {
+  flex-basis: 30%;
+  flex-grow: 2;
+}
+
+li:nth-child(3) {
+  width: 25%
 }
         </pre>
         <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--container-1">
+          <ul class="examples-flex examples-flex--grow-1">
             <li>1</li>
             <li>2</li>
             <li>3</li>
-            <li>4</li>
-            <li>5</li>
+          </ul>
+        </article>
+        <pre class="code code--css code--small">
+li {
+  flex-basis: 15%;
+  flex-grow: 2;
+}
+
+li:nth-child(2) {
+  flex-grow: 3;
+}
+        </pre>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--grow-2">
+            <li>1</li>
+            <li>2</li>
+          </ul>
+        </article>
+        <pre class="code code--css code--small">
+.examples-flex--grow-3 > li {
+  flex-basis: 20ch;
+}
+
+.examples-flex--grow-3 > li:nth-child(2) {
+  flex-grow: 1;
+}
+        </pre>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--grow-3">
+            <li>1</li>
+            <li class="main">2</li>
+            <li>3</li>
+          </ul>
+        </article>
+        <pre class="code code--css code--small">
+ul {
+  flex-direction: column;
+}
+
+li.hero {
+  flex-grow: 1;
+}
+        </pre>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--grow-4">
+            <li>1</li>
+            <li class="hero">2</li>
+            <li>3</li>
           </ul>
         </article>
       </section>
       <section>
-        <h2>Właściwość <code class="code">flex-direction</code></h2>
+        <h2>Właściwość <code class="code">flex-shrink</code></h2>
         <pre class="code code--css">
-flex-direction: row | row-reverse | column | column-reverse
+flex-shrink: &lt;number&gt;
         </pre>
-        <code>flex-direction: row</code>
+        <pre class="code code--css code--small">
+li {
+  flex-basis: 40%
+}
+
+li:nth-child(2) {
+  flex-shrink: 2;
+}
+        </pre>
         <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--container-row">
+          <ul class="examples-flex examples-flex--shrink-1">
             <li>1</li>
             <li>2</li>
             <li>3</li>
-            <li>4</li>
-            <li>5</li>
           </ul>
         </article>
-        <code>flex-direction: row-reverse</code>
+        <pre class="code code--css code--small">
+li {
+  flex-basis: 15%;
+  flex-shrink: 2;
+}
+
+li:nth-child(2) {
+  flex-shrink: 3;
+}
+        </pre>
         <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--container-row-reverse">
+          <ul class="examples-flex examples-flex--shrink-2">
             <li>1</li>
             <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>flex-direction: column</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--container-column">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>flex-direction: column-reverse</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--container-column-reverse">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
           </ul>
         </article>
       </section>
       <section>
-        <h2>Właściwość <code class="code">justify-content</code></h2>
+        <h2>Właściwość <code class="code">align-self</code></h2>
         <pre class="code code--css">
-justify-content: flex-start | flex-end | space-between | space-around | space-evenly | center
+align-self: stretch | flex-start | flex-end | baseline | center
         </pre>
-        <code>flex-start</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--justify-flex-start">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>flex-end</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--justify-flex-end">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>space-between</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--justify-space-between">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>space-around</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--justify-space-around">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>space-evenly</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--justify-space-evenly">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>center</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--justify-center">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
       </section>
       <section>
-        <h2>Właściwość <code class="code">align-items</code></h2>
+        <h2>Właściwość <code class="code">order</code></h2>
         <pre class="code code--css">
-align-items: stretch | flex-start | flex-end | baseline | center
+order: &lt;number&gt;
         </pre>
-        <code>stretch</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--align-items-stretch">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>flex-start</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--align-items-flex-start">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>flex-end</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--align-items-flex-end">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>baseline</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--align-items-baseline">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
-        <code>center</code>
-        <article class="example-wrapper">
-          <ul class="examples-flex examples-flex--align-items-center">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
-        </article>
       </section>
     </article>
   </main>

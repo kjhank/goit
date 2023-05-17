@@ -103,7 +103,13 @@
   justify-content: center;
 }
 
-[class*="examples-flex--align"] > li {
+[class*="examples-flex--align"] > li,
+[class*="examples-flex--justify"] > li,
+[class*="examples-flex--pseudo-grid"] > li,
+[class*="examples-flex--wrap"] > li,
+[class*="examples-flex--grow"] > li,
+[class*="examples-flex--shrink"] > li,
+[class*="examples-flex--basis"] > li {
   border: max(2px, 0.1vw) solid var(--color-sub);
   padding: 1em;
   background-color: var(--color-neutral-bg);
@@ -147,4 +153,110 @@
 
 .examples-flex--align-items-center {
   align-items: center;
+}
+
+[class*="examples-flex--align-content"] {
+  min-height: 50vh;
+}
+
+.examples-flex--align-content-stretch {
+  align-content: stretch;
+}
+
+.examples-flex--align-content-flex-start {
+  align-content: flex-start;
+}
+
+.examples-flex--align-content-flex-end {
+  align-content: flex-end;
+}
+
+.examples-flex--align-content-center {
+  align-content: center;
+}
+
+.examples-flex--wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.examples-flex--wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.examples-flex--wrap-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+[class*="examples-flex--align-content"] {
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.examples-flex--pseudo-grid {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.examples-flex--pseudo-grid > li {
+  flex-basis: calc((100% - 20px) / 3);
+  text-align: center;
+}
+
+.examples-flex--basis-1 > li {
+  flex-basis: 150px;
+}
+
+.examples-flex--basis-2 > li {
+  flex-basis: 3em;
+}
+
+.examples-flex--basis-3 > li {
+  flex-basis: 30%;
+}
+
+.examples-flex--grow-1 > li {
+  width: 15%
+}
+
+.examples-flex--grow-1 > li:nth-child(2) {
+  flex-basis: 30%;
+  flex-grow: 2;
+}
+
+.examples-flex--grow-1 > li:nth-child(3) {
+  width: 25%
+}
+
+.examples-flex--grow-2 > li {
+  flex-basis: 15%;
+  flex-grow: 2;
+}
+
+.examples-flex--grow-2 > li:nth-child(2) {
+  flex-grow: 3;
+}
+
+.examples-flex--grow-3 > li {
+  flex-basis: 20ch;
+}
+
+.examples-flex--grow-3 > li.main {
+  flex-grow: 1;
+}
+
+.examples-flex--grow-4 {
+  min-height: 30vh;
+  flex-direction: column;
+}
+
+.examples-flex--grow-4 > li.hero {
+  flex-grow: 1;
+}
+
+.examples-flex--shrink-1 > li {
+  flex-basis: 40%;
+}
+
+.examples-flex--shrink-1 > li:nth-child(2) {
+  flex-shrink: 2;
 }

@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flexbox - Właściwości kontenera</title>
+  <title>Flexbox - właściwości kontenera</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
   <nav class="main-navigation">
     <menu>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Podstawowe koncepcje</a>
+      <li class="main-navigation__item"><a href="./index.html">Podstawowe koncepcje</a>
       </li>
-      <li class="main-navigation__item"><a href="./flex-container.html">Właściwości kontenera</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./flex-container.html">Właściwości kontenera</a></li>
       <li class="main-navigation__item"><a href="./flex-items.html">Właściwości elementu</a></li>
     </menu>
   </nav>
@@ -217,6 +217,243 @@ align-items: stretch | flex-start | flex-end | baseline | center
             <li>3</li>
             <li>4</li>
             <li>5</li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">align-content</code></h2>
+        <pre class="code code--css">
+align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch
+        </pre>
+        <code>stretch</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--align-content-stretch">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+          </ul>
+        </article>
+        <code>flex-start</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--align-content-flex-start">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+          </ul>
+        </article>
+        <code>flex-end</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--align-content-flex-end">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+          </ul>
+        </article>
+        <code>center</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--align-content-center">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">flex-wrap</code></h2>
+        <pre class="code code--css">
+flex-wrap: nowrap | wrap
+        </pre>
+        <code>nowrap</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--wrap-nowrap">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+          </ul>
+        </article>
+        <code>wrap</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--wrap-wrap">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+          </ul>
+        </article>
+        <code>wrap-reverse</code>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--wrap-wrap-reverse">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Pseudo-siatka</h2>
+        <p>(do prawdziwej siatki służy <code class="code">display: grid</code>)</p>
+        <pre class="code code--css code--small">
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+li {
+  flex-basis: calc((100% - 20px) / 3);
+}
+        </pre>
+        <article class="example-wrapper">
+          <ul class="examples-flex examples-flex--pseudo-grid">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
           </ul>
         </article>
       </section>
