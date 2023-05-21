@@ -1,0 +1,21 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lightness-base: 63%;
+    --lightness-alt: calc(var(--lightness-base) - 48%);
+  }
+
+  body {
+    background-color: var(--color-neutral-bg);
+    color: var(--color-neutral-fg);
+  }
+
+  h1 {
+    background: #000;
+    color: #fff;
+    mix-blend-mode: lighten;
+  }
+
+  h1::before {
+    mix-blend-mode: multiply;
+  }
+}

@@ -1,0 +1,62 @@
+h1 {
+  position: relative;
+  align-self: center;
+  display: inline-block;
+  color: #000;
+  background: #fff;
+  mix-blend-mode: multiply;
+  font-size: clamp(3rem, 4vw + 1rem, 6rem);
+  font-family: var(--font-a11y);
+  text-align: center;
+}
+
+/* fujka ↓ nie robimy takich rzeczy na :hover, powodują layout shift */
+/* h1:hover {
+  font-weight: 900;
+  font-family: serif;
+} */
+
+h1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(45deg, var(--color-main), var(--color-sub), var(--color-accent));
+  pointer-events: none;
+}
+
+h1::before {
+  mix-blend-mode: screen;
+}
+
+h2 {
+  font-size: clamp(2rem, 2vw + 1rem, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
+}
+
+h2,
+h3 {
+  align-self: flex-start;
+  display: inline-block;
+  margin-inline-start: -0.5em;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+  color: var(--color-main);
+  transition: background-color var(--transition-default);
+}
+
+h2 code,
+h3 code {
+  color: var(--color-accent);
+}
+
+h2:has(code):hover,
+h3:has(code):hover {
+  background-color: var(--color-sub);
+}
