@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tło elementu</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Tło elementu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./object-fit-position.html">Właściwości dopasowania obrazu w elemencie</a>
+      </li>
+      <li class="main-navigation__item"><a href="./pseudos.html">Pseudoelementy</a></li>
+      <li class="main-navigation__item"><a href="./shadows.html">Cienie elementu</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Tło elementu</h1>
+      <section>
+        <h2>Właściwość <code class="code">background-color</code></h2>
+        <pre class="code code--css">
+background-color: &lt;color&gt;
+        </pre>
+        <article class="example">
+          <h3><code>rebeccapurple</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--color-name">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>hsl(90 46% 23%)</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--color-hsl">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>rgb(192 64 128)</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--color-rgb">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>#bada55</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--color-hex">
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">background-image</code></h2>
+        <pre class="code code--css">
+background-image: &lt;gradient&gt; | url() function | image() function | image-set() function | element() function | cross-fade() function
+        </pre>
+        <article class="example">
+          <h3><code>linear-gradient(45deg, var(--color-main), var(--color-sub))</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--image-linear-gradient">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>radial-gradient(ellipse at top, var(--color-main), var(--color-sub))</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--image-radial-gradient">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>conic-gradient(from 33deg, var(--color-main), var(--color-sub), var(--color-accent))</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--image-conic-gradient">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>url('https://source.unsplash.com/random/?clouds&1')</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--image-url">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>
+            url('https://via.placeholder.com/60x60/823456')
+          </code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--repeat">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code class="code code--css code--small">
+background-image: url('https://via.placeholder.com/60x60/823456')
+background-repeat: repeat-x;
+          </code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--repeat-x">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code class="code code--css code--small">
+background-image: url('https://via.placeholder.com/60x60/823456')
+background-repeat: repeat-y;
+          </code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--repeat-y">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code class="code code--css code--small">
+background-image: url('https://via.placeholder.com/60x60/823456')
+background-repeat: no-repeat;
+          </code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--repeat-no">
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">background-position</code></h2>
+        <pre class="code code--css">
+background-position: &lt;position&gt;
+
+&lt;position&gt; = horizontal offset | horizontal vertical | keyword value keyword value
+        </pre>
+        <article class="example">
+          <h3><code>bottom right</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--position-1">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>background-position: center</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--position-2">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>20%</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--position-3">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>-20% 90%</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--position-4">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>right 23px bottom -1em</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--position-5">
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">background-size</code></h2>
+        <pre class="code code--css">
+background-size: cover | contain | &lt;length&gt; | &lt;percentage&gt; | auto
+        </pre>
+        <article class="example">
+          <h3><code>cover</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--size-cover">
+            </div>
+            <div class="example-bg example-bg--size-cover-2">
+            </div>
+            <div class="example-bg example-bg--size-cover-3">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>contain</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--size-contain">
+            </div>
+            <div class="example-bg example-bg--size-contain-2">
+            </div>
+            <div class="example-bg example-bg--size-contain-3">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>100px</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--size-length">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>100px 200px</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--size-length-2">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>50%</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--size-percentage">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>50% 500%</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--size-percentage-2">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>auto</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--size-percentage-auto">
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">background-attachment</code></h2>
+        <pre class="code code--css">
+background-attachment: scroll | fixed | local
+        </pre>
+        <article class="example">
+          <h3><code>scroll</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--attachment-scroll">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae autem fugiat aliquam beatae velit quam
+              eaque, totam tenetur cupiditate sapiente quibusdam suscipit facere delectus vel? Dicta ab maiores
+              repellendus? Reiciendis!
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>fixed</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--attachment-fixed">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dicta rem sunt maxime incidunt
+              necessitatibus facilis provident labore saepe, ullam aliquam asperiores cum doloremque a, officiis cumque?
+              Consectetur, mollitia esse.
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>local</code></h3>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--attachment-local">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusamus dolores voluptatibus iure?
+              Consequuntur sed ipsa, nihil ipsum mollitia assumenda quo nesciunt. Recusandae eius ipsa quo, earum ab
+              voluptatum fugiat?
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Tła warstwowe (wielokrotne)</h2>
+        <article class="example">
+          <pre class="code code--css code--small">
+  background-image: url('https://source.unsplash.com/random/?clouds&1'),
+  url('https://source.unsplash.com/random/?dog&1');
+background-size: 120px,
+  70px;
+background-repeat: repeat-x,
+  repeat;
+background-position: bottom,
+  top right;background-image: url('https://source.unsplash.com/random/?clouds&1'),
+  url('https://source.unsplash.com/random/?dog&1');
+background-size: 120px,
+  70px;
+background-repeat: repeat-x,
+  repeat;
+background-position: bottom,
+  top right;
+          </pre>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--multiple">
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Shorthand <code class="code">background</code></h2>
+        <pre class="code code--css">
+background: background-color
+  | background-image repeat-style
+  | box background-color
+  | repeat-style background-image
+  | background-image background-position / background-size background-repeat background-attachment background-origin background-clip background-color
+        </pre>
+        <pre class="code code--css code--small">
+background: none;
+/* = */
+background: transparent;
+/* = */
+repeat scroll 0% 0% / auto padding-box border-box none transparent;
+        </pre>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

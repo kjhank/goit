@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lightness-base: 63%;
+    --lightness-alt: calc(var(--lightness-base) - 48%);
+  }
+
+  body {
+    background-color: var(--color-neutral-bg);
+    color: var(--color-neutral-fg);
+  }
+}
