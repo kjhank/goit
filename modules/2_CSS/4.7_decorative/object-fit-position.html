@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Właściwości dopasowania obrazu w
+    elemencie</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item">
+        <a href="./index.html">Tło elementu</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current">
+        <a href="./object-fit-position.html">Właściwości dopasowania obrazu w elemencie</a>
+      </li>
+      <li class="main-navigation__item">
+        <a href="./pseudos.html">Pseudoelementy</a>
+      </li>
+      <li class="main-navigation__item">
+        <a href="./shadows.html">Cienie elementu</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Właściwości dopasowania obrazu w elemencie</h1>
+      <section>
+        <h2>Właściwość <code class="code">object-fit</code></h2>
+        <pre class="code code--css">
+object-fit: cover | contain | fill | none | scale-down
+        </pre>
+        <article class="example">
+          <h3><code>cover</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example-object--fit-cover" src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>contain</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example-object--fit-contain"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>fill</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example-object--fit-fill" src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>none</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example-object--fit-none" src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>scale-down</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example-object--fit-scale-down"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">object-position</code></h2>
+        <pre class="code code--css">
+object-position: top | right | bottom | left | &lt;length&gt; &lt;length&gt; | &lt;percentage&gt; &lt;percentage&gt; | &lt;edge offset&gt;
+        </pre>
+        <article class="example">
+          <h3><code>bottom right</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example--object-position-bottom-right"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>top left</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example--object-position-top-left"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>30px 2em</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example--object-position-length"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>-40px -2em</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example--object-position-length-2"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>50% -50%</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example--object-position-percentage"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>top 20px right 3em</code></h3>
+          <div class="example-wrapper">
+            <img class="example-object example--object-position-edge-offset"
+              src="https://source.unsplash.com/random/?clouds&1" />
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

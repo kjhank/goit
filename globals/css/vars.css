@@ -1,0 +1,60 @@
+:root {
+  /* colors setup */
+  --hue-main: 90;
+  --saturation-base: 60%;
+  --saturation-dim: 23%;
+  --lightness-base: 37%;
+  --lightness-alt: calc(var(--lightness-base) + 46%);
+
+  --hue-orange: 30;
+  --hue-yellow: 60;
+  --hue-green: 120;
+  --hue-blue: 240;
+
+  --hue-sub: calc(var(--hue-main) + 120);
+  --hue-accent: calc(var(--hue-sub) + 480);
+
+  --color-main: hsl(var(--hue-main),
+      var(--saturation-base),
+      var(--lightness-base));
+  --color-sub: hsl(var(--hue-sub),
+      var(--saturation-base),
+      var(--lightness-base));
+  --color-accent: hsl(var(--hue-accent),
+      var(--saturation-base),
+      var(--lightness-base));
+
+  --color-main-dim: hsl(var(--hue-main),
+      var(--saturation-dim),
+      var(--lightness-alt));
+  --color-sub-dim: hsl(var(--hue-sub),
+      var(--saturation-dim),
+      var(--lightness-alt));
+  --color-accent-dim: hsl(var(--hue-accent),
+      var(--saturation-dim),
+      var(--lightness-alt));
+
+  --color-neutral-fg: hsl(var(--hue-main),
+      0%,
+      var(--lightness-base));
+  --color-neutral-bg: hsl(var(--hue-main),
+      0%,
+      var(--lightness-alt));
+
+  --transition-default: 400ms;
+  --transition-fast: calc(var(--transition-default) / 2);
+  --transition-slow: calc(var(--transition-default) * 2);
+
+  --border-default: min(4px, 0.2vw);
+  --border-slim: calc(var(--border-default) / 2);
+  --border-thick: calc(var(--border-default) * 2);
+
+  /* typography */
+
+  --font-text: 'Atkinson Hyperlegible', 'Roboto', 'Open Sans', sans-serif;
+  --font-mono: 'Fira Mono', monospace;
+
+  /* gradients */
+  --gradient-dark: linear-gradient(90deg, var(--color-sub-dim), var(--color-accent-dim));
+  ;
+}

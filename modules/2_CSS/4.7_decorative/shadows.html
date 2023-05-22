@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cienie elementu</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item">
+        <a href="./index.html">Tło elementu</a>
+      </li>
+      <li class="main-navigation__item">
+        <a href="./object-fit-position.html">Właściwości dopasowania obrazu w elemencie</a>
+      </li>
+      <li class="main-navigation__item">
+        <a href="./pseudos.html">Pseudoelementy</a>
+      </li>
+      <li class="main-navigation__item  main-navigation__item--current">
+        <a href="./shadows.html">Cienie elementu</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Cienie elementu</h1>
+      <section>
+        <h2>Właściwość <code class="code">box-shadow</code></h2>
+        <pre class="code code--css">
+box-shadow: none | offset-x offset-y &lt;color&gt; | offset-x offset-y blur-radius &lt;color&gt; | offset-x offset-y blur-radius spread-radius &lt;color&gt; | offset-x offset-y &lt;color&gt; | &lt;box-shadow&gt;, &lt;box-shadow&gt; | inset? &lt;box-shadow&gt;
+        </pre>
+        <article class="example">
+          <h3><code>1em 1em var(--color-accent)</code></h3>
+          <div class="example-wrapper">
+            <p class="example-box-shadow example-box-shadow--1">Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
+              consequuntur labore officiis possimus debitis consequatur enim deleniti.
+              Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
+              nisi minima labore rem tenetur tempora similique soluta incidunt facere beatae praesentium, voluptate odio
+              fugiat ipsa.
+              Recusandae iste earum incidunt. Excepturi cumque aperiam ad neque labore sunt aliquam nemo molestias
+              temporibus deleniti facere commodi voluptatibus ea accusantium minima velit, est porro? Expedita dicta
+              dolor vitae at.</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>0 2em 1em var(--color-accent)</code></h3>
+          <div class="example-wrapper">
+            <p class="example-box-shadow example-box-shadow--2">Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
+              consequuntur labore officiis possimus debitis consequatur enim deleniti.
+              Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
+              nisi minima labore rem tenetur tempora similique soluta incidunt facere beatae praesentium, voluptate odio
+              fugiat ipsa.
+              Recusandae iste earum incidunt. Excepturi cumque aperiam ad neque labore sunt aliquam nemo molestias
+              temporibus deleniti facere commodi voluptatibus ea accusantium minima velit, est porro? Expedita dicta
+              dolor vitae at.</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>0 2em 3em var(--color-accent)</code></h3>
+          <div class="example-wrapper">
+            <p class="example-box-shadow example-box-shadow--3">Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
+              consequuntur labore officiis possimus debitis consequatur enim deleniti.
+              Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
+              nisi minima labore rem tenetur tempora similique soluta incidunt facere beatae praesentium, voluptate odio
+              fugiat ipsa.
+              Recusandae iste earum incidunt. Excepturi cumque aperiam ad neque labore sunt aliquam nemo molestias
+              temporibus deleniti facere commodi voluptatibus ea accusantium minima velit, est porro? Expedita dicta
+              dolor vitae at.</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>0 -3em 5em 2em var(--color-accent)</code></h3>
+          <div class="example-wrapper">
+            <p class="example-box-shadow example-box-shadow--4">Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
+              consequuntur labore officiis possimus debitis consequatur enim deleniti.
+              Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
+              nisi minima labore rem tenetur tempora similique soluta incidunt facere beatae praesentium, voluptate odio
+              fugiat ipsa.
+              Recusandae iste earum incidunt. Excepturi cumque aperiam ad neque labore sunt aliquam nemo molestias
+              temporibus deleniti facere commodi voluptatibus ea accusantium minima velit, est porro? Expedita dicta
+              dolor vitae at.</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wielokrotny cień</h3>
+          <pre class="code code--css code--small">
+box-shadow: 1em 1em 2em 1em var(--color-accent),
+  -1em -1em 2em 1em var(--color-sub),
+  -2em 1em 2em 1em var(--color-main);
+          </pre>
+          <div class="example-wrapper">
+            <p class="example-box-shadow example-box-shadow--multiple">Lorem ipsum dolor sit amet, consectetur
+              adipisicing
+              elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
+              consequuntur labore officiis possimus debitis consequatur enim deleniti.
+              Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
+              nisi minima labore rem tenetur tempora similique soluta incidunt facere beatae praesentium, voluptate odio
+              fugiat ipsa.
+              Recusandae iste earum incidunt. Excepturi cumque aperiam ad neque labore sunt aliquam nemo molestias
+              temporibus deleniti facere commodi voluptatibus ea accusantium minima velit, est porro? Expedita dicta
+              dolor vitae at.</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code>inset 0 1em 1em var(--color-accent)</code></h3>
+          <div class="example-wrapper">
+            <p class="example-box-shadow example-box-shadow--inset">Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
+              consequuntur labore officiis possimus debitis consequatur enim deleniti.
+              Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
+              nisi minima labore rem tenetur tempora similique soluta incidunt facere beatae praesentium, voluptate odio
+              fugiat ipsa.
+              Recusandae iste earum incidunt. Excepturi cumque aperiam ad neque labore sunt aliquam nemo molestias
+              temporibus deleniti facere commodi voluptatibus ea accusantium minima velit, est porro? Expedita dicta
+              dolor vitae at.</p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Cień warstwowy</h2>
+        <article class="example">
+          <h3>Efekt kilku cieni z przezroczystością</h3>
+          <pre class="code code--css code--small"></pre>
+          <div class="example-wrapper example-wrapper--white example-wrapper--comparison">
+            <p class="example-box-shadow example-box-shadow--layered">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, aut neque, debitis cum perferendis delectus hic unde blanditiis esse id ab. Quibusdam aliquam quia facilis at quidem incidunt fugit iure.
+              Eos quasi mollitia porro pariatur praesentium, esse voluptatum velit dolore architecto doloribus quia sequi, numquam excepturi rem molestiae sunt aliquid iste error deserunt, dicta veritatis minus? Cupiditate veritatis corporis ducimus.
+            </p>
+            <p class="example-box-shadow example-box-shadow--basic">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, aut neque, debitis cum perferendis delectus hic unde blanditiis esse id ab. Quibusdam aliquam quia facilis at quidem incidunt fugit iure.
+              Eos quasi mollitia porro pariatur praesentium, esse voluptatum velit dolore architecto doloribus quia sequi, numquam excepturi rem molestiae sunt aliquid iste error deserunt, dicta veritatis minus? Cupiditate veritatis corporis ducimus.
+            </p>
+            </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

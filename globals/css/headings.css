@@ -1,0 +1,48 @@
+h1 {
+  align-self: center;
+  display: inline-block;
+  background-image: linear-gradient(45deg, var(--color-main), var(--color-sub), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(3rem, 4vw + 1rem, 6rem);
+  font-family: var(--font-a11y);
+  text-align: center;
+}
+
+
+h2 {
+  font-size: clamp(2rem, 2vw + 1rem, 3rem);
+}
+
+h3:not(h3:has(code, pre)) {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
+}
+
+h2,
+h3:not(:has(code)) {
+  align-self: flex-start;
+  display: inline-block;
+  margin-inline-start: -0.5em;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+  color: var(--color-main);
+  transition: background-color var(--transition-default);
+}
+
+h1 code {
+  -webkit-text-fill-color: var(--color-neutral-fg);
+}
+
+h3:has(+ code, + pre) {
+  display: block;
+}
+
+h2 code,
+h3 code:not(.example code) {
+  color: var(--color-accent);
+}
+
+:not(.example) > h2:has(code, pre):hover,
+:not(.example) > h3:has(code, pre):hover {
+  background-color: var(--color-sub);
+}

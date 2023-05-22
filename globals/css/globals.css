@@ -1,0 +1,256 @@
+@import url('./vars.css');
+@import url('./media.css');
+@import url('./reset.css');
+@import url('./headings.css');
+@import url('./nav.css');
+@import url('./fonts/stylesheet.css');
+
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: max(2vw, 40px);
+  width: min(1440px, 80vw);
+  margin-inline: auto;
+  color: var(--color-neutral-fg);
+  font-family: var(--font-text);
+  background-image: var(--gradient-dark);
+}
+
+body > main {
+  padding: 0 5% 5%;
+}
+
+main > article {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+}
+
+article > section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-block-end: 1px solid var(--color-sub);
+  padding-block: 3em;
+}
+
+article > section > section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+article > section:last-of-type {
+  border: unset;
+}
+
+section > p {
+  max-width: 80ch;
+  line-height: 1.5;
+}
+
+section.iframe-embed > iframe {
+  margin-block-start: 1em;
+}
+
+section > p:not([class]) {
+  border-inline-start: max(6px, 0.4vw) solid var(--color-accent);
+  padding-inline-start: max(6px, 0.4vw);
+  font-size: 1.25em;
+}
+
+section > p > a > sup {
+  text-decoration: underline;
+  text-decoration-color: var(--color-main);
+}
+
+section > p > a > sup::before {
+  content: '[';
+}
+
+section > p > a > sup::after {
+  content: ']';
+}
+
+section > p > a:not(:has(sup)) {
+  text-decoration: underline;
+  text-decoration-color: var(--color-main);
+}
+
+code,
+pre {
+  font-weight: inherit;
+  font-family: var(--font-mono);
+}
+
+
+pre {
+  overflow-x: auto;
+  padding: 1em 1em;
+  font-size: 2em;
+  line-height: 1.3;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+.code {
+  position: relative;
+  isolation: isolate;
+  background-color: #111;
+  color: #eee;
+  border-radius: 1ch;
+}
+
+.code:is(code) {
+  padding-inline: 0.5em;
+}
+
+.code::before {
+  position: absolute;
+  inset: auto 0.5ch 0 auto;
+  z-index: -1;
+  opacity: 0.1;
+  font-size: 2em;
+  text-shadow: none;
+}
+
+.code[class*="--"] {
+  padding-block-start: 2em;
+}
+
+.code--small {
+  width: min(fit-content, 100%);
+  padding-block: 2em;
+  font-size: 1em;
+}
+
+.code--css {
+  text-shadow: 0 0 10px var(--color-accent);
+}
+
+.code--css::before {
+  content: 'CSS';
+  color: var(--color-accent);
+}
+
+.code--html {
+  text-shadow: 0 0 10px var(--color-main);
+}
+
+.code--html::before {
+  content: 'HTML';
+  color: var(--color-main);
+}
+
+.code--js {
+  text-shadow: 0 0 10px var(--color-sub);
+}
+
+.code--js::before {
+  content: 'JS';
+  color: var(--color-accent);
+}
+
+.code > .code__comment {
+  color: #aaa;
+  text-shadow: none;
+}
+
+.footnotes {
+  margin-block-start: 3em;
+  border-block-start: max(1px, 0.1vw) solid var(--color-sub);
+  padding-block-start: 3em;
+}
+
+.footnotes h2 {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
+}
+
+.footnotes ol {
+  padding-inline-start: 1em;
+}
+
+.footnotes ol {
+  counter-reset: footnotes;
+}
+
+.footnotes ol > li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1em;
+  counter-increment: footnotes;
+}
+
+.footnotes ol > li::before {
+  content: counter(footnotes) '. ';
+}
+
+.footnotes :target p {
+  background-color: var(--color-accent);
+  color: var(--color-neutral-bg);
+}
+
+.example > code,
+.example > pre,
+.example > h3 > code,
+code:has(+ p,
+  + pre,
+  + article) {
+  align-self: flex-start;
+  display: inline-block;
+  margin-block-start: 2em;
+  border: min(2px, 0.1vw) solid var(--color-main);
+  border-radius: 0.25em;
+  padding-inline: 0.5em;
+  word-break: break-word;
+}
+
+.example > h3 > code {
+  margin-block-start: 0;
+}
+
+.example > .code--small {
+  border: none;
+}
+
+.example-wrapper {
+  position: relative;
+  outline: 2px dashed var(--color-neutral-fg);
+  padding: 1em 2em;
+  backdrop-filter: saturate(200%);
+}
+
+.example-wrapper--comparison {
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+  gap: 2em;
+}
+
+.example-wrapper--white {
+  background-color: white;
+}
+
+.example > .example-wrapper {
+  margin-block-start: 1em;
+}
+
+.example-wrapper code {
+  border: min(2px, 0.1vw) solid var(--color-neutral-fg);
+  border-radius: 0.25em;
+  padding-inline: 0.25em;
+  background-color: var(--color-neutral-bg);
+}
+
+.example-wrapper:has(.example-label) {
+  padding: 3em 3em 2em;
+}

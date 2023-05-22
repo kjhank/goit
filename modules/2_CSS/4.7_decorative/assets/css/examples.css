@@ -1,0 +1,340 @@
+.example-bg {
+  aspect-ratio: 1;
+  width: max(15vw, 200px);
+  display: inline-block;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.example-bg--color-name {
+  background-color: rebeccapurple;
+}
+
+.example-bg--color-hsl {
+  background-color: hsl(90 46% 23%);
+}
+
+.example-bg--color-rgb {
+  background-color: rgb(192 64 128);
+}
+
+.example-bg--color-hex {
+  background-color: #bada55;
+}
+
+.example-bg--image-linear-gradient {
+  background-image: linear-gradient(45deg,
+      var(--color-main),
+      var(--color-sub));
+}
+
+.example-bg--image-linear-gradient-2 {
+  background-image: linear-gradient(69deg,
+      var(--color-main) 15%,
+      var(--color-sub) 25%,
+      var(--color-accent) 25%,
+      var(--color-main) 65%,
+      var(--color-sub) 75%,
+      var(--color-main));
+}
+
+.example-bg--image-linear-gradient-3 {
+  background-image: linear-gradient(90deg,
+      var(--color-main) 15%,
+      var(--color-accent) 0,
+      var(--color-accent) 25%,
+      var(--color-sub) 0,
+      var(--color-sub) 45%,
+      var(--color-main) 0,
+      var(--color-main) 65%,
+      var(--color-sub) 0,
+      var(--color-sub) 25%);
+}
+
+.example-bg--image-repeating-linear-gradient .example-bg--image-radial-gradient {
+  background-image: radial-gradient(ellipse at top,
+      var(--color-main),
+      var(--color-sub));
+}
+
+.example-bg--image-conic-gradient {
+  background-image: conic-gradient(from 0.3turn,
+      var(--color-main),
+      var(--color-sub),
+      var(--color-accent));
+}
+
+.example-bg--image-url {
+  background-image: url('https://source.unsplash.com/random/?clouds&1');
+}
+
+[class*="example-bg--repeat"] {
+  background-image: url('https://via.placeholder.com/60x60/823456');
+  background-color: var(--color-neutral-fg);
+}
+
+.example-bg--repeat-x {
+  background-repeat: repeat-x;
+}
+
+.example-bg--repeat-y {
+  background-repeat: repeat-y;
+}
+
+.example-bg--repeat-no {
+  background-repeat: no-repeat;
+}
+
+[class*="example-bg--position"] {
+  background-image: url('https://via.placeholder.com/60x60/823456');
+  background-color: var(--color-neutral-fg);
+  background-repeat: no-repeat;
+}
+
+.example-bg--position-1 {
+  background-position: bottom right;
+}
+
+.example-bg--position-2 {
+  background-position: center;
+}
+
+.example-bg--position-3 {
+  background-position: 20%;
+}
+
+.example-bg--position-4 {
+  background-position: -20% 90%;
+}
+
+.example-bg--position-5 {
+  background-position: right 23px bottom -1em;
+}
+
+[class*="example-bg--size"],
+[class*="example-bg--attachment"] {
+  background-image: url('https://source.unsplash.com/random/?clouds&1');
+  background-repeat: no-repeat;
+}
+
+.example-bg--size-cover {
+  background-size: cover;
+}
+
+.example-bg--size-cover-2 {
+  background-size: cover;
+  aspect-ratio: 2;
+}
+
+.example-bg--size-cover-3 {
+  background-size: cover;
+  aspect-ratio: 1/2;
+}
+
+.example-bg--size-contain {
+  background-size: contain;
+}
+
+.example-bg--size-contain-2 {
+  background-size: contain;
+  aspect-ratio: 2;
+}
+
+.example-bg--size-contain-3 {
+  background-size: contain;
+  aspect-ratio: 1/2;
+}
+
+.example-bg--size-length {
+  background-size: 100px;
+}
+
+.example-bg--size-length-2 {
+  background-size: 100px 200px;
+}
+
+.example-bg--size-percentage {
+  background-size: 50%;
+}
+
+.example-bg--size-percentage-2 {
+  background-size: 50% 500%;
+}
+
+.example-bg--size-percentage-auto {
+  background-size: auto;
+}
+
+.example-bg--attachment-scroll {
+  background-attachment: scroll;
+  overflow: scroll;
+}
+
+.example-bg--attachment-fixed {
+  background-attachment: fixed;
+  overflow: scroll;
+}
+
+.example-bg--attachment-local {
+  background-attachment: local;
+  overflow: scroll;
+}
+
+.example-bg--multiple {
+  background-image: url('https://source.unsplash.com/random/?clouds&1'),
+    url('https://source.unsplash.com/random/?dog&1');
+  background-size: 120px,
+    70px;
+  background-repeat: repeat-x,
+    repeat;
+  background-position: bottom,
+    top right;
+}
+
+.example-object {
+  width: max(15vw, 200px);
+  aspect-ratio: 1;
+  border: var(--border-thick) solid var(--color-accent);
+}
+
+.example-object--fit-cover {
+  object-fit: cover;
+}
+
+.example-object--fit-contain {
+  object-fit: contain;
+}
+
+.example-object--fit-fill {
+  object-fit: fill;
+}
+
+.example-object--fit-none {
+  object-fit: none;
+}
+
+.example-object--fit-scale-down {
+  object-fit: scale-down;
+}
+
+[class*="example--object-position"] {
+  object-fit: scale-down;
+}
+
+.example--object-position-bottom-right {
+  object-position: bottom right;
+}
+
+.example--object-position-top-left {
+  object-position: top left;
+}
+
+.example--object-position-length {
+  object-position: 30px 2em;
+}
+
+.example--object-position-length-2 {
+  object-position: -40px -2em;
+}
+
+.example--object-position-percentage {
+  object-position: 50% -50%;
+}
+
+.example--object-position-edge-offset {
+  object-position: top 20px right 3em;
+}
+
+.example-pseudos {
+  min-height: 5em;
+}
+
+.example-pseudos--content::before {
+  content: '🍑';
+}
+
+.example-pseudos--content-2::before {
+  content: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg');
+  display: inline-block;
+  margin-inline-end: 1em;
+  width: 2em;
+  aspect-ratio: 1;
+}
+
+.example-pseudos--content-3::before {
+  content: conic-gradient(from 0.3turn,
+      var(--color-main),
+      var(--color-sub),
+      var(--color-accent));
+  aspect-ratio: 1;
+  display: inline-block;
+  width: 1em;
+  border-radius: 50%;
+  margin-inline-end: 0.5em;
+}
+
+.example-pseudos--content-4 {
+  counter-reset: demo;
+}
+
+.example-pseudos--content-4 li::before {
+  counter-increment: demo;
+}
+
+.example-pseudos--content-4 li::before {
+  content: counter(demo, lower-roman) ' / 🍑';
+  margin-inline-end: 1em;
+}
+
+.example-pseudos--content-4 li:hover::after {
+  content: '🍆';
+}
+
+.example-wrapper:has(.example-box-shadow) {
+  overflow: hidden;
+  padding: 3em 5em;
+}
+
+.example-box-shadow {
+  background-color: var(--color-neutral-bg);
+  border: var(--border-default) solid var(--color-sub);
+  padding: 1em;
+}
+
+.example-box-shadow--1 {
+  box-shadow: 1em 1em var(--color-accent);
+}
+
+.example-box-shadow--2 {
+  box-shadow: 0 2em 1em var(--color-accent);
+}
+
+.example-box-shadow--3 {
+  box-shadow: 0 2em 3em var(--color-accent);
+}
+
+.example-box-shadow--4 {
+  box-shadow: 0 -3em 5em 2em var(--color-accent);
+}
+
+.example-box-shadow--multiple {
+  box-shadow: 1em 1em 2em 1em var(--color-accent),
+    -1em -1em 2em 1em var(--color-sub),
+    -2em 1em 2em 1em var(--color-main);
+}
+
+.example-box-shadow--inset {
+  box-shadow: inset 0 1em 1em var(--color-accent);
+}
+
+.example-box-shadow--layered {
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.12),
+    0 2px 2px hsla(0, 0%, 0%, 0.12),
+    0 4px 4px hsla(0, 0%, 0%, 0.12),
+    0 8px 8px hsla(0, 0%, 0%, 0.12),
+    0 16px 16px hsla(0, 0%, 0%, 0.12);
+}
+
+.example-box-shadow--basic {
+  box-shadow: 0 8px 8px hsla(0, 0%, 0%, 0.3);
+}
