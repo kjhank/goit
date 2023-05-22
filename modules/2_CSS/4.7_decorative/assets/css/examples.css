@@ -51,7 +51,15 @@
       var(--color-sub) 25%);
 }
 
-.example-bg--image-repeating-linear-gradient .example-bg--image-radial-gradient {
+.example-bg--image-repeating-linear-gradient {
+  background-image: repeating-linear-gradient(0.46turn,
+      var(--color-main) 0,
+      var(--color-main) 0.5em,
+      var(--color-sub) 0,
+      var(--color-sub) 1em);
+}
+
+.example-bg--image-radial-gradient {
   background-image: radial-gradient(ellipse at top,
       var(--color-main),
       var(--color-sub));
