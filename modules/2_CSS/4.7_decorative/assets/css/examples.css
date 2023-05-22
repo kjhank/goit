@@ -285,7 +285,7 @@
   counter-reset: demo;
 }
 
-.example-pseudos--content-4 li::before {
+.example-pseudos--content-4 li {
   counter-increment: demo;
 }
 
@@ -319,6 +319,7 @@
 
 .example-box-shadow--3 {
   box-shadow: 0 2em 3em var(--color-accent);
+  /* filter: drop-shadow(0 2em 2em var(--color-accent)); */
 }
 
 .example-box-shadow--4 {
@@ -333,6 +334,15 @@
 
 .example-box-shadow--inset {
   box-shadow: inset 0 1em 1em var(--color-accent);
+}
+
+.example-box-shadow--negative-spread {
+  box-shadow: 3em 0 2em -1em var(--color-accent);
+  transition: box-shadow var(--transition-default);
+}
+
+.example-box-shadow--negative-spread:hover {
+  box-shadow: -3em 0 2em -1em var(--color-accent);
 }
 
 .example-box-shadow--layered {

@@ -64,7 +64,9 @@ box-shadow: none | offset-x offset-y &lt;color&gt; | offset-x offset-y blur-radi
         <article class="example">
           <h3><code>0 2em 3em var(--color-accent)</code></h3>
           <div class="example-wrapper">
-            <p class="example-box-shadow example-box-shadow--3">Lorem ipsum dolor sit amet, consectetur adipisicing
+            <p class="example-box-shadow example-box-shadow--3">
+              aqui
+              Lorem ipsum dolor sit amet, consectetur adipisicing
               elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
               consequuntur labore officiis possimus debitis consequatur enim deleniti.
               Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
@@ -125,20 +127,45 @@ box-shadow: 1em 1em 2em 1em var(--color-accent),
         </article>
       </section>
       <section>
+        <h2>Cień z jednej strony</h2>
+        <article class="example">
+          <h3><code>3em 0 2em -1em var(--color-accent)</code></h3>
+        </article>
+        <div class="example-wrapper">
+          <p class="example-box-shadow example-box-shadow--negative-spread">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est vero sapiente blanditiis placeat, suscipit magnam ad at maiores! Qui iusto, velit facere vel maxime molestiae animi eos quam saepe sint.
+            Nemo et nam, dolorem ab quam repellat minima id eos reiciendis dignissimos architecto harum magni odit explicabo, ipsam quibusdam quasi sed obcaecati voluptatum aspernatur voluptate, dolores dolore commodi. Ullam, dolor.
+            Dicta officiis aliquid ad ab delectus fugit quis! Commodi quod magni doloremque error, aut earum rerum sunt hic ducimus? Laborum cupiditate numquam, modi nemo illo eum ipsam minima impedit voluptatum.
+          </p>
+        </div>
+      </section>
+      <section>
         <h2>Cień warstwowy</h2>
         <article class="example">
           <h3>Efekt kilku cieni z przezroczystością</h3>
-          <pre class="code code--css code--small"></pre>
+          <pre class="code code--css code--small">
+box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.12),
+  0 2px 2px hsla(0, 0%, 0%, 0.12),
+  0 4px 4px hsla(0, 0%, 0%, 0.12),
+  0 8px 8px hsla(0, 0%, 0%, 0.12),
+  0 16px 16px hsla(0, 0%, 0%, 0.12);
+          </pre>
           <div class="example-wrapper example-wrapper--white example-wrapper--comparison">
             <p class="example-box-shadow example-box-shadow--layered">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, aut neque, debitis cum perferendis delectus hic unde blanditiis esse id ab. Quibusdam aliquam quia facilis at quidem incidunt fugit iure.
-              Eos quasi mollitia porro pariatur praesentium, esse voluptatum velit dolore architecto doloribus quia sequi, numquam excepturi rem molestiae sunt aliquid iste error deserunt, dicta veritatis minus? Cupiditate veritatis corporis ducimus.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, aut neque, debitis cum perferendis
+              delectus hic unde blanditiis esse id ab. Quibusdam aliquam quia facilis at quidem incidunt fugit iure.
+              Eos quasi mollitia porro pariatur praesentium, esse voluptatum velit dolore architecto doloribus quia
+              sequi, numquam excepturi rem molestiae sunt aliquid iste error deserunt, dicta veritatis minus? Cupiditate
+              veritatis corporis ducimus.
             </p>
             <p class="example-box-shadow example-box-shadow--basic">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, aut neque, debitis cum perferendis delectus hic unde blanditiis esse id ab. Quibusdam aliquam quia facilis at quidem incidunt fugit iure.
-              Eos quasi mollitia porro pariatur praesentium, esse voluptatum velit dolore architecto doloribus quia sequi, numquam excepturi rem molestiae sunt aliquid iste error deserunt, dicta veritatis minus? Cupiditate veritatis corporis ducimus.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, aut neque, debitis cum perferendis
+              delectus hic unde blanditiis esse id ab. Quibusdam aliquam quia facilis at quidem incidunt fugit iure.
+              Eos quasi mollitia porro pariatur praesentium, esse voluptatum velit dolore architecto doloribus quia
+              sequi, numquam excepturi rem molestiae sunt aliquid iste error deserunt, dicta veritatis minus? Cupiditate
+              veritatis corporis ducimus.
             </p>
-            </div>
+          </div>
         </article>
       </section>
     </article>
