@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudoelementy</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item">
+        <a href="./index.html">Tło elementu</a>
+      </li>
+      <li class="main-navigation__item">
+        <a href="./object-fit-position.html">Właściwości dopasowania obrazu w elemencie</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current">
+        <a href="./pseudos.html">Pseudoelementy</a>
+      </li>
+      <li class="main-navigation__item">
+        <a href="./shadows.html">Cienie elementu</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Pseudoelementy</h1>
+      <section>
+        <h2>Właściwość <code class="code">content</code></h2>
+        <pre class="code code--css">
+content: none | normal | &lt;image&gt; | &lt;image&gt; / text | &lt;string&gt; | &lt;counter&gt; | attr() | open-quote | close-quote | no-open-quote | no-close-quote | &lt;string&gt; &lt;image&gt; | &lt;string&gt; &lt;image&gt; / text
+        </pre>
+        <article class="example">
+          <pre class="code code--css code--small">
+p::before {
+  content: '🍑';
+}
+          </pre>
+          <div class="example-wrapper">
+            <p class="example-pseudos example-pseudos--content">Lorem, ipsum dolor sit amet consectetur adipisicing
+              elit. Sit corrupti suscipit possimus modi autem eum. Hic vero quis beatae illo perferendis cum labore
+              nihil nobis, tempora atque aut praesentium saepe?</p>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

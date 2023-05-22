@@ -45,6 +45,10 @@
   --transition-fast: calc(var(--transition-default) / 2);
   --transition-slow: calc(var(--transition-default) * 2);
 
+  --border-default: min(4px, 0.2vw);
+  --border-slim: calc(var(--border-default) / 2);
+  --border-thick: calc(var(--border-default) * 2);
+
   /* typography */
 
   --font-text: 'Atkinson Hyperlegible', 'Roboto', 'Open Sans', sans-serif;

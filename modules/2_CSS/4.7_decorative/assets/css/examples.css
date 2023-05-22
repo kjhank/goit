@@ -167,3 +167,65 @@
   background-position: bottom,
     top right;
 }
+
+.example-object {
+  width: max(15vw, 200px);
+  aspect-ratio: 1;
+  border: var(--border-thick) solid var(--color-accent);
+}
+
+.example-object--fit-cover {
+  object-fit: cover;
+}
+
+.example-object--fit-contain {
+  object-fit: contain;
+}
+
+.example-object--fit-fill {
+  object-fit: fill;
+}
+
+.example-object--fit-none {
+  object-fit: none;
+}
+
+.example-object--fit-scale-down {
+  object-fit: scale-down;
+}
+
+[class*="example--object-position"] {
+  object-fit: contain;
+}
+
+.example--object-position-bottom-right {
+  object-position: bottom right;
+}
+
+.example--object-position-top-left {
+  object-position: top left;
+}
+
+.example--object-position-length {
+  object-position: 30px 2em;
+}
+
+.example--object-position-length-2 {
+  object-position: -40px -2em;
+}
+
+.example--object-position-percentage {
+  object-position: 50% -50%;
+}
+
+.example--object-position-edge-offset {
+  object-position: top 20px right 3em;
+}
+
+.example-pseudos {
+  min-height: 5em;
+}
+
+.example-pseudos--content::before {
+  content: '🍑';
+}
