@@ -28,7 +28,30 @@
       var(--color-sub));
 }
 
-.example-bg--image-radial-gradient {
+.example-bg--image-linear-gradient-2 {
+  background-image: linear-gradient(69deg,
+      var(--color-main) 15%,
+      var(--color-sub) 25%,
+      var(--color-accent) 25%,
+      var(--color-main) 65%,
+      var(--color-sub) 75%,
+      var(--color-main));
+}
+
+.example-bg--image-linear-gradient-3 {
+  background-image: linear-gradient(90deg,
+      var(--color-main) 15%,
+      var(--color-accent) 0,
+      var(--color-accent) 25%,
+      var(--color-sub) 0,
+      var(--color-sub) 45%,
+      var(--color-main) 0,
+      var(--color-main) 65%,
+      var(--color-sub) 0,
+      var(--color-sub) 25%);
+}
+
+.example-bg--image-repeating-linear-gradient .example-bg--image-radial-gradient {
   background-image: radial-gradient(ellipse at top,
       var(--color-main),
       var(--color-sub));
@@ -195,7 +218,7 @@
 }
 
 [class*="example--object-position"] {
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 .example--object-position-bottom-right {
@@ -228,4 +251,90 @@
 
 .example-pseudos--content::before {
   content: '🍑';
+}
+
+.example-pseudos--content-2::before {
+  content: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg');
+  display: inline-block;
+  margin-inline-end: 1em;
+  width: 2em;
+  aspect-ratio: 1;
+}
+
+.example-pseudos--content-3::before {
+  content: conic-gradient(from 0.3turn,
+      var(--color-main),
+      var(--color-sub),
+      var(--color-accent));
+  aspect-ratio: 1;
+  display: inline-block;
+  width: 1em;
+  border-radius: 50%;
+  margin-inline-end: 0.5em;
+}
+
+.example-pseudos--content-4 {
+  counter-reset: demo;
+}
+
+.example-pseudos--content-4 li::before {
+  counter-increment: demo;
+}
+
+.example-pseudos--content-4 li::before {
+  content: counter(demo, lower-roman) ' / 🍑';
+  margin-inline-end: 1em;
+}
+
+.example-pseudos--content-4 li:hover::after {
+  content: '🍆';
+}
+
+.example-wrapper:has(.example-box-shadow) {
+  overflow: hidden;
+  padding: 3em 5em;
+}
+
+.example-box-shadow {
+  background-color: var(--color-neutral-bg);
+  border: var(--border-default) solid var(--color-sub);
+  padding: 1em;
+}
+
+.example-box-shadow--1 {
+  box-shadow: 1em 1em var(--color-accent);
+}
+
+.example-box-shadow--2 {
+  box-shadow: 0 2em 1em var(--color-accent);
+}
+
+.example-box-shadow--3 {
+  box-shadow: 0 2em 3em var(--color-accent);
+}
+
+.example-box-shadow--4 {
+  box-shadow: 0 -3em 5em 2em var(--color-accent);
+}
+
+.example-box-shadow--multiple {
+  box-shadow: 1em 1em 2em 1em var(--color-accent),
+    -1em -1em 2em 1em var(--color-sub),
+    -2em 1em 2em 1em var(--color-main);
+}
+
+.example-box-shadow--inset {
+  box-shadow: inset 0 1em 1em var(--color-accent);
+}
+
+.example-box-shadow--layered {
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.12),
+    0 2px 2px hsla(0, 0%, 0%, 0.12),
+    0 4px 4px hsla(0, 0%, 0%, 0.12),
+    0 8px 8px hsla(0, 0%, 0%, 0.12),
+    0 16px 16px hsla(0, 0%, 0%, 0.12);
+}
+
+.example-box-shadow--basic {
+  box-shadow: 0 8px 8px hsla(0, 0%, 0%, 0.3);
 }

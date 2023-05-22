@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pseudoelementy</title>
+  <title>Pseudoelementy ::before i ::after</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -27,11 +27,11 @@
   </nav>
   <main>
     <article>
-      <h1>Pseudoelementy</h1>
+      <h1>Pseudoelementy <code class="code">::before</code> i <code class="code">::after</code></h1>
       <section>
         <h2>Właściwość <code class="code">content</code></h2>
         <pre class="code code--css">
-content: none | normal | &lt;image&gt; | &lt;image&gt; / text | &lt;string&gt; | &lt;counter&gt; | attr() | open-quote | close-quote | no-open-quote | no-close-quote | &lt;string&gt; &lt;image&gt; | &lt;string&gt; &lt;image&gt; / text
+content: none | normal | &lt;image&gt; | &lt;image&gt; / &lt;string&gt;* | &lt;string&gt; | &lt;counter&gt; | attr() | open-quote | close-quote | no-open-quote | no-close-quote | &lt;string&gt; &lt;image&gt; | &lt;string&gt; &lt;image&gt; / text
         </pre>
         <article class="example">
           <pre class="code code--css code--small">
@@ -40,9 +40,83 @@ p::before {
 }
           </pre>
           <div class="example-wrapper">
-            <p class="example-pseudos example-pseudos--content">Lorem, ipsum dolor sit amet consectetur adipisicing
+            <p class="example-pseudos example-pseudos--content">Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Sed tenetur ipsam, repellendus id sunt, nisi omnis eaque quo impedit in distinctio harum,
+              consequuntur labore officiis possimus debitis consequatur enim deleniti.
+              Beatae excepturi deleniti qui saepe natus, officiis consequatur id. Delectus quod deserunt dolor quisquam
+              nisi minima labore rem tenetur tempora similique soluta incidunt facere beatae praesentium, voluptate odio
+              fugiat ipsa.
+              Recusandae iste earum incidunt. Excepturi cumque aperiam ad neque labore sunt aliquam nemo molestias
+              temporibus deleniti facere commodi voluptatibus ea accusantium minima velit, est porro? Expedita dicta
+              dolor vitae at.</p>
+          </div>
+        </article>
+        <article class="example">
+          <pre class="code code--css code--small">
+p::before {
+  content: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg');
+  display: inline-block;
+  width: 2em;
+  aspect-ratio: 1;
+}
+          </pre>
+          <div class="example-wrapper">
+            <p class="example-pseudos example-pseudos--content-2">Lorem, ipsum dolor sit amet consectetur adipisicing
               elit. Sit corrupti suscipit possimus modi autem eum. Hic vero quis beatae illo perferendis cum labore
               nihil nobis, tempora atque aut praesentium saepe?</p>
+          </div>
+        </article>
+        <article class="example">
+          <pre class="code code--css code--small">
+p::before {
+  content: conic-gradient(from 0.3turn,
+      var(--color-main),
+      var(--color-sub),
+      var(--color-accent));
+  aspect-ratio: 1;
+  display: inline-block;
+  width: 1em;
+  border-radius: 50%;
+  margin-inline-end: 0.5em;
+}
+          </pre>
+          <div class="example-wrapper">
+            <p class="example-pseudos example-pseudos--content-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa a eaque ut sit eius cum nihil vero officia eum quis ipsam, nostrum at maiores voluptatem, minus, dolorum accusamus error quisquam.
+            Odit aspernatur mollitia sunt voluptates officia culpa, obcaecati eveniet, libero doloribus dicta alias sapiente nemo et nesciunt deserunt, animi eius cupiditate amet officiis dolorem. Tenetur deserunt consectetur rem ad facere.
+            Rerum doloremque voluptatibus nihil consectetur odit ut maxime dicta laudantium vitae est tempore saepe sint, voluptates dolorem, debitis provident quasi facere assumenda. Nihil cumque quam velit doloribus possimus accusantium iste.
+            Quo, debitis non! Quos, in autem. Voluptatem numquam ipsum fugiat necessitatibus neque, perspiciatis ullam rerum natus a et fuga quasi provident ducimus suscipit quae nam maiores exercitationem, ab at ipsam.</p>
+          </div>
+        </article>
+        <article class="example">
+          <pre class="code code--css code--small">
+ol {
+  counter-reset: demo;
+}
+
+ol li::before {
+  counter-increment: demo;
+}
+
+ol li::before {
+  content: counter(demo, lower-roman) ' / 🍑';
+  margin-inline-end: 1em;
+}
+
+ol li:hover::after {
+  content: '🍆';
+}
+          </pre>
+          <div class="example-wrapper">
+            <ol class="example-pseudos example-pseudos--content-4">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Aut eveniet voluptatum illum vel.</li>
+              <li>Cumque nisi sint perspiciatis error.</li>
+              <li>Est a exercitationem obcaecati mollitia.</li>
+              <li>Omnis odit expedita doloribus porro.</li>
+              <li>Velit molestiae accusamus eveniet debitis?</li>
+              <li>Laboriosam velit nam molestias dolore!</li>
+              <li>Ducimus minus tenetur similique modi.</li>
+            </ol>
           </div>
         </article>
       </section>

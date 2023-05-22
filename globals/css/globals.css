@@ -201,6 +201,7 @@ b {
 }
 
 .example > code,
+.example > pre,
 .example > h3 > code,
 code:has(+ p,
   + pre,
@@ -218,7 +219,7 @@ code:has(+ p,
   margin-block-start: 0;
 }
 
-.example > code.code--small {
+.example > .code--small {
   border: none;
 }
 
@@ -227,6 +228,16 @@ code:has(+ p,
   outline: 2px dashed var(--color-neutral-fg);
   padding: 1em 2em;
   backdrop-filter: saturate(200%);
+}
+
+.example-wrapper--comparison {
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+  gap: 2em;
+}
+
+.example-wrapper--white {
+  background-color: white;
 }
 
 .example > .example-wrapper {

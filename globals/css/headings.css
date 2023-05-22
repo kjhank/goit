@@ -14,7 +14,7 @@ h2 {
   font-size: clamp(2rem, 2vw + 1rem, 3rem);
 }
 
-h3:not(h3:has(code)) {
+h3:not(h3:has(code, pre)) {
   font-size: clamp(1.5rem, 1.5vw + 1rem, 2.5rem);
 }
 
@@ -29,12 +29,20 @@ h3:not(:has(code)) {
   transition: background-color var(--transition-default);
 }
 
+h1 code {
+  -webkit-text-fill-color: var(--color-neutral-fg);
+}
+
+h3:has(+ code, + pre) {
+  display: block;
+}
+
 h2 code,
 h3 code:not(.example code) {
   color: var(--color-accent);
 }
 
-h2:has(code):hover,
-h3:has(code):hover {
+:not(.example) > h2:has(code, pre):hover,
+:not(.example) > h3:has(code, pre):hover {
   background-color: var(--color-sub);
 }

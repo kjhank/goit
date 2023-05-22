@@ -13,7 +13,8 @@
     <menu>
       <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Tło elementu</a>
       </li>
-      <li class="main-navigation__item"><a href="./object-fit-position.html">Właściwości dopasowania obrazu w elemencie</a>
+      <li class="main-navigation__item"><a href="./object-fit-position.html">Właściwości dopasowania obrazu w
+          elemencie</a>
       </li>
       <li class="main-navigation__item"><a href="./pseudos.html">Pseudoelementy</a></li>
       <li class="main-navigation__item"><a href="./shadows.html">Cienie elementu</a></li>
@@ -69,6 +70,65 @@ background-image: &lt;gradient&gt; | url() function | image() function | image-s
           </div>
         </article>
         <article class="example">
+          <h3>
+            Rozbudowany gradient liniowy
+          </h3>
+          <pre class="code code--css code--small">
+div {
+  background-image: linear-gradient(69deg,
+      var(--color-main) 15%,
+      var(--color-sub) 25%,
+      var(--color-accent) 25%,
+      var(--color-main) 65%,
+      var(--color-sub) 75%,
+      var(--color-main));
+}
+          </pre>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--image-linear-gradient-2">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>
+            Gradient liniowy - paski
+          </h3>
+          <pre class="code code--css code--small">
+div {
+  background-image: linear-gradient(90deg,
+      var(--color-main) 15%,
+      var(--color-accent) 0,
+      var(--color-accent) 25%,
+      var(--color-sub) 0,
+      var(--color-sub) 45%,
+      var(--color-main) 0,
+      var(--color-main) 65%,
+      var(--color-sub) 0,
+      var(--color-sub) 25%);
+}
+          </pre>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--image-linear-gradient-3">
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3> Gradient liniowy powtarzający się - paski</h3>
+          <pre class="code code--css code--small">
+div {
+  background-image: repeating-linear-gradient(0.46turn,
+      var(--color-main) 0,
+      var(--color-main) 0.5em,
+      var(--color-sub) 0,
+      var(--color-sub) 1em);
+}
+          </pre>
+          <div class="example-wrapper">
+            <div class="example-bg example-bg--image-repeating-linear-gradient">
+            </div>
+          </div>
+        </article>
+        <article class="example">
           <h3><code>radial-gradient(ellipse at top, var(--color-main), var(--color-sub))</code></h3>
           <div class="example-wrapper">
             <div class="example-bg example-bg--image-radial-gradient">
@@ -99,30 +159,36 @@ background-image: &lt;gradient&gt; | url() function | image() function | image-s
           </div>
         </article>
         <article class="example">
-          <h3><code class="code code--css code--small">
-background-image: url('https://via.placeholder.com/60x60/823456')
+          <h3>
+            Powtarzanie tła w osi x
+          </h3>
+          <pre class="code code--css code--small">
+background-image: url('https://via.placeholder.com/60x60/823456');
 background-repeat: repeat-x;
-          </code></h3>
+          </pre>
           <div class="example-wrapper">
             <div class="example-bg example-bg--repeat-x">
             </div>
           </div>
         </article>
         <article class="example">
-          <h3><code class="code code--css code--small">
+          <h3>Powtarzanie tła w osi y
+          </h3>
+          <pre class="code code--css code--small">
 background-image: url('https://via.placeholder.com/60x60/823456')
 background-repeat: repeat-y;
-          </code></h3>
+          </pre>
           <div class="example-wrapper">
             <div class="example-bg example-bg--repeat-y">
             </div>
           </div>
         </article>
         <article class="example">
-          <h3><code class="code code--css code--small">
+          <h3>Brak powtarzania tła</h3>
+          <pre class="code code--css code--small">
 background-image: url('https://via.placeholder.com/60x60/823456')
 background-repeat: no-repeat;
-          </code></h3>
+          </pre>
           <div class="example-wrapper">
             <div class="example-bg example-bg--repeat-no">
             </div>
@@ -274,6 +340,7 @@ background-attachment: scroll | fixed | local
       <section>
         <h2>Tła warstwowe (wielokrotne)</h2>
         <article class="example">
+          <h3>Tło na tle</h3>
           <pre class="code code--css code--small">
   background-image: url('https://source.unsplash.com/random/?clouds&1'),
   url('https://source.unsplash.com/random/?dog&1');
