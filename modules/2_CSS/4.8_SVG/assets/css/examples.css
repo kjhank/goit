@@ -1,0 +1,27 @@
+.example-svg svg {
+  outline: var(--border-thick) solid var(--color-sub);
+}
+
+.example-svg--2 svg rect {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--3 svg circle {
+  fill: var(--color-accent);
+  stroke: var(--color-sub);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--4 svg ellipse {
+  fill: var(--color-sub);
+  stroke: var(--color-main);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--5 svg line {
+  stroke: var(--color-main);
+  stroke-width: var(--border-slim);
+}
+

@@ -129,7 +129,8 @@ b {
 }
 
 .code--small {
-  width: min(fit-content, 100%);
+  /* width: fit-content; */
+  max-width: 100%;
   padding-block: 2em;
   font-size: 1em;
 }
