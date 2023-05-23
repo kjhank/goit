@@ -25,3 +25,14 @@
   stroke-width: var(--border-slim);
 }
 
+.example-svg--6 svg polygon {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--7 svg path {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}

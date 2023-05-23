@@ -165,7 +165,7 @@ svg circle {
         </article>
       </section>
       <section>
-        <h2>Element <code class="code">&lt;line&gt;</code></h2>
+        <h2>Element <code class="code">&lt;line /&gt;</code></h2>
         <pre class="code code--html">
 &lt;line
   x1=&quot;&lt;length&gt; | &lt;percentage&gt; | &lt;number&gt;&quot;
@@ -175,7 +175,7 @@ svg circle {
 /&gt;
         </pre>
         <article class="example">
-          <h3>Podstawowy <code class="code">&lt;ellipse /&gt;</code></h3>
+          <h3>Podstawowy <code class="code">&lt;line /&gt;</code></h3>
           <pre class="code code--html code--small">
 &lt;svg width=&quot;300&quot; height=&quot;300&quot;&gt;
   &lt;line x1=&quot;20&quot; y1=&quot;80&quot; x2=&quot;380&quot; y2=&quot;80&quot; /&gt;
@@ -199,10 +199,98 @@ svg line {
             <div class="example-svg example-svg--5">
               <svg width="300" height="300">
                 <line x1="20" y1="80" x2="380" y2="80" />
-                <line x1="0" y1="80" x2="100" y2="20"/>
+                <line x1="0" y1="80" x2="100" y2="20" />
                 <line x1="20" y1="110" x2="380" y2="110" />
-                <line x1="33" y1="20" x2="46" y2="69"/>
+                <line x1="33" y1="20" x2="46" y2="69" />
                 <line x1="20" y1="50" x2="380" y2="50" />
+              </svg>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Element <code class="code">&lt;polygon /&gt;</code></h2>
+        <pre class="code code--html">
+&lt;polygon points=&quot&lt;number&gt; +&quot; /&gt;
+        </pre>
+        <article class="example">
+          <h3>Podstawowy <code class="code">&lt;polygon /&gt;</code></h3>
+          <pre class="code code--html code--small">
+&lt;svg width=&quot;300&quot; height=&quot;300&quot;&gt;
+  &lt;polygon points=&quot;0,100 50,25 50,75 100,0&quot; /&gt;
+&lt;/svg&gt;
+          </pre>
+          <pre class="code code--small code--css">
+svg {
+  outline: var(--border-default) solid var(--color-sub);
+}
+
+svg polygon {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}
+          </pre>
+          <div class="example-wrapper">
+            <div class="example-svg example-svg--6">
+              <svg width="300" height="300">
+                <polygon points="0,100 50,25 50,75 100,0" />
+              </svg>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Element ścieżki <code class="code">&lt;path /&gt;</code></h2>
+        <pre class="code code--html">
+&lt;path d=&quot&lt;string&gt;&quot; /&gt;
+        </pre>
+        <section>
+          <h3>Rodzaje poleceń ścieżki</h3>
+          <ul>
+            <li><code class="code">M</code>, <code class="code">m</code>: <em lang="en">MoveTo</em> - przesunięcie</li>
+            <li><code class="code">L</code>, <code class="code">l</code>, <code class="code">H</code>, <code class="code">h</code>, <code class="code">V</code>, <code class="code">v</code>: <em
+                lang="en">LineTo</em> - linia</li>
+            <li><code class="code">C</code>, <code class="code">c</code>, <code class="code">S</code>, <code class="code">s</code>: rysowanie krzywych Béziera trzeciego
+              stopnia</li>
+            <li><code class="code">Q</code>, <code class="code">q</code>, <code class="code">T</code>, <code class="code">t</code>: rysowanie krzywych Béziera drugiego
+              stopnia</li>
+            <li><code class="code">A</code>, <code class="code">a</code> - krzywa eliptyczna</li>
+            <li><code class="code">Z</code>, <code class="code">z</code> - zamknięcie krzywej</li>
+          </ul>
+          <p>Szczegółowe opisy jak zwykle na <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#path_commands">MDN</a>.</p>
+        </section>
+        <article class="example">
+          <h3><s>Podstawowy</s> Przykładowy <code class="code">&lt;path /&gt;</code></h3>
+          <pre class="code code--html code--small">
+&lt;svg width=&quot;300&quot; height=&quot;300&quot;&gt;
+  &lt;path d=&quot;M 10,30
+    A 20,20 0,0,1 50,30
+    A 20,20 0,0,1 90,30
+    Q 90,60 50,90
+    Q 10,60 10,30 z&quot;
+  /&gt;
+&lt;/svg&gt;
+          </pre>
+          <pre class="code code--small code--css">
+svg {
+  outline: var(--border-default) solid var(--color-sub);
+}
+
+svg path {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}
+          </pre>
+          <div class="example-wrapper">
+            <div class="example-svg example-svg--7">
+              <svg width="300" height="300">
+                <path d="M 10,30
+                  A 20,20 0,0,1 50,30
+                  A 20,20 0,0,1 90,30
+                  Q 90,60 50,90
+                  Q 10,60 10,30 z" />
               </svg>
             </div>
           </div>
