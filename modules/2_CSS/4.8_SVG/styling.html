@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grafika wektorowa - elementy SVG</title>
+  <title>Grafika wektorowa - stylowanie kształtów</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -16,13 +16,13 @@
       <li class="main-navigation__item"><a href="./files.html">Plik SVG</a>
       </li>
       <li class="main-navigation__item"><a href="./usage.html">Użycie</a></li>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./styling.html">Stylizacja kształtów</a>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./styling.html">Stylowanie kształtów</a>
       </li>
     </menu>
   </nav>
   <main>
     <article>
-      <h1>Elementy <code>svg</code></h1>
+      <h1>Stylowanie kształtów</h1>
       <section>
         <h2>Właściwość <code class="code">fill</code></h2>
         <pre class="code code--css">
@@ -148,6 +148,26 @@ stroke-opacity: &lt;number&gt;
             <div class="example-svg-styling example-svg-styling--10">
               <svg width="300" height="300">
                 <circle cx="25%" cy="65%" r="100" />
+              </svg>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">stroke-linecap</code></h2>
+        <pre class="code code--css">
+stroke-opacity: &lt;number&gt;
+        </pre>
+        <article class="example">
+          <h3><code>0.67</code></h3>
+          <div class="example-wrapper">
+            <div class="example-svg-styling example-svg-styling--11">
+              <svg width="300" height="300">
+                <line x1="20" y1="80" x2="380" y2="80" />
+                <line x1="0" y1="80" x2="100" y2="20" />
+                <line x1="20" y1="110" x2="380" y2="110" />
+                <line x1="33" y1="20" x2="46" y2="69" />
+                <line x1="20" y1="50" x2="380" y2="50" />
               </svg>
             </div>
           </div>

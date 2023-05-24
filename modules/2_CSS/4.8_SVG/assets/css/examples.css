@@ -151,3 +151,9 @@
   stroke-opacity: 0.46;
 }
 
+.example-svg-styling-11 line {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(5px, 0.3vw);
+  stroke-linecap: round;
+}
+
