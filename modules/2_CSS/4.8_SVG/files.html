@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grafika wektorowa - elementy SVG</title>
+  <title>Grafika wektorowa - pliki SVG</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -21,18 +21,91 @@
   </nav>
   <main>
     <article>
-      <h1>Elementy SVG</h1>
+      <h1>Pliki SVG</h1>
       <section>
-        <h2>Właściwość <code class="code">background-color</code></h2>
-        <pre class="code code--css">
-background-color: &lt;color&gt;
+        <h2>Podstawowa składnia pliku SVG</h2>
+        <pre class="code code--svg">
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt; &lt;!-- XML namespace attribute is required --&gt;
+  &lt;!-- shape definitions --&gt;
+&lt;/svg&gt;
         </pre>
+      </section>
+      <section>
+        <h2>Viewport w SVG - atrybuty <code class="code">width</code> oraz <code class="code">height</code></h2>
+        <pre class="code code--svg">
+&lt;svg
+  xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  width=&quot;&lt;width&gt;&quot;
+  height=&quot;&lt;width&gt;&quot;
+&gt;
+  &lt;!-- shape definitions --&gt;
+&lt;/svg&gt;
+        </pre>
+      </section>
+      <section>
+        <h2>Atrybut <code class="code">viewBox</code></h2>
+        <pre class="code code--svg">
+&lt;svg
+  height=&quot;&lt;width&gt;&quot;
+  viewBox=&quot;&lt;min-x min-y width height&gt;&quot;
+  width=&quot;&lt;width&gt;&quot;
+  xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+&gt;
+  &lt;!-- shape definitions --&gt;
+&lt;/svg&gt;
+
+&lt;!-- min-x: min left coordinate --&gt;
+&lt;!-- min-y: min top coordinate --&gt;
+        </pre>
+        <p>Jeśli <code>width</code> i <code>height</code> w atrybucie <code>viewBox</code> są takie same jak atrybuty,
+          odpowiednio, <code>width</code> i <code>height</code> - wektory zostaną wyrenderowane w oryginalnym
+          rozmiarze. W innych przypadkach, zawartość będzie przeskalowana.</p>
         <article class="example">
-          <h3><code>rebeccapurple</code></h3>
-          <div class="example-wrapper">
-            <div class="example-bg example-bg--color-name">
-            </div>
-          </div>
+          <h3><code class="code">viewBox</code> i skalowanie</h3>
+          <ul class="examples-list">
+            <li class="code-wrapper">
+              <pre class="code code--html code--small">
+&lt;svg width=&quot;400&quot; height=&quot;200&quot; viewBox=&quot;0 0 400 200&quot;&gt;
+  &lt;circle r=&quot;75&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; /&gt;
+&lt;/svg&gt;
+              </pre>
+              <div class="example-wrapper">
+                <div class="example-svg-file example-svg-file--1">
+                  <svg width="400" height="200" viewBox="0 0 400 200">
+                    <circle r="75" cx="50%" cy="50%" />
+                  </svg>
+                </div>
+              </div>
+            </li>
+            <li class="code-wrapper">
+              <pre class="code code--html code--small">
+&lt;svg width=&quot;400&quot; height=&quot;200&quot; viewBox=&quot;0 0 200 100&quot;&gt;
+  &lt;circle r=&quot;75&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; /&gt;
+&lt;/svg&gt;
+              </pre>
+              <div class="example-wrapper">
+                <div class="example-svg-file example-svg-file--2">
+                  <svg width="400" height="200" viewBox="0 0 200 100">
+                    <circle r="75" cx="50%" cy="50%" />
+                  </svg>
+                </div>
+              </div>
+            </li>
+            <li class="code-wrapper">
+              <pre class="code code--html code--small">
+&lt;svg width=&quot;400&quot; height=&quot;200&quot; viewBox=&quot;0 0 800 400&quot;&gt;
+  &lt;circle r=&quot;75&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; /&gt;
+&lt;/svg&gt;
+              </pre>
+              <div class="example-wrapper">
+                <div class="example-svg-file example-svg-file--3">
+                  <svg width="400" height="200" viewBox="0 0 800 400">
+                    <circle r="75" cx="50%" cy="50%" />
+                  </svg>
+                </div>
+              </div>
+            </li>
+          </ul>
         </article>
       </section>
     </article>

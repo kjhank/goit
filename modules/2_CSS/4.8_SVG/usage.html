@@ -4,11 +4,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grafika wektorowa - elementy SVG</title>
+  <title>Grafika wektorowa - użycie</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
+  <svg width="0" height="0" class="visually-hidden sprites-thingamajig">
+    <symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300"
+      id="svg-logo">
+      <defs>
+        <path id="d" fill="#fff"
+          d="M50.964 220.638c-6.638-6.636-10.746-15.8-10.746-25.922 0-20.252 16.426-36.668 36.668-36.668 20.252 0 36.678 16.416 36.678 36.668h-21.48c0-8.388-6.808-15.186-15.198-15.186-8.388 0-15.186 6.798-15.186 15.186 0 4.19 1.702 7.986 4.44 10.726h.01c2.75 2.76 5.04 3.558 10.736 4.462 10.132 1.054 19.296 4.108 25.932 10.744 6.638 6.638 10.746 15.802 10.746 25.924 0 20.252-16.426 36.678-36.678 36.678-20.242 0-36.668-16.426-36.668-36.678H61.7c0 8.388 6.798 15.196 15.186 15.196 8.39 0 15.198-6.808 15.198-15.196 0-4.19-1.702-7.976-4.442-10.726h-.01c-2.75-2.75-6.696-3.698-10.746-4.452v-.01c-9.82-1.506-19.286-4.108-25.922-10.746Zm135.94-62.59-25.94 125.202h-21.48l-25.92-125.202h21.48l15.2 73.326 15.18-73.326h21.48Zm36.68 51.856h36.668v36.668h.01c0 20.254-16.426 36.68-36.678 36.68-20.254 0-36.668-16.426-36.668-36.68v-51.854h-.01c0-20.252 16.424-36.668 36.678-36.668 20.242 0 36.668 16.416 36.668 36.668H238.77c0-8.38-6.808-15.188-15.186-15.188-8.39 0-15.188 6.808-15.188 15.188v51.854c0 8.39 6.798 15.188 15.188 15.188 8.378 0 15.176-6.798 15.186-15.178v-15.186h-15.186v-21.492Z">
+        </path>
+      </defs>
+      <path id="c" fill="#000" d="M8.5 150h283v100c0 23.5-18 41.5-41.5 41.5H50c-23.5 0-41.5-18-41.5-41.5Z"></path>
+      <g stroke="#000" stroke-width="38.009">
+        <g id="b" transform="translate(150 150)">
+          <path id="a" fill="#ffb13b"
+            d="M-84.149-15.851a22.417 22.417 0 1 0 0 31.702H84.15a22.417 22.417 0 1 0 0-31.702Z"></path>
+          <use xlink:href="#a" transform="rotate(45)"></use>
+          <use xlink:href="#a" transform="rotate(90)"></use>
+          <use xlink:href="#a" transform="rotate(135)"></use>
+        </g>
+      </g>
+      <use xlink:href="#b"></use>
+      <use xlink:href="#c" opacity=".85"></use>
+      <use xlink:href="#d"></use>
+    </symbol>
+  </svg>
   <nav class="main-navigation">
     <menu>
       <li class="main-navigation__item"><a href="./index.html">Grafika wektorowa - elementy SVG</a>
@@ -21,16 +44,194 @@
   </nav>
   <main>
     <article>
-      <h1>Elementy SVG</h1>
+      <h1>Użycie SVG</h1>
       <section>
-        <h2>Właściwość <code class="code">background-color</code></h2>
-        <pre class="code code--css">
-background-color: &lt;color&gt;
-        </pre>
+        <h2>SVG w <code class="code">&lt;img /&gt;</code></h2>
         <article class="example">
-          <h3><code>rebeccapurple</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;img src=&quot;./assets/images/svg-logo.svg.svg&quot; alt=&quot;logo SVG&quot;&gt;
+            </pre>
+            <pre class="code code--small code--css">
+img {
+  max-width: 100%;
+  fill: var(--color-main); /* ?! */
+  strroke: var(--color-accent); /* ?! */
+}
+
+img:nth-child(1) {
+  width: min(300px, 25%);
+}
+
+img:nth-child(2) {
+  width: min(30px, 2.5%);
+}
+
+img:nth-child(3) {
+  width: min(3000px, 250%);
+}
+
+            </pre>
+          </div>
           <div class="example-wrapper">
-            <div class="example-bg example-bg--color-name">
+            <div class="example-svg-usage example-svg-usage--img">
+              <img src="./assets/images/svg-logo.svg" alt="logo SVG">
+            </div>
+            <div class="example-svg-usage example-svg-usage--img">
+              <img src="./assets/images/svg-logo.svg" alt="logo SVG">
+            </div>
+            <div class="example-svg-usage example-svg-usage--img">
+              <img src="./assets/images/svg-logo.svg" alt="logo SVG">
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>SVG jako tło elementu</h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;p lang=&quot;en&quot;&gt;My background is the SVG logo! (no idea why)&lt;/p&gt;
+            </pre>
+            <pre class="code code--small code--css">
+p {
+  padding-block: 3em;
+  background: url('../images/svg-logo.svg');
+  background-repeat: no-repeat;
+  font-weight: 700;
+  font-size: min(48px, 3em);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-svg-usage example-svg-usage--background">
+              <p lang="en">My background is the SVG logo! (no idea why)</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Inline SVG 💗 - wbudowany SVG</h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 0 300 300&quot;&gt;
+  &lt;defs&gt;
+    &lt;path id=&quot;d&quot; fill=&quot;#fff&quot; d=&quot;M50.964 220.638c-6.638-6.636-10.746-15.8-10.746-25.922 0-20.252 16.426-36.668 36.668-36.668 20.252 0 36.678 16.416 36.678 36.668h-21.48c0-8.388-6.808-15.186-15.198-15.186-8.388 0-15.186 6.798-15.186 15.186 0 4.19 1.702 7.986 4.44 10.726h.01c2.75 2.76 5.04 3.558 10.736 4.462 10.132 1.054 19.296 4.108 25.932 10.744 6.638 6.638 10.746 15.802 10.746 25.924 0 20.252-16.426 36.678-36.678 36.678-20.242 0-36.668-16.426-36.668-36.678H61.7c0 8.388 6.798 15.196 15.186 15.196 8.39 0 15.198-6.808 15.198-15.196 0-4.19-1.702-7.976-4.442-10.726h-.01c-2.75-2.75-6.696-3.698-10.746-4.452v-.01c-9.82-1.506-19.286-4.108-25.922-10.746Zm135.94-62.59-25.94 125.202h-21.48l-25.92-125.202h21.48l15.2 73.326 15.18-73.326h21.48Zm36.68 51.856h36.668v36.668h.01c0 20.254-16.426 36.68-36.678 36.68-20.254 0-36.668-16.426-36.668-36.68v-51.854h-.01c0-20.252 16.424-36.668 36.678-36.668 20.242 0 36.668 16.416 36.668 36.668H238.77c0-8.38-6.808-15.188-15.186-15.188-8.39 0-15.188 6.808-15.188 15.188v51.854c0 8.39 6.798 15.188 15.188 15.188 8.378 0 15.176-6.798 15.186-15.178v-15.186h-15.186v-21.492Z&quot;/&gt;
+  &lt;/defs&gt;
+  &lt;path id=&quot;c&quot; fill=&quot;#000&quot; d=&quot;M8.5 150h283v100c0 23.5-18 41.5-41.5 41.5H50c-23.5 0-41.5-18-41.5-41.5Z&quot;/&gt;
+  &lt;g stroke=&quot;#000&quot; stroke-width=&quot;38.009&quot;&gt;
+    &lt;g id=&quot;b&quot; transform=&quot;translate(150 150)&quot;&gt;
+      &lt;path id=&quot;a&quot; fill=&quot;#ffb13b&quot; d=&quot;M-84.149-15.851a22.417 22.417 0 1 0 0 31.702H84.15a22.417 22.417 0 1 0 0-31.702Z&quot;/&gt;
+      &lt;use xlink:href=&quot;#a&quot; transform=&quot;rotate(45)&quot;/&gt;
+      &lt;use xlink:href=&quot;#a&quot; transform=&quot;rotate(90)&quot;/&gt;
+      &lt;use xlink:href=&quot;#a&quot; transform=&quot;rotate(135)&quot;/&gt;
+    &lt;/g&gt;
+  &lt;/g&gt;
+  &lt;use xlink:href=&quot;#b&quot;/&gt;
+  &lt;use xlink:href=&quot;#c&quot; opacity=&quot;.85&quot;/&gt;
+  &lt;use xlink:href=&quot;#d&quot;/&gt;
+&lt;/svg&gt;
+            </pre>
+            <pre class="code code--small code--css">
+svg {
+  width: max(33%, 200px);
+}
+
+svg path#d {
+  fill: hsl(0 0% 100% / 0.25);
+  rotate: x 110deg;
+  transform-origin: center;
+}
+
+svg > path#c {
+  fill: transparent;
+}
+
+svg path#a {
+  stroke: var(--color-accent);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 2px;
+  animation: dash 5s alternate 1s linear forwards infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-svg-usage example-svg-usage--inline">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300">
+                <defs>
+                  <path id="d" fill="#fff"
+                    d="M50.964 220.638c-6.638-6.636-10.746-15.8-10.746-25.922 0-20.252 16.426-36.668 36.668-36.668 20.252 0 36.678 16.416 36.678 36.668h-21.48c0-8.388-6.808-15.186-15.198-15.186-8.388 0-15.186 6.798-15.186 15.186 0 4.19 1.702 7.986 4.44 10.726h.01c2.75 2.76 5.04 3.558 10.736 4.462 10.132 1.054 19.296 4.108 25.932 10.744 6.638 6.638 10.746 15.802 10.746 25.924 0 20.252-16.426 36.678-36.678 36.678-20.242 0-36.668-16.426-36.668-36.678H61.7c0 8.388 6.798 15.196 15.186 15.196 8.39 0 15.198-6.808 15.198-15.196 0-4.19-1.702-7.976-4.442-10.726h-.01c-2.75-2.75-6.696-3.698-10.746-4.452v-.01c-9.82-1.506-19.286-4.108-25.922-10.746Zm135.94-62.59-25.94 125.202h-21.48l-25.92-125.202h21.48l15.2 73.326 15.18-73.326h21.48Zm36.68 51.856h36.668v36.668h.01c0 20.254-16.426 36.68-36.678 36.68-20.254 0-36.668-16.426-36.668-36.68v-51.854h-.01c0-20.252 16.424-36.668 36.678-36.668 20.242 0 36.668 16.416 36.668 36.668H238.77c0-8.38-6.808-15.188-15.186-15.188-8.39 0-15.188 6.808-15.188 15.188v51.854c0 8.39 6.798 15.188 15.188 15.188 8.378 0 15.176-6.798 15.186-15.178v-15.186h-15.186v-21.492Z" />
+                </defs>
+                <path id="c" fill="#000" d="M8.5 150h283v100c0 23.5-18 41.5-41.5 41.5H50c-23.5 0-41.5-18-41.5-41.5Z" />
+                <g stroke="#000" stroke-width="38.009">
+                  <g id="b" transform="translate(150 150)">
+                    <path id="a" fill="#ffb13b"
+                      d="M-84.149-15.851a22.417 22.417 0 1 0 0 31.702H84.15a22.417 22.417 0 1 0 0-31.702Z" />
+                    <use xlink:href="#a" transform="rotate(45)" />
+                    <use xlink:href="#a" transform="rotate(90)" />
+                    <use xlink:href="#a" transform="rotate(135)" />
+                  </g>
+                </g>
+                <use xlink:href="#b" />
+                <use xlink:href="#c" opacity=".85" />
+                <use xlink:href="#d" />
+              </svg>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>SVG sprites</h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;svg&gt;
+  &lt;use xlink:href=&quot;#svg-logo&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+            </pre>
+            <pre class="code code--small code--css">
+svg {
+  width: max(33%, 200px);
+}
+
+svg path#d {
+  fill: hsl(0 0% 100% / 0.25);
+  rotate: x 110deg;
+  transform-origin: center;
+}
+
+svg > path#c {
+  fill: transparent;
+}
+
+svg path#a {
+  stroke: var(--color-accent);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 2px;
+  animation: dash 5s alternate 1s linear forwards infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-svg-usage example-svg-usage--inline-2">
+              <svg>
+                <use xlink:href="#svg-logo"></use>
+              </svg>
             </div>
           </div>
         </article>
