@@ -3,6 +3,7 @@
 @import url('./reset.css');
 @import url('./headings.css');
 @import url('./nav.css');
+@import url('./keyframes.css');
 @import url('./fonts/stylesheet.css');
 
 body {
@@ -57,7 +58,7 @@ section.iframe-embed > iframe {
 
 section > p:not([class]) {
   border-inline-start: max(6px, 0.4vw) solid var(--color-accent);
-  padding-inline-start: max(6px, 0.4vw);
+  padding-inline-start: max(12px, 0.8vw);
   font-size: 1.25em;
 }
 
@@ -129,7 +130,8 @@ b {
 }
 
 .code--small {
-  width: min(fit-content, 100%);
+  /* width: fit-content; */
+  max-width: 100%;
   padding-block: 2em;
   font-size: 1em;
 }
@@ -143,12 +145,18 @@ b {
   color: var(--color-accent);
 }
 
-.code--html {
+.code--html,
+.code--svg {
   text-shadow: 0 0 10px var(--color-main);
 }
 
 .code--html::before {
   content: 'HTML';
+  color: var(--color-main);
+}
+
+.code--svg::before {
+  content: 'SVG';
   color: var(--color-main);
 }
 
@@ -225,7 +233,8 @@ code:has(+ p,
 
 .example-wrapper {
   position: relative;
-  outline: 2px dashed var(--color-neutral-fg);
+  border: 2px dashed var(--color-neutral-fg);
+  border-radius: 0.25em;
   padding: 1em 2em;
   backdrop-filter: saturate(200%);
 }
@@ -253,4 +262,24 @@ code:has(+ p,
 
 .example-wrapper:has(.example-label) {
   padding: 3em 3em 2em;
+}
+
+.code-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.code-wrapper > * {
+  flex: min(50%, 50ch) 1 0;
+}
+
+.examples-list {
+  margin-block: 3em;
+}
+
+.examples-list > li + li {
+  margin-block-start: 1em;
+  padding-block-start: 1em;
 }

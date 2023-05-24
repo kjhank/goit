@@ -1,0 +1,6 @@
+@keyframes dashColor {
+  to {
+    stroke-dashoffset: 0;
+    stroke: var(--color-main);
+  }
+}

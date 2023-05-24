@@ -29,7 +29,7 @@ h3:not(:has(code)) {
   transition: background-color var(--transition-default);
 }
 
-h1 code {
+h1 .code {
   -webkit-text-fill-color: var(--color-neutral-fg);
 }
 
