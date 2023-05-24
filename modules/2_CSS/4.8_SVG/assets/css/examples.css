@@ -76,7 +76,7 @@
 }
 
 .example-svg-usage--inline svg path#d,
-.sprites-thingamajig path#d {
+#svg-logo path#d {
   fill: hsl(0 0% 100% / 0.25);
   transform-origin: center;
   rotate: z -45deg;
@@ -85,12 +85,12 @@
 }
 
 .example-svg-usage--inline svg > path#c,
-.sprites-thingamajig path#c {
+#svg-logo path#c {
   fill: transparent;
 }
 
 .example-svg-usage--inline svg path#a,
-.sprites-thingamajig path#a {
+#svg-logo path#a {
   stroke: var(--color-accent);
   stroke-dasharray: 548;
   stroke-dashoffset: 548;

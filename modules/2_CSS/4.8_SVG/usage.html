@@ -150,14 +150,16 @@ svg > path#c {
 
 svg path#a {
   stroke: var(--color-accent);
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  stroke-width: 2px;
-  animation: dash 5s alternate 1s linear forwards infinite;
+  stroke-dasharray: 548;
+  stroke-dashoffset: 548;
+  stroke-width: max(4px, 0.3vw);
+  stroke-linecap: round;
+  animation: dashColor 5s alternate 0.1s linear forwards infinite;
 }
 
-@keyframes dash {
+@keyframes dashColor {
   to {
+    stroke-dashoffset: 0;
     stroke-dashoffset: 0;
   }
 }
@@ -230,7 +232,7 @@ svg path#a {
           <div class="example-wrapper">
             <div class="example-svg-usage example-svg-usage--inline-2">
               <svg>
-                <use xlink:href="#svg-logo"></use>
+                <use class="foobar" xlink:href="#svg-logo"></use>
               </svg>
             </div>
           </div>
