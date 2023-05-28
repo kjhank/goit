@@ -27,9 +27,19 @@
 .main-navigation__item--current {
   color: var(--color-accent);
   text-decoration-style: double;
+  text-decoration-color: var(--color-main);
+}
+
+.main-navigation__item--current > a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
 }
 
 .main-navigation__item:not(.main-navigation__item--current):hover {
+  text-decoration-color: var(--color-main);
+}
+
+.main-navigation__item--current:hover > a {
   text-decoration-color: var(--color-main);
 }
 

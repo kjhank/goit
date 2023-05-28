@@ -95,3 +95,103 @@
   padding-inline-start: 0.5em;
   list-style-type: none;
 }
+
+.example-z-index {
+  position: relative;
+}
+
+.example-z-index--1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.example-z-index--1 > p {
+  position: relative;
+  padding: 0.5em;
+  background-color: var(--color-main);
+  color: var(--color-neutral-bg);
+  border-radius: 1em;
+}
+
+.example-z-index--1 > p:first-child {
+  inset: auto -25% -25% auto;
+  z-index: 1;
+  background-color: var(--color-sub);
+}
+
+.example-z-index--2 {
+  width: 50%;
+  aspect-ratio: 1;
+}
+
+.example-z-index--2 > li {
+  position: absolute;
+  border: var(--border-default) solid var(--color-accent);
+  border-radius: 0.25em;
+  padding: 0.5em;
+  background-color: var(--color-neutral-bg);
+}
+
+.example-z-index--2 > li:nth-child(1) {
+  inset: 0.1em auto auto 0.1em;
+  z-index: 1;
+  padding: 1.5em;
+  color: var(--color-neutral-bg);
+  background-color: var(--color-main);
+}
+
+.example-z-index--2 > li:nth-child(2) {
+  inset: 0.2em auto auto 0.2em;
+  z-index: 2;
+}
+
+.example-z-index--2 > li:nth-child(3) {
+  inset: 0.3em auto auto 0.3em;
+  z-index: 3;
+}
+
+.example-z-index--2 > li:nth-child(4) {
+  inset: 0.4em auto auto 0.4em;
+  z-index: 4;
+}
+
+.example-z-index--2 > li:nth-child(5) {
+  inset: 0.5em auto auto 0.5em;
+  z-index: 5;
+}
+
+.example-z-index--2 > li:nth-child(6) {
+  inset: 0.6em auto auto 0.6em;
+  z-index: 6;
+}
+
+.example-z-index--2 > li:nth-child(7) {
+  inset: 0.7em auto auto 0.7em;
+  z-index: 7;
+}
+
+.example-z-index--2 > li:nth-child(8) {
+  inset: 0.8em auto auto 0.8em;
+  z-index: 8;
+}
+
+.example-buttons-wrapper {
+  display: flex;
+  gap: 1em;
+}
+
+.example-button--z-index {
+  background-color: var(--color-sub);
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: outline-offset var(--transition-fast);
+}
+
+.example-button--z-index:hover,
+.example-button--z-index:focus,
+.example-button--z-index:active {
+  outline-offset: 0.25em;
+  outline: var(--border-thick) solid var(--color-accent);
+}

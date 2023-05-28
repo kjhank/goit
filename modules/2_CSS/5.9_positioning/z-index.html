@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>`z-index` i konteksty</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Pozycjonowanie</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./z-index.html"><code>z-index</code> i
+          kontekst warstwowy</a>
+      </li>
+      <li class="main-navigation__item"><a href="./usage.html">overflow</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Oś <em>z</em> i kontekst warstwowy</h1>
+      <section>
+        <pre class="code code--css">
+z-index: &lt;integer&gt; | auto
+        </pre>
+        <h2>Właściwość <code class="code">z-index</code></h2>
+        <article class="example">
+          <h3>Zmiany w osi z</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;div class=&quot;example-z-index example-z-index--1&quot;&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae corporis magnam iste obcaecati
+    accusamus itaque, quaerat omnis, unde rem ratione aliquam sequi non, id minima. Eligendi maxime soluta
+    ipsa!&lt;/p&gt;
+  &lt;p&gt;Magni sunt fugit qui similique facilis veritatis obcaecati tempore cupiditate eligendi? Animi quam
+    saepe ex delectus, magnam corporis deserunt, ad debitis repellat fugiat, cumque mollitia modi iusto
+    facere asperiores quas.&lt;/p&gt;
+&lt;/div&gt;
+              </pre>
+            <pre class="code code--small code--css">
+div {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+div > p {
+  position: relative;
+  padding: 0.5em;
+  background-color: var(--color-main);
+  color: var(--color-neutral-bg);
+  border-radius: 1em;
+}
+
+div > p:first-child {
+  inset: auto -25% -25% auto;
+  z-index: 1;
+  background-color: var(--color-sub);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-z-index example-z-index--1">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae corporis magnam iste obcaecati
+                accusamus itaque, quaerat omnis, unde rem ratione aliquam sequi non, id minima. Eligendi maxime soluta
+                ipsa!</p>
+              <p>Magni sunt fugit qui similique facilis veritatis obcaecati tempore cupiditate eligendi? Animi quam
+                saepe ex delectus, magnam corporis deserunt, ad debitis repellat fugiat, cumque mollitia modi iusto
+                facere asperiores quas.</p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Zmiana <code>z-index</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;ul class=&quot;example-z-index example-z-index--2&quot;&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+  &lt;li&gt;Officia deserunt pariatur qui esse!&lt;/li&gt;
+  &lt;li&gt;Totam corrupti perspiciatis culpa odit.&lt;/li&gt;
+  &lt;li&gt;Obcaecati facere veritatis ratione eveniet!&lt;/li&gt;
+  &lt;li&gt;Alias labore saepe tempora veritatis?&lt;/li&gt;
+  &lt;li&gt;Necessitatibus praesentium quod odio odit?&lt;/li&gt;
+  &lt;li&gt;Cum odio animi minima aliquid?&lt;/li&gt;
+  &lt;li&gt;Doloribus, provident similique. Doloribus, minus.&lt;/li&gt;
+&lt;/ul&gt;
+              </pre>
+              <pre class="code code--small code--css">
+  ul {
+    width: 50%;
+    aspect-ratio: 1;
+  }
+
+  ul > li {
+    position: absolute;
+    border: var(--border-default) solid var(--color-accent);
+    border-radius: 0.25em;
+    padding: 0.5em;
+    background-color: var(--color-neutral-bg);
+  }
+
+  ul > li:nth-child(1) {
+    inset: 0.1em auto auto 0.1em;
+    z-index: 1;
+    padding: 1.5em;
+    color: var(--color-neutral-bg);
+    background-color: var(--color-main);
+  }
+
+  ul > li:nth-child(2) {
+    inset: 0.2em auto auto 0.2em;
+    z-index: 2;
+  }
+
+  ul > li:nth-child(3) {
+    inset: 0.3em auto auto 0.3em;
+    z-index: 3;
+  }
+
+  ul > li:nth-child(4) {
+    inset: 0.4em auto auto 0.4em;
+    z-index: 4;
+  }
+
+  ul > li:nth-child(5) {
+    inset: 0.5em auto auto 0.5em;
+    z-index: 5;
+  }
+
+  ul > li:nth-child(6) {
+    inset: 0.6em auto auto 0.6em;
+    z-index: 6;
+  }
+
+  ul > li:nth-child(7) {
+    inset: 0.7em auto auto 0.7em;
+    z-index: 7;
+  }
+
+  ul > li:nth-child(8) {
+    inset: 0.8em auto auto 0.8em;
+    z-index: 8;
+  }
+              </pre>
+          </div>
+          <div class="example-wrapper">
+            <ul class="example-z-index example-z-index--2">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Officia deserunt pariatur qui esse!</li>
+              <li>Totam corrupti perspiciatis culpa odit.</li>
+              <li>Obcaecati facere veritatis ratione eveniet!</li>
+              <li>Alias labore saepe tempora veritatis?</li>
+              <li>Necessitatibus praesentium quod odio odit?</li>
+              <li>Cum odio animi minima aliquid?</li>
+              <li>Doloribus, provident similique. Doloribus, minus.</li>
+            </ul>
+            <div class="example-buttons-wrapper">
+              <button class="example-button example-button--z-index example-button--z-index-increment">higher pls</button>
+              <button type="reset"
+                class="example-button example-button--z-index example-button--z-index-reset">reset</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+
+  <script src="./assets/js/examples.js"></script>
+</body>
+
+</html>
