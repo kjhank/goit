@@ -1,0 +1,97 @@
+[class*="example-position--relative"] {
+  position: relative;
+}
+
+.example-position--relative {
+  inset: 1em auto auto auto;
+}
+
+.example-position--relative-2 {
+  top: -10%;
+  right: 25%;
+}
+
+.example-position--absolute {
+  position: absolute;
+  top: -3em;
+}
+
+.example-position--absolute-2 {
+  position: relative;
+}
+
+.example-position--absolute-2::before,
+.example-position--absolute-2::after {
+  position: absolute;
+}
+
+.example-position--absolute-2::before {
+  content: '🍑';
+  inset-inline-start: -1em;
+}
+
+.example-position--absolute-2::after {
+  content: '🍆';
+  inset-inline-end: -1em;
+}
+
+.example-position--absolute-3 {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  width: min(35%, 400px);
+  border-radius: 0.5em;
+}
+
+.example-position--absolute-3 > img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: scale var(--transition-slow);
+}
+
+.example-position--absolute-3 > figcaption {
+  position: relative;
+  align-self: flex-end;
+  width: 100%;
+  padding: 0.5em;
+  backdrop-filter: blur(2px);
+  background-color: hsl(0 0% 100% / 0.25);
+  color: #fff;
+  text-align: center;
+}
+
+.example-position--absolute-3:hover > img {
+  scale: 1.05;
+}
+
+.example-position--fixed {
+  /* position: fixed; */
+  inset: auto 0 0 auto;
+  width: min(35%, 400px);
+}
+
+.example-position--sticky {
+  overflow: scroll;
+  max-height: 20em;
+}
+
+.example-position--sticky > li > p {
+  position: sticky;
+  inset: 0 0 auto 0;
+  background-color: #fff;
+  border-block-end: var(--border-thick) solid var(--color-accent);
+  padding: 0.25em;
+  color: var(--color-accent);
+  font-size: 1.25em;
+}
+
+.example-position--sticky ul {
+  margin: 0.5em;
+  border-inline-start: var(--border-thick) solid var(--color-accent);
+  padding-inline-start: 0.5em;
+  list-style-type: none;
+}

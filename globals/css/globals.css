@@ -208,6 +208,10 @@ b {
   color: var(--color-neutral-bg);
 }
 
+.example {
+  margin-block-start: 2em;
+}
+
 .example > code,
 .example > pre,
 .example > h3 > code,
@@ -231,12 +235,20 @@ code:has(+ p,
   border: none;
 }
 
+.example > h3 {
+  margin-block-end: 1em;
+}
+
 .example-wrapper {
   position: relative;
   border: 2px dashed var(--color-neutral-fg);
   border-radius: 0.25em;
   padding: 1em 2em;
   backdrop-filter: saturate(200%);
+}
+
+.example-wrapper:has(.example-position) {
+  backdrop-filter: unset;
 }
 
 .example-wrapper--comparison {

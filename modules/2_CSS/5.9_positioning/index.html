@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pozycjonowanie</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Pozycjonowanie</a>
+      </li>
+      <li class="main-navigation__item"><a href="./z-index.html">z-index</a>
+      </li>
+      <li class="main-navigation__item"><a href="./usage.html">overflow</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Pozycjonowanie</h1>
+      <section>
+        <h2>Właściwość <code class="code">position</code> z wartością <code class="code">relative</code></h2>
+        <pre class="code code--css">
+position: static | relative | absolute | fixed | sticky
+        </pre>
+        <article class="example">
+          <h3>Przesunięcie w <code>position: relative</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  position: relative;
+  inset: 1em auto auto auto;
+
+  /* inset: w językach od lewej do prawej:
+    &lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt;
+  */
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-position example-position--relative">Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Deserunt ex sapiente optio eligendi nihil vel cum nemo, quibusdam sit asperiores dignissimos ipsa
+              illo est accusantium expedita sequi sed recusandae quidem?</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Przesunięcie w <code>position: relative</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  position: relative;
+  top: -10%;
+  right: 25%;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-position example-position--relative-2">Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Deserunt ex sapiente optio eligendi nihil vel cum nemo, quibusdam sit asperiores dignissimos ipsa
+              illo est accusantium expedita sequi sed recusandae quidem?</p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">position</code> z wartością <code class="code">absolute</code></h2>
+        <article class="example">
+          <h3>Przesunięcie w <code>position: absolute</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  position: absolute;
+  top: -3em;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-position example-position--absolute">Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Deserunt ex sapiente optio eligendi nihil vel cum nemo, quibusdam sit asperiores dignissimos ipsa
+              illo est accusantium expedita sequi sed recusandae quidem?</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Przesunięcie w <code>position: absolute</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  position: relative;
+}
+
+p::before {
+  content: '🍑';
+  inset-inline-start: -1em;
+}
+
+p::after {
+  content: '🍆';
+  inset-inline-end: -1em;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-position example-position--absolute-2">Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Vero cumque porro id illum, ut quod tempore vel recusandae quos in expedita doloremque, asperiores
+              reprehenderit voluptate veritatis rem rerum eum dolorum.
+              Assumenda illum labore, sed voluptatem expedita, id doloribus vero ipsam aliquam sequi nobis, quae minima
+              libero? Incidunt iste nulla laboriosam, voluptate temporibus voluptates quae mollitia vero totam earum
+              sunt ratione?
+              Fugit voluptate rerum ipsam nemo, quod molestias officiis porro ab dolorum? Nisi similique, rerum alias
+              adipisci ea totam exercitationem laborum porro nihil voluptates reprehenderit explicabo mollitia cumque
+              tempora officia facilis!</p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Przesunięcie w <code>position: absolute</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;figure class=&quot;example-position--absolute-3&quot;&gt;
+  &lt;img src=&quot;https://source.unsplash.com/random/?dog&amp;1&quot; alt=&quot;pies&quot;&gt;
+  &lt;figcaption&gt;Pies?&lt;/figcaption&gt;
+&lt;/figure&gt;
+            </pre>
+            <pre class="code code--small code--css">
+
+figure {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  width: min(25%, 300px);
+  border-radius: 0.5em;
+}
+
+figure > img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: scale var(--transition-slow);
+}
+
+figure > figcaption {
+  position: relative;
+  align-self: flex-end;
+  width: 100%;
+  padding: 0.5em;
+  backdrop-filter: blur(2px);
+  background-color: hsl(0 0% 100% / 0.25);
+  color: #fff;
+  text-align: center;
+}
+
+figure:hover > img {
+  scale: 1.05;
+}
+
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <figure class="example-position--absolute-3">
+              <img src="https://source.unsplash.com/random/?clouds&1" alt="pies">
+              <figcaption>Chmury?</figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">position</code> z wartością <code class="code">fixed</code></h2>
+        <article class="example">
+          <h3><code>position: fixed</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  position: fixed;
+  inset: auto 0 0 auto;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-position example-position--fixed">Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Deserunt ex sapiente optio eligendi nihil vel cum nemo, quibusdam sit asperiores dignissimos ipsa
+              illo est accusantium expedita sequi sed recusandae quidem?</p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">position</code> z wartością <code class="code">sticky</code></h2>
+        <article class="example">
+          <h3><code>position: stick</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  position: fixed;
+  inset: auto 0 0 auto;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <ul class="example-position example-position--sticky">
+              <li>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Quidem nisi illo culpa accusantium.</li>
+                  <li>Et totam quam incidunt quidem.</li>
+                  <li>Cupiditate harum sequi iusto quos.</li>
+                  <li>Quam repellat nihil nulla quos.</li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Quae corrupti maxime recusandae maiores!</li>
+                  <li>Nam culpa illum ad dolorem.</li>
+                  <li>Non autem vel architecto reprehenderit!</li>
+                </ul>
+              </li>
+              <li>
+                <p>Veritatis voluptatem aspernatur dolores odio?</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Suscipit rem sunt ratione dolores!</li>
+                  <li>A, hic! Reiciendis, officia nemo?</li>
+                  <li>Reprehenderit ipsum optio natus totam?</li>
+                  <li>Temporibus tenetur laudantium adipisci! Aperiam.</li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Voluptatem expedita asperiores ad animi!</li>
+                  <li>Quisquam porro aliquam vitae est!</li>
+                  <li>Maiores quos laborum odit numquam.</li>
+                </ul>
+              </li>
+              <li>
+                <p>Voluptas dolor odit deserunt ducimus.</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Ut non dolores omnis ducimus!</li>
+                  <li>At a alias beatae qui!</li>
+                  <li>Asperiores numquam hic eum nulla.</li>
+                  <li>Unde quisquam asperiores vero fugit?</li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Veritatis dolore ex facilis delectus.</li>
+                  <li>Repellendus vel impedit omnis iusto!</li>
+                  <li>Consequuntur nihil accusamus laudantium quam.</li>
+                </ul>
+              </li>
+              <li>
+                <p>Modi consequuntur quisquam minima dolor.</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Repudiandae quo dolorum ipsum hic.</li>
+                  <li>Non itaque cupiditate ducimus tempore.</li>
+                  <li>Quibusdam ad quaerat voluptates autem.</li>
+                  <li>Laborum nobis nisi provident ipsum!</li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Veritatis dolore ex facilis delectus.</li>
+                  <li>Repellendus vel impedit omnis iusto!</li>
+                  <li>Consequuntur nihil accusamus laudantium quam.</li>
+                </ul>
+              </li>
+              <li>
+                <p>Architecto consectetur repellendus blanditiis consequuntur.</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Nesciunt repellat facilis ea minus.</li>
+                  <li>Libero eos impedit at neque?</li>
+                  <li>Voluptates officia esse quam totam.</li>
+                  <li>Dolor tenetur nesciunt maxime reprehenderit.</li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Veritatis dolore ex facilis delectus.</li>
+                  <li>Repellendus vel impedit omnis iusto!</li>
+                  <li>Consequuntur nihil accusamus laudantium quam.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>
