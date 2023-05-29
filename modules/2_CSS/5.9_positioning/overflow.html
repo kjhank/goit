@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>`overflow`</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Pozycjonowanie</a>
+      </li>
+      <li class="main-navigation__item"><a href="./z-index.html"><code>z-index</code> i
+          kontekst warstwowy</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a
+          href="./overflow.html"><code>overflow</code></a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1><code>overflow</code></h1>
+      <section>
+        <pre class="code code--css">
+overflow: visible | hidden | clip | scroll | auto | &lt;overflow&gt; &lt;overflow&gt;
+        </pre>
+        <h2>Właściwość <code class="code">overflow</code></h2>
+        <article class="example">
+          <h3>Wartość <code>visible</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  aspect-ratio: 1;
+  width: min(35vw, 400px);
+  height: 10em;
+  outline: var(--border-thick) solid var(--color-sub);
+  overflow: visible;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-overflow example-overflow--visible">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores aut vitae quisquam nesciunt, recusandae
+              obcaecati, reiciendis blanditiis debitis repellat porro possimus at deserunt minus officia itaque natus
+              voluptatibus ratione perspiciatis?
+              Maiores voluptatibus labore commodi. Natus cum ab alias totam nemo deleniti suscipit facilis fugiat, fugit
+              odit, excepturi distinctio molestias dolore eaque. Ullam possimus amet ut animi dignissimos impedit
+              eligendi cupiditate.
+              Cumque, veritatis? Pariatur nostrum ab quod quasi fugiat aliquid omnis vel voluptatem eos, voluptas
+              architecto magnam tempore porro recusandae ullam, tenetur, perferendis earum? Corrupti illo repellat
+              accusamus repellendus odio deleniti!
+              Et, repudiandae sequi dolorem natus excepturi esse quaerat voluptas saepe, possimus neque sed quam. Beatae
+              odit asperiores vero blanditiis, laudantium perferendis sapiente, iste numquam aperiam aliquam suscipit
+              maxime dicta et.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>hidden</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  aspect-ratio: 1;
+  width: min(35vw, 400px);
+  height: 10em;
+  outline: var(--border-thick) solid var(--color-sub);
+  overflow: hidden;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-overflow example-overflow--hidden">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores aut vitae quisquam nesciunt, recusandae
+              obcaecati, reiciendis blanditiis debitis repellat porro possimus at deserunt minus officia itaque natus
+              voluptatibus ratione perspiciatis?
+              Maiores voluptatibus labore commodi. Natus cum ab alias totam nemo deleniti suscipit facilis fugiat, fugit
+              odit, excepturi distinctio molestias dolore eaque. Ullam possimus amet ut animi dignissimos impedit
+              eligendi cupiditate.
+              Cumque, veritatis? Pariatur nostrum ab quod quasi fugiat aliquid omnis vel voluptatem eos, voluptas
+              architecto magnam tempore porro recusandae ullam, tenetur, perferendis earum? Corrupti illo repellat
+              accusamus repellendus odio deleniti!
+              Et, repudiandae sequi dolorem natus excepturi esse quaerat voluptas saepe, possimus neque sed quam. Beatae
+              odit asperiores vero blanditiis, laudantium perferendis sapiente, iste numquam aperiam aliquam suscipit
+              maxime dicta et.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>clip</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  aspect-ratio: 1;
+  width: min(35vw, 400px);
+  height: 10em;
+  outline: var(--border-thick) solid var(--color-sub);
+  overflow: clip;
+  overflow-clip-margin: 3em;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-overflow example-overflow--clip">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores aut vitae quisquam nesciunt, recusandae
+              obcaecati, reiciendis blanditiis debitis repellat porro possimus at deserunt minus officia itaque natus
+              voluptatibus ratione perspiciatis?
+              Maiores voluptatibus labore commodi. Natus cum ab alias totam nemo deleniti suscipit facilis fugiat, fugit
+              odit, excepturi distinctio molestias dolore eaque. Ullam possimus amet ut animi dignissimos impedit
+              eligendi cupiditate.
+              Cumque, veritatis? Pariatur nostrum ab quod quasi fugiat aliquid omnis vel voluptatem eos, voluptas
+              architecto magnam tempore porro recusandae ullam, tenetur, perferendis earum? Corrupti illo repellat
+              accusamus repellendus odio deleniti!
+              Et, repudiandae sequi dolorem natus excepturi esse quaerat voluptas saepe, possimus neque sed quam. Beatae
+              odit asperiores vero blanditiis, laudantium perferendis sapiente, iste numquam aperiam aliquam suscipit
+              maxime dicta et.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>scroll</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  aspect-ratio: 1;
+  width: min(35vw, 400px);
+  height: 10em;
+  outline: var(--border-thick) solid var(--color-sub);
+  overflow: scroll;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-overflow example-overflow--scroll">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores aut vitae quisquam nesciunt, recusandae
+              obcaecati, reiciendis blanditiis debitis repellat porro possimus at deserunt minus officia itaque natus
+              voluptatibus ratione perspiciatis?
+              Maiores voluptatibus labore commodi. Natus cum ab alias totam nemo deleniti suscipit facilis fugiat, fugit
+              odit, excepturi distinctio molestias dolore eaque. Ullam possimus amet ut animi dignissimos impedit
+              eligendi cupiditate.
+              Cumque, veritatis? Pariatur nostrum ab quod quasi fugiat aliquid omnis vel voluptatem eos, voluptas
+              architecto magnam tempore porro recusandae ullam, tenetur, perferendis earum? Corrupti illo repellat
+              accusamus repellendus odio deleniti!
+              Et, repudiandae sequi dolorem natus excepturi esse quaerat voluptas saepe, possimus neque sed quam. Beatae
+              odit asperiores vero blanditiis, laudantium perferendis sapiente, iste numquam aperiam aliquam suscipit
+              maxime dicta et.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>auto</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  aspect-ratio: 1;
+  width: min(35vw, 400px);
+  height: 10em;
+  outline: var(--border-thick) solid var(--color-sub);
+  overflow: auto;
+
+  /* auto = scroll only if needed  */
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-overflow example-overflow--auto">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores aut vitae quisquam nesciunt, recusandae
+              obcaecati, reiciendis blanditiis debitis repellat porro possimus at deserunt minus officia itaque natus
+              voluptatibus ratione perspiciatis?
+              Maiores voluptatibus labore commodi. Natus cum ab alias totam nemo deleniti suscipit facilis fugiat, fugit
+              odit, excepturi distinctio molestias dolore eaque. Ullam possimus amet ut animi dignissimos impedit
+              eligendi cupiditate.
+              Cumque, veritatis? Pariatur nostrum ab quod quasi fugiat aliquid omnis vel voluptatem eos, voluptas
+              architecto magnam tempore porro recusandae ullam, tenetur, perferendis earum? Corrupti illo repellat
+              accusamus repellendus odio deleniti!
+              Et, repudiandae sequi dolorem natus excepturi esse quaerat voluptas saepe, possimus neque sed quam. Beatae
+              odit asperiores vero blanditiis, laudantium perferendis sapiente, iste numquam aperiam aliquam suscipit
+              maxime dicta et.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Praktyczne zastosowanie <code class="code">overflow</code></h2>
+        <article>
+          <h3>Element galerii</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;ul class=&quot;example-overflow--2&quot;&gt;
+  &lt;li&gt;1&lt;/li&gt;
+  &lt;li&gt;2&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;4&lt;/li&gt;
+  &lt;li&gt;5&lt;/li&gt;
+  &lt;li&gt;6&lt;/li&gt;
+  &lt;li&gt;7&lt;/li&gt;
+  &lt;li&gt;8&lt;/li&gt;
+  &lt;li&gt;9&lt;/li&gt;
+  &lt;li&gt;10&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <pre class="code code--small code--css">
+.example-overflow--2 {
+  position: relative;
+  overflow-y: hidden;
+}
+
+.example-overflow--2 &gt; ul {
+  scroll-snap-type: x proximity;
+  display: flex;
+  gap: 1em;
+  overflow-x: scroll;
+  list-style-type: none;
+}
+
+.example-overflow--2 &gt; ul &gt; li {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  scroll-snap-align: center;
+  flex: 20% 0 0;
+  font-size: clamp(3rem, 4vw + 1rem, 6rem);
+  text-align: center;
+  background-color: var(--color-accent);
+  color: #fff;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-overflow--2">
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

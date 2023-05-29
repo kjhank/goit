@@ -5,7 +5,6 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: clamp(3rem, 4vw + 1rem, 6rem);
-  font-family: var(--font-a11y);
   text-align: center;
 }
 
