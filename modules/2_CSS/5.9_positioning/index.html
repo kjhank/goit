@@ -15,7 +15,7 @@
       </li>
       <li class="main-navigation__item"><a href="./z-index.html"><code>z-index</code> i kontekst warstwowy</a>
       </li>
-      <li class="main-navigation__item"><a href="./usage.html">overflow</a></li>
+      <li class="main-navigation__item"><a href="./overflow.html"><code>overflow</code></a></li>
     </menu>
   </nav>
   <main>
@@ -133,7 +133,7 @@ figure {
   border-radius: 0.5em;
 }
 
-figure > img {
+figure &gt; img {
   position: absolute;
   inset: 0;
   object-fit: cover;
@@ -142,7 +142,7 @@ figure > img {
   transition: scale var(--transition-slow);
 }
 
-figure > figcaption {
+figure &gt; figcaption {
   position: relative;
   align-self: flex-end;
   width: 100%;
@@ -153,10 +153,9 @@ figure > figcaption {
   text-align: center;
 }
 
-figure:hover > img {
+figure:hover &gt; img {
   scale: 1.05;
 }
-
             </pre>
           </div>
           <div class="example-wrapper">

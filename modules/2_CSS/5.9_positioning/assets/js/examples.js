@@ -3,15 +3,23 @@ const trigger = document.querySelector('.example-button--z-index-increment');
 const reset = document.querySelector('.example-button--z-index-reset');
 
 const handleZIndex = () => {
+  if (!target) return;
+
   const currentZIndex = window.getComputedStyle(target).getPropertyValue('z-index');
 
   target.style.zIndex = String(Number(currentZIndex) + 1);
 }
 
 const resetZIndex = () => {
+  if (!target) return;
+
   target.removeAttribute('style');
 }
 
-trigger.addEventListener('click', handleZIndex);
+if (trigger) {
+  trigger.addEventListener('click', handleZIndex);
+}
 
-reset.addEventListener('click', resetZIndex);
+if (reset) {
+  reset.addEventListener('click', resetZIndex);
+}
