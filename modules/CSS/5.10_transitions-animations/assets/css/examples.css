@@ -133,3 +133,16 @@
   animation-duration: 400ms;
   animation-fill-mode: forwards;
 }
+
+.example-animation--fill-mode-2:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: backwards;
+}
+
+.example-animation--timing-function:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}

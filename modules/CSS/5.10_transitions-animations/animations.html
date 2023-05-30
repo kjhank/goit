@@ -130,7 +130,9 @@ p:hover {
           </div>
           <div class="example-wrapper">
             <p class="example-animation example-animation--name">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae ex.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
             </p>
           </div>
         </article>
@@ -157,7 +159,9 @@ p:hover {
           </div>
           <div class="example-wrapper">
             <p class="example-animation example-animation--duration">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae ex.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
             </p>
           </div>
         </article>
@@ -177,13 +181,72 @@ animation-fill-mode: forwards | backwards | both | none
 }
 
 p:hover {
-  animation: 400ms toRebeccapurple;
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
 }
             </pre>
           </div>
           <div class="example-wrapper">
             <p class="example-animation example-animation--fill-mode">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae ex.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: backwards;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--fill-mode-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-timing-function</code></h2>
+        <pre class="code code--css">
+animation-timing-function: ease | ease-in | ease-out | ease-in-out | linear | step-start | step-end | steps() | cubic-bezier()
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--timing-function">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
             </p>
           </div>
         </article>
