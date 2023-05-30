@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animacje</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Przejścia:
+          <code>transition</code></a>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./animations.html">Animacje</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Animacje</h1>
+      <pre class="code code--css">
+@keyframes &lt;keyframes-name&gt; {
+  &lt;rule-list&gt;
+}
+
+animation: &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt;
+&lt;iteration-count&gt; &lt;direction&gt; &lt;fill-mode&gt; &lt;play-state&gt; &lt;name&gt;
+  | &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt; &lt;name&gt;
+  | &lt;animation&gt;, &lt;animation&gt;
+      </pre>
+      <section>
+        <h2>Przykładowa animacja:</h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes makingRounds {
+  0% {
+    border-radius: 4em;
+    border-end-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
+}
+
+  25% {
+    border-radius: 4em;
+    border-end-start-radius: 1em;
+    translate: calc(50% - 1em) calc(-50% + 1em) 0;
+  }
+
+  50% {
+    border-radius: 4em;
+    border-start-start-radius: 1em;
+    translate: calc(50% - 1em) calc(50% - 1em) 0;
+  }
+
+  75% {
+    border-radius: 4em;
+    border-start-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(50% - 1em) 0;
+  }
+
+  100% {
+    border-radius: 4em;
+    border-end-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
+  }
+}
+
+div {
+  width: 25%;
+  aspect-ratio: 1;
+  border: var(--border-thick) solid var(--color-sub);
+  background-color: var(--color-accent);
+  animation: 2s ease-in 0s infinite normal both running makingRounds;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--1">
+              <div></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Deklaracja animacji: instrukcja (at-rule) <code class="code">@keyframes</code></h2>
+        <pre class="code code--css">
+@keyframes &lt;keyframes-name&gt; {
+  &lt;rule-list&gt;
+}
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est quis ipsa natus asperiores repellat minus
+              incidunt consequuntur ipsum aspernatur voluptatibus, maiores molestiae quae, velit nisi. Autem nostrum
+              sapiente ut magni!
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Użycie animacji: właściwość <code class="code">animation-name</code></h2>
+        <pre class="code code--css">
+animation-name: &lt;string&gt; | &lt;animation-name&gt;, &lt;animation-name&gt;
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation: toRebeccapurple;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--name">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Czas trwania animacji: właściwość <code class="code">animation-duration</code></h2>
+        <pre class="code code--css">
+animation-duration: &lt;time&gt; | &lt;time&gt;, &lt;time&gt;
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name toRebeccapurple;
+  animation-duration: 400ms
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--duration">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Stan na początku i końcu animacji <code class="code">animation-fill-mode</code></h2>
+        <pre class="code code--css">
+animation-fill-mode: forwards | backwards | both | none
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation: 400ms toRebeccapurple;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--fill-mode">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae ex.
+            </p>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

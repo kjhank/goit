@@ -56,7 +56,8 @@ section.iframe-embed > iframe {
   margin-block-start: 1em;
 }
 
-section > p:not([class]) {
+section > p:not([class]),
+.example > p:not([class]) {
   border-inline-start: max(6px, 0.4vw) solid var(--color-accent);
   padding-inline-start: max(12px, 0.8vw);
   font-size: 1.25em;
@@ -75,7 +76,8 @@ section > p > a > sup::after {
   content: ']';
 }
 
-section > p > a:not(:has(sup)) {
+section > p > a:not(:has(sup)),
+.example > p > a {
   text-decoration: underline;
   text-decoration-color: var(--color-main);
 }
@@ -248,7 +250,7 @@ code:has(+ p,
 }
 
 .example-wrapper:has(.example-position) {
-  backdrop-filter: unset;
+  backdrop-filter: unset; /* backdrop-filter creates new stacking contexts */
 }
 
 .example-wrapper--comparison {
@@ -261,6 +263,7 @@ code:has(+ p,
   background-color: white;
 }
 
+.example > p,
 .example > .example-wrapper {
   margin-block-start: 1em;
 }

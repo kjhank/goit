@@ -4,3 +4,41 @@
     stroke: var(--color-main);
   }
 }
+
+@keyframes makingRounds {
+  0% {
+    border-radius: 4em;
+    border-end-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
+}
+
+  25% {
+    border-radius: 4em;
+    border-end-start-radius: 1em;
+    translate: calc(50% - 1em) calc(-50% + 1em) 0;
+  }
+
+  50% {
+    border-radius: 4em;
+    border-start-start-radius: 1em;
+    translate: calc(50% - 1em) calc(50% - 1em) 0;
+  }
+
+  75% {
+    border-radius: 4em;
+    border-start-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(50% - 1em) 0;
+  }
+
+  100% {
+    border-radius: 4em;
+    border-end-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
+  }
+}
+
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
