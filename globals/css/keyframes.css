@@ -1,3 +1,10 @@
+.example {
+  --border-radius-base: 4em;
+  --border-radius-small: calc(var(--border-radius-base) / 4);
+  --offset-positive: calc(50% - 1em);
+  --offset-negative: calc(-50% + 1em);
+}
+
 @keyframes dashColor {
   to {
     stroke-dashoffset: 0;
@@ -7,38 +14,44 @@
 
 @keyframes makingRounds {
   0% {
-    border-radius: 4em;
-    border-end-end-radius: 1em;
-    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
-}
+    border-radius: var(--border-radius-base);
+    border-end-end-radius: var(--border-radius-small);
+    translate: var(--offset-negative) var(--offset-negative) 0;
+  }
 
   25% {
-    border-radius: 4em;
-    border-end-start-radius: 1em;
-    translate: calc(50% - 1em) calc(-50% + 1em) 0;
+    border-radius: var(--border-radius-base);
+    border-end-start-radius: var(--border-radius-small);
+    translate: var(--offset-positive) var(--offset-negative) 0;
   }
 
   50% {
-    border-radius: 4em;
-    border-start-start-radius: 1em;
-    translate: calc(50% - 1em) calc(50% - 1em) 0;
+    border-radius: var(--border-radius-base);
+    border-start-start-radius: var(--border-radius-small);
+    translate: var(--offset-positive) var(--offset-positive) 0;
   }
 
   75% {
-    border-radius: 4em;
-    border-start-end-radius: 1em;
-    translate: calc(-50% + 1em) calc(50% - 1em) 0;
+    border-radius: var(--border-radius-base);
+    border-start-end-radius: var(--border-radius-small);
+    translate: var(--offset-negative) var(--offset-positive) 0;
   }
 
   100% {
-    border-radius: 4em;
-    border-end-end-radius: 1em;
-    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
+    border-radius: var(--border-radius-base);
+    border-end-end-radius: var(--border-radius-small);
+    translate: var(--offset-negative) var(--offset-negative) 0;
   }
 }
 
 @keyframes toRebeccapurple {
   to {
     color: rebeccapurple;
+  }
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
   }
 }

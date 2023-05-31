@@ -11,9 +11,12 @@
 <body>
   <nav class="main-navigation">
     <menu>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Przejścia: <code>transition</code></a>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Przejścia:
+          <code>transition</code></a>
       <li class="main-navigation__item"><a href="./animations.html">Animacje</a>
       </li>
+      <li class="main-navigation__item"><a href="./perspective.html">Perspektywa</a></li>
+      <li class="main-navigation__item"><a href="./2d-transforms.html">Transformacje</a></li>
     </menu>
   </nav>
   <main>
@@ -38,6 +41,7 @@ transition: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transiti
       <section>
         <h2>Podstawowe przejście</h2>
         <article class="example">
+          <h3>Wartość <code>color 4s</code></h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 p {
@@ -264,6 +268,7 @@ div {
 transition-delay?: &lt;time&gt;
         </pre>
         <article class="example">
+          <h2>Wartość <code>1.5s</code></h2>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 p {
@@ -298,6 +303,7 @@ p:hover {
 transition: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transition-timing-function?&gt; &lt;transition-delay?&gt; | &lt;transition&gt;, &lt;transition&gt;
         </pre>
         <article class="example">
+          <h3>Skrócony zapis:</h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 p {

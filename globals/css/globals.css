@@ -63,16 +63,16 @@ section > p:not([class]),
   font-size: 1.25em;
 }
 
-section > p > a > sup {
+ a > sup {
   text-decoration: underline;
   text-decoration-color: var(--color-main);
 }
 
-section > p > a > sup::before {
+a > sup::before {
   content: '[';
 }
 
-section > p > a > sup::after {
+a > sup::after {
   content: ']';
 }
 
@@ -253,7 +253,8 @@ code:has(+ p,
   backdrop-filter: unset; /* backdrop-filter creates new stacking contexts */
 }
 
-.example-wrapper--comparison {
+.example-wrapper--comparison,
+.comparison {
   display: grid;
   grid-template: auto / repeat(2, 1fr);
   gap: 2em;

@@ -15,6 +15,8 @@
           <code>transition</code></a>
       <li class="main-navigation__item main-navigation__item--current"><a href="./animations.html">Animacje</a>
       </li>
+      <li class="main-navigation__item"><a href="./perspective.html">Perspektywa</a></li>
+      <li class="main-navigation__item"><a href="./2d-transforms.html">Transformacje</a></li>
     </menu>
   </nav>
   <main>
@@ -33,6 +35,9 @@ animation: &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt;
       <section>
         <h2>Przykładowa animacja:</h2>
         <article class="example">
+          <h3>Pełna definicja animacji w <code>@keyframes</code> i użycie jej za pomocą shorthandu
+            <code>animation</code>
+          </h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 @keyframes makingRounds {
@@ -91,6 +96,7 @@ div {
 }
         </pre>
         <article class="example">
+          <h3>Deklaracja animacji przez <code>@keyframes</code></h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 @keyframes toRebeccapurple {
@@ -115,6 +121,7 @@ div {
 animation-name: &lt;string&gt; | &lt;animation-name&gt;, &lt;animation-name&gt;
         </pre>
         <article class="example">
+          <h3>Użycie animacji przez <code>animation-name</code></h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 @keyframes toRebeccapurple {
@@ -124,7 +131,7 @@ animation-name: &lt;string&gt; | &lt;animation-name&gt;, &lt;animation-name&gt;
 }
 
 p:hover {
-  animation: toRebeccapurple;
+  animation-name: toRebeccapurple;
 }
             </pre>
           </div>
@@ -143,6 +150,7 @@ p:hover {
 animation-duration: &lt;time&gt; | &lt;time&gt;, &lt;time&gt;
         </pre>
         <article class="example">
+          <h3>Dodanie czasu trwania animacji przez <code>animation-duration</code></h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 @keyframes toRebeccapurple {
@@ -172,6 +180,7 @@ p:hover {
 animation-fill-mode: forwards | backwards | both | none
         </pre>
         <article class="example">
+          <h3>Wartość <code>forwards</code></h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 @keyframes toRebeccapurple {
@@ -196,6 +205,7 @@ p:hover {
           </div>
         </article>
         <article class="example">
+          <h3>Wartość <code>backwards</code></h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 @keyframes toRebeccapurple {
@@ -226,6 +236,7 @@ p:hover {
 animation-timing-function: ease | ease-in | ease-out | ease-in-out | linear | step-start | step-end | steps() | cubic-bezier()
         </pre>
         <article class="example">
+          <h3>Wartość <code>linear</code></h3>
           <div class="code-wrapper">
             <pre class="code code--small code--css">
 @keyframes toRebeccapurple {
@@ -236,7 +247,7 @@ animation-timing-function: ease | ease-in | ease-out | ease-in-out | linear | st
 
 p:hover {
   animation-name: toRebeccapurple;
-  animation-duration: 400ms;
+  animation-duration: 800ms;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -248,6 +259,265 @@ p:hover {
               impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
               ex.
             </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>ease-out</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--timing-function-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-delay</code></h2>
+        <pre class="code code--css">
+animation-delay: &lt;time&gt;
+        </pre>
+        <article class="example">
+          <h3>Opóźnienie animacji wartością <code>1s</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--delay">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-iteration-count</code></h2>
+        <pre class="code code--css">
+animation-iteration-count: &lt;number&gt; | infinite
+        </pre>
+        <article class="example">
+          <h3>Animacja trwająca w nieskończoność: wartość <code>infinite</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--iteration-count">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość dyskretna: <code>3</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 3;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--iteration-count example-animation--iteration-count-2">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-direction</code></h2>
+        <pre class="code code--css">
+animation-direction: normal | reverse | alternate | alternate-reverse
+        </pre>
+        <article class="example">
+          <h3>Wartość <code>alternate</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--direction">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>reverse</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--direction example-animation--direction-2">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>alternate-reverse</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--direction example-animation--direction-3">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-play-state</code></h2>
+        <pre class="code code--css">
+animation-play-state: running | paused
+        </pre>
+        <article class="example">
+          <h3>Wartość <code>paused</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+p:hover {
+  animation-play-state: paused;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--play-state">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Shorthand: właściwość <code class="code">animation</code></h2>
+        <pre class="code code--css">
+animation: &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt;
+&lt;iteration-count&gt; &lt;direction&gt; &lt;fill-mode&gt; &lt;play-state&gt; &lt;name&gt;
+  | &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt; &lt;name&gt;
+  | &lt;animation&gt;, &lt;animation&gt;
+        </pre>
+        <article class="example">
+          <h3>Skrócony zapis</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p {
+  animation: spin 2137ms 2s linear infinite paused;
+}
+
+p:hover {
+  animation-play-state: running;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--shorthand">
+              <p>spin me pls</p>
+            </div>
           </div>
         </article>
       </section>

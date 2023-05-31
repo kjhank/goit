@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perspektywa</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Przejścia:
+          <code>transition</code></a>
+      <li class="main-navigation__item"><a href="./animations.html">Animacje</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./perspective.html">Perspektywa</a></li>
+      <li class="main-navigation__item"><a href="./2d-transforms.html">Transformacje</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Perspektywa</h1>
+      <pre class="code code--css">
+perspective: &lt;length&gt;
+      </pre>
+      <section>
+        <h2>Obroty</h2>
+        <article class="example">
+          <h3>Obrót w osi x o 45°</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+  rotate: x 45deg;
+}
+
+div:last-child {
+  perspective: 320px;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-perspective example-perspective--rotate-x comparison">
+              <div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quam consequuntur voluptas alias
+                  odio ducimus id, ex explicabo quas dolor eum voluptate ea, aut at nesciunt aspernatur non, doloribus
+                  dolores.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Facilis maxime repellat magni cumque amet aut cupiditate, nostrum dolorum repudiandae corporis hic
+                  eum
+                  dicta a iure numquam, mollitia minima! Quaerat voluptatem est vel accusantium doloribus vitae optio,
+                  inventore adipisci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Obrót w osi y o -30°</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+  rotate: y -30deg;
+}
+
+div:last-child {
+  perspective: 320px;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-perspective example-perspective--rotate-y comparison">
+              <div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quam consequuntur voluptas alias
+                  odio ducimus id, ex explicabo quas dolor eum voluptate ea, aut at nesciunt aspernatur non, doloribus
+                  dolores.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Facilis maxime repellat magni cumque amet aut cupiditate, nostrum dolorum repudiandae corporis hic
+                  eum
+                  dicta a iure numquam, mollitia minima! Quaerat voluptatem est vel accusantium doloribus vitae optio,
+                  inventore adipisci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Obrót w osi y o -30° - alternatywny zapis</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+  transform: perspective(320px) rotateY(-30deg);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-perspective example-perspective--rotate-y-2 comparison">
+              <div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quam consequuntur voluptas alias
+                  odio ducimus id, ex explicabo quas dolor eum voluptate ea, aut at nesciunt aspernatur non, doloribus
+                  dolores.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Facilis maxime repellat magni cumque amet aut cupiditate, nostrum dolorum repudiandae corporis hic
+                  eum
+                  dicta a iure numquam, mollitia minima! Quaerat voluptatem est vel accusantium doloribus vitae optio,
+                  inventore adipisci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Obrót w osi z o 23°</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+  rotate: z 23deg;
+}
+
+div:last-child {
+  perspective: 320px;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-perspective example-perspective--rotate-z comparison">
+              <div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quam consequuntur voluptas alias
+                  odio ducimus id, ex explicabo quas dolor eum voluptate ea, aut at nesciunt aspernatur non, doloribus
+                  dolores.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Facilis maxime repellat magni cumque amet aut cupiditate, nostrum dolorum repudiandae corporis hic
+                  eum
+                  dicta a iure numquam, mollitia minima! Quaerat voluptatem est vel accusantium doloribus vitae optio,
+                  inventore adipisci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Przesunięcia</h2>
+        <article class="example">
+          <h3>Przesunięcie w osi x o 50px</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+  translate: 50px 0 0;
+}
+
+div:last-child {
+  perspective: 320px;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-perspective example-perspective--translate-x comparison">
+              <div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quam consequuntur voluptas alias
+                  odio ducimus id, ex explicabo quas dolor eum voluptate ea, aut at nesciunt aspernatur non, doloribus
+                  dolores.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Facilis maxime repellat magni cumque amet aut cupiditate, nostrum dolorum repudiandae corporis hic
+                  eum
+                  dicta a iure numquam, mollitia minima! Quaerat voluptatem est vel accusantium doloribus vitae optio,
+                  inventore adipisci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Przesunięcie w osi y o 50px</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+  translate: 0 50px 0;
+}
+
+div:last-child {
+  perspective: 320px;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-perspective example-perspective--translate-y comparison">
+              <div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quam consequuntur voluptas alias
+                  odio ducimus id, ex explicabo quas dolor eum voluptate ea, aut at nesciunt aspernatur non, doloribus
+                  dolores.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Facilis maxime repellat magni cumque amet aut cupiditate, nostrum dolorum repudiandae corporis hic
+                  eum
+                  dicta a iure numquam, mollitia minima! Quaerat voluptatem est vel accusantium doloribus vitae optio,
+                  inventore adipisci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Przesunięcie w osi z o -100px</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+  translate: 0 0 -100px;
+}
+
+div:last-child {
+  perspective: 320px;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-perspective example-perspective--translate-z comparison">
+              <div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quam consequuntur voluptas alias
+                  odio ducimus id, ex explicabo quas dolor eum voluptate ea, aut at nesciunt aspernatur non, doloribus
+                  dolores.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Facilis maxime repellat magni cumque amet aut cupiditate, nostrum dolorum repudiandae corporis hic
+                  eum
+                  dicta a iure numquam, mollitia minima! Quaerat voluptatem est vel accusantium doloribus vitae optio,
+                  inventore adipisci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

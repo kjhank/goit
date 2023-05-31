@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformacje</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Przejścia:
+          <code>transition</code></a>
+      <li class="main-navigation__item"><a href="./animations.html">Animacje</a>
+      </li>
+      <li class="main-navigation__item"><a href="./perspective.html">Perspektywa</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./2d-transforms.html">Transformacje</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Tramsformacje</h1>
+      <pre class="code code--css">
+translate: &lt;length-percentage&gt; | &lt;translate&gt;, &lt;translate&gt;
+rotate: &lt;angle&gt; | &lt;axis-name&gt; &lt;angle&gt; | &lt;vector&gt; &lt;angle&gt;
+scale: &lt;number&gt; | &lt;percentage&gt; | &lt;scale&gt; &lt;scale&gt; | &lt;scale&gt; &lt;scale&gt; &lt;scale&gt;
+      </pre>
+      <section>
+        <h2>Translacja: właściwość <code class="code">translate</code></h2>
+        <article class="example">
+          <h3>Przesunięcie w osi x</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  translate: 100px 0 0;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--translate-x">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Przesunięcie w osiach x oraz y</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  translate: -50px 50% 0;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--translate-y">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Środkowanie elementu za pomocą <code class="code">position: absolute</code> i właściwości <code
+              class="code">translate</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div {
+  position: relative;
+}
+
+div &gt; p {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50% 0;
+}
+
+/* lub starszy zapis: */
+
+div &gt; p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--translate-center">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Obroty: właściwość <code class="code">rotate</code></h2>
+        <article class="example">
+          <h3>Obrót w osi x</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  rotate: x -77deg;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--rotate-x">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Obrót w osi y</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  rotate: y 46deg;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--rotate-y">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Obrót o 30° wokół zdefiniowanego wektora</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  rotate: 1 2 1 30deg
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--rotate-xyz">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Odchylenie: właściwość <code class="code">transform</code> z wartością <code class="code">skew</code></h2>
+        <article class="example">
+          <h3>Odchylenie w osi x</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  transform: skew(23deg);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--skew-x">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Odchylenie w osi y</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  transform: skew(0, 0.3rad);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--skew-y">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Odchylenie w osiach x oraz y</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div &gt; p {
+  transform: skew(0.1turn, 23deg);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transforms example-transforms--skew-xy">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reiciendis unde qui tempora
+                repellendus temporibus omnis excepturi tempore velit assumenda odio quod, a esse porro, pariatur
+                adipisci enim distinctio? Laudantium!
+                Harum, labore. Eos debitis hic necessitatibus officia culpa repudiandae nihil vel sunt eaque nostrum?
+                Illo accusamus, quasi molestias repudiandae quod sunt numquam explicabo nisi esse ex placeat, a officiis
+                aliquid!
+                Cumque animi quaerat assumenda, voluptatem nobis tenetur consequatur eaque eos dolorum, officiis,
+                reprehenderit alias aperiam! Delectus nam nisi neque optio deserunt ullam, deleniti sapiente obcaecati,
+                iusto doloremque, ut quidem rem?
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">transform-origin</code>: punkt początkowy transformacji</h2>
+        <pre class="code code--css">
+transform-origin: left | center | right | top | bottom | &lt;length-percentage&gt; | &lt;transform-origin&gt; &lt;transform-origin&gt;
+        </pre>
+        <article class="example">
+          <h3>Zmiany punktu początkowego transformacji</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4em;
+  background-image: linear-gradient(var(--color-sub) .1em, transparent .1em), linear-gradient(90deg, var(--color-sub) .1em, transparent .1em);
+  background-size: 2em 2em;
+}
+
+ul p &gt; code {
+  padding: unset;
+  border: unset;
+}
+
+ul &gt; li {
+  width: 8em;
+  background-color: hsl(0 0% 100% / 0.5);
+}
+
+ul &gt; li &gt; p {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: var(--border-default) solid var(--color-accent);
+  background-color: hsl(0 0% 0% / 0.75);
+  rotate: 45deg;
+  text-align: center;
+}
+
+ul &gt; li:nth-child(1) &gt; p {
+  rotate: unset;
+}
+
+ul &gt; li:nth-child(2) &gt; p {
+  transform-origin: 23px;
+}
+
+ul &gt; li:nth-child(3) &gt; p {
+  transform-origin: bottom;
+}
+
+ul &gt; li:nth-child(4) &gt; p {
+  transform-origin: left 10px;
+}
+
+ul &gt; li:nth-child(5) &gt; p {
+  transform-origin: bottom right;
+}
+
+ul &gt; li:nth-child(6) &gt; p {
+  transform-origin: -50px -30px;
+}
+
+ul &gt; li:nth-child(6) &gt; p {
+  transform-origin: top 100%;
+}
+
+            </pre>
+            <pre class="code code--small code--html">
+&lt;div class=&quot;example-wrapper&quot;&gt;
+  &lt;ul class=&quot;example-transforms example-transforms--transform-origin&quot;&gt;
+    &lt;li&gt;
+      &lt;p&gt;control*&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;23px&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;bottom&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;left 10px&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;bottom right&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;-50px -30px&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;top 100%&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <ul class="example-transforms example-transforms--transform-origin">
+              <li>
+                <p><span>control<a href="#footnote-1"><sup>1</sup></a></span></p>
+              </li>
+              <li>
+                <p><code>23px</code></p>
+              </li>
+              <li>
+                <p><code>bottom</code></p>
+              </li>
+              <li>
+                <p><code>left 10px</code></p>
+              </li>
+              <li>
+                <p><code>bottom right</code></p>
+              </li>
+              <li>
+                <p><code>-50px -30px</code></p>
+              </li>
+              <li>
+                <p><code>top 100%</code></p>
+              </li>
+            </ul>
+          </div>
+          <footer class="footnotes">
+            <h2>Przypisy:</h2>
+            <ol>
+              <li id="footnote-1">
+                <p>Control: Brak <code>rotate</code> oraz <code>transform-origin</code></p>
+              </li>
+            </ol>
+          </footer>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>
