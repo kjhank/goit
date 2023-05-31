@@ -188,13 +188,105 @@ p {
       <section>
         <h2>Właściwość <code class="code">position</code> z wartością <code class="code">sticky</code></h2>
         <article class="example">
-          <h3><code>position: stick</code></h3>
+          <h3><code>position: sticky</code></h3>
           <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;ul class=&quot;example-position example-position--sticky&quot;&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Quidem nisi illo culpa accusantium.&lt;/li&gt;
+      &lt;li&gt;Et totam quam incidunt quidem.&lt;/li&gt;
+      &lt;li&gt;Cupiditate harum sequi iusto quos.&lt;/li&gt;
+      &lt;li&gt;Quam repellat nihil nulla quos.&lt;/li&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Quae corrupti maxime recusandae maiores!&lt;/li&gt;
+      &lt;li&gt;Nam culpa illum ad dolorem.&lt;/li&gt;
+      &lt;li&gt;Non autem vel architecto reprehenderit!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Veritatis voluptatem aspernatur dolores odio?&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Suscipit rem sunt ratione dolores!&lt;/li&gt;
+      &lt;li&gt;A, hic! Reiciendis, officia nemo?&lt;/li&gt;
+      &lt;li&gt;Reprehenderit ipsum optio natus totam?&lt;/li&gt;
+      &lt;li&gt;Temporibus tenetur laudantium adipisci! Aperiam.&lt;/li&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Voluptatem expedita asperiores ad animi!&lt;/li&gt;
+      &lt;li&gt;Quisquam porro aliquam vitae est!&lt;/li&gt;
+      &lt;li&gt;Maiores quos laborum odit numquam.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Voluptas dolor odit deserunt ducimus.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Ut non dolores omnis ducimus!&lt;/li&gt;
+      &lt;li&gt;At a alias beatae qui!&lt;/li&gt;
+      &lt;li&gt;Asperiores numquam hic eum nulla.&lt;/li&gt;
+      &lt;li&gt;Unde quisquam asperiores vero fugit?&lt;/li&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Veritatis dolore ex facilis delectus.&lt;/li&gt;
+      &lt;li&gt;Repellendus vel impedit omnis iusto!&lt;/li&gt;
+      &lt;li&gt;Consequuntur nihil accusamus laudantium quam.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Modi consequuntur quisquam minima dolor.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Repudiandae quo dolorum ipsum hic.&lt;/li&gt;
+      &lt;li&gt;Non itaque cupiditate ducimus tempore.&lt;/li&gt;
+      &lt;li&gt;Quibusdam ad quaerat voluptates autem.&lt;/li&gt;
+      &lt;li&gt;Laborum nobis nisi provident ipsum!&lt;/li&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Veritatis dolore ex facilis delectus.&lt;/li&gt;
+      &lt;li&gt;Repellendus vel impedit omnis iusto!&lt;/li&gt;
+      &lt;li&gt;Consequuntur nihil accusamus laudantium quam.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Architecto consectetur repellendus blanditiis consequuntur.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Nesciunt repellat facilis ea minus.&lt;/li&gt;
+      &lt;li&gt;Libero eos impedit at neque?&lt;/li&gt;
+      &lt;li&gt;Voluptates officia esse quam totam.&lt;/li&gt;
+      &lt;li&gt;Dolor tenetur nesciunt maxime reprehenderit.&lt;/li&gt;
+      &lt;li&gt;Lorem ipsum dolor sit amet.&lt;/li&gt;
+      &lt;li&gt;Veritatis dolore ex facilis delectus.&lt;/li&gt;
+      &lt;li&gt;Repellendus vel impedit omnis iusto!&lt;/li&gt;
+      &lt;li&gt;Consequuntur nihil accusamus laudantium quam.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
             <pre class="code code--small code--css">
-p {
-  position: fixed;
-  inset: auto 0 0 auto;
+ul {
+  overflow: scroll;
+  max-height: 20em;
 }
+
+ul > li > p {
+  position: sticky;
+  inset: 0 0 auto 0;
+  background-color: #fff;
+  border-block-end: var(--border-thick) solid var(--color-accent);
+  padding: 0.25em;
+  color: var(--color-accent);
+  font-size: 1.25em;
+}
+
+ul ul {
+  margin: 0.5em;
+  border-inline-start: var(--border-thick) solid var(--color-accent);
+  padding-inline-start: 0.5em;
+  list-style-type: none;
+}
+
             </pre>
           </div>
           <div class="example-wrapper">

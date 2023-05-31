@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animacje</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Przejścia:
+          <code>transition</code></a>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./animations.html">Animacje</a>
+      </li>
+      <li class="main-navigation__item"><a href="./perspective.html">Perspektywa</a></li>
+      <li class="main-navigation__item"><a href="./2d-transforms.html">Transformacje</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Animacje</h1>
+      <pre class="code code--css">
+@keyframes &lt;keyframes-name&gt; {
+  &lt;rule-list&gt;
+}
+
+animation: &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt;
+&lt;iteration-count&gt; &lt;direction&gt; &lt;fill-mode&gt; &lt;play-state&gt; &lt;name&gt;
+  | &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt; &lt;name&gt;
+  | &lt;animation&gt;, &lt;animation&gt;
+      </pre>
+      <section>
+        <h2>Przykładowa animacja:</h2>
+        <article class="example">
+          <h3>Pełna definicja animacji w <code>@keyframes</code> i użycie jej za pomocą shorthandu
+            <code>animation</code>
+          </h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes makingRounds {
+  0% {
+    border-radius: 4em;
+    border-end-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
+}
+
+  25% {
+    border-radius: 4em;
+    border-end-start-radius: 1em;
+    translate: calc(50% - 1em) calc(-50% + 1em) 0;
+  }
+
+  50% {
+    border-radius: 4em;
+    border-start-start-radius: 1em;
+    translate: calc(50% - 1em) calc(50% - 1em) 0;
+  }
+
+  75% {
+    border-radius: 4em;
+    border-start-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(50% - 1em) 0;
+  }
+
+  100% {
+    border-radius: 4em;
+    border-end-end-radius: 1em;
+    translate: calc(-50% + 1em) calc(-50% + 1em) 0;
+  }
+}
+
+div {
+  width: 25%;
+  aspect-ratio: 1;
+  border: var(--border-thick) solid var(--color-sub);
+  background-color: var(--color-accent);
+  animation: 2s ease-in 0s infinite normal both running makingRounds;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--1">
+              <div></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Deklaracja animacji: instrukcja (at-rule) <code class="code">@keyframes</code></h2>
+        <pre class="code code--css">
+@keyframes &lt;keyframes-name&gt; {
+  &lt;rule-list&gt;
+}
+        </pre>
+        <article class="example">
+          <h3>Deklaracja animacji przez <code>@keyframes</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est quis ipsa natus asperiores repellat minus
+              incidunt consequuntur ipsum aspernatur voluptatibus, maiores molestiae quae, velit nisi. Autem nostrum
+              sapiente ut magni!
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Użycie animacji: właściwość <code class="code">animation-name</code></h2>
+        <pre class="code code--css">
+animation-name: &lt;string&gt; | &lt;animation-name&gt;, &lt;animation-name&gt;
+        </pre>
+        <article class="example">
+          <h3>Użycie animacji przez <code>animation-name</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--name">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Czas trwania animacji: właściwość <code class="code">animation-duration</code></h2>
+        <pre class="code code--css">
+animation-duration: &lt;time&gt; | &lt;time&gt;, &lt;time&gt;
+        </pre>
+        <article class="example">
+          <h3>Dodanie czasu trwania animacji przez <code>animation-duration</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name toRebeccapurple;
+  animation-duration: 400ms
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--duration">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Stan na początku i końcu animacji <code class="code">animation-fill-mode</code></h2>
+        <pre class="code code--css">
+animation-fill-mode: forwards | backwards | both | none
+        </pre>
+        <article class="example">
+          <h3>Wartość <code>forwards</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--fill-mode">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>backwards</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: backwards;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--fill-mode-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-timing-function</code></h2>
+        <pre class="code code--css">
+animation-timing-function: ease | ease-in | ease-out | ease-in-out | linear | step-start | step-end | steps() | cubic-bezier()
+        </pre>
+        <article class="example">
+          <h3>Wartość <code>linear</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--timing-function">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>ease-out</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--timing-function-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-delay</code></h2>
+        <pre class="code code--css">
+animation-delay: &lt;time&gt;
+        </pre>
+        <article class="example">
+          <h3>Opóźnienie animacji wartością <code>1s</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes toRebeccapurple {
+  to {
+    color: rebeccapurple;
+  }
+}
+
+p:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-animation example-animation--delay">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dignissimos eos id eligendi ipsum sapiente
+              impedit. Labore expedita aliquam, dolores facilis assumenda provident est quo, earum nemo maxime beatae
+              ex.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-iteration-count</code></h2>
+        <pre class="code code--css">
+animation-iteration-count: &lt;number&gt; | infinite
+        </pre>
+        <article class="example">
+          <h3>Animacja trwająca w nieskończoność: wartość <code>infinite</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--iteration-count">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość dyskretna: <code>3</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 3;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--iteration-count example-animation--iteration-count-2">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-direction</code></h2>
+        <pre class="code code--css">
+animation-direction: normal | reverse | alternate | alternate-reverse
+        </pre>
+        <article class="example">
+          <h3>Wartość <code>alternate</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--direction">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>reverse</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--direction example-animation--direction-2">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>alternate-reverse</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--direction example-animation--direction-3">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">animation-play-state</code></h2>
+        <pre class="code code--css">
+animation-play-state: running | paused
+        </pre>
+        <article class="example">
+          <h3>Wartość <code>paused</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+p:hover {
+  animation-play-state: paused;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--play-state">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Shorthand: właściwość <code class="code">animation</code></h2>
+        <pre class="code code--css">
+animation: &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt;
+&lt;iteration-count&gt; &lt;direction&gt; &lt;fill-mode&gt; &lt;play-state&gt; &lt;name&gt;
+  | &lt;duration&gt; &lt;easing-function&gt; &lt;delay&gt; &lt;name&gt;
+  | &lt;animation&gt;, &lt;animation&gt;
+        </pre>
+        <article class="example">
+          <h3>Skrócony zapis</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+p {
+  animation: spin 2137ms 2s linear infinite paused;
+}
+
+p:hover {
+  animation-play-state: running;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-animation example-animation--shorthand">
+              <p>spin me pls</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

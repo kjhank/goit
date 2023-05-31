@@ -277,10 +277,10 @@
 }
 
 .example-overflow--2 > ul {
-	scroll-snap-type: x proximity;
-	display: flex;
+  scroll-snap-type: x proximity;
+  display: flex;
   gap: 1em;
-	overflow-x: scroll;
+  overflow-x: scroll;
   list-style-type: none;
 }
 
@@ -288,10 +288,56 @@
   display: grid;
   place-items: center;
   aspect-ratio: 1;
-	scroll-snap-align: center;
+  scroll-snap-align: center;
   flex: 20% 0 0;
   font-size: clamp(3rem, 4vw + 1rem, 6rem);
-	text-align: center;
+  text-align: center;
   background-color: var(--color-accent);
   color: #fff;
+}
+
+.example-overflow--3 {
+  aspect-ratio: unset;
+  height: unset;
+  border-radius: 2em;
+  overflow: hidden;
+}
+
+.example-overflow--3 > div > p {
+  padding: 0.5em;
+}
+
+.example-overflow--3 figure {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.example-overflow--3 figure > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: scale 3s;
+}
+
+.example-overflow--3 figure > figcaption {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0.5em;
+  background-color: hsl(0 0% 0% / 0.75);
+  color: #fff;
+  translate: 0 100% 0;
+  transition: translate var(--transition-fast);
+  text-align: center;
+  font-size: 1.75em;
+}
+
+.example-overflow--3 div:hover figcaption {
+  translate: 0;
+}
+
+.example-overflow--3 div:hover img {
+  scale: 1.1;
 }

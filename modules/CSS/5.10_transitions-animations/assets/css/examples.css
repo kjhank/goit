@@ -1,0 +1,385 @@
+.example-transition--1 {
+  color: rebeccapurple;
+  transition: color 4s;
+}
+
+.example-transition--1:hover {
+  color: limegreen;
+}
+
+.example-transition--2 > p:nth-child(1) {
+  transition-property: color;
+}
+
+.example-transition--2 > p:nth-child(2) {
+  transition-property: rotate;
+}
+
+.example-transition--2 > p:nth-child(3) {
+  transition-property: display;
+}
+
+.example-transition--2 > p:nth-child(4) {
+  transition-property: width;
+}
+
+.example-transition--2 > p:nth-child(1):hover {
+  color: var(--color-accent);
+}
+
+.example-transition--2 > p:nth-child(2):hover {
+  rotate: 115deg;
+}
+
+.example-transition--2 > p:nth-child(3):hover {
+  display: none;
+}
+
+.example-transition--2 > p:nth-child(4):hover {
+  width: 50%;
+}
+
+.example-transition--2 > p:nth-child(5):hover {
+  scale: 2;
+  transition-duration: var(--transition-default);
+  /* 400ms */
+}
+
+.example-transition--duration > * {
+  transition-duration: 2.137s;
+}
+
+.example-transition-timing-function > div {
+  width: 25%;
+  aspect-ratio: 1;
+  background-color: var(--color-accent);
+  transition-duration: 3s;
+  transition-property: translate;
+}
+
+.example-transition-timing-function:hover > div {
+  translate: 300% 0 0;
+}
+
+.example-transition-timing-function--linear > div {
+  transition-timing-function: linear;
+}
+
+.example-transition-timing-function--ease-in > div {
+  transition-timing-function: ease-in;
+}
+
+.example-transition-timing-function--ease-out > div {
+  transition-timing-function: ease-out;
+}
+
+.example-transition-timing-function--ease-in-out > div {
+  transition-timing-function: ease-in-out;
+}
+
+.example-transition-timing-function--steps > div {
+  transition-timing-function: steps(10, jump-start);
+}
+
+.example-transition-timing-function--cubic-bezier > div {
+  transition-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.example-transition-delay {
+  color: rebeccapurple;
+  transition-property: color;
+  transition-duration: 200ms;
+  transition-delay: 1.5s;
+}
+
+.example-transition-delay:hover {
+  color: limegreen;
+}
+
+.example-transition-shorthand {
+  color: rebeccapurple;
+  transition: color 200ms ease-in-out 1.5s;
+}
+
+.example-transition-shorthand:hover {
+  color: limegreen;
+}
+
+.example-animation--1 {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.example-animation--1 > div {
+  width: 25%;
+  aspect-ratio: 1;
+  border: var(--border-thick) solid var(--color-sub);
+  background-color: var(--color-accent);
+  animation: 2s ease-in 0s infinite normal both running makingRounds;
+}
+
+.example-animation--name:hover {
+  animation-name: toRebeccapurple;
+}
+
+.example-animation--duration:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+}
+
+.example-animation--fill-mode:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+
+.example-animation--fill-mode-2:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 400ms;
+  animation-fill-mode: backwards;
+}
+
+.example-animation--timing-function:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.example-animation--timing-function-2:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.example-animation--delay:hover {
+  animation-name: toRebeccapurple;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+}
+
+.example-animation--iteration-count {
+  filter: drop-shadow(2em 2em 1em var(--color-accent));
+}
+
+.example-animation--iteration-count > p,
+.example-animation--direction > p,
+.example-animation--play-state > p,
+.example-animation--shorthand > P {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  width: min(300px, 40%);
+  border: var(--border-thick) solid var(--color-main);
+  border-radius: 50%;
+  border-end-end-radius: 5%;
+  padding: 1em;
+  background-color: var(--color-accent);
+  font-weight: 700;
+  font-size: 2em;
+  color: var(--color-main);
+}
+
+.example-animation--iteration-count:hover > p {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.example-animation--iteration-count-2:hover > p {
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+}
+
+.example-animation--direction:hover > p {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.example-animation--direction-2:hover > p {
+  animation-direction: reverse;
+}
+
+.example-animation--direction-3:hover > p {
+  animation-direction: alternate-reverse;
+}
+
+.example-animation--play-state > p {
+  animation-name: spin;
+  animation-duration: 2137ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.example-animation--play-state:hover > p {
+  animation-play-state: paused;
+}
+
+.example-animation--shorthand > p {
+  animation: spin 2137ms 2s linear infinite paused;
+}
+
+.example-animation--shorthand:hover > p {
+  animation-play-state: running;
+}
+
+.example-perspective > div > p {
+  border: var(--border-default) solid var(--color-main);
+  padding: 1em;
+  background-color: var(--color-neutral-bg);
+}
+
+.example-perspective--rotate-x > div > p {
+  rotate: x 45deg;
+}
+
+.example-perspective--rotate-y > div > p {
+  rotate: y -30deg;
+}
+
+.example-perspective--rotate-z > div > p {
+  rotate: z 23deg;
+}
+
+.example-perspective--translate-x > div > p {
+  translate: 50px 0 0;
+}
+
+.example-perspective--translate-y > div > p {
+  translate: 0 50px 0;
+}
+
+.example-perspective--translate-z > div > p {
+  translate: 0 0 -100px;
+}
+
+.example-perspective:not(.example-perspective--rotate-y-2) > div:last-child {
+  perspective: 320px;
+}
+
+
+.example-perspective--rotate-y-2 > div:last-child > p {
+  transform: perspective(320px) rotateY(-30deg);
+}
+
+.example-transforms {
+  border: var(--border-default) solid var(--color-main);
+  padding: 2em;
+  perspective: 666px;
+}
+
+.example-transforms > p {
+  border: var(--border-slim) dotted var(--color-accent);
+  padding: 1em;
+  background: var(--color-neutral-bg);
+}
+
+.example-transforms--translate-x > p {
+  translate: 100px 0 0;
+}
+
+.example-transforms--translate-y > p {
+  translate: -50px 50% 0;
+}
+
+.example-transforms--translate-center {
+  position: relative;
+}
+
+.example-transforms--translate-center > p {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50% 0;
+}
+
+.example-transforms--rotate-x > p {
+  rotate: x -77deg;
+}
+
+.example-transforms--rotate-y > p {
+  rotate: y 46deg;
+}
+
+.example-transforms--rotate-xyz > p {
+  rotate: 2 1 -2 30deg;
+}
+
+.example-transforms--skew-x > p {
+  transform: skew(23deg);
+}
+
+.example-transforms--skew-y > p {
+  transform: skew(0, 0.3rad);
+}
+
+.example-transforms--skew-xy > p {
+  transform: skew(0.1turn, 23deg);
+}
+
+.example-transforms--transform-origin {
+  --grid-base: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4em;
+  background-image: linear-gradient(var(--color-sub) .1em, transparent .1em), linear-gradient(90deg, var(--color-sub) .1em, transparent .1em);
+  background-size: var(--grid-base) var(--grid-base);
+}
+
+.example-transforms--transform-origin p > code {
+  padding: unset;
+  border: unset;
+  background-color: transparent;
+}
+
+.example-transforms--transform-origin > li {
+  aspect-ratio: 1;
+  width: calc(4 * var(--grid-base));
+  background-color: hsl(0 0% 100% / 0.5);
+}
+
+.example-transforms--transform-origin > li > p {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border: var(--border-default) solid var(--color-accent);
+  background-color: hsl(0 0% 0% / 0.75);
+  rotate: 45deg;
+  text-align: center;
+}
+
+.example-transforms--transform-origin > li:nth-child(1) > p {
+  rotate: unset;
+}
+
+.example-transforms--transform-origin > li:nth-child(2) > p {
+  transform-origin: 23px;
+}
+
+.example-transforms--transform-origin > li:nth-child(3) > p {
+  transform-origin: bottom;
+}
+
+.example-transforms--transform-origin > li:nth-child(4) > p {
+  transform-origin: left 10px;
+}
+
+.example-transforms--transform-origin > li:nth-child(5) > p {
+  transform-origin: bottom right;
+}
+
+.example-transforms--transform-origin > li:nth-child(6) > p {
+  transform-origin: -50px -30px;
+}
+
+.example-transforms--transform-origin > li:nth-child(6) > p {
+  transform-origin: top 100%;
+}

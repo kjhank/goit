@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przejścia: `transition`</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Przejścia:
+          <code>transition</code></a>
+      <li class="main-navigation__item"><a href="./animations.html">Animacje</a>
+      </li>
+      <li class="main-navigation__item"><a href="./perspective.html">Perspektywa</a></li>
+      <li class="main-navigation__item"><a href="./2d-transforms.html">Transformacje</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Przejścia: właściwość <code class="code">transition</code></h1>
+      <pre class="code code--css">
+transition: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transition-timing-function?&gt; &lt;transition-delay?&gt; | &lt;transition&gt;, &lt;transition&gt;
+      </pre>
+      <section>
+        <h2>Tranzycje a dostępność</h2>
+        <pre class="code code--small code--css">
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+        </pre>
+      </section>
+      <section>
+        <h2>Podstawowe przejście</h2>
+        <article class="example">
+          <h3>Wartość <code>color 4s</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  color: rebeccapurple;
+  transition: color 4s;
+}
+
+p:hover {
+  color: limegreen;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-transition example-transition--1">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, minima! Enim fugiat vitae illum minus,
+              praesentium labore, temporibus sed earum quos iure tempore eius maiores, nisi porro quia ratione harum.
+              Aperiam quaerat hic dolore vero. Ipsam voluptatum natus beatae aspernatur distinctio architecto, dolor
+              minus. Quidem, vero. Molestias iusto in nulla voluptas dolor assumenda tenetur quaerat? Magnam deserunt
+              est animi fugiat.
+              Optio amet doloribus cupiditate recusandae vel molestias! Non atque commodi minima explicabo saepe ullam
+              illo quisquam autem, impedit quaerat animi maxime laboriosam vitae eius iusto illum et tempore, ad
+              praesentium.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">transition-property</code></h2>
+        <pre class="code code--css">
+transition-property: all | &lt;animatable-property&gt; | none
+          </pre>
+        <article class="example">
+          <h3>Tranzycje pojedynczych właściwości</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div > p:nth-child(1) {
+  transition-property: color;
+}
+
+div > p:nth-child(2) {
+  transition-property: rotate;
+}
+
+div > p:nth-child(3) {
+  transition-property: display; /* ! */
+}
+
+div > p:nth-child(4) {
+  transition-property: width;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transition--2">
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt dicta reiciendis quam? Eum a amet
+                quisquam voluptate non nulla porro velit veniam aliquid rem repellat, omnis dolor obcaecati! Esse,
+                quibusdam!</p>
+              <p>Libero magni molestiae, laudantium velit reiciendis nulla harum adipisci perferendis distinctio
+                corrupti aperiam ipsum consectetur veniam deserunt qui quos eius debitis aliquid. Mollitia sed quos
+                harum ut repudiandae? Ullam, quia?</p>
+              <p>Expedita modi illum iusto corporis ex veniam sint accusamus quos iste ipsam molestiae possimus a,
+                officiis quidem quo eligendi dolorum, quia, distinctio maiores in quibusdam excepturi consequuntur
+                fugiat amet. Sit!</p>
+              <p>Dolorem neque explicabo sit ipsum eum dignissimos iste nostrum tempore ducimus? Mollitia fugiat soluta
+                eum debitis odit aspernatur quae fuga, vel ab assumenda minima quidem tempora voluptates reprehenderit
+                rem laudantium?</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">transition-duration</code></h2>
+        <pre class="code code--css">
+transition-duration: &lt;time&gt;
+
+/* &lt;time&gt;: &lt;number&gt;ms | &lt;number&gt;s */
+        </pre>
+        <article class="example">
+          <h3>Czas trwania tranzycji</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div > * {
+  transition-duration: 2.137s;
+}
+
+div > p:nth-child(5):hover {
+  scale: 2;
+  transition-duration: var(--transition-default); /* 400ms */
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transition--2 example-transition--duration">
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt dicta reiciendis quam? Eum a amet
+                quisquam voluptate non nulla porro velit veniam aliquid rem repellat, omnis dolor obcaecati! Esse,
+                quibusdam!</p>
+              <p>Libero magni molestiae, laudantium velit reiciendis nulla harum adipisci perferendis distinctio
+                corrupti aperiam ipsum consectetur veniam deserunt qui quos eius debitis aliquid. Mollitia sed quos
+                harum ut repudiandae? Ullam, quia?</p>
+              <p>Expedita modi illum iusto corporis ex veniam sint accusamus quos iste ipsam molestiae possimus a,
+                officiis quidem quo eligendi dolorum, quia, distinctio maiores in quibusdam excepturi consequuntur
+                fugiat amet. Sit!</p>
+              <p>Dolorem neque explicabo sit ipsum eum dignissimos iste nostrum tempore ducimus? Mollitia fugiat soluta
+                eum debitis odit aspernatur quae fuga, vel ab assumenda minima quidem tempora voluptates reprehenderit
+                rem laudantium?</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quasi ad quidem sit omnis sed ullam
+                sapiente obcaecati labore in. Nobis porro ducimus expedita quis, quo quod distinctio ab cum.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">transition-timing-function</code></h2>
+        <pre class="code code--css">
+transition-timing-function: ease | ease-in | ease-out | ease-in-out | linear | step-start | step-end | steps() | cubic-bezier()
+        </pre>
+        <article class="example">
+          <h3>Wartość <code>linear</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div {
+  transition-duration: 3s;
+  transition-property: translate;
+  transition-timing-function: linear
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transition-timing-function example-transition-timing-function--linear">
+              <div></div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>ease-in</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div {
+  transition-duration: 3s;
+  transition-property: translate;
+  transition-timing-function: ease-in
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transition-timing-function example-transition-timing-function--ease-in">
+              <div></div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>ease-out</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div {
+  transition-duration: 3s;
+  transition-property: translate;
+  transition-timing-function: ease-out
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transition-timing-function example-transition-timing-function--ease-out">
+              <div></div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>ease-in-out</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div {
+  transition-duration: 3s;
+  transition-property: translate;
+  transition-timing-function: ease-in-out
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transition-timing-function example-transition-timing-function--ease-in-out">
+              <div></div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>steps()</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div {
+  transition-duration: 3s;
+  transition-property: translate;
+  transition-timing-function: steps(10, jump-start);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-transition-timing-function example-transition-timing-function--cubic-bezier">
+              <div></div>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Wartość <code>cubic-bezier()</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+div {
+  transition-duration: 3s;
+  transition-property: translate;
+  transition-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+}
+            </pre>
+          </div>
+          <p>Gotowe krzywe Beziera: <a href="https://easings.net">easings.net</a>.</p>
+          <div class="example-wrapper">
+            <div class="example-transition-timing-function example-transition-timing-function--cubic-bezier">
+              <div></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Właściwość <code class="code">transition-delay</code></h2>
+        <pre class="code code--css">
+transition-delay?: &lt;time&gt;
+        </pre>
+        <article class="example">
+          <h2>Wartość <code>1.5s</code></h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  color: rebeccapurple;
+  transition-property: color;
+  transition-duration: 200ms;
+  transition-delay: 1.5s;
+}
+
+p:hover {
+  color: limegreen;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-transition example-transition-delay">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, minima! Enim fugiat vitae illum minus,
+              praesentium labore, temporibus sed earum quos iure tempore eius maiores, nisi porro quia ratione harum.
+              Aperiam quaerat hic dolore vero. Ipsam voluptatum natus beatae aspernatur distinctio architecto, dolor
+              minus. Quidem, vero. Molestias iusto in nulla voluptas dolor assumenda tenetur quaerat? Magnam deserunt
+              est animi fugiat.
+              Optio amet doloribus cupiditate recusandae vel molestias! Non atque commodi minima explicabo saepe ullam
+              illo quisquam autem, impedit quaerat animi maxime laboriosam vitae eius iusto illum et tempore, ad
+              praesentium.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Shorthand <code class="code">transition</code></h2>
+        <pre class="code code--css">
+transition: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transition-timing-function?&gt; &lt;transition-delay?&gt; | &lt;transition&gt;, &lt;transition&gt;
+        </pre>
+        <article class="example">
+          <h3>Skrócony zapis:</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+p {
+  color: rebeccapurple;
+  transition: color 200ms ease-in-out 1.5s;
+}
+
+p:hover {
+  color: limegreen;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-transition example-transition-shorthand">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, minima! Enim fugiat vitae illum minus,
+              praesentium labore, temporibus sed earum quos iure tempore eius maiores, nisi porro quia ratione harum.
+              Aperiam quaerat hic dolore vero. Ipsam voluptatum natus beatae aspernatur distinctio architecto, dolor
+              minus. Quidem, vero. Molestias iusto in nulla voluptas dolor assumenda tenetur quaerat? Magnam deserunt
+              est animi fugiat.
+              Optio amet doloribus cupiditate recusandae vel molestias! Non atque commodi minima explicabo saepe ullam
+              illo quisquam autem, impedit quaerat animi maxime laboriosam vitae eius iusto illum et tempore, ad
+              praesentium.
+            </p>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>
