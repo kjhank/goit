@@ -127,6 +127,29 @@ div > * {
   transition-duration: 2.137s;
 }
 
+
+div > p:nth-child(1):hover {
+  color: var(--color-accent);
+}
+
+div > p:nth-child(2):hover {
+  rotate: 115deg;
+}
+
+div > p:nth-child(3):hover {
+  display: none;
+}
+
+div > p:nth-child(4):hover {
+  width: 50%;
+}
+
+div > p:nth-child(5):hover {
+  scale: 2;
+  transition-duration: var(--transition-default);
+  /* 400ms */
+}
+
 div > p:nth-child(5):hover {
   scale: 2;
   transition-duration: var(--transition-default); /* 400ms */
@@ -238,7 +261,7 @@ div {
             </pre>
           </div>
           <div class="example-wrapper">
-            <div class="example-transition-timing-function example-transition-timing-function--cubic-bezier">
+            <div class="example-transition-timing-function example-transition-timing-function--steps">
               <div></div>
             </div>
           </div>

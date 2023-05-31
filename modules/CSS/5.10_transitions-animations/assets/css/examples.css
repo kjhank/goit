@@ -169,7 +169,7 @@
 .example-animation--iteration-count > p,
 .example-animation--direction > p,
 .example-animation--play-state > p,
-.example-animation--shorthand > P {
+.example-animation--shorthand > p {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -380,6 +380,6 @@
   transform-origin: -50px -30px;
 }
 
-.example-transforms--transform-origin > li:nth-child(6) > p {
-  transform-origin: top 100%;
+.example-transforms--transform-origin > li:nth-child(7) > p {
+  transform-origin: 100% top;
 }
