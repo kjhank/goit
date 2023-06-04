@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pole wejściowe: &lt;input&gt;</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Element formularza:
+          <code>&lt;form&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./label.html">Etykieta: element
+          <code>&lt;label&gt;</code></a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./input.html">Pole wejściowe: element
+          <code>&lt;input&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./textarea.html">Tekst wielowierszowy: element
+          <code>&lt;textarea&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./select.html">Menu rozwijane: element <code>&lt;select&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./datalist.html">Element autouzupełniania:
+          <code>&lt;datalist&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./grouping.html">Grupowanie:
+          <code>&lt;fieldset&gt;</code> i <code>&lt;legend&gt;</code></a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Pole wejściowe: <code class="code">&lt;input&gt;</code></h1>
+      <pre class="code code--html">
+&lt;input
+  accept=&quot;&lt;MIME | extension | audio/* | video/* | image/* | &lt;accept&gt;, &lt;accept&gt;&gt;&quot;
+  alt=&quot;&lt;string&gt;&quot;
+  autocomplete=&quot;&lt;https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete&gt;&quot;
+  capture?=&quot;environment | user&quot;
+  checked?
+  dirname=&quot;&lt;&lt;name&gt;.dir&gt;&quot;
+  disabled?
+  form=&quot;&lt;string&gt;&quot;
+  formaction=&quot;&lt;url&gt;&quot;
+  formenctype=&quot;application/x-www-form-urlencoded | multipart/form-data |text/plain&quot;
+  formmethod=&quot;get | post | dialog&quot;
+  formnovalidate?
+  formtarget=&quot;_self | _blank | _parent | _top&quot;
+  height=&quot;&lt;length&gt;&quot;
+  list=&quot;&lt;string&gt;&quot;
+  max=&quot;&lt;https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/max&gt;&quot;
+  maxlength=&quot;&lt;number&gt;&quot;
+  min=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/min&quot;
+  minlength=&quot;&lt;number&gt;&quot;
+  multiple?
+  name=&quot;&lt;string&gt;&quot;
+  pattern=&quot;&lt;regex&gt;&quot;
+  placeholder=&quot;&lt;string&gt; | &lt;number&gt;&quot;
+  popovertarget=&quot;&lt;string&gt;&quot;
+  popovertargetaction=&quot;hide | show | toggle&quot;
+  readonly?
+  required?
+  size=&quot;&lt;length&gt;&quot;
+  src=&quot;&lt;image&gt;&quot;
+  step=&quot;&lt;number&gt; | any&quot;
+  type=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types&quot;
+  value=&quot;&lt;string&gt;&quot;
+  width=&quot;&lt;length&gt;&quot;
+/&gt;
+      </pre>
+      <section>
+        <h2>Atrybuty</h2>
+        <dl class="definitions">
+          <dt><code>accept</code></dt>
+          <dd>Przyjmuje listę plików (MIME-type, rozszerzenie itd.), które można dodać przy <code>type="file"</code>.
+          </dd>
+          <dt><code>autocomplete</code></dt>
+          <dd>Nazwa pola dla przeglądarki, żeby wiedziała, co ma podpowiadać. Lista dostępnych nazw: <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">HTML attribute:
+              autocomplete</a>.</dd>
+          <dt><code>checked</code></dt>
+          <dd>W przypadku <code>type="radio"</code> lub <code>type="checkbox"</code> pojawia się, jeśli pole jest
+            zaznaczone.</dd>
+          <dt><code>disabled</code></dt>
+          <dd>Oznacza pole jako nieaktywne.</dd>
+          <dt><code>list</code></dt>
+          <dd>Powiązanie z <code>id</code> elementu <code>datalist</code>, pokazuje podpowiedzi z listy w w/w polu.</dd>
+          <dt><code>min</code> / <code>max</code></dt>
+          <dd>Odpowiednio <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/min">minimalne</a> lub
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/max">maksymalne</a> wartości, w
+            zależności od typu pola.
+          </dd>
+          <dt><code>minlength</code> / <code>maxlength</code></dt>
+          <dd>Odpowiednio minimalna/maksymalna długość (ilość znaków) wartości pola. Raczej unikamy ze względów
+            dostępności.</dd>
+          <dt><code>multiple</code></dt>
+          <dd>W przypadku <code>type="file | email"</code> pozwala podać więcej niż jedną wartość.</dd>
+          <dt><code>name</code></dt>
+          <dd>Unikalna nazwa pola, konieczna przy wysyłaniu formularza na serwer.</dd>
+          <dt><code>pattern</code></dt>
+          <dd><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern">Wyrażenie regularne</a> do
+            walidacji wartości pola.</dd>
+          <dt><code>placeholder</code></dt>
+          <dd>Wartość zastępcza, pokazywana kiedy input jest pusty.</dd>
+          <dt><code>readonly</code></dt>
+          <dd>Blokuje edycję wartości pola.</dd>
+          <dt><code>required</code></dt>
+          <dd>Wskazuje, czy pole jest obowiązkowe.</dd>
+          <dt><code>step</code></dt>
+          <dd>Stopień inkrementacji wartości.</dd>
+          <dt><code>type</code></dt>
+          <dd>Typ pola: <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types</a>.
+          </dd>
+          <dt><code>value</code></dt>
+          <dd><a href="#footnote-1">Wstępna<sup>1</sup></a> wartość pola. Ważne zwłaszcza dla
+            <code>type="checkbox | radio"</code>.
+          </dd>
+        </dl>
+        <footer class="footnotes">
+          <h2>Przypisy:</h2>
+          <ol>
+            <li id="footnote-1">
+              <p>W czystym HTML wartość wstępna, natomiast później - w React itd - wartość bieżąca.</p>
+            </li>
+          </ol>
+        </footer>
+      </section>
+      <section>
+        <h2>Przykładowe inputy</h2>
+        <article class="example">
+          <h2>Podstawowe pola</h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form&quot;&gt;
+  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika&lt;/label&gt;
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Tadeusz Ko&sacute;ciuszko&quot; required /&gt;
+  &lt;label for=&quot;email&quot;&gt;Adres e-mail&lt;/label&gt;
+  &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;akosciuszko@equality-hero.com&quot; required /&gt;
+  &lt;label for=&quot;number&quot;&gt;Liczba&lt;/label&gt;
+  &lt;input type=&quot;number&quot; name=&quot;number&quot; id=&quot;number&quot; placeholder=&quot;23&quot; required/&gt;
+  &lt;label for=&quot;color&quot;&gt;Kolor (hex)&lt;/label&gt;
+  &lt;input type=&quot;color&quot; name=&quot;color&quot; id=&quot;color&quot; required /&gt;
+  &lt;label for=&quot;date&quot;&gt;Lokalna data&lt;/label&gt;
+  &lt;input type=&quot;datetime-local&quot; name=&quot;date&quot; id=&quot;date&quot; required /&gt;
+  &lt;label for=&quot;range&quot;&gt;Od-do&lt;/label&gt;
+  &lt;input max=&quot;23&quot; min=&quot;-4&quot; type=&quot;range&quot; name=&quot;range&quot; id=&quot;range&quot; required /&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Czy?&lt;/legend&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkboxYes&quot; name=&quot;checkbox&quot; value=&quot;Tak&quot; /&gt;
+    &lt;label for=&quot;checkboxYes&quot;&gt;Tak&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkboxNo&quot; name=&quot;checkbox&quot; value=&quot;Nie&quot; /&gt;
+    &lt;label for=&quot;checkboxNo&quot;&gt;Nie&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkboxMaybe&quot; name=&quot;checkbox&quot; value=&quot;By&cacute; mo&zdot;e&quot; /&gt;
+    &lt;label for=&quot;checkboxMaybe&quot;&gt;By&cacute; mo&zdot;e&lt;/label&gt;
+  &lt;/fieldset&gt;
+  &lt;hr /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" method="post" name="example-form">
+              <label for="username">Nazwa użytkownika</label>
+              <input type="text" name="username" id="username" placeholder="Tadeusz Kościuszko" required />
+              <label for="email">Adres e-mail</label>
+              <input type="email" name="email" id="email" placeholder="akosciuszko@equality-hero.com" required />
+              <label for="number">Liczba</label>
+              <input type="number" name="number" id="number" placeholder="23" required/>
+              <label for="date">Lokalna data</label>
+              <input type="datetime-local" name="date" id="date" required />
+              <hr />
+              <label for="color">Kolor (hex)</label>
+              <input type="color" name="color" id="color" required />
+              <label for="range">Od-do</label>
+              <input max="23" min="-4" type="range" name="range" id="range" required />
+              <fieldset>
+                <legend>Czy?</legend>
+                <input type="checkbox" id="checkboxYes" name="checkbox" value="Tak" />
+                <label for="checkboxYes">Tak</label>
+                <input type="checkbox" id="checkboxNo" name="checkbox" value="Nie" />
+                <label for="checkboxNo">Nie</label>
+                <input type="checkbox" id="checkboxMaybe" name="checkbox" value="Być może" />
+                <label for="checkboxMaybe">Być może</label>
+              </fieldset>
+              <hr />
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>

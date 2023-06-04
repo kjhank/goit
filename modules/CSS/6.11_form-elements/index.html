@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Element formularza: &lt;form&gt;</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Element formularza:
+          <code>&lt;form&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./label.html">Etykieta: element <code>&lt;label&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./input.html">Pole wejściowe: element <code>&lt;input&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./textarea.html">Tekst wielowierszowy: element
+          <code>&lt;textarea&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./select.html">Menu rozwijane: element <code>&lt;select&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./datalist.html">Element autouzupełniania:
+          <code>&lt;datalist&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./grouping.html">Grupowanie:
+          <code>&lt;fieldset&gt;</code> i <code>&lt;legend&gt;</code></a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Element formularza: <code class="code">&lt;form&gt;</code></h1>
+      <pre class="code code--html">
+&lt;form
+  accept-charset=&quot;&lt;string&gt;[]&quot;
+  action=&quot;&lt;url&gt;&quot;
+  autocomplete=&quot;off | on&quot;
+  enctype=&quot;application/x-www-form-urlencoded | multipart/form-data | text/plain &quot;
+  method=&quot;get | post | dialog&quot;
+  name=&quot;&lt;string&gt;&quot;
+  novalidate?
+  target=&quot;_self | _blank | _parent | _top&quot;&gt;
+&lt;/form&gt;
+      </pre>
+      <article class="example">
+        <h2>Przykładowy formularz</h2>
+        <div class="code-wrapper">
+          <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form&quot;&gt;
+  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika&lt;/label&gt;
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Tadeusz Kościuszko&quot; required /&gt;
+  &lt;label for=&quot;email&quot;&gt;Adres e-mail&lt;/label&gt;
+  &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;akosciuszko@equality-hero.com&quot; required /&gt;
+  &lt;hr /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+          </pre>
+        </div>
+        <div class="example-wrapper">
+          <form action="#" class="example-form" method="post" name="example-form">
+            <label for="username">Nazwa użytkownika</label>
+            <input type="text" name="username" id="username" placeholder="Tadeusz Kościuszko" required />
+            <label for="email">Adres e-mail</label>
+            <input type="email" name="email" id="email" placeholder="akosciuszko@equality-hero.com" required />
+            <hr />
+            <button type="submit">Wyślij</button>
+          </form>
+        </div>
+      </article>
+      <section>
+        <h2>Atrybuty</h2>
+        <dl class="definitions">
+          <dt><code>accept-charset</code></dt>
+          <dd>Lista akceptowanych przez serwer kodowań znaków. Domyślnie dziedziczy kodowanie od strony</dd>
+          <dt><code>action</code></dt>
+          <dd>Adres, na który ma zostać wysłana zawartość formularza. Ignorowany, jeśli atrybut <code>method</code> ma
+            wartość <code>dialog</code></dd>
+          <dt><code>autocomplete</code></dt>
+          <dd>Wskazuje, czy pola formularza mają być automatycznie wypełnione przez przeglądarkę. Wartość
+            <code>off</code>
+            bywa ignorowana w formularzach logowania: <a
+              href="https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion#the_autocomplete_attribute_and_login_fields">artykuł
+              na MDN</a>.
+          </dd>
+          <dt><code>enctype</code></dt>
+          <dd>Typ <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr>/Content-Type formularza. Działa tylko
+            w
+            przypadku atrybutu <code>method</code> ustawionego na <code>post</code>. Przyjmuje wartości
+            <code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code> (dla formularzy z plikami),
+            <code>text/plain</code> (nieprzydatny dla komputera; przydatny do debugowania formularza)
+          </dd>
+          <dt><code>method</code></dt>
+          <dd>Przyjmuje wartość z metodą HTTP, którą ma być wysłany formularz. <code>post</code> dla metody
+            <code>POST</code>, <code>get</code> dla metody <code>GET</code>. W przypadku ustawienia na
+            <code>dialog</code>, zamyka element <code>&lt;dialog&gt;</code>, w którym jest formularz, wysyła event
+            <code>submit</code>, ale niczego nie wysyła automatycznie ani nie czyści formularza
+          </dd>
+          <dt><code>name</code></dt>
+          <dd>Unikalna nazwa formularza.</dd>
+          <dt><code>novalidate</code></dt>
+          <dd>Określa, czy wartości formularza mają być automatycznie walidowane czy nie.</dd>
+          <dt><code>target</code></dt>
+          <dd>Przyjmuje takie same wartości, jak <code>target</code> przy linkach. Domyślna wartość <code>_self</code>
+            po wysłaniu formularza otworzy tę samą stronę, wartość <code>_blank</code> otworzy nowe okno, etc.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>

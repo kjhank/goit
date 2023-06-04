@@ -1,0 +1,42 @@
+.example-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.example-form hr {
+  width: 60%;
+  border: none;
+  border-block-end: var(--border-default) solid var(--color-main);
+}
+
+.example-form input,
+.example-form button[type="submit"] {
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  outline: var(--border-thick) solid transparent;
+  outline-offset: 0;
+  transition: outline-offset var(--transition-fast),
+    outline var(--transition-fast);
+  accent-color: var(--color-accent);
+}
+
+.example-form input[type="checkbox"] {
+  align-self: flex-start;
+}
+
+.example-form button {
+  cursor: pointer;
+}
+
+.example-form button[type="submit"] {
+  align-self: center;
+}
+
+.example-form input:focus,
+.example-form button:focus,
+.example-form textarea:focus {
+  outline: var(--border-thick) solid var(--color-accent);
+  outline-offset: var(--border-thick);
+}
