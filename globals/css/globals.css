@@ -63,9 +63,14 @@ section > p:not([class]),
   font-size: 1.25em;
 }
 
- a > sup {
+.example:has( > h2 + p) > p {
+  margin-block: 1em;
+}
+
+a > sup {
   text-decoration: underline;
   text-decoration-color: var(--color-main);
+  transition: color var(--transition-default);
 }
 
 a > sup::before {
@@ -77,9 +82,18 @@ a > sup::after {
 }
 
 section > p > a:not(:has(sup)),
-.example > p > a {
+.example > p > a,
+.definitions a:not(:has(sup)) {
   text-decoration: underline;
   text-decoration-color: var(--color-main);
+  transition: color var(--transition-default);
+}
+
+section > p > a:not(:has(sup)):hover,
+.example > p > a:hover,
+.definitions a:not(:has(sup)):hover,
+a:has(sup):hover > sup {
+  color: var(--color-main);
 }
 
 code,
@@ -132,7 +146,6 @@ b {
 }
 
 .code--small {
-  /* width: fit-content; */
   max-width: 100%;
   padding-block: 2em;
   font-size: 1em;
@@ -219,7 +232,8 @@ b {
 .example > h3 > code,
 code:has(+ p,
   + pre,
-  + article) {
+  + article),
+.definitions dt code {
   align-self: flex-start;
   display: inline-block;
   margin-block-start: 2em;
@@ -250,7 +264,8 @@ code:has(+ p,
 }
 
 .example-wrapper:has(.example-position) {
-  backdrop-filter: unset; /* backdrop-filter creates new stacking contexts */
+  backdrop-filter: unset;
+  /* backdrop-filter creates new stacking contexts */
 }
 
 .example-wrapper--comparison,
@@ -298,4 +313,26 @@ code:has(+ p,
 .examples-list > li + li {
   margin-block-start: 1em;
   padding-block-start: 1em;
+}
+
+.definitions dt {
+  font-size: 1.25em;
+}
+
+.definitions dt:not(:first-of-type) {
+  margin-block-start: 1.5em;
+}
+
+.definitions dt > code {
+  margin-block-start: unset;
+}
+
+.definitions > dd {
+  padding-block-start: 0.5em;
+}
+
+.definitions dd,
+.definitions dt {
+  border-inline-start: var(--border-slim) solid var(--color-accent);
+  padding-inline-start: 1rem;
 }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu wyboru: &lt;select&gt;</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Element formularza:
+          <code>&lt;form&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./label.html">Etykieta: element
+          <code>&lt;label&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./input.html">Pole wejściowe: element <code>&lt;input&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./textarea.html">Tekst wielowierszowy:
+          element
+          <code>&lt;textarea&gt;</code></a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./select.html">Menu wyboru: element
+          <code>&lt;select&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./datalist.html">Element podpowiedzi:
+          <code>&lt;datalist&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./grouping.html">Grupowanie:
+          <code>&lt;fieldset&gt;</code> i <code>&lt;legend&gt;</code></a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Menu wyboru: <code class="code">&lt;select&gt;</code>
+      </h1>
+      <pre class="code code--html">
+&lt;select
+  autocomplete=&quot;off | on&quot;
+  autofocus?
+  disabled?
+  form=&quot;&lt;string&gt;&quot;
+  multiple?
+  name=&quot;&lt;string&gt;&quot;
+  required?
+  size=&quot;&lt;number&gt;&quot;
+&gt;
+&lt;option
+  disabled?
+  label="&lt;string&gt;"
+  selected?
+  value=&quot;&lt;string&gt;"
+&gt;
+  some label
+&lt;/option&gt;
+&lt;/select&gt;
+      </pre>
+      <section>
+        <h2>Atrybuty</h2>
+        <section>
+          <h3>Element <code>select</code></h3>
+          <dl class="definitions">
+            <dt><code>autocomplete</code></dt>
+            <dd>Nazwa pola dla przeglądarki, żeby wiedziała, co ma podpowiadać. Lista dostępnych nazw: <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">HTML attribute:
+                autocomplete</a>.</dd>
+            <dt><code>autofocus</code></dt>
+            <dd>Określa, czy pole ma automatycznie dostawać focus po załadowaniu</dd>
+            <dt><code>disabled</code></dt>
+            <dd>Oznacza pole jako nieaktywne.</dd>
+            <dt><code>form</code></dt>
+            <dt><code>multiple</code></dt>
+            <dd>Określa, czy można wybrać więcej niż jedną wartość.</dd>
+            <dd>Powiązanie z <code>id</code> elementu <code>form</code>.</dd>
+            <dt><code>name</code></dt>
+            <dd>Unikalna nazwa pola, konieczna przy wysyłaniu formularza na serwer.</dd>
+            <dt><code>required</code></dt>
+            <dd>Wskazuje, czy pole jest obowiązkowe.</dd>
+            <dt><code>size</code></dt>
+            <dd>Określa rozmiar w liniach tekstu</dd>
+          </dl>
+        </section>
+        <section>
+          <h3>Element <code>option</code></h3>
+          <dl class="definitions">
+            <dt><code>disabled</code></dt>
+            <dd>Oznacza pole jako nieaktywne.</dd>
+            <dt><code>label</code></dt>
+            <dd>Opisuje wartość</dd>
+            <dt><code>selected</code></dt>
+            <dd>Określa, czy element jest domyślnie zaznaczony.</dd>
+            <dt><code>value</code></dt>
+            <dd>Wartość</dd>
+          </dl>
+        </section>
+        <article class="example">
+          <h2>Formularz z <code>select</code>em</h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form&quot;&gt;
+  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika&lt;/label&gt;
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Tadeusz Ko&sacute;ciuszko&quot; required /&gt;
+  &lt;label for=&quot;textarea&quot;&gt;Wypracowanie&lt;/label&gt;
+  &lt;textarea cols=&quot;80&quot; name=&quot;textarea&quot; id=&quot;textarea&quot; placeholder=&quot;A long time ago etc.&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+  &lt;hr /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" method="post" name="example-form">
+              <div class="comparison">
+                <div>
+                  <label for="favoriteColors">Ulubione systemy kolorów</label>
+                  <select multiple name="favoriteColors" id="favoriteColors">
+                    <option selected value="hsl">HSL</option>
+                    <option value="lch">LCH</option>
+                    <option value="hex">Hex</option>
+                    <option value="rgb">RGB</option>
+                    <option disabled value="name">Nazwa</option>
+                  </select>
+                </div>
+                <div><label for="favoriteFranchise">Ulubione uniwersum filmów itd.</label>
+                  <select name="favoriteFranchise" id="favoriteFranchise" required>
+                    <option value="">?</option>
+                    <option value="Star Wars">Gwiezdne Wojny</option>
+                    <option value="DC">DC Comics</option>
+                    <option disabled value="Twilight">Zmierzch/50 Twarzy Graya</option>
+                    <option value="Unbreakable">Unbreakable, Split, Glass</option>
+                    <option value="Marvel">Marvel</option>
+                  </select>
+                </div>
+              </div>
+              <label for="favoriteMonth">Ulubiony miesiąc</label>
+                <select name="favoriteMonth" id="favoriteMonth">
+                  <optgroup label="lato">
+                    <option value="june">czerwiec</option>
+                    <option value="july">lipiec</option>
+                    <option value="august">sierpień</option>
+                  </optgroup>
+
+                  <optgroup label="jesień">
+                    <option value="september">wrzesień</option>
+                    <option value="october">październik</option>
+                    <option value="november">listopad</option>
+                  </optgroup>
+                </select>
+              <hr />
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>

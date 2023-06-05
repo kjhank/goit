@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etykieta: &lt;label&gt;</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Element formularza:
+          <code>&lt;form&gt;</code></a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./label.html">Etykieta: element
+          <code>&lt;label&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./input.html">Pole wejściowe: element <code>&lt;input&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./textarea.html">Tekst wielowierszowy: element
+          <code>&lt;textarea&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./select.html">Menu wyboru: element <code>&lt;select&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./datalist.html">Element podpowiedzi:
+          <code>&lt;datalist&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./grouping.html">Grupowanie:
+          <code>&lt;fieldset&gt;</code> i <code>&lt;legend&gt;</code></a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Element etykiety: <code class="code">&lt;label&gt;</code></h1>
+      <pre class="code code--html">
+&lt;label for=&quot;&lt;string&gt;&quot;&gt;&lt;/label&gt;
+      </pre>
+      <section>
+        <h2>Atrybuty</h2>
+        <dl class="definitions">
+          <dt><code>for</code></dt>
+          <dd>Łączy etykietę z elementem wejściowym (<code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code> itd),
+            pozwalając łatwo zidentyfikować, jakiego pola dotyczy. Wymagany, jeśli element wejściowy nie jest potomkiem
+            elementu etykiety.</dd>
+        </dl>
+        <article class="example">
+          <h2>Powiązanie etykiety z inputem</h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form&gt;
+  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika&lt;/label&gt;
+  &lt;input id=&quot;username&quot; /&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" method="post" name="example-form">
+              <label for="username">Nazwa użytkownika</label>
+              <input id="username" />
+            </form>
+          </div>
+        </article>
+        <article class="example">
+          <h2>Powiązanie etykiety przez zagnieżdżenie</h2>
+          <p>Lepiej robić to za pomocą atrybutu <code>for</code> - niektóre technologie asystujące mają problemy z
+            czytaniem inputów zagnieżdżonych w labelach bez <code>for</code>.</p>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form-nested&quot;&gt;
+  &lt;label&gt; &lt;!-- mo&zdot;na unikn&aogon;&cacute; atrybutu &grave;for&grave; --&gt;
+    Nazwa u&zdot;ytkownika &lt;br /&gt;
+    &lt;input id=&quot;name&quot; /&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" method="post" name="example-form-nested">
+              <label>
+                Nazwa użytkownika <br />
+                <input id="name" />
+              </label>
+            </form>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>

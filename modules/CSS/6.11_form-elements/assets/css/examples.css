@@ -1,0 +1,106 @@
+.example-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.example-form hr {
+  width: 60%;
+  border: none;
+  border-block-end: var(--border-default) solid var(--color-main);
+}
+
+.example-form input,
+.example-form textarea,
+.example-form select,
+.example-form fieldset,
+.example-form button[type="submit"] {
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  outline: var(--border-default) solid transparent;
+  outline-offset: 0;
+  transition: outline-offset var(--transition-fast),
+    outline var(--transition-fast);
+  accent-color: var(--color-accent);
+}
+
+.example-form input[type="checkbox"],
+.example-form input[type="radio"] {
+  align-self: flex-start;
+}
+
+.example-form input[type="checkbox"] + label,
+.example-form input[type="radio"] + label{
+  transition: color var(--transition-fast);
+}
+
+.example-form button {
+  cursor: pointer;
+}
+
+.example-form textarea,
+.example-form select,
+.example-form fieldset {
+  align-self: flex-start;
+}
+
+.example-form select[multiple] {
+  width: min(20ch, 150px);
+  padding: 0.5em;
+}
+
+
+.example-form button[type="submit"] {
+  align-self: center;
+  transition: filter var(--transition-default),
+    outline-offset var(--transition-fast),
+    outline var(--transition-fast);
+}
+
+.example-form button[type="submit"]:hover {
+  filter: drop-shadow(0 0 0.5em var(--color-accent));
+}
+
+.example-form input:focus,
+.example-form textarea:focus,
+.example-form select:focus,
+.example-form button:focus,
+.example-form textarea:focus {
+  outline: var(--border-default) solid var(--color-accent);
+  outline-offset: var(--border-default);
+}
+
+.example-form .comparison > div:not([role="group"]) > label {
+  display: block;
+  margin-block-end: 1em;
+}
+
+.example-form div[role="group"] {
+  border: var(--border-default) dotted var(--color-sub);
+  border-radius: 2em 0.4em;
+  padding: 1em;
+  background-color: hsl(0 0% 100% / 0.1);
+}
+
+.example-form div[role="group"] h3 {
+  width: 100%;
+}
+
+.example-form fieldset {
+  border: var(--border-slim) solid var(--color-main);
+  transition: border-color var(--transition-fast)
+}
+
+.example-form fieldset:has(:focus) {
+  border-color: var(--color-accent);
+}
+
+.example-form legend {
+  margin-inline: auto;
+  padding-inline: 0.5em;
+}
+
+input:checked + label {
+  color: var(--color-accent);
+}

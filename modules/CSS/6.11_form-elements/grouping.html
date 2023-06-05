@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupowanie</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Element formularza:
+          <code>&lt;form&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./label.html">Etykieta: element
+          <code>&lt;label&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./input.html">Pole wejściowe: element <code>&lt;input&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./textarea.html">Tekst wielowierszowy: element
+          <code>&lt;textarea&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./select.html">Menu wyboru: element <code>&lt;select&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./datalist.html">Element podpowiedzi:
+          <code>&lt;datalist&gt;</code></a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./grouping.html">Grupowanie:
+          <code>&lt;fieldset&gt;</code> i <code>&lt;legend&gt;</code></a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Grupowanie: <code class="code">&lt;fieldset&gt;</code> i <code class="code">&lt;legend&gt;</code>
+      </h1>
+      <pre class="code code--html">
+&lt;fieldset
+  disabled?
+  form=&quot;&lt;string&gt;&quot;
+  name=&quot;&lt;string&gt;&quot;
+&gt;
+  &lt;!-- inputs, labels, etc. --&gt;
+&lt;/fieldset&gt;
+      </pre>
+      <section>
+        <h2>Atrybuty elementu <code class="code">fieldset</code></h2>
+        <dl class="definitions">
+          <dt><code>disabled</code></dt>
+          <dd>Oznacza pole jako nieaktywne.</dd>
+          <dt><code>form</code></dt>
+          <dd>Powiązanie z <code>id</code> elementu <code>form</code>.</dd>
+          <dt><code>name</code></dt>
+          <dd>Unikalna nazwa grupy.</dd>
+        </dl>
+        <article class="example">
+          <h2><code class="code">fieldset</code> z radio-inputami</h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form&quot;&gt;
+  &lt;div class=&quot;comparison&quot;&gt;
+    &lt;fieldset&gt;
+      &lt;legend&gt;Ulubiony potw&oacute;r&lt;/legend&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;kraken&quot; name=&quot;monster&quot; value=&quot;K&quot;&gt;
+      &lt;label for=&quot;kraken&quot;&gt;Kraken&lt;/label&gt;&lt;br /&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;sasquatch&quot; name=&quot;monster&quot; value=&quot;S&quot;&gt;
+      &lt;label for=&quot;sasquatch&quot;&gt;Sasquatch&lt;/label&gt;&lt;br /&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;mothman&quot; name=&quot;monster&quot; value=&quot;M&quot;&gt;
+      &lt;label for=&quot;mothman&quot;&gt;Mothman&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset&gt;
+      &lt;legend&gt;Czy?&lt;/legend&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;checkboxYes&quot; name=&quot;checkbox&quot; value=&quot;Tak&quot; /&gt;
+      &lt;label for=&quot;checkboxYes&quot;&gt;Tak&lt;/label&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;checkboxNo&quot; name=&quot;checkbox&quot; value=&quot;Nie&quot; /&gt;
+      &lt;label for=&quot;checkboxNo&quot;&gt;Nie&lt;/label&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;checkboxMaybe&quot; name=&quot;checkbox&quot; value=&quot;By&cacute; mo&zdot;e&quot; /&gt;
+      &lt;label for=&quot;checkboxMaybe&quot;&gt;By&cacute; mo&zdot;e&lt;/label&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" method="post" name="example-form">
+              <div class="comparison">
+                <fieldset>
+                  <legend>Ulubiony potwór</legend>
+                  <input type="radio" id="kraken" name="monster" value="K">
+                  <label for="kraken">Kraken</label><br />
+                  <input type="radio" id="sasquatch" name="monster" value="S">
+                  <label for="sasquatch">Sasquatch</label><br />
+                  <input type="radio" id="mothman" name="monster" value="M">
+                  <label for="mothman">Mothman</label>
+                </fieldset>
+                <fieldset>
+                  <legend>Czy?</legend>
+                  <input type="checkbox" id="checkboxYes" name="checkbox" value="Tak" />
+                  <label for="checkboxYes">Tak</label>
+                  <input type="checkbox" id="checkboxNo" name="checkbox" value="Nie" />
+                  <label for="checkboxNo">Nie</label>
+                  <input type="checkbox" id="checkboxMaybe" name="checkbox" value="Być może" />
+                  <label for="checkboxMaybe">Być może</label>
+                </fieldset>
+              </div>
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Grupowanie z własnym stylowaniem</h2>
+        <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form-2&quot;&gt;
+  &lt;div class=&quot;comparison&quot;&gt;
+    &lt;div aria-labelledby=&quot;monster-heading&quot; role=&quot;group&quot;&gt;
+      &lt;h3 id=&quot;monster-heading&quot;&gt;Ulubiony potw&oacute;r&lt;/h3&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;kraken2&quot; name=&quot;monster&quot; value=&quot;K&quot;&gt;
+      &lt;label for=&quot;kraken2&quot;&gt;Kraken&lt;/label&gt;&lt;br /&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;sasquatch2&quot; name=&quot;monster&quot; value=&quot;S&quot;&gt;
+      &lt;label for=&quot;sasquatch2&quot;&gt;Sasquatch&lt;/label&gt;&lt;br /&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;mothman2&quot; name=&quot;monster&quot; value=&quot;M&quot;&gt;
+      &lt;label for=&quot;mothman2&quot;&gt;Mothman&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div aria-labelledby=&quot;checkboxes-heading&quot; role=&quot;group&quot;&gt;
+      &lt;h3 id=&quot;checkboxes-heading&quot;&gt;Czy?&lt;/h3&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;checkboxYes2&quot; name=&quot;checkbox&quot; value=&quot;Tak&quot; /&gt;
+      &lt;label for=&quot;checkboxYes2&quot;&gt;Tak&lt;/label&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;checkboxNo2&quot; name=&quot;checkbox&quot; value=&quot;Nie&quot; /&gt;
+      &lt;label for=&quot;checkboxNo2&quot;&gt;Nie&lt;/label&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;checkboxMaybe2&quot; name=&quot;checkbox&quot; value=&quot;By&cacute; mo&zdot;e&quot; /&gt;
+      &lt;label for=&quot;checkboxMaybe2&quot;&gt;By&cacute; mo&zdot;e&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+        </pre>
+        <div class="example-wrapper">
+          <form action="#" class="example-form" method="post" name="example-form-2">
+            <div class="comparison">
+              <div aria-labelledby="monster-heading" role="group">
+                <h3 id="monster-heading">Ulubiony potwór</h3>
+                <input type="radio" id="kraken2" name="monster" value="K">
+                <label for="kraken2">Kraken</label><br />
+                <input type="radio" id="sasquatch2" name="monster" value="S">
+                <label for="sasquatch2">Sasquatch</label><br />
+                <input type="radio" id="mothman2" name="monster" value="M">
+                <label for="mothman2">Mothman</label>
+              </div>
+              <div aria-labelledby="checkboxes-heading" role="group">
+                <h3 id="checkboxes-heading">Czy?</h3>
+                <input type="checkbox" id="checkboxYes2" name="checkbox" value="Tak" />
+                <label for="checkboxYes2">Tak</label>
+                <input type="checkbox" id="checkboxNo2" name="checkbox" value="Nie" />
+                <label for="checkboxNo2">Nie</label>
+                <input type="checkbox" id="checkboxMaybe2" name="checkbox" value="Być może" />
+                <label for="checkboxMaybe2">Być może</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>
