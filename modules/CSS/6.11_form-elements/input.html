@@ -23,9 +23,9 @@
       <li class="main-navigation__item"><a href="./textarea.html">Tekst wielowierszowy: element
           <code>&lt;textarea&gt;</code></a>
       </li>
-      <li class="main-navigation__item"><a href="./select.html">Menu rozwijane: element <code>&lt;select&gt;</code></a>
+      <li class="main-navigation__item"><a href="./select.html">Menu wyboru: element <code>&lt;select&gt;</code></a>
       </li>
-      <li class="main-navigation__item"><a href="./datalist.html">Element autouzupełniania:
+      <li class="main-navigation__item"><a href="./datalist.html">Element podpowiedzi:
           <code>&lt;datalist&gt;</code></a>
       </li>
       <li class="main-navigation__item"><a href="./grouping.html">Grupowanie:
@@ -144,12 +144,13 @@
   &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;akosciuszko@equality-hero.com&quot; required /&gt;
   &lt;label for=&quot;number&quot;&gt;Liczba&lt;/label&gt;
   &lt;input type=&quot;number&quot; name=&quot;number&quot; id=&quot;number&quot; placeholder=&quot;23&quot; required/&gt;
-  &lt;label for=&quot;color&quot;&gt;Kolor (hex)&lt;/label&gt;
-  &lt;input type=&quot;color&quot; name=&quot;color&quot; id=&quot;color&quot; required /&gt;
   &lt;label for=&quot;date&quot;&gt;Lokalna data&lt;/label&gt;
   &lt;input type=&quot;datetime-local&quot; name=&quot;date&quot; id=&quot;date&quot; required /&gt;
+  &lt;hr /&gt;
+  &lt;label for=&quot;color&quot;&gt;Kolor (hex)&lt;/label&gt;
+  &lt;input type=&quot;color&quot; name=&quot;color&quot; id=&quot;color&quot; /&gt;
   &lt;label for=&quot;range&quot;&gt;Od-do&lt;/label&gt;
-  &lt;input max=&quot;23&quot; min=&quot;-4&quot; type=&quot;range&quot; name=&quot;range&quot; id=&quot;range&quot; required /&gt;
+  &lt;input max=&quot;23&quot; min=&quot;-4&quot; type=&quot;range&quot; name=&quot;range&quot; id=&quot;range&quot; /&gt;
   &lt;fieldset&gt;
     &lt;legend&gt;Czy?&lt;/legend&gt;
     &lt;input type=&quot;checkbox&quot; id=&quot;checkboxYes&quot; name=&quot;checkbox&quot; value=&quot;Tak&quot; /&gt;
@@ -176,9 +177,9 @@
               <input type="datetime-local" name="date" id="date" required />
               <hr />
               <label for="color">Kolor (hex)</label>
-              <input type="color" name="color" id="color" required />
+              <input type="color" name="color" id="color" />
               <label for="range">Od-do</label>
-              <input max="23" min="-4" type="range" name="range" id="range" required />
+              <input max="23" min="-4" type="range" name="range" id="range" />
               <fieldset>
                 <legend>Czy?</legend>
                 <input type="checkbox" id="checkboxYes" name="checkbox" value="Tak" />

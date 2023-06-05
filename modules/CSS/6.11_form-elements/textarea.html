@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&lt;textarea&gt;</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Element formularza:
+          <code>&lt;form&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./label.html">Etykieta: element
+          <code>&lt;label&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./input.html">Pole wejściowe: element <code>&lt;input&gt;</code></a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./textarea.html">Tekst wielowierszowy:
+          element
+          <code>&lt;textarea&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./select.html">Menu wyboru: element <code>&lt;select&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./datalist.html">Element podpowiedzi:
+          <code>&lt;datalist&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./grouping.html">Grupowanie:
+          <code>&lt;fieldset&gt;</code> i <code>&lt;legend&gt;</code></a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Tekst wielowierszowy: element
+        <code class="code">&lt;textarea&gt;</code>
+      </h1>
+      <pre class="code code--html">
+&lt;textarea
+  autocomplete=&quot;off | on&quot;
+  autofocus?
+  cols=&quot;&lt;number&gt;&quot;
+  disabled?
+  form=&quot;&lt;string&gt;&quot;
+  maxlength=&quot;&lt;number&gt;&quot;
+  minlength=&quot;&lt;number&gt;&quot;
+  name=&quot;&lt;string&gt;&quot;
+  placeholder=&quot;&lt;string&gt;&quot;
+  readonly?
+  required?
+  rows=&quot;&lt;number&gt;&quot;
+  spellcheck=&quot;true | default | false&quot;
+  wrap=&quot;hard | soft&quot;
+&gt;
+  Some default value
+&lt;/textarea&gt;
+      </pre>
+      <section>
+        <h2>Atrybuty</h2>
+        <dl class="definitions">
+          <dt><code>autocomplete</code></dt>
+          <dd>Nazwa pola dla przeglądarki, żeby wiedziała, co ma podpowiadać. Lista dostępnych nazw: <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">HTML attribute:
+              autocomplete</a>.</dd>
+          <dt><code>autofocus</code></dt>
+          <dd>Określa, czy pole ma automatycznie dostawać focus po załadowaniu</dd>
+          <dt><code>cols</code></dt>
+          <dd>Liczba kolumn tekstu</dd>
+          <dt><code>disabled</code></dt>
+          <dd>Oznacza pole jako nieaktywne.</dd>
+          <dt><code>form</code></dt>
+          <dd>Powiązanie z <code>id</code> elementu <code>form</code>.</dd>
+          <dt><code>minlength</code> / <code>maxlength</code></dt>
+          <dd>Odpowiednio minimalna/maksymalna długość (ilość znaków) wartości pola. Raczej unikamy ze względów
+            dostępności.</dd>
+          <dt><code>name</code></dt>
+          <dd>Unikalna nazwa pola, konieczna przy wysyłaniu formularza na serwer.</dd>
+          <dt><code>placeholder</code></dt>
+          <dd>Wartość zastępcza, pokazywana kiedy input jest pusty.</dd>
+          <dt><code>readonly</code></dt>
+          <dd>Blokuje edycję wartości pola.</dd>
+          <dt><code>required</code></dt>
+          <dd>Wskazuje, czy pole jest obowiązkowe.</dd>
+          <dt><code>rows</code></dt>
+          <dd>Liczba rzędów tekstu</dd>
+          <dt><code>spellcheck</code></dt>
+          <dd>Określa, czy zawartość ma być sprawdzana pod względem poprawności językowej</dd>
+          <dt><code>wrap</code></dt>
+          <dd>Określa sposób łamania wierszy tekstu</dd>
+        </dl>
+        <article class="example">
+          <h2>Formularz z <code>textarea</code> i inputem</h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form&quot;&gt;
+  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika&lt;/label&gt;
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Tadeusz Ko&sacute;ciuszko&quot; required /&gt;
+  &lt;label for=&quot;textarea&quot;&gt;Wypracowanie&lt;/label&gt;
+  &lt;textarea cols=&quot;80&quot; name=&quot;textarea&quot; id=&quot;textarea&quot; placeholder=&quot;A long time ago etc.&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+  &lt;hr /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" method="post" name="example-form">
+              <label for="username">Nazwa użytkownika</label>
+              <input type="text" name="username" id="username" placeholder="Tadeusz Kościuszko" required />
+              <label for="textarea">Wypracowanie</label>
+              <textarea cols="80" name="textarea" id="textarea" placeholder="A long time ago etc." rows="10"></textarea>
+              <hr />
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>

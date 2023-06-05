@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podpowiedź: &lt;datalist&gt;</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Element formularza:
+          <code>&lt;form&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./label.html">Etykieta: element
+          <code>&lt;label&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./input.html">Pole wejściowe: element <code>&lt;input&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./textarea.html">Tekst wielowierszowy: element
+          <code>&lt;textarea&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./select.html">Menu wyboru: element <code>&lt;select&gt;</code></a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./datalist.html">Element podpowiedzi:
+          <code>&lt;datalist&gt;</code></a>
+      </li>
+      <li class="main-navigation__item"><a href="./grouping.html">Grupowanie:
+          <code>&lt;fieldset&gt;</code> i <code>&lt;legend&gt;</code></a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Element podpowiedzi: <code class="code">&lt;datalist&gt;</code></h1>
+      <pre class="code code--html">
+&lt;datalist&gt;
+  &lt;option
+    disabled?
+    label="&lt;string&gt;"
+    selected?
+    value=&quot;&lt;string&gt;"
+  &gt;
+    some label
+  &lt;/option&gt;
+&lt;/datalist&gt;
+      </pre>
+      <section>
+        <h2><code class="code">datalist</code></h2>
+        <article class="example">
+          <h2>Podpowiedzi z <code>datalist</code> w inpucie</h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form&quot;&gt;
+  &lt;label for=&quot;myBrowser&quot;&gt;Ulubiona przegl&aogon;darka&lt;/label&gt;
+  &lt;input list=&quot;browsers&quot; id=&quot;myBrowser&quot; name=&quot;myBrowser&quot; required /&gt;
+  &lt;datalist id=&quot;browsers&quot;&gt;
+    &lt;option value=&quot;chrome&quot;&gt;Google Chrome&lt;/option&gt;
+    &lt;option value=&quot;firefox&quot;&gt;Mozilla Firefox&lt;/option&gt;
+    &lt;option value=&quot;lynx&quot;&gt;Lynx&lt;/option&gt;
+    &lt;option value=&quot;edge&quot;&gt;Microsoft Edge&lt;/option&gt;
+    &lt;option value=&quot;opera&quot;&gt;Opera&lt;/option&gt;
+    &lt;option value=&quot;safari&quot;&gt;Safari&lt;/option&gt;
+    &lt;option value=&quot;vivaldi&quot;&gt;Vivaldi&lt;/option&gt;
+  &lt;/datalist&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" method="post" name="example-form">
+              <label for="myBrowser">Ulubiona przeglądarka</label>
+              <input list="browsers" id="myBrowser" name="myBrowser" required />
+              <datalist id="browsers">
+                <option value="chrome">Google Chrome</option>
+                <option value="firefox">Mozilla Firefox</option>
+                <option value="lynx">Lynx</option>
+                <option value="edge">Microsoft Edge</option>
+                <option value="opera">Opera</option>
+                <option value="safari">Safari</option>
+                <option value="vivaldi">Vivaldi</option>
+              </datalist>
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>
