@@ -102,10 +102,42 @@
           <div class="code-wrapper">
             <pre class="code code--small code--html">
 &lt;form action=&quot;#&quot; class=&quot;example-form&quot; method=&quot;post&quot; name=&quot;example-form&quot;&gt;
-  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika&lt;/label&gt;
-  &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Tadeusz Ko&sacute;ciuszko&quot; required /&gt;
-  &lt;label for=&quot;textarea&quot;&gt;Wypracowanie&lt;/label&gt;
-  &lt;textarea cols=&quot;80&quot; name=&quot;textarea&quot; id=&quot;textarea&quot; placeholder=&quot;A long time ago etc.&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+  &lt;div class=&quot;comparison&quot;&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;favoriteColors&quot;&gt;Ulubione systemy kolor&oacute;w&lt;/label&gt;
+      &lt;select multiple name=&quot;favoriteColors&quot; id=&quot;favoriteColors&quot;&gt;
+        &lt;option selected value=&quot;hsl&quot;&gt;HSL&lt;/option&gt;
+        &lt;option value=&quot;lch&quot;&gt;LCH&lt;/option&gt;
+        &lt;option value=&quot;hex&quot;&gt;Hex&lt;/option&gt;
+        &lt;option value=&quot;rgb&quot;&gt;RGB&lt;/option&gt;
+        &lt;option disabled value=&quot;name&quot;&gt;Nazwa&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&lt;label for=&quot;favoriteFranchise&quot;&gt;Ulubione uniwersum film&oacute;w itd.&lt;/label&gt;
+      &lt;select name=&quot;favoriteFranchise&quot; id=&quot;favoriteFranchise&quot; required&gt;
+        &lt;option value=&quot;&quot;&gt;?&lt;/option&gt;
+        &lt;option value=&quot;Star Wars&quot;&gt;Gwiezdne Wojny&lt;/option&gt;
+        &lt;option value=&quot;DC&quot;&gt;DC Comics&lt;/option&gt;
+        &lt;option disabled value=&quot;Twilight&quot;&gt;Zmierzch/50 Twarzy Graya&lt;/option&gt;
+        &lt;option value=&quot;Unbreakable&quot;&gt;Unbreakable, Split, Glass&lt;/option&gt;
+        &lt;option value=&quot;Marvel&quot;&gt;Marvel&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;label for=&quot;favoriteMonth&quot;&gt;Ulubiony miesi&aogon;c&lt;/label&gt;
+    &lt;select name=&quot;favoriteMonth&quot; id=&quot;favoriteMonth&quot;&gt;
+      &lt;optgroup label=&quot;lato&quot;&gt;
+        &lt;option value=&quot;june&quot;&gt;czerwiec&lt;/option&gt;
+        &lt;option value=&quot;july&quot;&gt;lipiec&lt;/option&gt;
+        &lt;option value=&quot;august&quot;&gt;sierpie&nacute;&lt;/option&gt;
+      &lt;/optgroup&gt;
+
+      &lt;optgroup label=&quot;jesie&nacute;&quot;&gt;
+        &lt;option value=&quot;september&quot;&gt;wrzesie&nacute;&lt;/option&gt;
+        &lt;option value=&quot;october&quot;&gt;pa&zacute;dziernik&lt;/option&gt;
+        &lt;option value=&quot;november&quot;&gt;listopad&lt;/option&gt;
+      &lt;/optgroup&gt;
+    &lt;/select&gt;
   &lt;hr /&gt;
   &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
 &lt;/form&gt;
