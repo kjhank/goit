@@ -172,7 +172,7 @@
               <label for="email">Adres e-mail</label>
               <input type="email" name="email" id="email" placeholder="akosciuszko@equality-hero.com" required />
               <label for="number">Liczba</label>
-              <input type="number" name="number" id="number" placeholder="23" required/>
+              <input type="number" name="number" id="number" placeholder="23" required />
               <label for="date">Lokalna data</label>
               <input type="datetime-local" name="date" id="date" required />
               <hr />
@@ -190,6 +190,67 @@
                 <label for="checkboxMaybe">Być może</label>
               </fieldset>
               <hr />
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+        <article class="example">
+          <h2>Formularz #2</h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-2&quot;&gt;
+  &lt;label for=&quot;name&quot;&gt;nazwa u&zdot;ytkownika&lt;/label&gt;
+  &lt;input required id=&quot;name&quot; name=&quot;uername&quot; type=&quot;text&quot; /&gt;
+  &lt;label for=&quot;pass&quot;&gt;has&lstrok;o&lt;/label&gt;
+  &lt;input required id=&quot;pass&quot; name=&quot;pass&quot; type=&quot;password&quot; /&gt;
+  &lt;label for=&quot;dob&quot;&gt;Data urodzenia&lt;/label&gt;
+  &lt;input required id=&quot;dob&quot; name=&quot;dateOfBirth&quot; type=&quot;date&quot; /&gt;
+  &lt;label for=&quot;phoneNo&quot;&gt;Telefon&lt;/label&gt;
+  &lt;input required id=&quot;phoneNo&quot; name=&quot;phoneNumber&quot; pattern=&quot;[0-9]{3}-[0-9]{3}-[0-9]{4}&quot; placeholder=&quot;312-231-4312&quot; type=&quot;tel&quot; /&gt;
+  &lt;label for=&quot;shoeSize&quot;&gt;Rozmiar buta&lt;/label&gt;
+  &lt;input required min=&quot;33&quot; id=&quot;shoeSize&quot; name=&quot;shoeSize&quot; type=&quot;number&quot; /&gt;
+  &lt;div&gt;
+    &lt;input id=&quot;gdpr&quot; name=&quot;agreedToGDPR&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;label for=&quot;gdpr&quot;&gt;Zgadzam si&eogon; etc.&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;P&lstrok;e&cacute;&lt;/legend&gt;
+    &lt;input id=&quot;genderMale&quot; name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;male&quot; /&gt;
+    &lt;label for=&quot;genderMale&quot;&gt;M&eogon;&zdot;czyzna&lt;/label&gt;
+    &lt;input id=&quot;genderFemale&quot; name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;female&quot; /&gt;
+    &lt;label for=&quot;genderFemale&quot;&gt;Kobieta&lt;/label&gt;
+    &lt;input id=&quot;genderNoAnswer&quot; name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;no answer&quot; /&gt;
+    &lt;label for=&quot;genderNoAnswer&quot;&gt;Wol&eogon; nie odpowiada&cacute;&lt;/label&gt;
+  &lt;/fieldset&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" name="form-2">
+              <label for="name">nazwa użytkownika</label>
+              <input required id="name" name="uername" type="text" />
+              <label for="pass">hasło</label>
+              <input required id="pass" name="pass" type="password" />
+              <label for="dob">Data urodzenia</label>
+              <input required id="dob" name="dateOfBirth" type="date" />
+              <label for="phoneNo">Telefon</label>
+              <input required id="phoneNo" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="312-231-4312" type="tel" />
+              <label for="shoeSize">Rozmiar buta</label>
+              <input required min="33" id="shoeSize" name="shoeSize" type="number" />
+              <div>
+                <input id="gdpr" name="agreedToGDPR" type="checkbox" />
+                <label for="gdpr">Zgadzam się etc.</label>
+              </div>
+              <fieldset>
+                <legend>Płeć</legend>
+                <input id="genderMale" name="gender" type="radio" value="male" />
+                <label for="genderMale">Mężczyzna</label>
+                <input id="genderFemale" name="gender" type="radio" value="female" />
+                <label for="genderFemale">Kobieta</label>
+                <input id="genderNoAnswer" name="gender" type="radio" value="no answer" />
+                <label for="genderNoAnswer">Wolę nie odpowiadać</label>
+              </fieldset>
               <button type="submit">Wyślij</button>
             </form>
           </div>
