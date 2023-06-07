@@ -104,3 +104,74 @@
 input:checked + label {
   color: var(--color-accent);
 }
+
+.example-form .form-message {
+  text-align: center;
+  color: var(--color-main);
+}
+
+.example-form .password-wrapper {
+  display: flex;
+}
+
+.example-form .password-wrapper input {
+  flex-grow: 1;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.example-form .password-wrapper button {
+  border-start-end-radius: 0.5em;
+  border-end-end-radius: 0.5em;
+  padding: 0.5em 1em;
+}
+
+.example-form--enabled input:disabled {
+  rotate: z -0.01turn;
+  cursor: not-allowed;
+}
+
+.example-form--enabled input:enabled {
+  filter: drop-shadow(0 0 1em var(--color-sub));
+}
+
+.example-form--enabled input:disabled:hover {
+  filter: drop-shadow(0 0 1em var(--color-main));
+}
+
+.example-form--invalid input:not(:placeholder-shown):not(:focus):invalid {
+  background-color: red;
+}
+
+.example-form--range input:out-of-range {
+  background-color: red;
+}
+
+.example-form--range input:in-range {
+  background-color: green;
+}
+
+.example-form--required {
+  transition: scale var(--transition-fast);
+}
+
+.example-form--required input {
+  transition: scale var(--transition-fast);
+}
+
+.example-form--required label:has(+ input:required)::after {
+  content: '*';
+  color: red;
+}
+
+.example-form--required input:optional:focus {
+  scale: 0.9;
+}
+
+.example-form--required input:required:focus {
+  scale: 1.2;
+}
+
+.example-form--required:focus-within {
+  scale: 1.05;
+}

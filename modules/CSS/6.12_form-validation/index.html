@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walidacja formularzy</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Walidacja formularzy po
+          stronie klienta</a>
+      </li>
+      <li class="main-navigation__item"><a href="./form-pseudoclasses.html">Pseudoklasy elementów formularza</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Walidacja formularzy po stronie klienta</h1>
+      <section>
+        <h2>Atrybut <code class="code">required</code></h2>
+        <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-required&quot;&gt;
+  &lt;label for=&quot;myName&quot;&gt;Imi&eogon;&lt;/label&gt;
+  &lt;input id=&quot;myName&quot; name=&quot;userName&quot; required type=&quot;text&quot; /&gt;
+  &lt;label for=&quot;myPass&quot;&gt;Has&lstrok;o&lt;/label&gt;
+  &lt;input id=&quot;myPass&quot; name=&quot;password&quot; required type=&quot;password&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+        </pre>
+        <article class="example">
+          <h3>Przykładowe użycie <code>required</code></h3>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" name="form-required">
+              <label for="myName">Imię</label>
+              <input id="myName" name="userName" required type="text" />
+              <label for="myPass">Hasło</label>
+              <input id="myPass" name="password" required type="password" />
+              <button type="submit">Wyślij</button>
+              <p class="visually-hidden form-message" data-message>komunikat</p>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Atrybuty <code class="code">minlength</code> i <code class="code">maxlength</code></h2>
+        <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-lengths&quot;&gt;
+  &lt;label for=&quot;myName&quot;&gt;Imi&eogon;&lt;/label&gt;
+  &lt;input id=&quot;myName&quot; name=&quot;userName&quot; required type=&quot;text&quot; /&gt;
+  &lt;label for=&quot;myPass&quot;&gt;Has&lstrok;o (minimum 8, maksimum 64 znaki)&lt;/label&gt;
+  &lt;input id=&quot;myPass&quot; maxlength=&quot;64&quot; minLength=&quot;8&quot; name=&quot;password&quot; required type=&quot;password&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+        </pre>
+        <article class="example">
+          <h3>Przykładowe użycie <code>minlength</code> i <code>maxlength</code></h3>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" name="form-lengths">
+              <label for="myName2">Imię</label>
+              <input id="myName2" name="userName" required type="text" />
+              <label for="myPass2">Hasło (minimum 8, maksimum 64 znaki)</label>
+              <input id="myPass2" maxlength="64" minLength="8" name="password" required type="password" />
+              <button type="submit">Wyślij</button>
+              <p class="visually-hidden form-message" data-message>komunikat</p>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Atrybuty <code class="code">min</code> i <code class="code">max</code></h2>
+        <p>Maksymalna długość stringa wartości</p>
+        <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-lengths&quot;&gt;
+  &lt;label for=&quot;myName&quot;&gt;Imi&eogon;&lt;/label&gt;
+  &lt;input id=&quot;myName&quot; name=&quot;userName&quot; required type=&quot;text&quot; /&gt;
+  &lt;label for=&quot;startDate&quot;&gt;Data rozpocz&eogon;cia (najwcze&sacute;niej &oacute;smy czerwca 2023)&lt;/label&gt;
+  &lt;input id=&quot;startDate&quot; type=&quot;date&quot; min=&quot;2023-06-08&quot; name=&quot;startDate&quot; /&gt;
+  &lt;label for=&quot;endDate&quot;&gt;Data zako&nacute;czenia (najwcze&sacute;niej &oacute;smy czerwca 2023, najp&oacute;&zacute;niej ostatni dzie&nacute; 2023)&lt;/label&gt;
+  &lt;input id=&quot;endDate&quot; type=&quot;date&quot; max=&quot;2023-12-31&quot; min=&quot;2023-06-08&quot; name=&quot;endDate&quot; /&gt;
+  &lt;label for=&quot;age&quot;&gt;Wiek (conajmniej 18)&lt;/label&gt;
+  &lt;input type=&quot;number&quot; name=&quot;age&quot; id=&quot;age&quot; min=&quot;18&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+        </pre>
+        <article class="example">
+          <h3>Przykładowe użycie <code>min</code> i <code>max</code></h3>
+          <p>Maksymalna wartość inputu. Dla typów <code>date</code>, <code>moth</code>, <code>week</code>,
+            <code>time</code>, <code>datetime-local</code>, <code>number</code>, <code>range</code>
+          </p>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" name="form-lengths">
+              <label for="myName3">Imię</label>
+              <input id="myName3" name="userName" required type="text" />
+              <label for="startDate">Data rozpoczęcia (najwcześniej ósmy czerwca 2023)</label>
+              <input id="startDate" type="date" min="2023-06-08" name="startDate" />
+              <label for="endDate">Data zakończenia (najwcześniej ósmy czerwca 2023, najpóźniej ostatni dzień
+                2023)</label>
+              <input id="endDate" type="date" max="2023-12-31" min="2023-06-08" name="endDate" />
+              <label for="age">Wiek (conajmniej 18)</label>
+              <input type="number" name="age" id="age" min="18" />
+              <button type="submit">Wyślij</button>
+              <p class="visually-hidden form-message" data-message>komunikat</p>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Walidacja przez <code class="code">type</code></h2>
+        <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-lengths&quot;&gt;
+  &lt;label for=&quot;myName&quot;&gt;Imi&eogon;&lt;/label&gt;
+  &lt;input id=&quot;myName&quot; name=&quot;userName&quot; required type=&quot;text&quot; /&gt;
+  &lt;label for=&quot;myMail&quot;&gt;Adres e-mail&lt;/label&gt;
+  &lt;input id=&quot;myMail&quot; name=&quot;userMail&quot; required type=&quot;email&quot; /&gt;
+  &lt;label for=&quot;startMonth&quot;&gt;Miesi&aogon;c rozpocz&eogon;cia&lt;/label&gt;
+  &lt;input id=&quot;startMonth&quot; type=&quot;month&quot; name=&quot;startMonth&quot; /&gt;
+  &lt;label for=&quot;url&quot;&gt;Strona internetowa&lt;/label&gt;
+  &lt;input type=&quot;url&quot; name=&quot;url&quot; id=&quot;url&quot; /&gt;
+  &lt;label for=&quot;age&quot;&gt;Wiek&lt;/label&gt;
+  &lt;input type=&quot;number&quot; name=&quot;age&quot; id=&quot;age&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+        </pre>
+        <article class="example">
+          <h3>Automatyczna walidacja przez podanie typu inputu</h3>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" name="form-lengths">
+              <label for="myName4">Imię</label>
+              <input id="myName4" name="userName" required type="text" />
+              <label for="myMail">Adres e-mail</label>
+              <input id="myMail" name="userMail" required type="email" />
+              <label for="startMonth">Miesiąc rozpoczęcia</label>
+              <input id="startMonth" type="month" name="startMonth" />
+              <label for="url">Strona internetowa</label>
+              <input type="url" name="url" id="url" />
+              <label for="age2">Wiek</label>
+              <input type="number" name="age2" id="age2" />
+              <button type="submit">Wyślij</button>
+              <p class="visually-hidden form-message" data-message>komunikat</p>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Walidacja przez wyrażenia regularne: atrybut <code class="code">pattern</code></h2>
+        <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-lengths&quot;&gt;
+  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika (1-127 &lstrok;aci&nacute;skich liter)&lt;/label&gt;
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; pattern=&quot;([a-zA-Z]){1,127}&quot; required /&gt;
+  &lt;label for=&quot;myPassword&quot;&gt;Has&lstrok;o (5-255 znak&oacute;w alfanumerycznych lub !@#$%^&amp;*()_+-=)&lt;/label&gt;
+  &lt;input type=&quot;password&quot; name=&quot;myPassword&quot; id=&quot;myPassword&quot; pattern=&quot;[\w!@#$%^&amp;*()_+-=]{5,255}&quot; required /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+        </pre>
+        <article class="example">
+          <h3>Automatyczna walidacja przez wyrażenia regularne</h3>
+          <div class="example-wrapper">
+            <form action="#" class="example-form" name="form-lengths">
+              <label for="username">Nazwa użytkownika (1-127 łacińskich liter)</label>
+              <input type="text" name="username" id="username" pattern="([a-zA-Z]){1,127}" required />
+              <label for="myPassword">Hasło (5-255 znaków alfanumerycznych lub <code>!@#$%^&*()_+-=</code>)</label>
+              <div class="password-wrapper">
+                <input type="password" name="myPassword" id="myPassword" pattern="[\w!@#$%^&*()_+-=]{5,255}" required />
+                <button type="button">poka</button>
+              </div>
+              <button type="submit">Wyślij</button>
+              <p class="visually-hidden form-message" data-message>komunikat</p>
+            </form>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>

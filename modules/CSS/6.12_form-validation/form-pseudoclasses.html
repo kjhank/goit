@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudoklasy elementów formularza</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Walidacja formularzy po stronie klienta</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./form-pseudoclasses.html">Pseudoklasy
+          elementów formularza</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Walidacja formularzy po stronie klienta</h1>
+      <section>
+        <h2>Pseudoklasy <code class="code">:enabled</code> oraz <code class="code">:disabled</code></h2>
+        <div class="code-wrapper">
+          <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-required&quot;&gt;
+  &lt;label for=&quot;myName&quot;&gt;Imi&eogon;&lt;/label&gt;
+  &lt;input id=&quot;myName&quot; name=&quot;userName&quot; required type=&quot;text&quot; /&gt;
+  &lt;label for=&quot;myPass&quot;&gt;Has&lstrok;o&lt;/label&gt;
+  &lt;input disabled id=&quot;myPass&quot; name=&quot;password&quot; required type=&quot;password&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+          </pre>
+          <pre class="code code--small code--css">
+.example-form :disabled {
+  rotate: z -0.01turn;
+  cursor: not-allowed;
+}
+
+.example-form :enabled {
+  filter: drop-shadow(0 0 0.3em var(--color-sub));
+}
+
+.example-form :disabled:hover {
+  filter: drop-shadow(0 0 0.3em red);
+}
+          </pre>
+        </div>
+        <article class="example">
+          <h3>Przykładowe użycie <code>:disabled</code></h3>
+          <p><code>:enabled</code> jest implikowane przez brak
+            <code>:disabled</code>
+          </p>
+          <div class="example-wrapper">
+            <form action="#" class="example-form example-form--enabled" name="form-required">
+              <label for="myName">Imię</label>
+              <input id="myName" name="userName" required type="text" />
+              <label for="myPass">Hasło</label>
+              <input disabled id="myPass" name="password" required type="password" />
+              <button type="submit">Wyślij</button>
+              <p class="visually-hidden form-message" data-message>komunikat</p>
+            </form>
+          </div>
+        </article>
+        <section>
+          <h2>Pseudoklasa <code class="code">:checked</code></h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-required&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Czy?&lt;/legend&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkboxYes&quot; name=&quot;checkbox&quot; value=&quot;Tak&quot; /&gt;
+    &lt;label for=&quot;checkboxYes&quot;&gt;Tak&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkboxNo&quot; name=&quot;checkbox&quot; value=&quot;Nie&quot; /&gt;
+    &lt;label for=&quot;checkboxNo&quot;&gt;Nie&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkboxMaybe&quot; name=&quot;checkbox&quot; value=&quot;By&cacute; mo&zdot;e&quot; /&gt;
+    &lt;label for=&quot;checkboxMaybe&quot;&gt;By&cacute; mo&zdot;e&lt;/label&gt;
+  &lt;/fieldset&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+            </pre>
+            <pre class="code code--small code--css">
+form :disabled {
+  rotate: z -0.01turn;
+  cursor: not-allowed;
+}
+
+form :enabled {
+  filter: drop-shadow(0 0 0.3em var(--color-sub));
+}
+
+form :disabled:hover {
+  filter: drop-shadow(0 0 0.3em red);
+}
+
+form input:checked + label {
+  color: var(--color-accent);
+}
+          </pre>
+          </div>
+          <article class="example">
+            <h3>Przykładowe użycie <code>:checked</code></h3>
+            <div class="example-wrapper">
+              <form action="#" class="example-form" name="form-required">
+                <fieldset>
+                  <legend>Czy?</legend>
+                  <input type="checkbox" id="checkboxYes" name="checkbox" value="Tak" />
+                  <label for="checkboxYes">Tak</label>
+                  <input type="checkbox" id="checkboxNo" name="checkbox" value="Nie" />
+                  <label for="checkboxNo">Nie</label>
+                  <input type="checkbox" id="checkboxMaybe" name="checkbox" value="Być może" />
+                  <label for="checkboxMaybe">Być może</label>
+                </fieldset>
+                <button type="submit">Wyślij</button>
+                <p class="visually-hidden form-message" data-message>komunikat</p>
+              </form>
+            </div>
+          </article>
+        </section>
+        <section>
+          <h2>Pseudoklasa <code class="code">:invalid</code></h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form example-form--invalid&quot; name=&quot;form-invalid&quot;&gt;
+  &lt;label for=&quot;username&quot;&gt;Nazwa u&zdot;ytkownika (2-127 &lstrok;aci&nacute;skich liter)&lt;/label&gt;
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; pattern=&quot;([a-zA-Z]){2,127}&quot; placeholder=&quot;andRzej&quot; required /&gt;
+  &lt;label for=&quot;myPassword&quot;&gt;Has&lstrok;o (5-255 znak&oacute;w alfanumerycznych lub &lt;code&gt;!@#$%^&amp;*()_+-=&lt;/code&gt;)&lt;/label&gt;
+  &lt;div class=&quot;password-wrapper&quot;&gt;
+    &lt;input type=&quot;password&quot; name=&quot;myPassword&quot; id=&quot;myPassword&quot; pattern=&quot;[\w!@#$%^&amp;*()_+-=]{5,255}&quot;
+      placeholder=&quot;D#@asd666&quot; required /&gt;
+    &lt;button type=&quot;button&quot;&gt;poka&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+  &lt;p class=&quot;visually-hidden form-message&quot; data-message&gt;komunikat&lt;/p&gt;
+&lt;/form&gt;
+            </pre>
+            <pre class="code code--small code--css">
+input:not(:placeholder-shown):not(:focus):invalid {
+  background-color: red;
+}
+          </pre>
+          </div>
+          <article class="example">
+            <h3>Przykładowe użycie pseudoklas <code>:invalid</code> wraz z <code>:placeholder-shown</code> i
+              <code>:focus</code>
+            </h3>
+            <div class="example-wrapper">
+              <form action="#" class="example-form example-form--invalid" name="form-invalid">
+                <label for="username">Nazwa użytkownika (2-127 łacińskich liter)</label>
+                <input type="text" name="username" id="username" pattern="([a-zA-Z]){2,127}" placeholder="andRzej"
+                  required />
+                <label for="myPassword">Hasło (5-255 znaków alfanumerycznych lub <code>!@#$%^&*()_+-=</code>)</label>
+                <div class="password-wrapper">
+                  <input type="password" name="myPassword" id="myPassword" pattern="[\w!@#$%^&*()_+-=]{5,255}"
+                    placeholder="D#@asd666" required />
+                  <button type="button">poka</button>
+                </div>
+                <button type="submit">Wyślij</button>
+                <p class="visually-hidden form-message" data-message>komunikat</p>
+              </form>
+            </div>
+          </article>
+        </section>
+        <section>
+          <h2>Pseudoklasy <code class="code">:out-of-range</code> <code class="code">:in-range</code></h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form example-form--range&quot; name=&quot;form-range&quot;&gt;
+  &lt;label for=&quot;deliveryDate&quot;&gt;Data dostawy&lt;/label&gt;
+  &lt;input required id=&quot;deliveryDate&quot; min=&quot;2023-06-08&quot; name=&quot;deliveryDate&quot; type=&quot;date&quot; value=&quot;2023-06-07&quot; /&gt;
+  &lt;label for=&quot;count&quot;&gt;Liczba sztuk&lt;/label&gt;
+  &lt;input required min=&quot;1&quot; id=&quot;count&quot; name=&quot;count&quot; type=&quot;number&quot; value=&quot;0&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+            <pre class="code code--small code--css">
+input:out-of-range {
+  background-color: red;
+}
+
+input:in-range {
+  background-color: green;
+}
+          </pre>
+        </div>
+        <article class="example">
+          <h3>Przykładowe użycie pseudoklas <code>:in-range</code> oraz <code>:out-of-range</code></h3>
+          <div class="example-wrapper">
+            <form action="#" class="example-form example-form--range" name="form-range">
+              <label for="deliveryDate">Data dostawy</label>
+              <input required id="deliveryDate" min="2023-06-08" name="deliveryDate" type="date" value="2023-06-07" />
+              <label for="count">Liczba sztuk</label>
+              <input required min="1" id="count" name="count" type="number" value="0" />
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+      </section>
+        <section>
+          <h2>Pseudoklasy <code class="code">:required</code> i <code class="code">:optional</code></h2>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;form action=&quot;#&quot; class=&quot;example-form example-form--required&quot; name=&quot;form-required&quot;&gt;
+  &lt;label for=&quot;deliveryDate&quot;&gt;Data dostawy&lt;/label&gt;
+  &lt;input required id=&quot;deliveryDate&quot; min=&quot;2023-06-08&quot; name=&quot;deliveryDate&quot; type=&quot;date&quot; value=&quot;2023-06-07&quot; /&gt;
+  &lt;label for=&quot;count&quot;&gt;Liczba sztuk&lt;/label&gt;
+  &lt;input min=&quot;1&quot; id=&quot;count&quot; name=&quot;count&quot; type=&quot;number&quot; value=&quot;0&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Wy&sacute;lij&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+            <pre class="code code--small code--css">
+form {
+  transition: scale var(--transition-fast);
+}
+
+form input {
+  transition: scale var(--transition-fast);
+}
+
+form label:has(+ input:required)::after {
+  content: '*';
+  color: red;
+}
+
+form input:optional:focus {
+  scale: 0.9;
+}
+
+form input:required:focus {
+  scale: 1.2;
+}
+
+form:focus-within {
+  scale: 1.05;
+}
+          </pre>
+        </div>
+        <article class="example">
+          <h3>Przykładowe użycie pseudoklas <code class="code">:required</code> i <code class="code">:optional</code></h3>
+          <div class="example-wrapper">
+            <form action="#" class="example-form example-form--required" name="form-required">
+              <label for="deliveryDate">Data dostawy</label>
+              <input required id="deliveryDate" min="2023-06-08" name="deliveryDate" type="date" value="2023-06-07" />
+              <label for="count">Liczba sztuk</label>
+              <input min="1" id="count" name="count" type="number" value="0" />
+              <button type="submit">Wyślij</button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/forms.js"></script>
+</body>
+
+</html>
