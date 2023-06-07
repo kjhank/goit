@@ -35,17 +35,17 @@
 &lt;/form&gt;
           </pre>
           <pre class="code code--small code--css">
-.example-form :disabled {
+form input:disabled {
   rotate: z -0.01turn;
   cursor: not-allowed;
 }
 
-.example-form :enabled {
-  filter: drop-shadow(0 0 0.3em var(--color-sub));
+form input:enabled {
+  filter: drop-shadow(0 0 1em var(--color-sub));
 }
 
-.example-form :disabled:hover {
-  filter: drop-shadow(0 0 0.3em red);
+form input:disabled:hover {
+  filter: drop-shadow(0 0 1em var(--color-main));
 }
           </pre>
         </div>
@@ -84,19 +84,6 @@
 &lt;/form&gt;
             </pre>
             <pre class="code code--small code--css">
-form :disabled {
-  rotate: z -0.01turn;
-  cursor: not-allowed;
-}
-
-form :enabled {
-  filter: drop-shadow(0 0 0.3em var(--color-sub));
-}
-
-form :disabled:hover {
-  filter: drop-shadow(0 0 0.3em red);
-}
-
 form input:checked + label {
   color: var(--color-accent);
 }
@@ -243,10 +230,10 @@ form:focus-within {
           <h3>Przykładowe użycie pseudoklas <code class="code">:required</code> i <code class="code">:optional</code></h3>
           <div class="example-wrapper">
             <form action="#" class="example-form example-form--required" name="form-required">
-              <label for="deliveryDate">Data dostawy</label>
-              <input required id="deliveryDate" min="2023-06-08" name="deliveryDate" type="date" value="2023-06-07" />
-              <label for="count">Liczba sztuk</label>
-              <input min="1" id="count" name="count" type="number" value="0" />
+              <label for="deliveryDate2">Data dostawy</label>
+              <input required id="deliveryDate2" min="2023-06-08" name="deliveryDate2" type="date" value="2023-06-07" />
+              <label for="count2">Liczba sztuk</label>
+              <input min="1" id="count2" name="count2" type="number" value="0" />
               <button type="submit">Wyślij</button>
             </form>
           </div>

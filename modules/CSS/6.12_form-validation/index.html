@@ -49,6 +49,7 @@
       </section>
       <section>
         <h2>Atrybuty <code class="code">minlength</code> i <code class="code">maxlength</code></h2>
+        <p>Maksymalna długość stringa wartości</p>
         <pre class="code code--small code--html">
 &lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-lengths&quot;&gt;
   &lt;label for=&quot;myName&quot;&gt;Imi&eogon;&lt;/label&gt;
@@ -75,7 +76,9 @@
       </section>
       <section>
         <h2>Atrybuty <code class="code">min</code> i <code class="code">max</code></h2>
-        <p>Maksymalna długość stringa wartości</p>
+        <p>Maksymalna wartość inputu. Dla typów <code>date</code>, <code>moth</code>, <code>week</code>,
+          <code>time</code>, <code>datetime-local</code>, <code>number</code>, <code>range</code>
+        </p>
         <pre class="code code--small code--html">
 &lt;form action=&quot;#&quot; class=&quot;example-form&quot; name=&quot;form-lengths&quot;&gt;
   &lt;label for=&quot;myName&quot;&gt;Imi&eogon;&lt;/label&gt;
@@ -92,9 +95,6 @@
         </pre>
         <article class="example">
           <h3>Przykładowe użycie <code>min</code> i <code>max</code></h3>
-          <p>Maksymalna wartość inputu. Dla typów <code>date</code>, <code>moth</code>, <code>week</code>,
-            <code>time</code>, <code>datetime-local</code>, <code>number</code>, <code>range</code>
-          </p>
           <div class="example-wrapper">
             <form action="#" class="example-form" name="form-lengths">
               <label for="myName3">Imię</label>
@@ -103,9 +103,9 @@
               <input id="startDate" type="date" min="2023-06-08" name="startDate" />
               <label for="endDate">Data zakończenia (najwcześniej ósmy czerwca 2023, najpóźniej ostatni dzień
                 2023)</label>
-              <input id="endDate" type="date" max="2023-12-31" min="2023-06-08" name="endDate" />
+              <input id="endDate" type="date" max="2023-12-31" min="2023-06-08" name="endDate" required />
               <label for="age">Wiek (conajmniej 18)</label>
-              <input type="number" name="age" id="age" min="18" />
+              <input required type="number" name="age" id="age" min="18" />
               <button type="submit">Wyślij</button>
               <p class="visually-hidden form-message" data-message>komunikat</p>
             </form>
