@@ -27,6 +27,7 @@
 
 .example-form input[type="checkbox"],
 .example-form input[type="radio"] {
+  appearance: none;
   align-self: flex-start;
 }
 
