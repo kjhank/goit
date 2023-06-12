@@ -67,6 +67,10 @@ section > p:not([class]),
   margin-block: 1em;
 }
 
+.example-list {
+  margin-top: 2em;
+}
+
 a > sup {
   text-decoration: underline;
   text-decoration-color: var(--color-main);
@@ -261,6 +265,7 @@ code:has(+ p,
   border-radius: 0.25em;
   padding: 1em 2em;
   backdrop-filter: saturate(200%);
+  container-type: inline-size;
 }
 
 .example-wrapper:has(.example-position) {
@@ -273,6 +278,13 @@ code:has(+ p,
   display: grid;
   grid-template: auto / repeat(2, 1fr);
   gap: 2em;
+}
+
+@container (max-width: 800px) {
+  .example-wrapper--comparison,
+  .comparison {
+    grid-template: auto / 1fr;
+  }
 }
 
 .example-wrapper--white {
