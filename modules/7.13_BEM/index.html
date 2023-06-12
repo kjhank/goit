@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodologie CSS - BEM</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current">
+        <a href="./index.html">Bloki, elementy, modyfikatory</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Bloki, elementy, modyfikatory</h1>
+      <section>
+        <h2>Bloki</h2>
+        <pre class="code code--html">
+&lt;element class=&quot;block&quot;&gt;&lt;/element&gt;
+        </pre>
+        <p>Odpowiada na pytanie <em>co to jest?</em></p>
+        <article class="example">
+          <h3>Przykładowe bloki</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;header class=&quot;main-header&quot;&gt;&lt;/header&gt;
+
+&lt;dialog class=&quot;modal-window&quot;&gt;&lt;/dialog&gt;
+
+&lt;footer class=&quot;main-footer&quot;&gt;&lt;/footer&gt;
+
+&lt;ul class=&quot;team&quot;&gt;&lt;/ul&gt;
+
+&lt;li class=&quot;team-member&quot;&gt;&lt;/li&gt;
+
+&lt;ul class=&quot;team&quot;&gt;
+  &lt;li class=&quot;team-member&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;team-member&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;team-member&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;team-member&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <ul class="comparison example-list">
+              <li><img src="./assets/images/main-header.png" alt="główna nawigacja strony: logo, linki" /></li>
+              <li><img src="./assets/images/modal.png" alt="okno modalne z formularzem kontaktowym" /></li>
+              <li><img src="./assets/images/main-footer.png"
+                  alt="główna stopka strony: dane adresowe, linki, formularz newslettera"></li>
+              <li><img src="./assets/images/team-list.png" alt="lista członków zespołu" /></li>
+              <li><img src="./assets/images/team-member.png" alt="członkini zespołu" /></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Elementy</h2>
+        <pre class="code code--html">
+&lt;element class=&quot;block__element&quot;&gt;&lt;/element&gt;
+        </pre>
+        <p>Odpowiada na pytanie <em>co to jest?</em> w kontekście większej całości - <strong>bloku</strong>.</p>
+        <article class="example">
+          <h3>Przykładowe elementy w blokach</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;img src=&quot;./assets/logo.png&quot; alt=&quot;logo of WebSomething&quot; class=&quot;main-header__logo&quot; /&gt;
+
+&lt;menu class=&quot;main-header__links main-navigation&quot;&gt;&lt;/menu&gt;
+
+&lt;a href=&quot;./portfolio&quot; class=&quot;main-header__link main-navigation__link&quot;&gt;Portfolio&lt;/a&gt;
+            </pre>
+            <div class="example-wrapper">
+              <ul class="comparison example-list">
+                <li><img src="./assets/images/main-header-elements.png"
+                    alt="główna nawigacja strony: zaznaczone logo, linki" /></li>
+              </ul>
+            </div>
+            <pre class="code code--small code--html">
+&lt;h2 class=&quot;modal-window__heading&quot;&gt;&lt;/h2&gt;
+
+&lt;button class=&quot;modal-window__close-button&quot;&gt;&lt;/button&gt;
+
+&lt;button class=&quot;modal-window__submit-button&quot;&gt;&lt;/button&gt;
+            </pre>
+            <div class="example-wrapper">
+              <ul class="comparison example-list">
+                <li><img src="./assets/images/modal-elements.png"
+                    alt="okno modalne z formularzem kontaktowym; zaznaczono nagłówek, przycisk z krzyżykiem i przycisk 'wyślij'" />
+                </li>
+              </ul>
+            </div>
+            <pre class="code code--small code--html">
+
+&lt;img src=&quot;./assets/person.jpg&quot; alt=&quot;Jane Doe&quot; class=&quot;team-member__picture&quot; /&gt;
+
+&lt;ul class=&quot;team-member__socials-list&quot;&gt;
+  &lt;li class=&quot;team-member__social-item&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;team-member__social-link&quot;&gt;
+      &lt;svg&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;team-member__social-item&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;team-member__social-link&quot;&gt;
+      &lt;svg&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;team-member__social-item&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;team-member__social-link&quot;&gt;
+      &lt;svg&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;team-member__social-item&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;team-member__social-link&quot;&gt;
+      &lt;svg&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;li class=&quot;team-member__social-item&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;team-member__social-link&quot;&gt;
+    &lt;svg&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/li&gt;
+
+&lt;a href=&quot;#&quot; class=&quot;team-member__social-link&quot;&gt;
+  &lt;svg&gt;&lt;/svg&gt;
+&lt;/a&gt;
+            </pre>
+            <div class="example-wrapper">
+              <ul class="comparison example-list">
+                <li><img src="./assets/images/team-member-blocks.png" alt="członkini zespołu, zaznaczony blok zdjęcia">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <p><a href="https://en.bem.info/methodology/quick-start/#should-i-create-a-block-or-an-element">Kiedy wybrać
+            blok, a kiedy element?</a></p>
+      </section>
+      <section>
+        <h2>Modyfikator</h2>
+        <pre class="code code--html">
+&lt;element class=&quot;block__element block__element--modifier&quot;&gt;&lt;/element&gt;
+        </pre>
+        <p>Odpowiada na pytanie - <em>co modyfikuje?</em> w elemencie. <strong>Ważne: Klasa bazowa + klasa
+            modyfikatora</strong></p>
+        <article class="example">
+          <h3>Przykładowe modyfikatory</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;a href=&quot;#&quot; class=&quot;team-member__social-link team-member__social-link--instagram&quot;&gt;
+  &lt;svg&gt;&lt;/svg&gt;
+&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;team-member__social-link team-member__social-link--twitter&quot;&gt;
+  &lt;svg&gt;&lt;/svg&gt;
+&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;team-member__social-link team-member__social-link--linkedin&quot;&gt;
+  &lt;svg&gt;&lt;/svg&gt;
+&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;team-member__social-link team-member__social-link--facebook&quot;&gt;
+  &lt;svg&gt;&lt;/svg&gt;
+&lt;/a&gt;
+            </pre>
+            <pre class="code code--small code--css">
+.team-member__social-link {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1em;
+  background-color: #fff;
+  transition: background-color 400ms;
+}
+
+.team-member__social-link--instagram:hover {
+  background-color: var(--color-instagram);
+}
+
+.team-member__social-link--twitter:hover {
+  background-color: var(--color-twitter);
+}
+
+.team-member__social-link--linkedin:hover {
+  background-color: var(--color-linkedin);
+}
+
+.team-member__social-link--facebook:hover {
+  background-color: var(--color-facebook);
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <img src="./assets/images/team-member-modifiers.png" alt="członkini zespołu" />
+          </div>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;button class=&quot;example-bem__button&quot; data-togglemodal&gt;open modal&lt;/button&gt;
+&lt;dialog class=&quot;modal&quot; data-modal&gt;
+  &lt;button class=&quot;modal__close-button&quot; data-togglemodal&gt;&#x2A09;&lt;/button&gt;
+  &lt;section class=&quot;modal__body&quot;&gt;
+    &lt;h2 class=&quot;modal__title&quot;&gt;I am a modal window&lt;/h2&gt;
+  &lt;/section&gt;
+&lt;/dialog&gt;
+            </pre>
+            <pre class="code code--small code--css">
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 50vw;
+  min-height: 50vh;
+  border-radius: 0.5em;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.modal--open {
+  opacity: 1;
+  pointer-events: all;
+}
+            </pre>
+          </div>
+          <div class="example-wrapper" data-modalwrapper>
+            <button class="example-bem-button" data-togglemodal>open modal</button>
+            <dialog class="example-bem-modal" data-modal>
+              <button class="example-bem-modal__close-button" data-togglemodal>⨉</button>
+              <section class="example-bem-modal__body">
+                <h2 class="example-bem-modal__title">I am a modal window</h2>
+              </section>
+            </dialog>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

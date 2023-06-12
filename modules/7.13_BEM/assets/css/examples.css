@@ -1,0 +1,40 @@
+.example-bem-button {
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.example-bem-modal {
+  position: fixed;
+  inset: 0;
+  width: 50vw;
+  min-height: 50vh;
+  border: none;
+  border-radius: 0.5em;
+  background: var(--color-neutral-bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.example-bem-modal__body {
+  padding: 1em;
+}
+
+.example-bem-modal::backdrop {
+  background-color: hsl(0 0% 5% / 0.5);
+}
+
+.example-bem-modal--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.example-bem-modal__close-button {
+  position: absolute;
+  inset: 1em 1em auto auto;
+  background-color: transparent;
+  padding: 1em;
+  color: var(--color-sub);
+  cursor: pointer;
+}
