@@ -1,0 +1,58 @@
+.main-header {
+  background-color: #fff;
+  margin-block-end: 5em;
+}
+
+.main-header__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.main-header__navigation {
+  display: inherit;
+}
+
+.main-header__link {
+  color: #000;
+}
+
+.home-link {
+  font-size: 36px;
+}
+
+.home-link__highlight {
+  color: skyblue;
+}
+
+.main-header__link:hover {
+  color: limegreen;
+}
+
+.main-header__page-links {
+  display: flex;
+  gap: 1em;
+  list-style-type: none;
+}
+
+.main-footer {
+  background-color: blue;
+}
+
+.page-links__link {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: tomato;
+}
+
+.page-links__link--current {
+  position: relative;
+}
+
+.page-links__link--current::after {
+  content: '';
+  position: absolute;
+  inset: 2em 0 auto;
+  height: 4px;
+  border-radius: 2px;
+  background-color: teal;
+}
