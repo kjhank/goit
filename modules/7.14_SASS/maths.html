@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SASS - zmienne, zagnieżdżanie i łączenie selektorów</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Zmienne, zagnieżdżanie i łączenie selektorów</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./maths.html">Arytmetyka wartości</a>
+      </li>
+      <li class="main-navigation__item"><a href="./imports-extends.html">Importowanie i reużywanie (<code>@import</code>
+          i <code>@extend</code>)</a></li>
+      <li class="main-navigation__item"><a href="./mixins.html">Reużywalne funkcje (<code>@mixin</code>)</a></li>
+      <li class="main-navigation__item"><a href="./each-maps.html">Pętle (<code>@each</code>) i mapy</a></li>
+      <li class="main-navigation__item"><a href="./autoprefixer.html">Prefiksy</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>SASS - arytmetyka</h1>
+      <section>
+        <article class="example">
+          <section>
+            <h2>Dodawanie, odejmowanie</h2>
+            <div class="code-wrapper">
+              <pre class="code code--small code--sass">
+$headingWidth: 300px;
+$borderWidth: 6px;
+
+h2 {
+  width: $headingWidth - $borderWidth - $borderWidth;
+  // absolute units only
+}
+              </pre>
+              <pre class="code code--small code--css">
+h2 {
+  width: 288px;
+}
+              </pre>
+            </div>
+          </section>
+          <section>
+            <h2>Mnożenie, dzielenie</h2>
+            <div class="code-wrapper">
+              <pre class="code code--small code--sass">
+$fullWidth: 250px;
+
+.half {
+  width: $fullWidth / 2;
+}
+
+.quarter {
+  width: $fullWidth / 4;
+}
+
+.fifth {
+  width: $fullWidth / 5;
+}
+              </pre>
+              <pre class="code code--small code--css">
+h2 {
+  width: 288px;
+}
+              </pre>
+              <pre class="code code--small code--sass">
+$gridWidth: 600px;
+$gridGutter: 30px;
+
+.row {
+  display: inline-block;
+  width: $gridWidth;
+  white-space: nowrap;
+}
+
+.col {
+  display: inline-block;
+  white-space: normal;
+}
+
+.col-1 {
+  width: $gridWidth;
+}
+
+.col-2 {
+  width: ($gridWidth - 2 * $gridGutter) / 2;
+  margin: $gridGutter / 2;
+}
+
+.col-3 {
+  width: ($gridWidth - 2 * $gridGutter) / 3;
+  margin: $gridGutter / 3;
+}
+              </pre>
+              <pre class="code code--small code--css">
+.row {
+  display: inline-block;
+  width: 600px;
+  white-space: nowrap;
+}
+
+.col {
+  display: inline-block;
+  white-space: normal;
+}
+
+.col-1 {
+  width: 600px;
+}
+
+.col-2 {
+  width: 270px;
+  margin: 15px;
+}
+
+.col-3 {
+  width: 180px;
+  margin: 10px;
+}
+              </pre>
+            </div>
+          </section>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>
