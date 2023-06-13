@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SASS - zmienne, zagnieżdżanie i łączenie selektorów</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Zmienne, zagnieżdżanie i
+          łączenie selektorów</a></li>
+      <li class="main-navigation__item"><a href="./maths.html">Arytmetyka wartości</a></li>
+      <li class="main-navigation__item"><a href="./imports-extends.html">Importowanie i reużywanie (<code>@import</code>
+          i <code>@extend</code>)</a></li>
+      <li class="main-navigation__item"><a href="./mixins.html">Reużywalne funkcje (<code>@mixin</code>)</a></li>
+      <li class="main-navigation__item"><a href="./each-maps.html">Pętle (<code>@each</code>) i mapy</a></li>
+      <li class="main-navigation__item"><a href="./autoprefixer.html">Prefiksy</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>SASS - zmienne, zagnieżdżanie i łączenie selektorów</h1>
+      <section>
+        <h2>Deklaracja i użycie zmiennych</h2>
+        <pre class="code code--sass">
+$variableName: value;
+
+selector {
+  property: $variableName;
+}
+        </pre>
+        <article class="example">
+          <h3>Przykładowe użycie zmiennych</h3>
+          <div class="code-wrapper">
+            <div class="code-wrapper">
+              <pre class="code code--small code--sass">
+$saturation: 67%;
+$ligthness: 60%;
+$mainColor: hsl(90 $saturation $ligthness);
+$subColor: hsl(210 $saturation $ligthness);
+
+body {
+  background: hsl(0 0% 10%);
+}
+
+article {
+  color: $mainColor;
+}
+
+article &gt; h2 {
+  color: $subColor;
+}
+              </pre>
+              <pre class="code code--small code--css">
+body {
+  background: #1a1a1a;
+}
+
+article {
+  color: #99dd55;
+}
+
+article &gt; h2 {
+  color: #5599dd;
+}
+              </pre>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Zasięg zmiennych</h2>
+        <article class="example">
+          <h3>Zmiana wartości zmiennej wewnątrz bloku</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+$hue: 210;
+$mainColor: hsl($hue 70% 65%);
+
+body {
+  color: $mainColor;
+}
+
+h2 {
+  $hue: 90;
+}
+            </pre>
+            <pre class="code code--small code--css">
+body {
+  color: #67a6e4;
+  background: #1a1a1a;
+}
+
+h2 {
+  color: #a6e467;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Zagnieżdżanie <span lang="en">(nesting)</span> reguł</h2>
+        <article class="example">
+          <h3>Przykłady zagnieżdżeń</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+a {
+  color: limegreen;
+}
+
+li {
+  list-style-type: disc;
+}
+
+.main-header {
+  li {
+    list-style-type: circle;
+    > a {
+      color: rebeccapurple;
+    }
+  }
+}
+            </pre>
+            <pre class="code code--small code--css">
+.main-header li {
+  list-style-type: circle;
+}
+.main-header li > a {
+  color: rebeccapurple;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Łączenie selektorów</h2>
+        <article class="example">
+          <h3>Przykłady łączenia (konkatenacji) selektorów + BEM</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+$mainColor: hsl(210 70% 60%);
+$subColor: hsl(90 70% 60%);
+
+.main-footer {
+  background-color: hsl(0 0% 5%);
+
+  &amp;__links {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  &amp;__link {
+    color: $mainColor;
+
+    &amp;:hover {
+      color: $subColor;
+    }
+
+    &amp;--hero {
+      scale: 1.05;
+    }
+  }
+}
+            </pre>
+            <pre class="code code--small code--css">
+.main-footer {
+  background-color: #0d0d0d;
+}
+.main-footer__links {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  list-style-type: none;
+}
+.main-footer__link {
+  color: #5299e0;
+}
+.main-footer__link:hover {
+  color: #99e052;
+}
+.main-footer__link--hero {
+  scale: 1.05;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

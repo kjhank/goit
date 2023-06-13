@@ -155,7 +155,8 @@ b {
   font-size: 1em;
 }
 
-.code--css {
+.code--css,
+.code--sass {
   text-shadow: 0 0 10px var(--color-accent);
 }
 
@@ -185,6 +186,11 @@ b {
 
 .code--js::before {
   content: 'JS';
+  color: var(--color-accent);
+}
+
+.code--sass::before {
+  content: 'SASS';
   color: var(--color-accent);
 }
 
