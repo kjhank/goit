@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reużywalne funkcje - @mixin</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Zmienne, zagnieżdżanie i łączenie selektorów</a></li>
+      <li class="main-navigation__item"><a href="./maths.html">Arytmetyka wartości</a>
+      </li>
+      <li class="main-navigation__item"><a href="./imports-extends.html">Importowanie i
+          reużywanie (<code>@import</code>, <code>@use</code>
+          i <code>@extend</code>)</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./mixins.html">Reużywalne funkcje (<code>@mixin</code>)</a></li>
+      <li class="main-navigation__item"><a href="./each-maps.html">Pętle (<code>@each</code>) i mapy</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Reużywalne funkcje (<code>@mixin</code>)</h1>
+      <pre class="code code--sass">
+@mixin name {
+// declarations
+}
+
+selector {
+@include name;
+}
+      </pre>
+      <section>
+        <h2>Użycie <code class="code">@mixin</code> jak <code class="code">@extend</code></h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul {
+  @include reset-list;
+}
+            </pre>
+            <pre class="code code--small code--css">
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Parametry <code class="code">@mixin</code></h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+@mixin border($color, $width) {
+  border-width: $width;
+  border-color: $color;
+}
+
+.bordered {
+  border-style: solid;
+
+  &--rebeccapurple {
+    @include border(rebeccapurple, 0.2em);
+  }
+
+  &--limegreen {
+    @include border(limegreen, 0.3em);
+  }
+}
+            </pre>
+            <pre class="code code--small code--css">
+.bordered {
+  border-style: solid;
+}
+.bordered--rebeccapurple {
+  border-width: 0.2em;
+  border-color: rebeccapurple;
+}
+.bordered--limegreen {
+  border-width: 0.3em;
+  border-color: limegreen;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Domyślne parametry <code class="code">@mixin</code></h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+@mixin flex($direction: row, $justify: flex-start, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.flex {
+  @include flex;
+}
+
+.flex-end {
+  @include flex(row, flex-end);
+  gap: 2em;
+}
+            </pre>
+            <pre class="code code--small code--css">
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2em;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

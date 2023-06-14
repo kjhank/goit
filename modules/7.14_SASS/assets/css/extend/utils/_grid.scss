@@ -1,0 +1,9 @@
+
+@import 'vars';
+
+%my-grid-styles {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}

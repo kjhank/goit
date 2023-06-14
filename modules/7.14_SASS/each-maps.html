@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pętle i mapy: @each i @map</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Zmienne, zagnieżdżanie i łączenie selektorów</a></li>
+      <li class="main-navigation__item"><a href="./maths.html">Arytmetyka wartości</a>
+      </li>
+      <li class="main-navigation__item"><a href="./imports-extends.html">Importowanie i
+          reużywanie (<code>@import</code>, <code>@use</code>
+          i <code>@extend</code>)</a></li>
+      <li class="main-navigation__item"><a href="./mixins.html">Reużywalne funkcje (<code>@mixin</code>)</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./each-maps.html">Pętle
+          (<code>@each</code>) i mapy</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Pętle (<code>@each</code>)</h1>
+      <pre class="code code--sass">
+@each $item in $list {
+  // do something with $item
+}
+      </pre>
+      <section>
+        <h2>Użycie interpolacji wartości w pętli <code class="code">@each</code></h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+$sizes: 40px, 50px, 80px;
+
+@each $size in $sizes {
+  .icon-#{$size} {
+    font-size: $size;
+    height: $size;
+    width: $size;
+  }
+}
+            </pre>
+            <pre class="code code--small code--css">
+.icon-40px {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.icon-50px {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.icon-80px {
+  font-size: 80px;
+  height: 80px;
+  width: 80px;
+}
+            </pre>
+          </div>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+$animals: dog, cat, bird, turtle;
+
+@each $animal in $animals {
+  .#{$animal}-icon {
+    background-image: url('../images/#{$animal}.png');
+  }
+}
+            </pre>
+            <pre class="code code--small code--css">
+.dog-icon {
+  background-image: url("../images/dog.png");
+}
+
+.cat-icon {
+  background-image: url("../images/cat.png");
+}
+
+.bird-icon {
+  background-image: url("../images/bird.png");
+}
+
+.turtle-icon {
+  background-image: url("../images/turtle.png");
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Mapy (słowniki)</h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+@$font-weights: (
+	"regular": 400,
+	"medium": 500,
+	"bold": 700
+);
+
+.font {
+	&--regular {
+		font-weight: map-get($font-weights, regular);
+	}
+
+	&--medium {
+		font-weight: map-get($font-weights, medium);
+	}
+
+	&--bold {
+		font-weight: map-get($font-weights, bold);
+	}
+}
+            </pre>
+            <pre class="code code--small code--css">
+.font--regular {
+  font-weight: 400;
+}
+.font--medium {
+  font-weight: 500;
+}
+.font--bold {
+  font-weight: 700;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Połączenie pętli <code class="code">@each</code> i słowinków</h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+);
+
+.font {
+  @each $name, $weight in $font-weights {
+    &--#{$name} {
+      font-weight: $weight;
+    };
+  }
+}
+            </pre>
+            <pre class="code code--small code--css">
+.font--regular {
+  font-weight: 400;
+}
+.font--medium {
+  font-weight: 500;
+}
+.font--bold {
+  font-weight: 700;
+}
+            </pre>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

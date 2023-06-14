@@ -1,0 +1,25 @@
+.example__sass--grid {
+  max-width: 600px;
+  margin-inline: auto;
+}
+.example__sass .row {
+  display: inline-block;
+  width: 600px;
+  white-space: nowrap;
+}
+.example__sass .col {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+}
+.example__sass .col-1 {
+  width: 600px;
+}
+.example__sass .col-2 {
+  width: 270px;
+  margin: 15px;
+}
+.example__sass .col-3 {
+  width: 180px;
+  margin: 10px;
+}/*# sourceMappingURL=examples.css.map */

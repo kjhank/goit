@@ -1,0 +1,17 @@
+@import 'vars';
+
+.modal {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  &::backdrop {
+    background-color: $modalBackground;
+  }
+
+  &--open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
