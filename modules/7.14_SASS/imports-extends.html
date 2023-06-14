@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SASS - importowanie, reużywanie</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Zmienne, zagnieżdżanie i łączenie selektorów</a></li>
+      <li class="main-navigation__item"><a href="./maths.html">Arytmetyka wartości</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./imports-extends.html">Importowanie i
+          reużywanie (<code>@import</code>, <code>@use</code>
+          i <code>@extend</code>)</a></li>
+      <li class="main-navigation__item"><a href="./mixins.html">Reużywalne funkcje (<code>@mixin</code>)</a></li>
+      <li class="main-navigation__item"><a href="./each-maps.html">Pętle (<code>@each</code>) i mapy</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>SASS - importowanie, reużywanie</h1>
+      <section>
+        <h2>Importowanie przez <code class="code">@import</code></h2>
+        <pre class="code code--sass">
+@import 'path/to/file.scss';
+@import 'path/to/_partial.scss';
+
+selector {
+  property: $variable;
+}
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small">
+src/
+  main.scss
+  components/
+    modal.scss
+  utils/
+    _vars.scss
+            </pre>
+            <pre class="code code--small code--sass">
+// main.scss
+
+@import 'utils/vars';
+@import 'components/modal';
+            </pre>
+          </div>
+          <div class="code-wrapper">
+            <pre class="code code--small code-sass">
+// _vars.scss
+
+$modalBackground: hsl(0 0% 5%);
+            </pre>
+            <pre class="code code--small code-sass">
+// modal.scss
+
+@import 'vars';
+
+.modal {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  &::backdrop {
+    background-color: $modalBackground;
+  }
+
+  &--open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+            </pre>
+          </div>
+          <div class="code-wrapper">
+            <pre class="code code--small code-sass">
+// index.scss
+
+@import 'modal.scss'
+            </pre>
+            <pre class="code code--small code-sass">
+/* index.css */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal::backdrop {
+  background-color: hsl(0, 0%, 5%);
+}
+.modal--open {
+  opacity: 1;
+  pointer-events: all;
+}/*# sourceMappingURL=index.css.map */
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Importowanie przez <code class="code">@use</code></h2>
+        <pre class="code code--sass">
+@use 'path/to/file.scss';
+@use 'path/to/_partial.scss';
+
+selector {
+  property: partial.$variable;
+}
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small">
+src/
+  main.scss
+  components/
+    modal.scss
+  utils/
+    _vars.scss
+            </pre>
+            <pre class="code code--small code--sass">
+// main.scss
+
+@import 'utils/vars';
+@import 'components/modal';
+            </pre>
+          </div>
+          <div class="code-wrapper">
+            <pre class="code code--small code-sass">
+// _vars.scss
+
+$modalBackground: hsl(0 0% 15%);
+            </pre>
+            <pre class="code code--small code-sass">
+// modal.scss
+
+@use 'vars'; // 🍆
+
+.modal {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  &::backdrop {
+    background-color: vars.$modalBackground; // 🍆
+  }
+
+  &--open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+            </pre>
+          </div>
+          <div class="code-wrapper">
+            <pre class="code code--small code-sass">
+// index.scss
+
+@use 'modal.scss';
+            </pre>
+            <pre class="code code--small code-sass">
+/* index.css */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal::backdrop {
+  background-color: hsl(0, 0%, 15%);
+}
+.modal--open {
+  opacity: 1;
+  pointer-events: all;
+}/*# sourceMappingURL=index.css.map */
+            </pre>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Reużywanie z pomocą <code class="code">@extend</code></h2>
+        <pre class="code code--sass">
+.some-class {
+  // declarations
+}
+
+.another-class {
+  @extend .some-class;
+  // more declarations
+}
+        </pre>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-col-reverse {
+  @extend .flex-column;
+
+  flex-direction: column-reverse;
+}
+            </pre>
+            <pre class="code code--small code--css">
+.flex-column,
+.flex-col-reverse {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+            </pre>
+          </div>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+// utils/_vars.scss
+
+$grid-gap: 2em;
+
+// utils/_grid.scss
+
+@import 'vars';
+
+%my-grid-styles {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+// components/grid.scss
+
+@import '../utils/vars';
+@import '../utils/grid';
+
+.my-grid {
+  @extend %my-grid-styles;
+}
+
+.my-grid-tighter {
+  @extend %my-grid-styles;
+  gap: $grid-gap / 2;
+}
+            </pre>
+            <pre class="code code--small code--css">
+.my-grid-tighter, .my-grid {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.my-grid-tighter {
+  gap: 1em;
+}/*# sourceMappingURL=index.css.map */
+            </pre>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

@@ -299,7 +299,7 @@ code:has(+ p,
 
 .example > p,
 .example > .example-wrapper {
-  margin-block-start: 1em;
+  margin-block-start: 2em;
 }
 
 .example-wrapper code {
@@ -318,6 +318,10 @@ code:has(+ p,
   justify-content: space-between;
   gap: 2em;
   flex-wrap: wrap;
+}
+
+.code-wrapper + .code-wrapper {
+  margin-block-start: 2em;
 }
 
 .code-wrapper > * {
@@ -353,4 +357,9 @@ code:has(+ p,
 .definitions dt {
   border-inline-start: var(--border-slim) solid var(--color-accent);
   padding-inline-start: 1rem;
+}
+
+
+del {
+  text-decoration: line-through;
 }

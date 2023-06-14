@@ -14,11 +14,10 @@
       <li class="main-navigation__item"><a href="./index.html">Zmienne, zagnieżdżanie i łączenie selektorów</a></li>
       <li class="main-navigation__item main-navigation__item--current"><a href="./maths.html">Arytmetyka wartości</a>
       </li>
-      <li class="main-navigation__item"><a href="./imports-extends.html">Importowanie i reużywanie (<code>@import</code>
+      <li class="main-navigation__item"><a href="./imports-extends.html">Importowanie i reużywanie (<code>@import</code>, <code>@use</code>
           i <code>@extend</code>)</a></li>
       <li class="main-navigation__item"><a href="./mixins.html">Reużywalne funkcje (<code>@mixin</code>)</a></li>
       <li class="main-navigation__item"><a href="./each-maps.html">Pętle (<code>@each</code>) i mapy</a></li>
-      <li class="main-navigation__item"><a href="./autoprefixer.html">Prefiksy</a></li>
     </menu>
   </nav>
   <main>
@@ -28,6 +27,32 @@
         <article class="example">
           <section>
             <h2>Dodawanie, odejmowanie</h2>
+            <div class="code-wrapper">
+              <pre class="code code--small code--sass">
+p {
+  margin-block: 120px + 20;
+  inset-block-start: -(10px - 30px);
+  padding: 10px + 2em; // incompatible units, won't compile
+}
+              </pre>
+              <pre class="code code--small code--css">
+/* Error: 10px and 2em have incompatible units.*/
+              </pre>
+            </div>
+            <div class="code-wrapper">
+              <pre class="code code--small code--sass">
+p {
+  top: -(10px - 30px);
+  margin-block: 120px + 20;
+}
+              </pre>
+              <pre class="code code--small code--css">
+p {
+  top: 20px;
+  margin-block: 140px;
+}
+              </pre>
+            </div>
             <div class="code-wrapper">
               <pre class="code code--small code--sass">
 $headingWidth: 300px;
@@ -48,6 +73,16 @@ h2 {
           <section>
             <h2>Mnożenie, dzielenie</h2>
             <div class="code-wrapper">
+              <pre class="pre code code--small code--sass">
+p {
+  width: 4px * 2px;
+}
+              </pre>
+              <pre class="pre code code--small code--css">
+/* Error: 8px*px isn't a valid CSS value. */
+              </pre>
+            </div>
+            <div class="code-wrapper">
               <pre class="code code--small code--sass">
 $fullWidth: 250px;
 
@@ -64,11 +99,61 @@ $fullWidth: 250px;
 }
               </pre>
               <pre class="code code--small code--css">
-h2 {
-  width: 288px;
+.half {
+  width: 125px;
+}
+
+.quarter {
+  width: 62.5px;
+}
+
+.fifth {
+  width: 50px;
 }
               </pre>
+            </div>
+            <div class="code-wrapper">
               <pre class="code code--small code--sass">
+.foo {
+  width: 30px / 3;
+}
+
+.bar {
+  width: (30px / 3);
+}
+
+.baz {
+  width: 54px / 3 + 4;
+}
+
+$baseWidth: 30px;
+
+.foobar {
+  width: $baseWidth / 3;
+}
+              </pre>
+              <pre class="code code--small code--css">
+.foo {
+  width: 30px/3;
+}
+
+.bar {
+  width: 10px;
+}
+
+.baz {
+  width: 22px;
+}
+
+.foobar {
+  width: 10px;
+}
+              </pre>
+            </div>
+            <article class="example">
+              <h3>Praktyczne zastosowanie dzielenia i mnożenia - oldskulowy grid</h3>
+              <div class="code-wrapper">
+                <pre class="code code--small code--sass">
 $gridWidth: 600px;
 $gridGutter: 30px;
 
@@ -96,8 +181,8 @@ $gridGutter: 30px;
   width: ($gridWidth - 2 * $gridGutter) / 3;
   margin: $gridGutter / 3;
 }
-              </pre>
-              <pre class="code code--small code--css">
+                </pre>
+                <pre class="code code--small code--css">
 .row {
   display: inline-block;
   width: 600px;
@@ -107,6 +192,7 @@ $gridGutter: 30px;
 .col {
   display: inline-block;
   white-space: normal;
+  vertical-align: top;
 }
 
 .col-1 {
@@ -122,8 +208,39 @@ $gridGutter: 30px;
   width: 180px;
   margin: 10px;
 }
-              </pre>
-            </div>
+                </pre>
+              </div>
+              <div class="example-wrapper">
+                <div class="example__sass example__sass--grid">
+                  <div class="row">
+                    <div class="col col-1">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nobis! Obcaecati, rerum sint.
+                      Iure praesentium tempora fuga, quas nisi unde facilis sapiente eligendi dicta consectetur sequi
+                      odit earum aperiam consequatur.
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, odio
+                      reiciendis iusto quos, facere perspiciatis est officia dolorum dolores, distinctio eius eligendi
+                      veniam labore! Porro nam odit voluptatum ea exercitationem.</div>
+                    <div class="col col-2">Corporis in sapiente distinctio incidunt officia omnis veritatis optio, animi
+                      ipsum doloribus voluptas quas porro culpa explicabo rerum obcaecati non, est hic eveniet libero
+                      fugit placeat numquam. Hic, ab distinctio!</div>
+                  </div>
+                  <div class="row">
+                    <div class="col col-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+                      impedit rem odio laborum quo illo culpa laudantium minus inventore, perspiciatis fugiat iure quam
+                      ut velit quis eum ullam libero placeat?</div>
+                    <div class="col col-3">Minus tempora soluta praesentium modi excepturi quod eos velit obcaecati
+                      consequuntur debitis aliquam a deserunt architecto delectus sit sed nisi explicabo laudantium,
+                      exercitationem doloremque. Molestiae aliquam quas aliquid soluta sapiente?</div>
+                    <div class="col col-3">Eaque eveniet nobis, sunt ex suscipit iure, beatae reprehenderit laudantium
+                      optio fugit officiis qui ducimus officia fugiat delectus voluptatibus explicabo animi quia aut,
+                      harum ut deleniti? Assumenda labore vel minima!</div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </section>
         </article>
       </section>

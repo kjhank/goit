@@ -1,0 +1,33 @@
+.example__sass {
+  &--grid {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+
+  .row {
+    display: inline-block;
+    width: 600px;
+    white-space: nowrap;
+  }
+
+  .col {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+  }
+
+  .col-1 {
+    width: 600px;
+  }
+
+  .col-2 {
+    width: 270px;
+    margin: 15px;
+  }
+
+  .col-3 {
+    width: 180px;
+    margin: 10px;
+  }
+}
