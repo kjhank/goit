@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media queries</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Media queries (zapytania o
+          media)</a></li>
+          <li class="main-navigation__item"><a href="./meta-viewport.html">Metatag <code>viewport</code></a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Responsywność - media queries (zapytania o media)</h1>
+      <section>
+        <h2>Deklaracja i użycie zmiennych</h2>
+        <pre class="code code--sass">
+@media &lt;media-feature&gt; | &lt;media-type&gt; {
+  selector {
+    /* declarations */
+  }
+}
+
+&lt;media-type&gt;: all | print | screen
+
+&lt;media-feature&gt;: any-hover | any-pointer | aspect-ratio | color | color-gamut | color-index | display-mode | dynamic-range | forced-colors | grid | height | hover | inverted-colors | monochrome | orientation | overflow-block | overflow-inline | pointer | prefers-color-scheme | prefers-contrast | prefers-reduced-motion | resolution | update | video-dynamic-range | width
+        </pre>
+        <article class="example">
+          <h3>Zapytanie o szerokość viewportu</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+p {
+  color: var(--color-main);
+}
+
+@media (529px >= width >= 489px) {
+  p {
+    color: var(--color-sub);
+  }
+}
+
+/* legacy syntax ↓ */
+
+@media (min-width: 529px) and (max-width: 489px) {
+  p {
+    color: var(--color-sub);
+  }
+}
+              </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-rwd__media-queries example-rwd__media-queries--width">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim aut officia, aspernatur laborum
+              dignissimos sequi deserunt saepe maiores. Maxime repellendus consequuntur dolor voluptate, natus
+              laboriosam aspernatur minus perspiciatis id!
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Zapytanie o rodzaj interakcji z ekranem: <code class="code">pointer</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+button {
+    padding: 0.5em 1em;
+}
+
+@media (pointer: fine) {
+  button {
+    padding: 0.25em 0.5em;
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <button class="example-rwd__media-queries example-rwd__media-queries--pointer">
+              click me
+            </button>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Zapytanie o stosunek rozmiarów viewportu: <code class="code">aspect-ratio</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+p {
+  font-family: var(--font-text);
+}
+
+@media (aspect-ratio &lt; 1) {
+  p {
+    font-family: var(--font-mono);
+  }
+}
+              </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-rwd__media-queries example-rwd__media-queries--aspect-ratio">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque perferendis obcaecati quibusdam quo
+              laborum, sit quidem tenetur. Distinctio soluta error odio quisquam vitae explicabo enim veritatis, saepe
+              eum eos illum!
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Zapytanie o orientację urządzenia: <code class="code">orientation</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+ul {
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+}
+
+@media (orientation: landscape) {
+  ul {
+    grid-template: auto / repeat(4, 1fr) ;
+  }
+}
+              </pre>
+          </div>
+          <div class="example-wrapper">
+            <ul class="example-rwd__media-queries example-rwd__media-queries--orientation">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+            </ul>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Zapytanie o preferowany schemat kolorów: <code class="code">prefers-color-scheme</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+p {
+  --lightness-fg: 85%;
+  --lightness-bg: 10%;
+
+  background-color: hsl(120, 75%, var(--lightness-bg));
+  color: hsl(120, 75%, var(--lightness-fg));
+}
+
+@media (prefers-color-scheme: light) {
+  --lightness-fg: 10%;
+  --lightness-bg: 85%;
+}
+              </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-rwd__media-queries example-rwd__media-queries--prefers-color-scheme">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reprehenderit omnis amet non, est voluptas
+              laborum magnam tempore, unde eaque iure eligendi asperiores quod pariatur. Quibusdam tempore consectetur
+              numquam. Cupiditate!
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Łączenie zapytań i operatory logiczne</h2>
+        <article class="example">
+          <h3>Negacja zapytania: <code class="code">not</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+p {
+  line-height: 1.2;
+}
+
+@media not (pointer: fine) {
+  p {
+    line-height: 1.4;
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-rwd__media-queries example-rwd__media-queries--not">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cupiditate magnam, eos vero a deserunt
+              quo, veniam dolores commodi nulla accusantium nobis molestiae, voluptatibus ipsa obcaecati non praesentium
+              minus facere.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Iloczyn logiczny <code class="code">and</code></h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+p {
+  color: var(--color-main)
+}
+
+@media (pointer: coarse) and (height &lt; 437px) {
+  p {
+    color: var(--color-sub);
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-rwd__media-queries example-rwd__media-queries--and">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cupiditate magnam, eos vero a deserunt
+              quo, veniam dolores commodi nulla accusantium nobis molestiae, voluptatibus ipsa obcaecati non praesentium
+              minus facere.
+            </p>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Lista zapytań (suma logiczna - <code class="code">or</code>)</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+p {
+  color: var(--color-main)
+}
+
+@media (pointer: coarse) or (height &lt; 437px) {
+  color: var(--color-sub);
+}
+
+/* legacy syntax ↓*/
+
+@media (pointer: coarse),
+  (height &lt; 437px) {
+  p {
+    color: var(--color-sub);
+  }
+}
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <p class="example-rwd__media-queries example-rwd__media-queries--or">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cupiditate magnam, eos vero a deserunt
+              quo, veniam dolores commodi nulla accusantium nobis molestiae, voluptatibus ipsa obcaecati non praesentium
+              minus facere.
+            </p>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

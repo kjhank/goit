@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metatag `viewport`</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Media queries (zapytania o
+          media)</a></li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./meta-viewport.html">Metatag
+          <code>viewport</code></a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Responsywność - metatag <code class="code">viewport</code></h1>
+      <pre class="code code--html">
+&lt;meta name=&quot;viewport&quot; content=&quot;&lt;list&lt;viewport-settings&gt;&gt;&quot; /&gt;
+
+&lt;viewport-settings&gt;: width, height, initial-scale, minimum-scale, maximum-scale, user-scalable, interactive-widget
+      </pre>
+      <section>
+        <h2>Definicje</h2>
+        <pre class="code code--small code--html">
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        </pre>
+        <dl class="definitions">
+          <dt><code>width</code></dt>
+          <dd>Ilość <a href="#footnote-1">pikseli<sup>1</sup></a>, jakiej będzie odpowiadać <code>100vw</code>.
+            Minimum:
+            <code>1</code>. Maksimum:
+            <code>10000</code>. Najczęściej: <code>device-width</code>
+          </dd>
+          <dt><code>height</code></dt>
+          <dd>Ilość pikseli, jakiej będzie odpowiadać <code>100vh</code>. Minimum: <code>1</code>. Maksimum:
+            <code>10000</code>. Najczęściej: <code>device-height</code>
+          </dd>
+          <dt><code>initial-scale</code></dt>
+          <dd>Wstępny poziom przybliżenia widoku po pierwszym załadowaniu strony. Minimum: <code>0.1</code>. Maksimum:
+            <code>10</code>. Domyślnie: <code>1</code>
+          </dd>
+          <dt><code>minimum-scale</code></dt>
+          <dd>Minimalny dozwolony poziom przybliżenia widoku. Minimum: <code>0.1</code>. Maksimum: <code>10</code>.
+            Domyślnie: <code>0.1</code></dd>
+          <dt><code>maximum-scale</code></dt>
+          <dd>Maksymalny dozwolony poziom przybliżenia. Minimum: <code>0.1</code>. Maksimum: <code>10</code>. Domyślnie:
+            <code>10</code>. Jakakolwiek wartość mniejsza niż 3 - accessibility fail
+          </dd>
+          <dt><code>user-scalable</code></dt>
+          <dd>Określa, czy użytkownik może przybliżać stronę. Dostępne wartości pozytywne:
+            <ul>
+              <li><code>1</code> - domyślna</li>
+              <li><code>yes</code></li>
+            </ul>
+            Dostępne wartości negatywne:
+            <ul>
+              <li><code>0</code></li>
+              <li><code>No</code></li>
+            </ul>
+            Ustawienie którejkolwiek negatywnej wartości jest sprzeczne z wytycznymi <abbr
+              title="Web Content Accessibility Guidelines">WCAG</abbr>. Przeglądarki pozwalają zignorować to ustawienie.
+          </dd>
+          <dt><code>interactive-widget</code></dt>
+          <dd>Określa, w jaki sposób interaktywne elementy interfejsu, jak klawiatura ekranowa, wpływają na viewport. Dostępne wartości:
+            <ul>
+              <li><code>resizes-visual</code> - domyślna</li>
+              <li><code>resizes-content</code></li>
+              <li><code>overlays-content</code></li>
+            </ul>
+          </dd>
+        </dl>
+        <footer class="footnotes">
+          <h2>Przypisy</h2>
+          <ol>
+            <li id="footnote-1"><p>Nie odnosi si&eogon; do pikseli fizycznych, ale przeliczonych przez DPI wy&sacute;wietlacza</p></li>
+          </ol>
+        </footer>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

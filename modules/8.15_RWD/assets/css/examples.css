@@ -1,0 +1,77 @@
+.example .example-rwd__media-queries--width {
+  color: var(--color-main);
+}
+@media (529px >= width >= 489px) {
+  .example .example-rwd__media-queries--width {
+    color: var(--color-sub);
+  }
+}
+.example .example-rwd__media-queries--pointer {
+  padding: 0.5em 1em;
+}
+@media (pointer: fine) {
+  .example .example-rwd__media-queries--pointer {
+    padding: 0.25em 0.5em;
+  }
+}
+.example .example-rwd__media-queries--aspect-ratio {
+  font-family: var(--font-text);
+}
+@media (aspect-ratio < 1) {
+  .example .example-rwd__media-queries--aspect-ratio {
+    font-family: var(--font-mono);
+  }
+}
+.example .example-rwd__media-queries--orientation {
+  display: grid;
+  grid-template: auto/repeat(2, 1fr);
+  gap: 1em;
+}
+.example .example-rwd__media-queries--orientation > li {
+  border: var(--border-slim) solid var(--color-accent);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+}
+@media (orientation: landscape) {
+  .example .example-rwd__media-queries--orientation {
+    grid-template: auto/repeat(4, 1fr);
+  }
+}
+.example .example-rwd__media-queries--prefers-color-scheme {
+  --lightness-fg: 85%;
+  --lightness-bg: 10%;
+  padding: 1em;
+  background-color: hsl(120, 75%, var(--lightness-bg));
+  color: hsl(120, 75%, var(--lightness-fg));
+}
+@media (prefers-color-scheme: light) {
+  .example .example-rwd__media-queries--prefers-color-scheme {
+    --lightness-fg: 10%;
+    --lightness-bg: 85%;
+  }
+}
+.example .example-rwd__media-queries--not {
+  line-height: 1.2;
+}
+@media not (pointer: fine) {
+  .example .example-rwd__media-queries--not {
+    line-height: 1.4;
+  }
+}
+.example .example-rwd__media-queries--and {
+  color: var(--color-main);
+}
+@media (pointer: coarse) and (height < 437px) {
+  .example .example-rwd__media-queries--and {
+    color: var(--color-sub);
+  }
+}
+.example .example-rwd__media-queries--or {
+  color: var(--color-main);
+}
+@media (pointer: coarse) or (height < 437px) {
+  .example .example-rwd__media-queries--or {
+    color: var(--color-sub);
+  }
+}/*# sourceMappingURL=examples.css.map */
