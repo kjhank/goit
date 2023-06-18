@@ -1,4 +1,4 @@
-@import 'vars';
+@import '../utils/vars';
 
 .modal {
   position: fixed;
@@ -7,7 +7,7 @@
   pointer-events: none;
 
   &::backdrop {
-    background-color: $modalBackground;
+    background-color: var(--color-accent);
   }
 
   &--open {

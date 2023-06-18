@@ -113,7 +113,7 @@ nav ul {
 }
 
 .flex-end {
-  @include flex(row, flex-end);
+  @include flex(row-reverse, flex-end);
   gap: 2em;
 }
             </pre>
@@ -127,10 +127,45 @@ nav ul {
 
 .flex-end {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
   gap: 2em;
+}
+            </pre>
+          </div>
+        </article>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--sass">
+@mixin flex($direction: row, $justify: flex-start, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.flex {
+  @include flex;
+}
+
+.flex-align-end {
+  @include flex($align: flex-end);
+}
+            </pre>
+            <pre class="code code--small code--css">
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-align-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
             </pre>
           </div>
