@@ -44,23 +44,23 @@ src/
   utils/
     _vars.scss
             </pre>
-            <pre class="code code--small code--sass">
+            <!-- <pre class="code code--small code--sass">
 // main.scss
 
 @import 'utils/vars';
 @import 'components/modal';
-            </pre>
+            </pre> -->
           </div>
           <div class="code-wrapper">
             <pre class="code code--small code-sass">
-// _vars.scss
+// src/utils/_vars.scss
 
 $modalBackground: hsl(0 0% 5%);
             </pre>
             <pre class="code code--small code-sass">
-// modal.scss
+// src/components/modal.scss
 
-@import 'vars';
+@import '../utils/vars';
 
 .modal {
   position: fixed;
@@ -83,7 +83,7 @@ $modalBackground: hsl(0 0% 5%);
             <pre class="code code--small code-sass">
 // index.scss
 
-@import 'modal.scss'
+@import 'components/modal.scss'
             </pre>
             <pre class="code code--small code-sass">
 /* index.css */

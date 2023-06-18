@@ -100,24 +100,24 @@ $animals: dog, cat, bird, turtle;
         <article class="example">
           <div class="code-wrapper">
             <pre class="code code--small code--sass">
-@$font-weights: (
-	"regular": 400,
-	"medium": 500,
-	"bold": 700
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
 );
 
 .font {
-	&--regular {
-		font-weight: map-get($font-weights, regular);
-	}
+  &--regular {
+    font-weight: map-get($font-weights, regular);
+  }
 
-	&--medium {
-		font-weight: map-get($font-weights, medium);
-	}
+  &--medium {
+    font-weight: map-get($font-weights, medium);
+  }
 
-	&--bold {
-		font-weight: map-get($font-weights, bold);
-	}
+  &--bold {
+    font-weight: map-get($font-weights, bold);
+  }
 }
             </pre>
             <pre class="code code--small code--css">
@@ -135,7 +135,7 @@ $animals: dog, cat, bird, turtle;
         </article>
       </section>
       <section>
-        <h2>Połączenie pętli <code class="code">@each</code> i słowinków</h2>
+        <h2>Połączenie pętli <code class="code">@each</code> i słowników</h2>
         <article class="example">
           <div class="code-wrapper">
             <pre class="code code--small code--sass">
