@@ -1,0 +1,11 @@
+@import '../utils/vars';
+@import '../utils/grid';
+
+.my-grid {
+  @extend %my-grid-styles;
+}
+
+.my-grid-tighter {
+  @extend %my-grid-styles;
+  gap: $grid-gap / 2;
+}

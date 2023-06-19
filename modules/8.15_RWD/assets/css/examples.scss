@@ -1,0 +1,85 @@
+.example {
+  .example-rwd {
+    &__media-queries {
+      &--width {
+        color: var(--color-main);
+
+        @media (529px >=width >=489px) {
+          color: var(--color-sub);
+        }
+      }
+
+      &--pointer {
+        padding: 0.5em 1em;
+
+        @media (pointer: fine) {
+          padding: 0.25em 0.5em;
+        }
+      }
+
+      &--aspect-ratio {
+        font-family: var(--font-text);
+
+        @media (aspect-ratio < 1) {
+          font-family: var(--font-mono);
+        }
+      }
+
+      &--orientation {
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+        gap: 1em;
+
+        > li {
+          border: var(--border-slim) solid var(--color-accent);
+          border-radius: 0.5em;
+          padding: 0.5em;
+          text-align: center;
+        }
+
+        @media (orientation: landscape) {
+          grid-template: auto / repeat(4, 1fr);
+        }
+      }
+
+      &--prefers-color-scheme {
+        --lightness-fg: 85%;
+        --lightness-bg: 10%;
+
+        padding: 1em;
+        background-color: hsl(120, 75%, var(--lightness-bg));
+        color: hsl(120, 75%, var(--lightness-fg));
+
+        @media (prefers-color-scheme: light) {
+          --lightness-fg: 10%;
+          --lightness-bg: 85%;
+        }
+      }
+
+      &--not {
+        line-height: 1.2;
+
+        @media not (pointer: fine) {
+          line-height: 1.4;
+        }
+      }
+
+      &--and {
+        color: var(--color-main);
+
+        @media (pointer: coarse) and (height < 437px) {
+          color: var(--color-sub);
+        }
+      }
+
+      &--or {
+        color: var(--color-main);
+
+        @media (pointer: coarse) or (height < 437px) {
+          color: var(--color-sub);
+        }
+      }
+
+    }
+  }
+}
