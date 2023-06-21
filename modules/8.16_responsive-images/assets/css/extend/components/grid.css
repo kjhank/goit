@@ -1,0 +1,10 @@
+.my-grid-tighter, .my-grid {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.my-grid-tighter {
+  gap: 1em;
+}/*# sourceMappingURL=grid.css.map */

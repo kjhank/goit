@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>`picture` oraz responsywne tło</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Responsywne grafiki</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a
+          href="./picture-backgrounds.html"><code>picture</code> oraz responsywne tła</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1><code>picture</code> oraz responsywne tła</h1>
+      <section>
+        <h2><code class="code">picture</code> - przypomnienie</h2>
+        <pre class="code code--html">
+&lt;picture&gt;
+  &lt;source srcset=&quot;photo.avif&quot; type=&quot;image/avif&quot; /&gt;
+  &lt;source srcset=&quot;photo.webp&quot; type=&quot;image/webp&quot; /&gt;
+  &lt;img src=&quot;photo.jpg&quot; alt=&quot;photo&quot; /&gt;
+&lt;/picture&gt;
+        </pre>
+        <article class="example">
+          <h3><code class="code">picture</code> i responsywność</h3>
+          <pre class="code code--html code--small">
+&lt;picture&gt;
+  &lt;source
+    srcset=&quot;https://picsum.photos/id/237/400/600 400w, https://picsum.photos/id/237/800/1200 800w&quot;
+    media=&quot;(max-width: 600px)&quot;
+    sizes=&quot;(min-width: 480px) 480px, 100vw&quot;&gt;
+  &lt;source
+    srcset=&quot;https://picsum.photos/id/237/800/400 800w, https://picsum.photos/id/237/1600/800 1600w&quot;
+    media=&quot;(min-width: 601px)&quot;
+    sizes=&quot;(min-width: 800px) 800px, 100vw&quot;&gt;
+  &lt;img
+    src=&quot;https://picsum.photos/id/237/300/200&quot;
+    alt=&quot;Cute puppy&quot;
+  &gt;
+&lt;/picture&gt;
+          </pre>
+          <div class="example-wrapper">
+            <div class="example-rwd__images example-rwd__images--picture">
+              <picture>
+                <source srcset="https://picsum.photos/id/237/400/600 400w, https://picsum.photos/id/237/800/1200 800w" media="(max-width: 600px)" sizes="(min-width: 480px) 480px, 100vw">
+                <source srcset="https://picsum.photos/id/237/800/400 800w, https://picsum.photos/id/237/1600/800 1600w" media="(min-width: 601px)" sizes="(min-width: 800px) 800px, 100vw">
+                <img src="https://picsum.photos/id/237/300/200" alt="Cute puppy">
+              </picture>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Responsywne tła</h2>
+        <pre class="code code--sass code--small">
+div {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://images.unsplash.com/photo-1536809188428-e8ecf663d0be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTgxOTk&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=540);
+
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: url(https://images.unsplash.com/photo-1536809188428-e8ecf663d0be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTgxOTk&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080)
+  }
+}
+        </pre>
+      </section>
+      <div class="example-wrapper">
+        <div class="example-rwd__images--background"></div>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>

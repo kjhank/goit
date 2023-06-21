@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsywne grafiki</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Responsywne grafiki</a>
+      </li>
+      <li class="main-navigation__item"><a href="./picture-backgrounds.html"><code>picture</code> oraz responsywne tła</a>
+      </li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Responsywne grafiki</h1>
+      <section>
+        <h2><abbr lang="en" title="device pixel ratio">DPR</abbr> - stosunek fizycznych pikseli urządzenia do pikseli
+          wyliczonych</h2>
+        <article class="example">
+          <h3>Problem: ta sama grafika w różnych rozmiarach</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;img
+  src=&quot;https://images.unsplash.com/[...]w=<span class="underline">1080</span>&quot;
+  alt=&quot;doggo&quot;
+  width=&quot;1080&quot;
+  height=&quot;720&quot;
+/&gt;
+&lt;img
+  src=&quot;https://images.unsplash.com/[...]w=<span class="underline">540</span>&quot;
+  alt=&quot;doggo&quot;
+  width=&quot;1080&quot;
+  height=&quot;720&quot;
+/&gt;
+&lt;img
+  src=&quot;https://images.unsplash.com/[...]w=<span class="underline">360</span>&quot;
+  alt=&quot;doggo&quot;
+  width=&quot;1080&quot;
+  height=&quot;720&quot;
+/&gt;
+&lt;img
+  src=&quot;https://images.unsplash.com/[...]w=<span class="underline">270</span>&quot;
+  alt=&quot;doggo&quot;
+  width=&quot;1080&quot;
+  height=&quot;720&quot;
+/&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-rwd__images example-rwd__images--1">
+              <img
+                src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTI5NzQ&ixlib=rb-4.0.3&q=80&w=1080"
+                alt="doggo" width="1080" height="720" />
+              <img
+                src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTI5NzQ&ixlib=rb-4.0.3&q=80&w=540"
+                alt="doggo" width="1080" height="720" />
+              <img
+                src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTI5NzQ&ixlib=rb-4.0.3&q=80&w=360"
+                alt="doggo" width="1080" height="720" />
+              <img
+                src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTI5NzQ&ixlib=rb-4.0.3&q=80&w=270"
+                alt="doggo" width="1080" height="720" />
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Rozwiązanie: osobne adresy dla różnych DPR</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;img
+  alt=&quot;doggo&quot;
+  src=&quot;https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e[...]&amp;w=270&quot;
+  srcset=&quot;
+  https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e[...]&amp;w=405 1.5x,
+  https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e[...]&amp;w=540   2x,
+  https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e[...]&amp;w=675 2.5x,
+  https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e[...]&amp;w=720 3x
+&quot;
+/&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-rwd__images example-rwd__images--2">
+              <img alt="doggo"
+                src="https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTQzMjg&ixlib=rb-4.0.3&q=80&w=270"
+                srcset="
+      https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTQzMjg&ixlib=rb-4.0.3&q=80&w=405 1.5x,
+      https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTQzMjg&ixlib=rb-4.0.3&q=80&w=540   2x,
+      https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTQzMjg&ixlib=rb-4.0.3&q=80&w=675 2.5x,
+      https://images.unsplash.com/photo-1440500758936-9ec6bc937f5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTQzMjg&ixlib=rb-4.0.3&q=80&w=720 3x
+    " />
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3>Rozwiązanie: osobne adresy dla różnych szerokości</h3>
+          <div class="code-wrapper">
+            <pre class="code code--small code--html">
+&lt;img
+  alt=&quot;doggo&quot;
+  src=&quot;https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?[...]w=270&quot;
+  srcset=&quot;
+    https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?[...]w=300 300w,
+    https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?[...]w=480 480w,
+    https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?[...]w=640 640w,
+    https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?[...]w=720 720w,
+    https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?[...]w=1080 1080w
+  &quot;
+  sizes=&quot;(min-width: 900px) 720px, (min-width: 600px) 480px, 100vw&quot;
+/&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper">
+            <div class="example-rwd__images example-rwd__images--3">
+              <img alt="doggo"
+                src="https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTUwMDc&ixlib=rb-4.0.3&q=80&w=270"
+                srcset="
+                https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTUwMDc&ixlib=rb-4.0.3&q=80&w=300 300w,
+                https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTUwMDc&ixlib=rb-4.0.3&q=80&w=480 480w,
+                https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTUwMDc&ixlib=rb-4.0.3&q=80&w=640 640w,
+                https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTUwMDc&ixlib=rb-4.0.3&q=80&w=720 720w,
+                https://images.unsplash.com/photo-1487000863648-80cd0e0b3e59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDEsd3x8fHx8fDE2ODczNTUwMDc&ixlib=rb-4.0.3&q=80&w=1080 1080w
+              "
+              sizes="(min-width: 900px) 720px, (min-width: 600px) 480px, 100vw"
+              />
+            </div>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>
