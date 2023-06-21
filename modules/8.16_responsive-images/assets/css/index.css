@@ -1,0 +1,57 @@
+@import '../../../../globals/css/reset.css';
+body {
+  background-color: rebeccapurple;
+}
+
+.page-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.page-header__links-wrapper {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fff;
+}
+.page-header__links-wrapper--is-open {
+  display: flex;
+}
+.page-header__links-wrapper > .page-header__menu-toggle {
+  position: absolute;
+  inset: 1em 1em auto auto;
+}
+@media (width >= 720px) {
+  .page-header__links-wrapper {
+    position: static;
+  }
+  .page-header__links-wrapper > .page-header__nav > menu {
+    display: flex;
+    gap: 1em;
+  }
+}
+.page-header__socials {
+  -webkit-margin-before: auto;
+          margin-block-start: auto;
+}
+@media (width >= 720px) {
+  .page-header__socials {
+    display: none;
+  }
+}
+@media (width >= 720px) {
+  .page-header__menu-toggle {
+    display: none;
+  }
+}
+@media (width >= 720px) {
+  .page-header {
+    display: flex;
+    gap: 1em;
+  }
+}/*# sourceMappingURL=index.css.map */
