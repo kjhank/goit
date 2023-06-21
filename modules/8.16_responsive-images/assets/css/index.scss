@@ -1,0 +1,66 @@
+@import '../../../../globals/css/reset.css';
+$mobile: 480px;
+$tablet: 720px;
+$desktop: 1200px;
+
+
+body {
+  background-color: rebeccapurple;
+}
+
+.page-header {
+  $ancestor: &;
+
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+
+  &__links-wrapper {
+    position: fixed;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+
+    &--is-open {
+      display: flex;
+    }
+
+    > #{$ancestor}__menu-toggle {
+      position: absolute;
+      inset: 1em 1em auto auto;
+    }
+
+    @media (width >= $tablet) {
+      position: static;
+
+      > #{$ancestor}__nav > menu {
+        display: flex;
+        gap: 1em;
+      }
+
+    }
+  }
+
+  &__socials {
+    margin-block-start: auto;
+    @media (width >= $tablet) {
+      display: none;
+    }
+  }
+
+  &__menu-toggle {
+    @media (width >= $tablet) {
+      display: none;
+    }
+  }
+
+  @media (width >= $tablet) {
+    display: flex;
+    gap: 1em;
+  }
+}
