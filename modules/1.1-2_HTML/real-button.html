@@ -1,4 +1,4 @@
-<button class="real-button">
+<button class="real-button" type="button">
   <img alt="icon description" src="./some-icon.svg" />
   <span class="visually-hidden">open popup</span>
 </button>
@@ -11,6 +11,8 @@
 
 <script>
   const realButton = document.querySelector('.real-button');
+
+  if (!realButton) return;
 
   const handleClick = () => {
     alert('You should see the other guy.');
