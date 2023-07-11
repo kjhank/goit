@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML: linki i przyciski</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>HTML: linki i przyciski</h1>
+      <section>
+        <h2>Linki.</h2>
+        <pre class="code code--html">
+&lt;a href=&quot;&lt;URL&gt;&quot;&gt;&lt;text&gt;&lt;/a&gt;
+        </pre>
+      </section>
+      <section>
+        <h2>Rodzaje linków</h2>
+        <pre class="code code--html code--small">
+&lt;ul id=&quot;linksList&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;https://google.com&quot;&gt;I&apos;ll take you to Google&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://google.com&quot; rel=&quot;norefferer noopener&quot; target=&quot;_blank&quot;&gt;I&apos;ll open Google in a new tab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./links-buttons.html&quot;&gt;I am a relative link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/modules/1.1-2_HTML/lists.html&quot;&gt;I am an absolute link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./assets/sample.png&quot; download&gt;I will attempt to trigger direct file download&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#linksList&quot;&gt;I am a fragment link to this list&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;mailto:foo@bar.com&quot;&gt;I&apos;m gonna send an email&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;tel:0202122&quot;&gt;I&apos;ll make a phone call&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#:~:text=trigger&quot;&gt;I will link to the first occurence of the word &quot;trigger&quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--links">
+          <ul id="linksList">
+            <li><a href="https://google.com">I'll take you to Google</a></li>
+            <li><a href="https://google.com" rel="norefferer noopener" target="_blank">I'll open Google in a new tab</a>
+            </li>
+            <li><a href="./links-buttons.html">I am a relative link</a></li>
+            <li><a href="/modules/1.1-2_HTML/lists.html">I am an absolute link</a></li>
+            <li><a href="./assets/sample.png" download>I will attempt to trigger direct file download</a></li>
+            <li><a href="#linksList">I am a fragment link to this list</a></li>
+            <li><a href="mailto:foo@bar.com">I'm gonna send an email</a></li>
+            <li><a href="tel:0202122">I'll make a phone call</a></li>
+            <li><a href="#:~:text=trigger">I will link to the first occurence of the word "trigger"</a></li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2>Przyciski</h2>
+        <pre class="code code--html code--small">
+&lt;button type=&quot;button&quot;&gt;
+  &lt;img alt=&quot;icon description&quot; src=&quot;/modules/4.8_SVG/assets/images/svg-logo.svg&quot; /&gt;
+  &lt;span&gt;open popup&lt;/span&gt;
+&lt;/button&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--buttons">
+          <button type="button">
+            <img alt="icon description" src="/modules/4.8_SVG/assets/images/svg-logo.svg" />
+            <span class="visually-hidden">open popup</span>
+          </button>
+        </div>
+      </section>
+    </article>
+  </main>
+  <script src="/globals/js/page.js"></script>
+  <script src="./assets/js/button.js"></script>
+</body>
+
+</html>

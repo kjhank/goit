@@ -2,181 +2,63 @@
 <html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Znaczniki tekstu</title>
-  <link rel="stylesheet" href="./assets/module-1.css">
+  <title>HTML: elementy tekstowe</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
 </head>
 
 <body>
-  <header>
-    <nav>
-      <menu>
-        <li>
-          <a href="./tables.html">Tabele</a>
-        </li>
-        <li>
-          <a href="./text-tags.html">Znaczniki tekstu</a>
-        </li>
-        <li>
-          <a href="./special-chars.html">Znaki specjalne</a>
-        </li>
-        <li>
-          <a href="./video-audio.html">Wideo i audio</a>
-        </li>
-      </menu>
-    </nav>
-  </header>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+    </menu>
+  </nav>
   <main>
     <article>
-      <h1>Znaczniki tekstu</h1>
+      <h1>HTML: elementy tekstowe</h1>
       <section>
-        <h2>Znacznik
-          <code>dl</code>
-        </h2>
-        <dl>
-          <dt>JPEG</dt>
-          <dd>
-            Large files that do not require transparent backgrounds or animations. This format is ideal for vivid
-            photorealistic photographs as it can contain millions of colors.
-          </dd>
-
-          <dt>PNG</dt>
-          <dd>
-            Has an additional parameter for describing transparency - the alpha channel. Suitable for images with
-            transparent or monochrome backgrounds. Used for icons and decorative items.
-          </dd>
-
-          <dt>webP</dt>
-          <dd>
-            A replacement format for PNG and JPEG, but with incomplete browser support. When
-            equal image quality, the compressed files will be smaller than PNG and JPEG on average
-            by 25%.
-          </dd>
-          <dt>SVG</dt>
-          <dd>
-            Vector format
-          </dd>
-        </dl>
-      </section>
-      <section>
-        <h2>Znacznik <code>span</code></h2>
-        <p>
-          Znacznik <span class="accent">span jest to</span> uniwersalny pojemnik na małą
-          zawartość tekstową.
-        </p>
-      </section>
-      <section>
-        <h2>Znacznik <code>pre</code></h2>
-        <pre>
- /* CSS: */
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #222;
-    color: #eee;
-  }
-
-  :root {
-    --lightness-base: 63%;
-  }
-
-  h1 {
-    background: #000;
-    color: #fff;
-    mix-blend-mode: lighten;
-  }
-
-  h1::before {
-    mix-blend-mode: multiply;
-  }
-}
-        </pre>
-        <pre>
-// JavaScript + React:
-
-const Component = () => &lt;div&gt;null&lt;/div&gt;;
-        </pre>
-        <p>
-          Wyatt resteth here, that quick could never rest;
-          Whose heavenly gifts increased by disdain,
-          And virtue sank the deeper in his breast;
-          Such profit he by envy could obtain.
-        </p>
-        <pre>
-          Wyatt resteth     here, that quick could never rest;
-          Whose heavenly gifts increased by disdain,
-          And virtue sank the deeper in his breast;
-          Such profit he by envy could obtain.
-        </pre>
-
-        <pre>
-          A head where wisdom mysteries did frame,
-          Whose hammers beat still in that lively brain
-          As on a stithy where that some work of fame
-          Was daily wrought, to turn to Britain's gain.
-        </pre>
-
-        <pre>
-          A visage stern and mild, where both did grow,
-          Vice to contemn, in virtue to rejoice;
-          Amid great storms, whom grace assured so
-          To live upright and smile at fortune's choice.
+        <h2>Akapity, nagłówki itd.</h2>
+        <pre class="code code--html">
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;h1&gt;This is a level-1 heading&lt;/h1&gt;
+&lt;h6&gt;This is a level-6 heading&lt;/h6&gt;
+&lt;strong&gt;This is a text of high importance&lt;/strong&gt;
+&lt;em&gt;This is emphasised&lt;/em&gt;
         </pre>
       </section>
       <section>
-        <h2>Znaczniki <code>sub</code> oraz <code>sup</code></h2>
+        <h2>Listy</h2>
+        <pre class="code code--html code--small">
+&lt;ul&gt;
+  &lt;li&gt;onions&lt;/li&gt;
+  &lt;li&gt;carrots&lt;/li&gt;
+  &lt;li&gt;celery&lt;/li&gt;
+&lt;/ul&gt;
 
-        <p>Formula of water - H<sub>2</sub>O</p>
+&lt;ol&gt;
+  &lt;li&gt;cut your veg&lt;/li&gt;
+  &lt;li&gt;preheat pan&lt;/li&gt;
+  &lt;li&gt;add oil to pan&lt;/li&gt;
+&lt;/ol&gt;
 
-        <p>Total area of the room - 150м²<sup>2</sup>.</p>
-        <p>w<sub>x<sup>y</sup></sub></p>
-
-        <p>Solve the equation a<sup>3</sup>+a<sup>2</sup>=4</p>
-      </section>
-      <section>
-        <h2>Znacznik <code>time</code></h2>
-        <p>
-          Najnowsze wiadomości <time datetime="2019-12-14">14 grudnia 2019 roku</time>.
-        </p>
-
-        <p>
-          Spotkanie odbyło się o <time datetime="2018-07-14T11:30">11:30 rano</time>.
-        </p>
-      </section>
-      <section>
-        <h2>Znacznik <code>address</code></h2>
-        <address>
-          Kijów, <br />
-          Bulwar Łesi Ukrainki, 26, <br />
-          Czwarte piętro biuro 427
-        </address>
-
-        <address>
-          <a href="mailto:mango@mail.pig">mango@mail.pig</a>
-          <a href="tel:+1112223344">(111) 222-33-44</a>
-        </address>
-      </section>
-      <section>
-        <h2>Znaczniki <code>strong</code> oraz <code>em</code></h2>
-        <p>
-          <strong>Uwaga!</strong> Okres subskrypcji dobiega końca.
-          <strong>Konto zostanie zawieszone.</strong> Odnów subskrypcję lub skontaktuj
-          się z pomocą techniczną.
-        </p>
-        <p>Jak <em>się cieszę</em> gdy wynagrodzenie jest spóźnione!</p>
-      </section>
-      <section>
-        <h2>Znaczniki <code>b</code> oraz <code>i</code></h2>
-        <p>
-          <strong>Uwaga!</strong> Okres subskrypcji dobiega końca.
-          <strong>Konto <b>zostanie</b> zawieszone.</strong> Odnów subskrypcję lub skontaktuj <b>się z pomocą</b>
-          techniczną.
-        </p>
-        <p>Jak <i>się cieszę</i> gdy wynagrodzenie <i>jest spóźnione!</i></p>
+&lt;menu&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;homepage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/contacts&quot;&gt;contact us&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/portfolio&quot;&gt;our portfolio&lt;/a&gt;&lt;/li&gt;
+&lt;/menu&gt;
+        </pre>
       </section>
     </article>
   </main>
+  <script src="/globals/js/page.js"></script>
 </body>
 
 </html>

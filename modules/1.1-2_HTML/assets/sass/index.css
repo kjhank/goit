@@ -1,0 +1,48 @@
+@import '../../../../globals/css/globals.css';
+.example__html--accessibility iframe {
+  width: 100%;
+  height: min(50vh, 800px);
+  background-color: #fff;
+}
+.example__html--links {
+  font-size: 1.5em;
+}
+.example__html--links li {
+  margin-block: 0.25em;
+}
+.example__html--links a {
+  -webkit-text-decoration: underline var(--color-accent);
+          text-decoration: underline var(--color-accent);
+}
+.example__html--links a:hover {
+  text-decoration-color: var(--color-main);
+}
+.example__html--buttons button {
+  display: inline-flex;
+  gap: 1em;
+  padding: 0.5em;
+  border-radius: 0.25em;
+}
+.example__html--buttons button:hover {
+  cursor: pointer;
+  outline: var(--border-default) dashed var(--color-accent);
+  outline-offset: var(--border-default);
+}
+.example__html--buttons button img {
+  height: 1em;
+}
+.example__html--image-figure figure {
+  overflow: hidden;
+  width: min(50vw, 360px);
+  border: var(--border-slim) solid var(--color-sub);
+  border-radius: 0.5em;
+  background-color: var(--color-sub);
+}
+.example__html--image-figure figure > img {
+  max-width: 100%;
+  height: auto;
+}
+.example__html--image-figure figcaption {
+  padding: 1em;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */

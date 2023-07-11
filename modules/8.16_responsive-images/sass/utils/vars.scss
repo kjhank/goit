@@ -1,0 +1,30 @@
+$modalBackdrop: rgb(0, 0, 0, 5%);
+
+// font-sizes
+
+// S
+$fs-hero: 32px;
+$fs-nav-link: 48px;
+$fs-social-links: 12px;
+
+$fs-team-name: 24px;
+$fs-team-position: 16px;
+
+
+// M
+$fs-hero-m: $fs-hero * 2;
+
+
+// L
+
+// paddings
+
+$p-container: 15px;
+
+// font families
+
+$ff-hero: 'Roboto', sans-serif;
+
+$clients-grid-gap: 24px;
+
+$clients-grid-gap-m: $clients-grid-gap * 1.5;

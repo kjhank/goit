@@ -1,11 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+<html lang="pl">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML: tagi (znaczniki)</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+          <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>HTML: tagi (znaczniki)</h1>
+      <pre class="code code--html">
+&lt;element&gt;&lt;/element&gt;
+&lt;element /&gt;
+      </pre>
+      <section>
+        <h2>Przykładowe tagi</h2>
+        <pre class="code code--html code--small">
+&lt;p&gt;To jest akapit tekstu&lt;/p&gt;
+
+&lt;input /&gt; &lt;!-- &larr; pole do wpisywania tekstu  --&gt;
+
+&lt;dialog&gt;To jest wyskakuj&aogon;ce okno&lt;/dialog&gt;
+        </pre>
+      </section>
+      <section>
+        <h2>Atrybuty</h2>
+        <pre class="code code--html">
+&lt;tag attribute=&quot;value&quot;&gt;&lt;/tag&gt;
+&lt;!-- attribute: &lt;global-attrs&gt; | per-element attrs --&gt;
+        </pre>
+        <h3>Globalne atrybuty</h3>
+        <ul class="definitions">
+          <li>accesskey</li>
+          <li>autocapitalize</li>
+          <li>autofocus</li>
+          <li>class</li>
+          <li>contenteditable</li>
+          <li>contextmenu</li>
+          <li>data-</li>
+          <li>dir</li>
+          <li>draggable</li>
+          <li>enterkeyhint</li>
+          <li>exportparts</li>
+          <li>hidden</li>
+          <li>id</li>
+          <li>inert</li>
+          <li>inputmode</li>
+          <li>is</li>
+          <li>itemid</li>
+          <li>itemprop</li>
+          <li>itemref</li>
+          <li>itemscope</li>
+          <li>itemtype</li>
+          <li>lang</li>
+          <li>nonce</li>
+          <li>part</li>
+          <li>popover</li>
+          <li>role</li>
+          <li>slot</li>
+          <li>spellcheck</li>
+          <li>style</li>
+          <li>tabindex</li>
+          <li>title</li>
+          <li>translate</li>
+          <li>virtualkeyboardpolicy</li>
+        </ul>
+        <pre class="code code--html code--small">
+&lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+&lt;img src=&quot;assets/avatars/user.jpg&quot; alt=&quot;Jane Doe&quot; /&gt;
+&lt;p dir=&quot;rtl&quot;&gt;This text is in a right to left language&lt;/p&gt;
+&lt;article lang=&quot;es&quot;&gt;Este articulo esta en espa&ntilde;ol&lt;/article&gt;
+&lt;a href=&quot;https://google.com&quot; rel=&quot;noreferrer,noopener&quot; target=&quot;_blank&quot;&gt;Google&lt;/a&gt;
+          </pre>
+      </section>
+      <section>
+        <h2>Komentarze</h2>
+        <pre class="code code--html">
+&lt;!-- this is a comment --&gt;
+        </pre>
+        <!--
+          Komentarze nie są widoczne w przeglądarce,
+          są informacjami dla developera
+         -->
+      </section>
+      <section>
+        <h2>Zamykanie i zagnieżdżanie znaczników</h2>
+        <pre class="code code--html">
+&lt;section&gt;&lt;/section&gt;
+&lt;section&gt;
+  &lt;h2&gt;Heading&lt;/h2&gt;
+&lt;/section&gt;
+&lt;input type=&quot;text&quot; /&gt;
+        </pre>
+        <article class="example">
+          <h3>Przykładowe zagnieżdżenia</h3>
+          <pre class="code code--small code--html">
+&lt;section&gt;
+  &lt;h2&gt;Heading&lt;/h2&gt;
+  &lt;p&gt;Lorem, ipsum dolor sit &lt;a href=&quot;#&quot;&gt;&lt;strong&gt;amet&lt;/strong&gt; consectetur&lt;/a&gt; adipisicing elit. Id reiciendis ducimus aut laboriosam maxime commodi sapiente, accusantium at ad consectetur eveniet nesciunt esse sunt voluptatibus dolor, repudiandae voluptate iure fuga.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe similique ipsum sed dolorum? Quas aspernatur eveniet omnis fuga, atque consequuntur corporis ipsam praesentium cumque enim debitis quo a nulla. Nemo.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia at nisi error sequi commodi magni ad repellat vel, obcaecati cumque facere necessitatibus vitae, quidem voluptatem suscipit ipsum saepe labore?&lt;/p&gt;
+&lt;/section&gt;
+          </pre>
+          <div class="example-wrapper">
+            <section>
+              <h2>Heading</h2>
+              <p>Lorem, ipsum dolor sit <a href="#"><strong>amet</strong> consectetur</a> adipisicing elit. Id
+                reiciendis ducimus aut laboriosam maxime commodi sapiente, accusantium at ad consectetur eveniet
+                nesciunt esse sunt voluptatibus dolor, repudiandae voluptate iure fuga.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe similique ipsum sed dolorum? Quas
+                aspernatur eveniet omnis fuga, atque consequuntur corporis ipsam praesentium cumque enim debitis quo a
+                nulla. Nemo.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia at nisi error sequi commodi
+                magni ad repellat vel, obcaecati cumque facere necessitatibus vitae, quidem voluptatem suscipit ipsum
+                saepe labore?</p>
+            </section>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="/globals/js/page.js"></script>
 </body>
+
 </html>

@@ -354,7 +354,8 @@ code:has(+ p,
 }
 
 .definitions dd,
-.definitions dt {
+.definitions dt,
+.definitions li {
   border-inline-start: var(--border-slim) solid var(--color-accent);
   padding-inline-start: 1rem;
 }
@@ -379,4 +380,12 @@ del {
 
 .underline {
   text-decoration: underline;
+}
+
+.no-shadow {
+  text-shadow: none;
+}
+
+.dim {
+  opacity: 0.6;
 }

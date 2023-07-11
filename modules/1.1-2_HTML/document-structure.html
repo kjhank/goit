@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML: struktura dokumentu</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>HTML: struktura dokumentu</h1>
+      <pre class="code code--html">
+&lt;!DOCTYPE html&gt; <span class="no-shadow dim">← deklaracja typu dokumentu</span>
+&lt;html lang=&quot;en&quot;&gt; <span class="no-shadow dim">← deklaracja języka dokumentu</span>
+  <span class="no-shadow dim">↑
+  element główny, <em>root element</em></span>
+  &lt;head&gt; <span class="no-shadow dim">← element metadanych dokumentu</span>
+    &lt;meta charset=&quot;UTF-8&quot;&gt; <span class="no-shadow dim">← deklaracja kodowania znaków</span>
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; <span class="no-shadow dim">← deklaracja <em>viewportu</em></span>
+    &lt;title&gt;Document&lt;/title&gt; <span class="no-shadow dim">← tytuł dokumentu (widoczny m.in. na pasku przeglądarki)</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;!-- tre&sacute;&cacute; dokumentu --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+      <section>
+        <h2>Metadane - <code class="code">&lt;head&gt;</code></h2>
+        <pre class="code code--html">
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;title&gt;Page title&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+  &lt;script src=&quot;assets/script.js&quot; defer&gt;&lt;/script&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;This is a SEO description&quot; /&gt;
+&lt;/head&gt;
+        </pre>
+      </section>
+      <section>
+        <h2>Treść dokumentu - <code class="code">&lt;body&gt;</code></h2>
+        <pre class="code code--html code--small">
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;!-- zawarto&sacute;&cacute; nag&lstrok;&oacute;wka strony --&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;!-- g&lstrok;&oacute;wna zawarto&sacute;&cacute; strony --&gt;
+    &lt;article&gt;
+      &lt;!-- artyku&lstrok; na stronie --&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;
+    &lt;!-- stopka strony --&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+        </pre>
+      </section>
+      <section>
+        <h2>Rodzaje elementów - blokowe vs liniowe</h2>
+        <pre class="code code--html code--small">
+&lt;main&gt;G&lstrok;&oacute;wna tre&sacute;&cacute; dokumentu&lt;/main&gt;
+&lt;article&gt;Artyku&lstrok;&lt;/article&gt;
+&lt;dialog&gt;Okno dialogowe&lt;/dialog&gt;
+&lt;p&gt;Akapit&lt;/p&gt;
+&lt;textarea name=&quot;myMessage&quot; id=&quot;myMessage&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;Obszar tekstowy&lt;/textarea&gt;
+&lt;div&gt;Element ozdobny&lt;/div&gt;
+
+&lt;!-- vs --&gt;
+
+&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;
+&lt;span&gt;Fragment tekstu&lt;/span&gt;
+&lt;strong&gt;Fragment wa&zdot;nego zaznaczonego tekstu&lt;/strong&gt;
+&lt;img src=&quot;&lt;URL&gt;&quot; alt=&quot;&quot; /&gt; &lt;!-- obrazek --&gt;
+&lt;input type=&quot;email&quot; /&gt; &lt;!-- pole do wpisania adresu email --&gt;
+        </pre>
+      </section>
+    </article>
+  </main>
+  <script src="/globals/js/page.js"></script>
+</body>
+
+</html>
