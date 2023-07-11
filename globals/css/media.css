@@ -2,6 +2,13 @@
   :root {
     --lightness-base: 63%;
     --lightness-alt: calc(var(--lightness-base) - 48%);
+
+    --color-neutral-fg: hsl(var(--hue-main),
+        0%,
+        calc(var(--lightness-base) + 15%));
+    --color-neutral-bg: hsl(var(--hue-main),
+        0%,
+        calc(var(--lightness-alt)) - 5%);
   }
 
   body {

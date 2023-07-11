@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML: struktura dokumentu</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--current"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Dostępność i semantyka</h1>
+      <pre class="code code--html">
+<del>&lt;div&gt;G&lstrok;&oacute;wna tre&sacute;&cacute; dokumentu&lt;/div&gt;</del>
+<del>&lt;div&gt;Artyku&lstrok;&lt;/div&gt;</del>
+<del>&lt;div&gt;Okno dialogowe&lt;/div&gt;</del>
+<del>&lt;div&gt;Akapit&lt;/div&gt;</del>
+<del>&lt;span&gt;Fragment wa&zdot;nego zaznaczonego tekstu&lt;/span&gt;</del>
+
+&lt;main&gt;G&lstrok;&oacute;wna tre&sacute;&cacute; dokumentu&lt;/main&gt;
+&lt;article&gt;Artyku&lstrok;&lt;/article&gt;
+&lt;dialog&gt;Okno dialogowe&lt;/dialog&gt;
+&lt;p&gt;Akapit&lt;/p&gt;
+&lt;strong&gt;Fragment wa&zdot;nego zaznaczonego tekstu&lt;/strong&gt;
+      </pre>
+      <section>
+        <h2>Znaczniki strukturalne i dostępność</h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;nav&gt;
+      &lt;a href=&quot;/&quot;&gt;
+        &amp;lt;!-- markup logo --&amp;gt;
+      &lt;/a&gt;
+      &lt;menu&gt;
+        &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Strona g&lstrok;&oacute;wna&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/team&quot;&gt;Zesp&oacute;&lstrok;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/portfolio&quot;&gt;Projekty&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/contact&quot;&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+      &lt;/menu&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h1&gt;Tytu&lstrok; artyku&lstrok;u&lt;/h1&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Tytu&lstrok; sekcji&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, maxime minima voluptate praesentium suscipit deleniti voluptatem nesciunt culpa pariatur consequuntur eaque odio similique reprehenderit ex vel. Accusantium vitae suscipit dicta.&lt;/p&gt;
+        &lt;p&gt;Fugiat, ducimus voluptates quam nam eveniet aperiam incidunt, corporis suscipit modi quos ea accusamus reprehenderit temporibus vitae nesciunt. Culpa neque animi voluptatem ad voluptate odit fugiat illum libero aspernatur soluta.&lt;/p&gt;
+        &lt;p&gt;Ipsam recusandae officia a dignissimos expedita voluptas asperiores dolore, repudiandae quae saepe ut et. Natus voluptatibus consectetur excepturi possimus adipisci fugit autem aperiam. Pariatur amet, cumque tenetur non laboriosam labore?&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Kolejna sekcja&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat molestiae corrupti sed veritatis. Veniam totam exercitationem dignissimos molestiae iusto repudiandae magni voluptatem impedit minima. Voluptatibus cumque saepe nisi ratione pariatur.&lt;/p&gt;
+        &lt;p&gt;Quasi iure repudiandae nesciunt. Minima exercitationem doloribus et repellendus laboriosam cum, eligendi modi ex debitis, obcaecati nihil incidunt. Fugiat sunt aut hic recusandae error quo iure voluptatem facere quasi placeat.&lt;/p&gt;
+        &lt;p&gt;Architecto ut animi vitae est. Magni reprehenderit, at omnis quidem sed eos minus ab perferendis, molestiae repellat sequi similique, odit animi natus rem voluptatibus culpa officia asperiores? Tempora, dignissimos accusamus?&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;
+    &lt;a href=&quot;/&quot;&gt;Strona g&lstrok;&oacute;wna&lt;/a&gt;
+    &lt;address&gt;
+      Lorem ipsum,
+      dolor sit amet consectetur,
+      adipisicing elit. Fugit,
+      23-666 &Lstrok;&oacute;d&zacute;
+      &lt;a href=&quot;mailto:contact@foo.bar&quot;&gt;Napisz do nas&lt;/a&gt;
+    &lt;/address&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+        </pre>
+          <pre class="code code--html code--small">
+&lt;div&gt;
+  &lt;div&gt;
+    &lt;a href=&quot;/&quot;&gt;
+      &amp;lt;!-- SVG z logo --&amp;gt;
+    &lt;/a&gt;
+    &lt;div&gt;
+      &lt;div&gt;&lt;a href=&quot;/&quot;&gt;Strona g&lstrok;&oacute;wna&lt;/a&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;a href=&quot;/team&quot;&gt;Zesp&oacute;&lstrok;&lt;/a&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;a href=&quot;/portfolio&quot;&gt;Projekty&lt;/a&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;a href=&quot;/contact&quot;&gt;Kontakt&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Tytu&lstrok; artyku&lstrok;u&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Tytu&lstrok; sekcji&lt;/h2&gt;
+      &lt;div&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, maxime minima voluptate praesentium suscipit deleniti voluptatem nesciunt culpa pariatur consequuntur eaque odio similique reprehenderit ex vel. Accusantium vitae suscipit dicta.&lt;/div&gt;
+      &lt;div&gt;Fugiat, ducimus voluptates quam nam eveniet aperiam incidunt, corporis suscipit modi quos ea accusamus reprehenderit temporibus vitae nesciunt. Culpa neque animi voluptatem ad voluptate odit fugiat illum libero aspernatur soluta.&lt;/div&gt;
+      &lt;div&gt;Ipsam recusandae officia a dignissimos expedita voluptas asperiores dolore, repudiandae quae saepe ut et. Natus voluptatibus consectetur excepturi possimus adipisci fugit autem aperiam. Pariatur amet, cumque tenetur non laboriosam labore?&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Kolejna sekcja&lt;/h2&gt;
+      &lt;div&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat molestiae corrupti sed veritatis. Veniam totam exercitationem dignissimos molestiae iusto repudiandae magni voluptatem impedit minima. Voluptatibus cumque saepe nisi ratione pariatur.&lt;/div&gt;
+      &lt;div&gt;Quasi iure repudiandae nesciunt. Minima exercitationem doloribus et repellendus laboriosam cum, eligendi modi ex debitis, obcaecati nihil incidunt. Fugiat sunt aut hic recusandae error quo iure voluptatem facere quasi placeat.&lt;/div&gt;
+      &lt;div&gt;Architecto ut animi vitae est. Magni reprehenderit, at omnis quidem sed eos minus ab perferendis, molestiae repellat sequi similique, odit animi natus rem voluptatibus culpa officia asperiores? Tempora, dignissimos accusamus?&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;a href=&quot;/&quot;&gt;Strona g&lstrok;&oacute;wna&lt;/a&gt;
+  &lt;div&gt;
+    Lorem ipsum,
+    dolor sit amet consectetur,
+    adipisicing elit. Fugit,
+    23-666 &Lstrok;&oacute;d&zacute;
+    &lt;a href=&quot;mailto:contact@foo.bar&quot;&gt;Napisz do nas&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div>
+        </pre>
+        </div>
+        <div class="example-wrapper example__html example__html--accessibility comparison">
+          <iframe src="./accessibility-sample.html"></iframe>
+          <iframe src="./inaccessibility-sample.html"></iframe>
+        </div>
+      </section>
+    </article>
+  </main>
+  <script src="/globals/js/page.js"></script>
+</body>
+
+</html>

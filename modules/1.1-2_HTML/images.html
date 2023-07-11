@@ -1,24 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Link z obrazkiem</title>
+  <title>HTML: obrazki</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
 </head>
 
 <body>
-  <picture>
-    <source srcset="photo.avif" type="image/avif" />
-    <source srcset="photo.webp" type="image/webp" />
-    <img src="photo.jpg" alt="photo" />
-  </picture>
-  <img alt="Rudy kot" height="426" src="https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg?w=640"
-    width="640" />
-    <img
-      alt="sample"
-      src="./assets/sample.png"
-    />
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>HTML: obrazki</h1>
+      <pre class="code code--html">
+&lt;img src=&quot;&lt;URL&gt;&quot; alt=&quot;&lt;string&gt;&quot; width="&lt;number&gt;" height="&lt;number&gt;" /&gt;
+      </pre>
+      <section>
+        <h2>Obrazki i dostępność</h2>
+        <pre class="code code--html code--small">
+&lt;img
+  src=&quot;https://images.unsplash.com/photo-1470390356535-d19bbf47bacb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDF8fHx8fHwxNjg5MDg4NzYw&amp;ixlib=rb-4.0.3&amp;q=80&amp;utm_campaign=api-credit&amp;utm_medium=referral&amp;utm_source=unsplash_source&amp;w=1080&quot;
+  alt=&quot;cute puppy calmly sleeping in their owner&apos;s arms&quot;
+/&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--image-alt">
+          <img
+            src="https://images.unsplash.com/photo-1470390356535-d19bbf47bacb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDF8fHx8fHwxNjg5MDg4NzYw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
+            alt="cute puppy calmly sleeping in their owner's arms" />
+        </div>
+      </section>
+      <section>
+        <h2>Obrazki z opisami - <code class="code">&lt;figure&gt;</code> i <code class="code">&lt;figcaption&gt;</code>
+        </h2>
+        <pre class="code code--html code--small">
+&lt;figure&gt;
+  &lt;img
+  src=&quot;https://images.unsplash.com/photo-1470390356535-d19bbf47bacb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDF8fHx8fHwxNjg5MDg4NzYw&amp;ixlib=rb-4.0.3&amp;q=80&amp;utm_campaign=api-credit&amp;utm_medium=referral&amp;utm_source=unsplash_source&amp;w=1080&quot;
+  alt=&quot;cute puppy calmly sleeping in their owner&apos;s arms&quot;
+/&gt;
+  &lt;figcaption&gt;Cute puppers&lt;/figcaption&gt;
+&lt;/figure&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--image-figure">
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1470390356535-d19bbf47bacb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDF8fHx8fHwxNjg5MDg4NzYw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
+              alt="cute puppy calmly sleeping in their owner's arms" />
+            <figcaption>Cute puppers</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>Link z obrazkiem</h2>
+        <pre class="code code--html code--small">
+&lt;a href=&quot;https://google.com&quot;&gt;
+  &lt;img
+    src=&quot;https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png&quot;
+    alt=&quot;Google logo&quot;
+  /&gt;
+&lt;/a&gt;
+        </pre>
+        <div class="example-wrapper">
+          <a href="https://google.com">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png"
+              alt="Google logo" />
+          </a>
+        </div>
+      </section>
+      <section>
+        <h2>Ścieżki do plików:</h2>
+        <section>
+          <h3>Ścieżki względne:</h3>
+          <pre class="code code--html code--small">
+&lt;img src=&quot;assets/sample.png&quot; alt=&quot;some-image&quot; /&gt;
+&lt;img src=&quot;../7.13_BEM/assets/images/modal.png&quot; alt=&quot;modal window&quot; /&gt;
+          </pre>
+        </section>
+        <section>
+          <h3>Ścieżki bezwzględne:</h3>
+          <pre class="code code--html code--small">
+&lt;img src=&quot;/modules/7.13_BEM/assets/images/social-link.png&quot; alt=&quot;social links&quot; /&gt;
+&lt;img
+  src=&quot;https://images.unsplash.com/photo-1470390356535-d19bbf47bacb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9nLDF8fHx8fHwxNjg5MDg4NzYw&amp;ixlib=rb-4.0.3&amp;q=80&amp;utm_campaign=api-credit&amp;utm_medium=referral&amp;utm_source=unsplash_source&amp;w=1080&quot;
+  alt=&quot;cute puppy calmly sleeping in their owner&apos;s arms&quot;
+/&gt;
+          </pre>
+        </section>
+      </section>
+    </article>
+  </main>
+  <script src="/globals/js/page.js"></script>
 </body>
 
 </html>

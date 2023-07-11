@@ -1,0 +1,11 @@
+@import '../utils/vars.scss';
+
+.modal {
+  &__close-button {
+
+  }
+
+  &__backdrop {
+    background-color: $modalBackdrop;
+  }
+}

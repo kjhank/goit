@@ -1,0 +1,66 @@
+.example {
+  &__html {
+    &--accessibility {
+      iframe {
+        width: 100%;
+        height: min(50vh, 800px);
+        background-color: #fff;
+      }
+    }
+
+    &--links {
+      font-size: 1.5em;
+
+      li {
+        margin-block: 0.25em;
+      }
+
+      a {
+        text-decoration: underline var(--color-accent);
+
+        &:hover {
+          text-decoration-color: var(--color-main);
+        }
+      }
+    }
+
+    &--buttons {
+      button {
+        display: inline-flex;
+        gap: 1em;
+        padding: 0.5em;
+        border-radius: 0.25em;
+
+        &:hover {
+          cursor: pointer;
+          outline: var(--border-default) dashed var(--color-accent);
+          outline-offset: var(--border-default);
+        }
+
+        img {
+          height: 1em;
+        }
+      }
+    }
+
+    &--image-figure {
+      figure {
+        overflow: hidden;
+        width: min(50vw, 360px);
+        border: var(--border-slim) solid var(--color-sub);
+        border-radius: 0.5em;
+        background-color: var(--color-sub);
+
+        > img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      figcaption {
+        padding: 1em;
+        text-align: center;
+      }
+    }
+  }
+}
