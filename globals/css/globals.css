@@ -7,7 +7,7 @@
 @import url('./fonts/stylesheet.css');
 
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   display: flex;
   flex-direction: column;
   gap: max(2vw, 40px);
@@ -337,6 +337,10 @@ code:has(+ p,
   padding-block-start: 1em;
 }
 
+.definitions {
+  width: min(100%, 80ch);
+}
+
 .definitions dt {
   font-size: 1.25em;
 }
@@ -351,6 +355,10 @@ code:has(+ p,
 
 .definitions > dd {
   padding-block-start: 0.5em;
+}
+
+.definitions > dd > span[lang] {
+  font-style: italic;
 }
 
 .definitions dd,

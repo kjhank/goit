@@ -62,5 +62,49 @@
         text-align: center;
       }
     }
+
+    &--dl {
+      dl {
+        padding-inline-start: 0.75em;
+
+        > dt {
+          position: relative;
+
+          &::before {
+            content: '●';
+            position: absolute;
+            inset-inline-start: -0.75em;
+            color: var(--color-main);
+          }
+        }
+
+        > dd {
+          margin-block-end: 1em;
+        }
+      }
+    }
+
+    &--span {
+      & .accent {
+        color: var(--color-accent);
+      }
+    }
+
+    &--strong-em,
+    &--special-chars {
+      p {
+        width: min(100%, 80ch);
+        &:not(:last-child) {
+          margin-block-end: 1em;
+        }
+      }
+    }
+
+    &--video {
+      video {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }

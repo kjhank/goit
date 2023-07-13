@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML: elementy multimedialne</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+      <li class="main-navigation__item"><a href="./tables.html">Tabele</a>
+      <li class="main-navigation__item"><a href="./text-ctd.html">Więcej znaczników tekstu</a>
+      <li class="main-navigation__item"><a href="./special-chars.html">Znaki specjalne</a>
+      <li class="main-navigation__item"><a href="./multimedia.html">Elementy multimedialne: <code
+            class="code">video</code> i <code class="code">audio</code></a>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Elementy multimedialne: <code class="code">&lt;video&gt;</code> i <code class="code">&lt;audio&gt;</code></h1>
+      <section>
+        <h2>Tag <code class="code">video</code> - podstawowy</h2>
+        <pre class="code code--html code--small">
+&lt;video muted src=&quot;http://techslides.com/demos/sample-videos/small.webm&quot;
+poster=&quot;https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?w=640&quot; width=&quot;640&quot; controls autoplay
+loop preload=&quot;auto&quot; controlslist=&quot;nodownload&quot;&gt;&lt;/video&gt;
+
+&lt;!-- the `controlslist` attribute is experimental &amp; non-standard --&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--video">
+          <video muted src="http://techslides.com/demos/sample-videos/small.webm"
+            poster="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?w=640" width="640" controls
+            autoplay loop preload="auto" controlslist="nodownload"></video>
+        </div>
+      </section>
+      <section>
+        <h2>Element <code class="code">video</code> - rozbudowany</h2>
+        <pre class="code code--html code--small">
+&lt;video muted poster=&quot;https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?w=640&quot; width=&quot;640&quot; controls&gt;
+    &lt;source src=&quot;http://techslides.com/demos/sample-videos/small.webm&quot; type=&quot;video/webm&quot; /&gt;
+    &lt;source src=&quot;http://techslides.com/demos/sample-videos/small.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+    &lt;source src=&quot;http://techslides.com/demos/sample-videos/small.ogg&quot; type=&quot;video/ogg&quot; /&gt;
+    Your browser doesn&amp;apos;t support the video element &#x1F641;
+  &lt;/video&gt;
+      </pre>
+        <div class="example-wrapper example__html example__html--video">
+          <video muted poster="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?w=640" width="640"
+            controls>
+            <source src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" />
+            <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
+            <source src="http://techslides.com/demos/sample-videos/small.ogg" type="video/ogg" />
+            Your browser doesn&apos;t support the video element 🙁
+          </video>
+        </div>
+      </section>
+      <section>
+        <h2>Element &lt;audio&gt;</h2>
+        <pre class="code code--html code--small">
+&lt;audio muted src=&quot;./assets/audio.ogg&quot; controls autoplay loop preload=&quot;auto&quot;&gt;&lt;/audio&gt;
+      </pre>
+        <div class="example-wrapper example__html example__html--audio">
+          <audio muted src="./assets/audio.ogg" controls autoplay loop preload="auto"></audio>
+        </div>
+      </section>
+      <section>
+        <h2>Tag audio - rozszerzone</h2>
+        <pre class="code code--html code--small">
+&lt;audio controls&gt;
+  &lt;source src=&quot;./assets/audio.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+  &lt;source src=&quot;./assets/audio.ogg&quot; type=&quot;audio/ogg&quot; /&gt;
+  Your browser doesn&amp;apos;t support the audio element &#x1F641;
+
+&lt;/audio&gt;
+      </pre>
+        <div class="example-wrapper example__html example__html--audio">
+          <audio controls>
+            <source src="./assets/audio.mp3" type="audio/mpeg" />
+            <source src="./assets/audio.ogg" type="audio/ogg" />
+            Your browser doesn&apos;t support the audio element 🙁
+
+          </audio>
+        </div>
+      </section>
+    </article>
+  </main>
+  <script src="/globals/js/page.js"></script>
+</body>
+
+</html>

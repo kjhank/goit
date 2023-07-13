@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML: więcej znaczników tekstu</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+      <li class="main-navigation__item"><a href="./tables.html">Tabele</a>
+      <li class="main-navigation__item"><a href="./text-ctd.html">Więcej znaczników tekstu</a>
+      <li class="main-navigation__item"><a href="./special-chars.html">Znaki specjalne</a>
+      <li class="main-navigation__item"><a href="./multimedia.html">Elementy multimedialne: <code
+            class="code">video</code> i <code class="code">audio</code></a>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>HTML: więcej znaczników tekstu</h1>
+      <section>
+        <h2>Lista definicji: <code class="code">dl</code></h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
+&lt;dl&gt;
+  &lt;dt&gt;Termin&lt;/dt&gt;
+  &lt;dd&gt;Definicja terminu&lt;/dd&gt;
+  &lt;dt&gt;Kolejny termin&lt;/dt&gt;
+  &lt;dd&gt;Definicja kolejnego terminu&lt;/dd&gt;
+&lt;/dl&gt;
+        </pre>
+          <div class="example-wrapper example__html example__html--dl">
+            <dl>
+              <dt>Termin</dt>
+              <dd>Definicja terminu</dd>
+              <dt>Kolejny termin</dt>
+              <dd>Definicja kolejnego terminu</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Dekoracyjny liniowy znacznik tekstu: <code class="code">&lt;span&gt;</code></h2>
+        <pre class="code code--html code--small">
+&lt;p&gt;
+  &lt;span class=&quot;accent&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing&lt;/span&gt; elit. Repellat, esse quia unde fuga nulla, nam maiores tenetur blanditiis laudantium nihil eos eius, odit facere hic. Laboriosam sapiente accusamus maiores quisquam.
+&lt;/p&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--span">
+          <p>
+            <span class="accent">Lorem ipsum dolor sit amet consectetur adipisicing</span> elit. Repellat, esse quia
+            unde fuga nulla, nam maiores tenetur blanditiis laudantium nihil eos eius, odit facere hic. Laboriosam
+            sapiente accusamus maiores quisquam.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2>Tekst preformatowany: <code class="code">&lt;pre&gt;</code></h2>
+        <pre class="code code--html code--small">
+&lt;pre&gt;
+Lorem
+  ipsum
+    dolor sit amet
+      consectetur adipisicing elit.
+
+Quam maiores      harum delectus? Cumque eum voluptas est magni,
+eligendi adipisci ducimus      accusamus       quo quas, commodi quos    optio repellat    vel tenetur labore?
+&lt;/pre&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--table">
+          <pre>
+Lorem
+  ipsum
+    dolor sit amet
+      consectetur adipisicing elit.
+
+Quam maiores      harum delectus? Cumque eum voluptas est magni,
+eligendi adipisci ducimus      accusamus       quo quas, commodi quos    optio repellat    vel tenetur labore?
+          </pre>
+        </div>
+      </section>
+      <section>
+        <h2>Indeks górny <code class="code">&lt;sup&gt;</code> i dolny <code class="code">&lt;sub&gt;</code></h2>
+        <pre class="code code--html code--small">
+&lt;p&gt;
+  Lorem ipsum&lt;sup&gt;1&lt;/sup&gt; dolor sit amet, consectetur adipisicing elit. Odio, ducimus.&lt;sup&gt;2&lt;/sup&gt; Ipsam ducimus
+  expedita labore? Temporibus nulla natus vel quod dolore, nostrum itaque quis quos sunt expedita amet, aliquam
+  sit omnis.
+&lt;/p&gt;
+
+C&lt;sub&gt;2&lt;/sub&gt;H&lt;sub&gt;5&lt;/sub&gt;OH
+        </pre>
+        <div class="example-wrapper example__html example__html--sub-sup">
+          <p>
+            Lorem ipsum<sup>1</sup> dolor sit amet, consectetur adipisicing elit. Odio, ducimus.<sup>2</sup> Ipsam
+            ducimus
+            expedita labore? Temporibus nulla natus vel quod dolore, nostrum itaque quis quos sunt expedita amet,
+            aliquam
+            sit omnis.
+          </p>
+
+          C<sub>2</sub>H<sub>5</sub>OH
+        </div>
+      </section>
+      <section>
+        <h2>Element czasu: <code class="code">&lt;time&gt;</code></h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
+&lt;time datetime=&quot;2023-07-13&quot;&gt;
+  July 13&lt;sup&gt;th&lt;/sup&gt;
+&lt;/time&gt;
+          </pre>
+          <div class="example-wrapper example__html example__html--time">
+            <time datetime="2023-07-13">
+              July 13<sup>th</sup>
+            </time>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Znacznik adresu: <code class="code">&lt;address&gt;</code></h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
+&lt;address&gt;
+  901 S Ashland Ave&lt;br /&gt;
+  60607 Chicago, IL&lt;br /&gt;
+  USA
+&lt;/address&gt;
+          </pre>
+          <div class="example-wrapper example__html example__html--address">
+            <address>
+              901 S Ashland Ave<br />
+              60607 Chicago, IL<br />
+              USA
+            </address>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Elementy semantyczno-dekoracyjne: <code class="code">&lt;strong&gt;</code> oraz <code
+            class="code">&lt;em&gt;</code> vs. czysto dekoracyjne: <code class="code">&lt;b&gt;</code> oraz <code
+            class="code">&lt;i&gt;</code></h2>
+        <pre class="code code--html code--small">
+&lt;p&gt;&lt;strong&gt;Lorem ipsum dolor sit amet&lt;/strong&gt;, consectetur adipisicing elit. &lt;em&gt;Quisquam odit modi unde&lt;/em&gt; temporibus sequi ratione debitis amet eius magnam nemo maxime adipisci ex, vel est quidem accusantium facere! Reprehenderit, minima.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Lorem ipsum dolor sit amet&lt;/b&gt;, consectetur adipisicing elit. &lt;i&gt;Quisquam odit modi unde&lt;/i&gt; temporibus sequi ratione debitis amet eius magnam nemo maxime adipisci ex, vel est quidem accusantium facere! Reprehenderit, minima.&lt;/p&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--strong-em">
+          <p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipisicing elit. <em>Quisquam odit modi unde</em>
+            temporibus sequi ratione debitis amet eius magnam nemo maxime adipisci ex, vel est quidem accusantium
+            facere! Reprehenderit, minima.</p>
+          <p><b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit. <i>Quisquam odit modi unde</i> temporibus
+            sequi ratione debitis amet eius magnam nemo maxime adipisci ex, vel est quidem accusantium facere!
+            Reprehenderit, minima.</p>
+
+        </div>
+      </section>
+    </article>
+  </main>
+  <script src="/globals/js/page.js"></script>
+</body>
+
+</html>

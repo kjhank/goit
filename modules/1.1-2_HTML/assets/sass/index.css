@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import '../../../../globals/css/globals.css';
 .example__html--accessibility iframe {
   width: 100%;
@@ -45,4 +46,35 @@
 .example__html--image-figure figcaption {
   padding: 1em;
   text-align: center;
+}
+.example__html--dl dl {
+  -webkit-padding-start: 0.75em;
+          padding-inline-start: 0.75em;
+}
+.example__html--dl dl > dt {
+  position: relative;
+}
+.example__html--dl dl > dt::before {
+  content: "●";
+  position: absolute;
+  inset-inline-start: -0.75em;
+  color: var(--color-main);
+}
+.example__html--dl dl > dd {
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+.example__html--span .accent {
+  color: var(--color-accent);
+}
+.example__html--strong-em p, .example__html--special-chars p {
+  width: min(100%, 80ch);
+}
+.example__html--strong-em p:not(:last-child), .example__html--special-chars p:not(:last-child) {
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+.example__html--video video {
+  width: 100%;
+  height: auto;
 }/*# sourceMappingURL=index.css.map */

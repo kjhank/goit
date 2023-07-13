@@ -2,55 +2,87 @@
 <html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Znaki specjalne</title>
-  <link rel="stylesheet" href="./assets/module-1.css">
+  <title>HTML: znaki specjalne</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
 </head>
 
 <body>
-  <header>
-    <nav>
-      <menu>
-        <li>
-          <a href="./tables.html">Tabele</a>
-        </li>
-        <li>
-          <a href="./text-tags.html">Znaczniki tekstu</a>
-        </li>
-        <li>
-          <a href="./special-chars.html">Znaki specjalne</a>
-        </li>
-        <li>
-          <a href="./video-audio.html">Wideo i audio</a>
-        </li>
-      </menu>
-    </nav>
-  </header>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+      <li class="main-navigation__item"><a href="./tables.html">Tabele</a>
+      <li class="main-navigation__item"><a href="./text-ctd.html">Więcej znaczników tekstu</a>
+      <li class="main-navigation__item"><a href="./special-chars.html">Znaki specjalne</a>
+      <li class="main-navigation__item"><a href="./multimedia.html">Elementy multimedialne: <code
+            class="code">video</code> i <code class="code">audio</code></a>
+    </menu>
+  </nav>
   <main>
     <article>
-      <h1>Znaki specjalne</h1>
+      <h1>HTML: znaki specjalne</h1>
       <section>
-        <h2>Encje / mnemonik</h2>
-        <p>Wszelkie prawa zastrzeżone &copy; Lex, 2020</p>
-        <pre>
-          &lt;a href="/"&gt;foobar&lt;/a&gt;
+        <h2>Encje / mnemoniki:</h2>
+        <pre class="code code--html code--small">
+&lt;p&gt;Wszelkie prawa zastrze&zdot;one &amp;copy; Kancelaria Taka i Inna, 2023&lt;/p&gt;
+
+&lt;p&gt;Lorem Ipsum&amp;trade;&lt;/p&gt;
+
+&lt;p&gt;A tak markujemy HTML: &lt;span&gt;treść&lt;/span&gt;&lt;/p&gt;
         </pre>
+        <div class="example-wrapper example__html example__html--special-chars">
+          <p>Wszelkie prawa zastrzeżone &copy; Kancelaria Taka i Inna, 2023</p>
+
+          <p>Lorem Ipsum&trade;</p>
+
+          <p>A tak markujemy HTML: &amp;lt;span&amp;gt;treść&amp;lt;/span&amp;gt;</p>
+        </div>
       </section>
       <section>
-        <h2>Kod dziesiętny</h2>
-        <p>Wszelkie prawa zastrzeżone &#169; Lex, 2020</p>
-        <p>&#666;</p>
-        <p>&#267;</p>
-        <p>&#672;</p>
-        <p>&#908;</p>
+        <h2>Kody dziesiętne:</h2>
+        <pre class="code code--html code--small">
+&lt;p&gt;Wszelkie prawa zastrze&zdot;one &amp;#169; Kancelaria Taka i Inna, 2023&lt;/p&gt;
+
+&lt;p&gt;Lorem Ipsum&amp;#8482;
+
+&lt;p&gt;A tak markujemy HTML: &amp;#60;span&amp;#62;treść&amp;#60;/span&amp;#62;&lt;/p&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--special-chars">
+          <p>Wszelkie prawa zastrzeżone &#169; Kancelaria Taka i Inna, 2023</p>
+
+          <p>Lorem Ipsum&#8482;</p>
+
+          <p>A tak markujemy HTML: &#60;span&#62;treść&#60;/span&#62;</p>
+        </div>
       </section>
       <section>
-        <h2>Kod szesnastkowy (heksadecymalny)</h2>
-        <p>Wszelkie prawa zastrzeżone &#xa9; Lex, 2020</p>
+        <h2>Kody szesnastkowe (heksadecymalne):</h2>
+        <pre class="code code--html code--small">
+&lt;p&gt;Wszelkie prawa zastrze&zdot;one &amp;#169; Kancelaria Taka i Inna, 2023&lt;/p&gt;
+
+&lt;p&gt;Lorem Ipsum&amp;#x2122;
+
+&lt;p&gt;A tak markujemy HTML: &amp;#x3c;span&amp;#x3e;treść&amp;#x3c;/span&amp;#x3e;&lt;/p&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--special-chars">
+          <p>Wszelkie prawa zastrzeżone &#xa9; Kancelaria Taka i Inna, 2023</p>
+
+          <p>Lorem Ipsum&#x2122;</p>
+
+          <p>A tak markujemy HTML: &#x3c;span&#x3e;treść&#x3c;/span&#x3e;</p>
+        </div>
       </section>
     </article>
   </main>
+  <script src="/globals/js/page.js"></script>
 </body>
 
 </html>
