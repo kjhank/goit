@@ -2,125 +2,225 @@
 <html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabele</title>
-  <link rel="stylesheet" href="./assets/module-1.css">
+  <title>HTML: tabele</title>
+  <link rel="stylesheet" href="./assets/sass/index.css" />
 </head>
 
 <body>
-  <header>
-    <nav>
-      <menu>
-        <li>
-          <a href="./tables.html">Tabele</a>
-        </li>
-        <li>
-          <a href="./text-tags.html">Znaczniki tekstu</a>
-        </li>
-        <li>
-          <a href="./special-chars.html">Znaki specjalne</a>
-        </li>
-        <li>
-          <a href="./video-audio.html">Wideo i audio</a>
-        </li>
-      </menu>
-    </nav>
-  </header>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Tagi</a>
+      <li class="main-navigation__item"><a href="./document-structure.html">Struktura dokumentu</a>
+      </li>
+      <li class="main-navigation__item"><a href="./accessibility.html">Dostępność i
+          semantyka</a></li>
+      <li class="main-navigation__item"><a href="./text-tags.html">Elementy tekstowe i listy</a></li>
+      <li class="main-navigation__item"><a href="./links-buttons.html">Linki i przyciski</a></li>
+      <li class="main-navigation__item"><a href="./images.html">Obrazki</a></li>
+      <li class="main-navigation__item"><a href="./tables.html">Tabele</a>
+      <li class="main-navigation__item"><a href="./text-ctd.html">Więcej znaczników tekstu</a>
+      <li class="main-navigation__item"><a href="./special-chars.html">Znaki specjalne</a>
+      <li class="main-navigation__item"><a href="./multimedia.html">Elementy multimedialne: <code
+            class="code">video</code> i <code class="code">audio</code></a>
+    </menu>
+  </nav>
   <main>
     <article>
       <h1>Tabele</h1>
+      <pre class="code code--html">
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+      </pre>
+      <section>
+        <h2>Elementy tabeli</h2>
+        <dl class="definitions">
+          <dt><code>table</code></dt>
+          <dd>Całość tabeli, najbardziej zewnętrzny element</dd>
+          <dt><code>thead</code></dt>
+          <dd><span lang="en">Table head:</span> nagłówek tabeli</dd>
+          <dt><code>tbody</code></dt>
+          <dd><span lang="en">Table body:</span> treść tabeli</dd>
+          <dt><code>tr</code></dt>
+          <dd><span lang="en">Table row:</span> rząd tabeli</dd>
+          <dt><code>th</code></dt>
+          <dd><span lang="en">Table header:</span> pojedyncza komórka nagłówka</dd>
+          <dt><code>td</code></dt>
+          <dd><span lang="en">Table data cell:</span> Komórka tabeli</dd>
+          <dt><code>tfoot</code></dt>
+          <dd><span lang="en">Table footer:</span> Stopka tabeli</dd>
+          <dt><code>caption</code></dt>
+          <dd>Opis tabeli</dd>
+        </dl>
+      </section>
+      <section>
+        <h2>Przykładowa tabela</h2>
+        <pre class="code code--html code--small">
+&lt;table&gt;
 
-      <section>
-        <h2>Podstawowa tabela</h2>
-        <table>
-          <caption>Train schedule</caption>
-          <thead>
-            <tr>
-              <th>Numer pociągu</th>
-              <th>Trasa</th>
-              <th>Czas przejazdu</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>433</td>
-            <td>Kijów - Kowel</td>
-            <td>5 godzin</td>
-          </tr>
-          <tr>
-            <td>701</td>
-            <td>Charków - Dniepr</td>
-            <td>7 godzin</td>
-          </tr>
-          <tr>
-            <td>258</td>
-            <td>Lwów - Odessa</td>
-            <td>4 godziny</td>
-          </tr>
-          <tfoot>
-            <tr>
-              <td colspan="3">&copy; PKP</td>
-            </tr>
-          </tfoot>
-        </table>
+  &lt;caption&gt;Train schedule&lt;/caption&gt;
+
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Train number&lt;/th&gt;
+      &lt;th&gt;Route&lt;/th&gt;
+      &lt;th&gt;Time&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;666&lt;/td&gt;
+      &lt;td&gt;&Lstrok;&oacute;d&zacute; - Hel&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2137&lt;/td&gt;
+      &lt;td&gt;Szczecin - Przemy&sacute;l&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;Pozna&nacute; - Berlin&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;262&lt;/td&gt;
+      &lt;td&gt;Pary&zdot; - Istambu&lstrok;&lt;/td&gt;
+      &lt;td&gt;144&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; colspan=&quot;3&quot;&gt;® PKP Intercity&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--table">
+          <table>
+            <caption>Train schedule</caption>
+            <thead>
+              <tr>
+                <th>Train number</th>
+                <th>Route</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>666</td>
+                <td>Łódź - Hel</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>2137</td>
+                <td>Szczecin - Przemyśl</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>Poznań - Berlin</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>262</td>
+                <td>Paryż - Istambuł</td>
+                <td>144</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">® PKP Intercity</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </section>
       <section>
-        <h2>Tabela z atrybutami <code>colspan</code> i <code>rowspan</code></h2>
-      </section>
-      <table>
-        <thead>
-          <tr>
-            <th rowspan="2">Usługa w chmurze</th>
-            <th colspan="3">Użycie</th>
-          </tr>
-          <tr>
-            <th>Użytkownicy</th>
-            <th>Odwiedzenia</th>
-            <th>Rozmiar</th>
-          </tr>
-        </thead>
-      </table>
-      <section>
-        <h2>Nasza tabela</h2>
-        <table>
-          <caption>Elementy HTML</caption>
-          <thead>
-            <tr>
-              <th>tag</th>
-              <th>przykładowe atrybuty</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>img</td>
-              <td>src, alt, width, height</td>
-            </tr>
-            <tr>
-              <td>ul</td>
-              <td>class, id, data-*, style</td>
-            </tr>
-            <tr>
-              <td>a</td>
-              <td>href, target, title*, rel, download</td>
-            </tr>
-            <tr>
-              <td>video</td>
-              <td align="center">src, poster, loop, controls, autoplay, preload</td>
-            </tr>
-            <tr>
-              <td>caption</td>
-              <td>class, id</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <th colspan="2">
-              źródło informacji: czat zooma
-            </th>
-          </tfoot>
-        </table>
+        <h2>Łączenie komórek, czyli <code class="code">rowspan</code> i <code class="code">colspan</code></h2>
+        <pre class="code code--html code--small">
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&quot;2&quot;&gt;Us&lstrok;uga w chmurze&lt;/th&gt;
+      &lt;th colspan=&quot;3&quot;&gt;U&zdot;ycie&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;U&zdot;ytkownicy&lt;/th&gt;
+      &lt;th&gt;Odwiedzenia&lt;/th&gt;
+      &lt;th&gt;Rozmiar&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Google&lt;/td&gt;
+      &lt;td&gt;12000&lt;/td&gt;
+      &lt;td&gt;307000&lt;/td&gt;
+      &lt;td&gt;1000 Tb&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Amazon&lt;/td&gt;
+      &lt;td&gt;9000&lt;/td&gt;
+      &lt;td&gt;200500&lt;/td&gt;
+      &lt;td&gt;800 Tb&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+        </pre>
+        <div class="example-wrapper example__html example__html--table">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Usługa w chmurze</th>
+                <th colspan="3">Użycie</th>
+              </tr>
+              <tr>
+                <th>Użytkownicy</th>
+                <th>Odwiedzenia</th>
+                <th>Rozmiar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google</td>
+                <td>12000</td>
+                <td>307000</td>
+                <td>1000 Tb</td>
+              </tr>
+              <tr>
+                <td>Amazon</td>
+                <td>9000</td>
+                <td>200500</td>
+                <td>800 Tb</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </article>
   </main>
+  <script src="/globals/js/page.js"></script>
 </body>
 
 </html>
