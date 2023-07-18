@@ -286,6 +286,10 @@ code:has(+ p,
   gap: 2em;
 }
 
+.comparison + .comparison {
+  margin-block-start: 2em;
+}
+
 @container (max-width: 800px) {
   .example-wrapper--comparison,
   .comparison {
