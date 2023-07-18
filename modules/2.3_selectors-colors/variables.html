@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles.css" id="myStyleSheet" />
+  <title>Zmienne</title>
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a>
+      </li>
+      <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
+      <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
+      <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
+      <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
+      <li class="main-navigation__item"><a href="./variables.html">Zmienne</a></li>
+    </menu>
+  </nav>
+
+  <main>
+    <article>
+      <h1>Zmienne w CSS</h1>
+      <pre class="code code--css">
+:root {
+  --myVarName: value;
+}
+
+selector {
+  property: var(--myVarName);
+}
+      </pre>
+      <section>
+        <h2>Użycie zmiennych</h2>
+        <article class="example">
+          <div class="code-wrapper">
+            <pre class="code code--small code--css">
+:root {
+  --color-brand: lime;
+}
+
+.example__vars--1 p {
+  text-shadow: 0 0 0.25em var(--color-brand);
+}
+
+p > a {
+  --color-brand: #1ce1ce;
+  color: var(--color-brand);
+}
+            </pre>
+            <pre class="code code--small code--css">
+&lt;p&gt;Lorem ipsum dolor &lt;a href=&quot;#&quot;&gt;sit amet consectetur&lt;/a&gt; adipisicing elit. Ea at voluptate eligendi quia aliquid cupiditate impedit reprehenderit debitis quibusdam, odit minus, dignissimos nulla. Nesciunt officia tempora repellendus qui numquam vero?&lt;/p&gt;
+            </pre>
+          </div>
+          <div class="example-wrapper example__vars example__vars--1">
+            <p>Lorem ipsum dolor <a href="#">sit amet consectetur</a> adipisicing elit. Ea at voluptate eligendi quia
+              aliquid cupiditate impedit reprehenderit debitis quibusdam, odit minus, dignissimos nulla. Nesciunt
+              officia tempora repellendus qui numquam vero?</p>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script src="../../globals/js/page.js"></script>
+</body>
+
+</html>

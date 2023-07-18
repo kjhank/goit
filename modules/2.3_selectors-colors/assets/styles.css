@@ -273,6 +273,10 @@ a[href^="https://images"] {
   color: orange;
 }
 
+.example__cascade--2nd .post-title.post-title1.post-title2.post-title3.post-title4.post-title5.post-title6.post-title7.post-title8.post-title9.post-title10.post-title11.post-title12.post-title13 {
+  color: rebeccapurple;
+}
+
 .example__cascade a {
   background-color: unset;
 }
@@ -304,5 +308,82 @@ a[href^="https://images"] {
 .button--list-flipper {
   align-self: flex-start;
   padding: 0.5em;
-  border-radius: 0.25em;;
+  border-radius: 0.25em;
+  ;
+}
+
+time {
+  font-size: 46px;
+}
+
+.example__selectors--class .title {
+  font-weight: 900;
+}
+
+.example__selectors--class .text {
+  color: brown;
+  font-size: 18px;
+}
+
+.example__selectors--class-composition .alert {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.success {
+  color: green;
+}
+
+.warning {
+  color: orange;
+}
+
+.error {
+  color: red;
+}
+
+.example__selectors--child a {
+  color: pink;
+  text-decoration: none;
+}
+
+.example__selectors--descendant .social-links a {
+  color: purple;
+  text-decoration: none;
+}
+
+.example__selectors--child .menu li {
+  border: 1px dashed rgb(0 0 0 / 0.5);
+}
+
+.example__selectors--child .menu > li {
+  border: 1px solid tomato;
+}
+
+.highlight {
+  color: pink;
+  font-weight: 700;
+}
+
+/* .icon {
+  font-size: 0.5em;
+  color: tomato;
+} */
+
+.page-links > li > a > .icon {
+  font-size: 2em;
+  color: rebeccapurple
+}
+
+html {
+  --color-brand: lime;
+}
+
+.example__vars--1 p {
+  text-shadow: 0 0 0.25em var(--color-brand);
+}
+
+.example__vars--1 p > a {
+  --color-brand: #1ce1ce;
+  color: var(--color-brand, pink);
 }

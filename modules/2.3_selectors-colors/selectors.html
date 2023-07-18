@@ -16,6 +16,7 @@
       <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
       <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
       <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
+      <li class="main-navigation__item"><a href="./variables.html">Zmienne</a></li>
     </menu>
   </nav>
   <main>
@@ -34,12 +35,13 @@ a {
   text-decoration: none;
 }
       </pre>
+        <time>19:20</time>
       </section>
       <section>
         <h2>Selektor klasy</h2>
         <div class="comparison">
           <pre class="code code--html code--small">
-&lt;h1 class=&quot;title&quot;&gt;Cześć, jestem Mango.&lt;/h1&gt;
+&lt;h4 class=&quot;title&quot;&gt;Cześć, jestem Mango.&lt;/h4&gt;
 &lt;p class=&quot;text&quot;&gt;
   Witam na mojej osobistej stronie. Tutaj możesz zobaczyć
   &lt;a class=&quot;link&quot; href=&quot;&quot;&gt;projekty&lt;/a&gt;.
@@ -62,6 +64,15 @@ a {
   text-decoration: none;
 }
           </pre>
+        </div>
+        <div class="example-wrapper">
+          <div class="example__selectors example__selectors--class">
+            <h4 class="title text">Cześć, jestem Mango.</h4>
+            <p class="text">
+              Witam na mojej osobistej stronie. Tutaj możesz zobaczyć
+              <a class="link" href="">projekty</a>.
+            </p>
+          </div>
         </div>
       </section>
       <section>
@@ -94,6 +105,13 @@ a {
   color: red;
 }
       </pre>
+        <div class="example-wrapper">
+          <div class="example__selectors example__selectors--class-composition">
+            <p class="alert success">Zakończono doładowanie konta</p>
+            <p class="alert warning">Uwaga, taryfy ulegną zmianie</p>
+            <p class="alert error">Błąd transakcji</p>
+          </div>
+        </div>
       </section>
       <section>
         <h2>Selektor identyfikatora: <code>#my_id</code></h2>
@@ -130,17 +148,31 @@ a {
           <pre class="code code--css code--small">
 <span class="code__comment">/* ❌ Będzie zastosowane do wszystkich linków w dokumencie */</span>
 a {
-  color: blue;
+  color: pink;
   text-decoration: none;
 }
 
 <span class="code__comment">/* ✅ Będzie zastosowane tylko do linków,
    które znajdują się wewnątrz znacznika z klasą social-links */</span>
 .social-links a {
-  color: blue;
+  color: purple;
   text-decoration: none;
 }
           </pre>
+        </div>
+        <div class="example-wrapper example__selectors example__selectors--descendant">
+          <a href="">Czytaj nasz blog!</a>
+          <ul class="social-links">
+            <li>
+              <a href="">Twitter</a>
+            </li>
+            <li>
+              <a href="">Instagram</a>
+            </li>
+            <li>
+              <a href="">Facebook</a>
+            </li>
+          </ul>
         </div>
       </section>
       <section>
@@ -177,7 +209,7 @@ a {
           <pre class="code code--css code--small">
 <span class="code__comment">/* ❌ Nie rozwiązuje problemu */</span>
 .menu li {
-  border: 1px solid tomato;
+  border: 1px dashed rgb(0 0 0 / 0.5);
 }
 
 <span class="code__comment">/* ✅ Dokładnie to, czego potrzeba */</span>
@@ -185,6 +217,44 @@ a {
   border: 1px solid tomato;
 }
           </pre>
+        </div>
+
+        <div class="example-wrapper example__selectors example__selectors--child">
+          <ul class="menu">
+            <li>
+              Komputery i akcesoria
+              <ul class="submenu">
+                <li>Procesory</li>
+                <li>Monitory</li>
+                <li>Karty graficzne</li>
+              </ul>
+            </li>
+            <li>
+              Artykuły gospodarstwa domowego
+              <ul class="submenu">
+                <li>Lodówki</li>
+                <li>Telewizory</li>
+                <li>Pralki</li>
+              </ul>
+            </li>
+            <li>
+              Sprzęty gospodarstwa domowego
+              <ul class="submenu">
+                <li>Fotele</li>
+                <li>Materace</li>
+                <li>Kominki elektryczne</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="example-wrapper example__selectors example__selectors--child-2">
+          <span class="icon">u</span>
+          <menu class="page-links">
+            <li><a href="#"><span data-foo="bar" class="icon">x</span>Lorem, ipsum dolor.</a></li>
+            <li><a href="#"><span data-foo="bar" class="icon">y</span>Optio, totam placeat!</a></li>
+            <li><a href="#"><span data-foo="bar" class="icon">z</span>Eos, delectus? Aliquam.</a></li>
+            <li><a href="#"><span data-foo="bar" class="icon">q</span>Saepe, id quia!</a></li>
+          </menu>
         </div>
       </section>
       <section>
