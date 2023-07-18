@@ -15,26 +15,29 @@
       <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
       <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
       <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./cascade.html">Kaskada stylów</a></li>
+      <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
     </menu>
   </nav>
   <main>
-    <h1>Kaskada</h1>
-    <section>
-      <h2>Specyficzność</h2>
-      <ul class="specificity-list" data-action="flippable">
-        <li>inline</li>
-        <li>IDs</li>
-        <li>classes, pseudo-classes, attributes</li>
-        <li>elements, pseudo-elements</li>
-      </ul>
-      <button class="button button--list-flipper" type="button" data-action="flip-sibling">flip 'em</button>
-    </section>
-    <section>
-      <h2>Selektory czwartej rangi: elementy, pseudoelementy</h2>
-      <pre class="code code--html">
+    <article>
+      <h1>Kaskada</h1>
+      <section>
+        <h2>Specyficzność</h2>
+        <ul class="specificity-list" data-action="flippable">
+          <li>inline</li>
+          <li>IDs</li>
+          <li>classes, pseudo-classes, attributes</li>
+          <li>elements, pseudo-elements</li>
+        </ul>
+        <button class="button button--list-flipper" type="button" data-action="flip-sibling">flip 'em</button>
+      </section>
+      <section>
+        <h2>Selektory czwartej rangi: elementy, pseudoelementy</h2>
+        <div class="example">
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;article&gt;
-  &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;h3&gt;Lorem ipsum dolor sit amet&lt;/h3&gt;
   &lt;p&gt;
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
     veritatis nihil alias iste odit similique sit eius optio veniam, impedit
@@ -43,7 +46,7 @@
   &lt;a href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
 &lt;/article&gt;
       </pre>
-      <pre class="code code--css">
+            <pre class="code code--css code--small">
 <span class="code__comment">/* Specyficzność - 0 0 0 1 */</span>
 p {
   color: green;
@@ -54,13 +57,27 @@ article > p {
   color: orange;
 }
       </pre>
-
-    </section>
-    <section>
-      <h2>Selektory trzeciej rangi - klasy, pseudoklasy, atrybuty</h2>
-      <pre class="code code--html">
+          </div>
+          <div class="example-wrapper example__cascade--4th">
+            <article>
+              <h3>Lorem ipsum dolor sit amet</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                cumque fuga facere labore quo id necessitatibus quaerat rerum.
+              </p>
+              <a href="">Czytaj więcej...</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Selektory trzeciej rangi - klasy, pseudoklasy, atrybuty</h2>
+        <div class="example">
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;article class=&quot;post&quot;&gt;
-  &lt;h1 class=&quot;post-title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;h3 class=&quot;post-title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h3&gt;
   &lt;p&gt;
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
     veritatis nihil alias iste odit similique sit eius optio veniam, impedit
@@ -69,14 +86,14 @@ article > p {
   &lt;a href=&quot;&quot; class=&quot;post-link&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
 &lt;/article&gt;
       </pre>
-      <pre class="code code--css">
+            <pre class="code code--css code--small">
 <span class="code__comment">/* Specyficzność - 0 0 1 0 */</span>
 .post-title {
   color: green;
 }
 
 <span class="code__comment">/* Specyficzność - 0 0 1 1 */</span>
-.post > h1 {
+.post > h3 {
   color: red;
 }
 
@@ -84,8 +101,8 @@ article > p {
 .post > .post-title {
   color: orange;
 }
-      </pre>
-      <pre class="code code--css">
+      <!-- </pre>
+            <pre class="code code--css code--small"> -->
 <span class="code__comment">/* Specyficzność - 0 0 0 1 */</span>
 a {
   color: green;
@@ -108,24 +125,30 @@ a.post-link {
 
 <span class="code__comment">/* ✅ Specyficzność - 0 0 2 1 */</span>
 .post > a.post-link {
-  color: brown;
+  color: rebeccapurple;
 }
-      </pre>
-      <article class="post">
-        <h2 class="post-title">Lorem ipsum dolor sit amet</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
-          veritatis nihil alias iste odit similique sit eius optio veniam, impedit
-          cumque fuga facere labore quo id necessitatibus quaerat rerum.
-        </p>
-        <a href="" class="post-link">Czytaj więcej...</a>
-      </article>
-    </section>
-    <section>
-      <h2>Selektory drugiej rangi - ID</h2>
-      <pre class="code code--html">
+          </pre>
+          </div>
+          <div class="example-wrapper example__cascade--3rd">
+            <article class="post">
+              <h3 class="post-title">Lorem ipsum dolor sit amet</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                cumque fuga facere labore quo id necessitatibus quaerat rerum.
+              </p>
+              <a href="" class="post-link">Czytaj więcej...</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Selektory drugiej rangi - ID</h2>
+        <div class="example">
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;article class=&quot;post&quot;&gt;
-  &lt;h1 class=&quot;post-title&quot; id=&quot;title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+  &lt;h3 class=&quot;post-title&quot; id=&quot;title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h3&gt;
   &lt;p&gt;
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
     veritatis nihil alias iste odit similique sit eius optio veniam, impedit
@@ -133,8 +156,8 @@ a.post-link {
   &lt;/p&gt;
   &lt;a href=&quot;&quot; class=&quot;post-link&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
 &lt;/article&gt;
-      </pre>
-      <pre class="code code--css">
+          </pre>
+            <pre class="code code--css code--small">
 <span class="code__comment">/* Specyficzność - 0 0 1 0 */</span>
 .post-title {
   color: green;
@@ -144,21 +167,41 @@ a.post-link {
 #title {
   color: orange;
 }
-      </pre>
-    </section>
-    <section>
-      <h2>Selektory pierwszej rangi - style inline; straszna fujka</h2>
-      <pre class="code code--html">
+          </pre>
+          </div>
+          <div class="example-wrapper example__cascade example__cascade--2nd">
+            <article class="post">
+              <h3 class="post-title" id="title">Lorem ipsum dolor sit amet</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                cumque fuga facere labore quo id necessitatibus quaerat rerum.
+              </p>
+              <a href="" class="post-link">Czytaj więcej...</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Selektory pierwszej rangi - style inline; straszna fujka</h2>
+        <pre class="code code--html code--small">
 &lt;p style=&quot;color: green;&quot;&gt;
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
   veritatis nihil alias iste odit similique sit eius optio veniam, impedit
   cumque fuga facere labore quo id necessitatibus quaerat rerum.
 &lt;/p&gt;
       </pre>
-    </section>
-    <section>
-      <h2>Jednakowa specyficzność</h2>
-      <pre class="code code-css">
+        <div class="example-wrapper">
+          <p style="color: green;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+            veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+            cumque fuga facere labore quo id necessitatibus quaerat rerum.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2>Jednakowa specyficzność</h2>
+        <pre class="code code-css code--small">
 <span class="code__comment">/* Trzy selektory elementów o tej samej specyficzności */</span>
 a {
   color: teal;
@@ -173,116 +216,22 @@ a {
   color: orange;
 }
       </pre>
-    </section>
-    <section>
-      <h2>Unikanie specyficzności</h2>
-      <pre class="code code--html">
-&lt;article class=&quot;post&quot;&gt;
-  &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
-  &lt;p&gt;
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
-    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
-    cumque fuga facere labore quo id necessitatibus quaerat rerum.
-  &lt;/p&gt;
-  &lt;a href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
-&lt;/article&gt;
-      </pre>
-      <pre class="code code--css">
-.post {
-  <span class="code__comment">/* Style artykułu */</span>
-}
-
-.post > h1 {
-  <span class="code__comment">/* Style nagłówka */</span>
-}
-
-.post > p {
-  <span class="code__comment">/* Style tekstu */</span>
-}
-
-.post > a {
-  <span class="code__comment">/* Style linku */</span>
-}
-
-.post > a:hover {
-  <span class="code__comment">/* Style linku po najechaniu kursorem */</span>
-}
-      </pre>
-      <pre class="code code--html">
-&lt;article class=&quot;post&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
-  &lt;p class=&quot;text&quot;&gt;
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
-    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
-    cumque fuga facere labore quo id necessitatibus quaerat rerum.
-  &lt;/p&gt;
-  &lt;a class=&quot;link&quot; href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
-&lt;/article&gt;
-      </pre>
-      <pre class="code code--css">
-.post {
-  <span class="code__comment">/* Style artykułu */</span>
-}
-
-.post > .title {
-  <span class="code__comment">/* Style nagłówka */</span>
-}
-
-.post > .text {
-  <span class="code__comment">/* Style tekstu */</span>
-}
-
-.post > .link {
-  <span class="code__comment">/* Style linku */</span>
-}
-
-.post > .link:hover {
-  <span class="code__comment">/* Style linku po najechaniu kursorem */</span>
-}
-      </pre>
-      <pre class="code code--html">
-&lt;article class=&quot;post&quot;&gt;
-  &lt;h1 class=&quot;post-title&quot;&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
-  &lt;p class=&quot;post-text&quot;&gt;
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
-    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
-    cumque fuga facere labore quo id necessitatibus quaerat rerum.
-  &lt;/p&gt;
-  &lt;a href=&quot;&quot; class=&quot;post-link&quot;&gt;Czytaj wi&eogon;cej....&lt;/a&gt;
-&lt;/article&gt;
-      </pre>
-      <pre class="code code--css">
-.post {
-  <span class="code__comment">/* Style artykułu */</span>
-}
-
-.post-title {
-  <span class="code__comment">/* Style nagłówka */</span>
-}
-
-.post-text {
-  <span class="code__comment">/* Style tekstu */</span>
-}
-
-.post-link {
-  <span class="code__comment">/* Style linku */</span>
-}
-
-.post-link:hover {
-  <span class="code__comment">/* Style linku po najechaniu kursorem */</span>
-}
-      </pre>
-    </section>
-    <section>
-      <h2>Słowo kluczowe <code>!important</code>, równie paskudna fujka, ale chociaż czasem przydatna</h2>
-      <pre class="code code--html">
+        <div class="example-wrapper example__cascade example__cascade--equal">
+          <a href="https://google.com">google</a>
+        </div>
+      </section>
+      <section>
+        <h2>Słowo kluczowe <code>!important</code></h2>
+        <div class="example">
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;p class=&quot;text&quot; id=&quot;text-id&quot;&gt;
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
   veritatis nihil alias iste odit similique sit eius optio veniam, impedit
   cumque fuga facere labore quo id necessitatibus quaerat rerum.
 &lt;/p&gt;
-      </pre>
-      <pre class="code code--css">
+            </pre>
+            <pre class="code code--css code--small">
 p {
   color: orange !important;
 }
@@ -290,11 +239,22 @@ p {
 p#text-id.text {
   color: blue;
 }
-      </pre>
-    </section>
-    <section>
-      <h2>Dziedziczenie</h2>
-      <pre class="code code--html">
+            </pre>
+          </div>
+          <div class="example-wrapper example__cascade example__cascade--important">
+            <p class="text" id="text-id">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+              veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+              cumque fuga facere labore quo id necessitatibus quaerat rerum.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Dziedziczenie</h2>
+        <div class="example">
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;article class=&quot;post&quot;&gt;
   &lt;h1&gt;Popularne w tym miesi&aogon;cu&lt;/h1&gt;
   &lt;p&gt;
@@ -304,23 +264,29 @@ p#text-id.text {
   &lt;/p&gt;
   &lt;a href=&quot;&quot;&gt;Czytaj wi&eogon;cej...&lt;/a&gt;
 &lt;/article&gt;
-      </pre>
-      <pre class="code code-css">
+            </pre>
+            <pre class="code code-css code--small">
 .post {
   color: green;
 }
-      </pre>
-      <article class="post">
-        <h2>Popularne w tym miesiącu</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
-          veritatis nihil alias iste odit similique sit eius optio veniam, impedit
-          cumque fuga facere labore quo id necessitatibus quaerat rerum.
-        </p>
-        <a href="">Czytaj więcej...</a>
-      </article>
-    </section>
+          </pre>
+          </div>
+          <div class="example-wrapper example__cascade example__cascade--inheritance">
+            <article class="post">
+              <h2>Popularne w tym miesiącu</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                cumque fuga facere labore quo id necessitatibus quaerat rerum.
+              </p>
+              <a href="">Czytaj więcej...</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </article>
   </main>
+  <script src="../../globals/js/page.js"></script>
   <script src="./main.js"></script>
 </body>
 

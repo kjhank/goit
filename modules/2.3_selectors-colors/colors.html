@@ -14,91 +14,106 @@
       <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a></li>
       <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
       <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./colors.html">Praca z kolorami</a></li>
+      <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
       <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
     </menu>
   </nav>
   <main>
-    <h1>Praca z kolorami</h1>
-    <section>
-      <h2>Kolor tekstu</h2>
-      <pre class="code code--html">
+    <article>
+      <h1>Praca z kolorami</h1>
+      <section>
+        <h2>Kolor tekstu</h2>
+        <div class="example">
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;p class=&quot;text&quot;&gt;
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
   veritatis nihil alias iste odit similique sit eius optio veniam, impedit
   cumque fuga facere labore quo id necessitatibus quaerat rerum.
 &lt;/p&gt;
       </pre>
-      <pre class="code code--css">
-.text {
+            <pre class="code code--css code--small">
+p {
   color: tomato;
 }
-      </pre>
-      <p class="text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos libero voluptates animi sequi esse vero, aliquam
-        provident, ab odio magni molestias deleniti veritatis minima adipisci! Aspernatur doloremque officiis
-        repudiandae error!
-      </p>
-    </section>
-    <section>
-      <h2>Kolor tła</h2>
-      <pre class="code code--html">
+        </pre>
+          </div>
+          <div class="example-wrapper example__color example__color--text">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos libero voluptates animi sequi esse vero,
+              aliquam
+              provident, ab odio magni molestias deleniti veritatis minima adipisci! Aspernatur doloremque officiis
+              repudiandae error!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Kolor tła</h2>
+        <div class="example">
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;p class=&quot;text&quot;&gt;
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
   veritatis nihil alias iste odit similique sit eius optio veniam, impedit
   cumque fuga facere labore quo id necessitatibus quaerat rerum.
 &lt;/p&gt;
       </pre>
-      <pre class="code code-css">
-.text {
-  background-color: tomato;
-  color: white;
+            <pre class="code code--css code--small">
+p {
+  color: tomato;
+  background-color: white;
 }
-      </pre>
-      <p class="text-background">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quis ipsum voluptatem suscipit excepturi
-        recusandae, exercitationem ratione blanditiis sed natus id aliquam iusto ipsa alias non quam expedita, odio
-        deserunt?
-      </p>
-    </section>
-    <section>
-      <h2>Notacje kolorów</h2>
+        </pre>
+          </div>
+          <div class="example-wrapper example__color example__color--bg-color">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos libero voluptates animi sequi esse vero,
+              aliquam
+              provident, ab odio magni molestias deleniti veritatis minima adipisci! Aspernatur doloremque officiis
+              repudiandae error!
+            </p>
+          </div>
+        </div>
+      </section>
       <section>
-        <h3>Subtraktywny zapis RGB: <code>rgb()</code></h3>
-        <pre class="code code-css">
+        <h2>Notacje kolorów</h2>
+        <section>
+          <h3>Subtraktywny zapis RGB: <code class="code">rgb()</code></h3>
+          <pre class="code code--css code--small">
 rgb(czerwony, zielony, niebieski)
         </pre>
-        <pre class="code code-css">
+          <pre class="code code--css code--small">
 <span class="code__comment">/* Czysta czerwień: 255 czerwonego,
     0 zielonego, 0 niebieskiego */</span>
 p {
   color: rgb(255, 0, 0);
 }
         </pre>
-        <pre class="code code-css">
-<span class="code__comment">/* Czysta czerwień: 100% czerwonego,
-  0% zielonego, 0% niebieskiego */</span>
+          <pre class="code code--css code--small">
+<span class="code__comment">/* Czysta zieleń: 0% czerwonego,
+  100% zielonego, 0% niebieskiego */</span>
 p {
   color: rgb(100%, 0%, 0%);
 }
         </pre>
-        <p class="text-rgb">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda, harum
-          omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
-        </p>
-        <p class="text-rgb-alt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda, harum
-          omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
-        </p>
-        <p class="text-rgb-alt2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda, harum
-          omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
-        </p>
-      </section>
-      <section>
-        <h3>Zapis szesnastkowy notacji RGB: <code
-            class="inline-code inline-code--rgb">#<span>1c</span><span>e1</span><span>ce</span></code></h3>
-        <pre class="code code--css">
+          <div class="example-wrapper example__colors">
+            <p class="text-rgb">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda,
+              harum
+              omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
+            </p>
+            <p class="text-rgb-alt">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus eum sed libero dolor assumenda,
+              harum
+              omnis odio asperiores neque placeat quisquam, facilis iure recusandae rem temporibus atque accusamus id!
+            </p>
+          </div>
+        </section>
+        <section>
+          <h3>Zapis szesnastkowy notacji RGB: <code
+              class="inline-code inline-code--rgb">#<span>RR</span><span>GG</span><span>BB</span></code></h3>
+          <pre class="code code--css code--small">
 <span class="code__comment">/* Czysta czerwień: ff (100%) czerwonego,
    00 (0%) zielonego, 00 (0%) niebieskiego */</span>
 p {
@@ -117,25 +132,42 @@ p {
   color: #0000ff;
 }
         </pre>
+        </section>
+        <section>
+          <h3>Notacja HSL - odcień, nasycenie, jasność</h3>
+          <div class="example">
+            <div class="comparison">
+              <pre class="code code--css code--small">
+p {
+  color: hsl(150, 69%, 23%);
+}
+              </pre>
+              <pre class="code code--html code--small">
+&lt;p&gt;
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, esse? Quia autem earum unde illo
+  assumenda
+  velit commodi voluptate omnis quibusdam officiis iste voluptas facere, totam temporibus ducimus labore
+  dolore?
+&lt;/p&gt;
+            </pre>
+            </div>
+            <p>Więcej: <a
+                href="https://www.merixstudio.com/blog/hsl-color-model/">https://www.merixstudio.com/blog/hsl-color-model/</a>
+            </p>
+            <div class="example-wrapper example__colors example__colors--hsl">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, esse? Quia autem earum unde illo
+                assumenda
+                velit commodi voluptate omnis quibusdam officiis iste voluptas facere, totam temporibus ducimus labore
+                dolore?
+              </p>
+            </div>
+          </div>
+        </section>
       </section>
       <section>
-        <h3>Notacja HSL - odcień, nasycenie, jasność</h3>
-        <pre class="code code--css">
-p {
-  color: hsl(420, 69%, 23%);
-}
-        </pre>
-        Więcej: <a
-          href="https://www.merixstudio.com/blog/hsl-color-model/">https://www.merixstudio.com/blog/hsl-color-model/</a>
-        <p class="text-hsl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, esse? Quia autem earum unde illo assumenda
-          velit commodi voluptate omnis quibusdam officiis iste voluptas facere, totam temporibus ducimus labore dolore?
-        </p>
-      </section>
-    </section>
-    <section>
-      <h2>Kanał alfa - przezroczystość koloru</h2>
-      <pre class="code code--css">
+        <h2>Kanał alfa - przezroczystość koloru</h2>
+        <pre class="code code--css code--small">
 <span class="code__comment">/* Czysty czerwony kolor z przezroczystością 30% */</span>
 p {
   background-color: rgba(255, 0, 0, 0.3);
@@ -152,13 +184,24 @@ p {
 }
       </pre>
 
-      <p class="alpha-channel">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In illum temporibus quasi necessitatibus cum dolorem,
-        blanditiis distinctio quae harum nam sed aliquid iure, deleniti aspernatur tempore voluptates deserunt vero
-        maiores.
-      </p>
-    </section>
+        <div class="example-wrapper example__colors example__colors--alpha">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In illum temporibus quasi necessitatibus cum
+            dolorem,
+            blanditiis distinctio quae harum nam sed aliquid iure, deleniti aspernatur tempore voluptates deserunt vero
+            maiores.
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, error incidunt sint nostrum illum id
+            adipisci magnam quo explicabo recusandae odit beatae facere commodi nemo ducimus labore laudantium amet
+            temporibus!</p>
+          <p>Eum ipsa maiores molestias sed consequatur placeat earum. Ullam vero illum quaerat eum unde repudiandae,
+            quo error rerum tempora, explicabo, fugiat doloribus omnis cumque exercitationem impedit expedita aspernatur
+            doloremque nobis.</p>
+        </div>
+      </section>
+    </article>
   </main>
+  <script src="../../globals/js/page.js"></script>
 </body>
 
 </html>

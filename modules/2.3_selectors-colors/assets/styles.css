@@ -1,9 +1,4 @@
-@import url('./vars.css');
-@import url('./nav.css');
-@import url('./headings.css');
-@import url('./buttons.css');
-@import url('./links.css');
-@import url('./colors.css');
+@import url('../../../globals/css/globals.css');
 
 html {
   font-family: sans-serif;
@@ -20,8 +15,8 @@ body {
   width: min(1440px, 80vw);
   margin-inline: auto;
   font-family: sans-serif;
-  background-color: #eee;
-  color: #222;
+  /* background-color: #eee;
+  color: #222; */
 }
 
 a {
@@ -83,20 +78,20 @@ pre {
   color: var(--color-accent);
 }
 
-.code>.code__comment {
+.code > .code__comment {
   color: #aaa;
   text-shadow: none;
 }
 
-.inline-code--rgb>span:first-child {
+.inline-code--rgb > span:first-child {
   color: red;
 }
 
-.inline-code--rgb>span:nth-child(2) {
+.inline-code--rgb > span:nth-child(2) {
   color: green;
 }
 
-.inline-code--rgb>span:nth-child(3) {
+.inline-code--rgb > span:nth-child(3) {
   color: blue;
 }
 
@@ -128,15 +123,27 @@ ul.specificity-list::before {
   color: var(--color-accent);
   translate: 0 -50% 0;
   transition: rotate var(--transition-default);
+  pointer-events: none;
 }
 
 ul.specificity-list--flipped::before {
   rotate: x 180deg;
 }
 
-.links>a {
-  display: block;
+.links {
   font-size: 8em;
+}
+
+.links li:not(:first-child) {
+  margin-block-start: 0.25em;
+}
+
+.links li {
+  list-style-type: none;
+}
+
+.links a {
+  display: inline-block;
 }
 
 a[href="https://google.com"] {
@@ -149,36 +156,153 @@ a[href*="google.com"] {
 
 a[href$=".ca"] {
   font-family: fantasy;
+  color: var(--color-accent);
 }
 
 a[href^="https://images"] {
   background-image: linear-gradient(red, blue);
 }
 
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #222;
-    color: #eee;
-  }
-
-  :root {
-    --lightness-base: 63%;
-  }
-
-  h1 {
-    background: #000;
-    color: #fff;
-    mix-blend-mode: lighten;
-  }
-
-  h1::before {
-    mix-blend-mode: multiply;
-  }
+.example__pseudoclasses--hover a {
+  color: teal;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
+.example__pseudoclasses--hover a:hover {
+  color: tomato
+}
+
+
+.example__pseudoclasses--active a {
+  color: teal;
+}
+
+.example__pseudoclasses--active a:visited {
+  color: rebeccapurple;
+}
+
+.example__pseudoclasses--active a:hover {
+  color: orange;
+}
+
+.example__pseudoclasses--active a:active {
+  color: red;
+}
+
+.example__cursor > p {
+  cursor: not-allowed;
+}
+
+.example__color--text > p {
+  color: tomato;
+}
+
+.example__color--bg-color > p {
+  color: tomato;
+  background-color: white;
+}
+
+.example__colors .text-rgb {
+  color: rgb(255, 0, 0);
+}
+
+.example__colors .text-rgb-alt {
+  color: rgb(100%, 0%, 0%);
+}
+
+.example__colors--hsl p {
+  color: hsl(150, 69%, 23%);
+}
+
+.example__colors--alpha > p:nth-child(1) {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.example__colors--alpha > p:nth-child(2) {
+  background-color: rgba(100%, 0%, 0%, 30%);
+}
+
+.example__colors--alpha > p:nth-child(3) {
+  background-color: #ff00004d;
+}
+
+.example__cascade--4th p {
+  color: green;
+}
+
+.example__cascade--4th article > p {
+  color: orange;
+}
+
+.example__cascade--3rd .post-title {
+  color: green;
+}
+
+.example__cascade--3rd .post > h3 {
+  color: red;
+}
+
+.example__cascade--3rd .post > .post-title {
+  color: orange;
+}
+
+.example__cascade--3rd a {
+  color: green;
+}
+
+.example__cascade--3rd .post-link {
+  color: orange;
+}
+
+.example__cascade--3rd a.post-link {
+  color: blue;
+}
+
+.example__cascade--3rd .post > .post-link {
+  color: red;
+}
+
+.example__cascade--3rd .post > a.post-link {
+  color: rebeccapurple;
+}
+
+.example__cascade--2nd .post-title {
+  color: green;
+}
+
+.example__cascade--2nd #title {
+  color: orange;
+}
+
+.example__cascade a {
+  background-color: unset;
+}
+
+.example__cascade--equal a {
+  color: teal;
+}
+
+.example__cascade--equal a {
+  color: brown;
+}
+
+.example__cascade--equal a {
+  color: orange;
+}
+
+.example__cascade--important p {
+  color: orange !important;
+}
+
+.example__cascade--important p#text-id.text {
+  color: blue;
+}
+
+.example__cascade--inheritance .post {
+  color: green;
+}
+
+.button--list-flipper {
+  align-self: flex-start;
+  padding: 0.5em;
+  border-radius: 0.25em;;
 }
