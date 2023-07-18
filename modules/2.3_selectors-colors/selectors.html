@@ -12,17 +12,18 @@
   <nav class="main-navigation">
     <menu>
       <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a></li>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./selectors.html">Selektory</a></li>
+      <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
       <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
       <li class="main-navigation__item"><a href="./colors.html">Praca z kolorami</a></li>
       <li class="main-navigation__item"><a href="./cascade.html">Kaskada stylów</a></li>
     </menu>
   </nav>
   <main>
-    <h1>CSS - selektory</h1>
-    <section>
-      <h2>Selektor elementu (znacznika)</h2>
-      <pre class="code code--css">
+    <article>
+      <h1>CSS - selektory</h1>
+      <section>
+        <h2>Selektor elementu (znacznika)</h2>
+        <pre class="code code--css">
 <span class="code__comment">/* Zastosowane do wszystkich akapitów na stronie */</span>
 p {
   font-size: 24px;
@@ -33,17 +34,18 @@ a {
   text-decoration: none;
 }
       </pre>
-    </section>
-    <section>
-      <h2>Selektor klasy</h2>
-      <pre class="code code--html">
+      </section>
+      <section>
+        <h2>Selektor klasy</h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
 &lt;h1 class=&quot;title&quot;&gt;Cześć, jestem Mango.&lt;/h1&gt;
 &lt;p class=&quot;text&quot;&gt;
   Witam na mojej osobistej stronie. Tutaj możesz zobaczyć
   &lt;a class=&quot;link&quot; href=&quot;&quot;&gt;projekty&lt;/a&gt;.
 &lt;/p&gt;
-      </pre>
-      <pre class="code code--css">
+          </pre>
+          <pre class="code code--css code--small">
 <span class="code__comment">/* Będzie dotyczyć wszystkich znaczników z klasą title */</span>
 .title {
   font-weight: 500;
@@ -59,19 +61,20 @@ a {
 .link {
   text-decoration: none;
 }
-      </pre>
-    </section>
-    <section>
-      <h2>Kompozycja klas</h2>
-      <pre class="code code--html">
+          </pre>
+        </div>
+      </section>
+      <section>
+        <h2>Kompozycja klas</h2>
+        <pre class="code code--html code--small">
 &lt;element class=&quot;value1 value2 value3&quot;&gt;&lt;/element&gt;
       </pre>
-      <pre class="code code--html">
+        <pre class="code code--html code--small">
 &lt;p class=&quot;alert success&quot;&gt;Zakończono doładowanie konta&lt;/p&gt;
 &lt;p class=&quot;alert warning&quot;&gt;Uwaga, taryfy ulegną zmianie&lt;/p&gt;
 &lt;p class=&quot;alert error&quot;&gt;Błąd transakcji&lt;/p&gt;
       </pre>
-      <pre class="code code--css">
+        <pre class="code code--css code--small">
 <span class="code__comment">/* Wspólne style dla wszystkich typów alertów */</span>
 .alert {
   font-size: 24px;
@@ -91,22 +94,25 @@ a {
   color: red;
 }
       </pre>
-    </section>
-    <section>
-      <h2>Selektor identyfikatora: <code>#my_id</code></h2>
-      <pre class="code code--html">
+      </section>
+      <section>
+        <h2>Selektor identyfikatora: <code>#my_id</code></h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
 &lt;h1 id=&quot;title&quot;&gt;Nag&lstrok;&oacute;wek strony&lt;/h1&gt;
-      </pre>
-      <pre class="code code--css">
+          </pre>
+          <pre class="code code--css code--small">
 #title {
   font-weight: 500;
   color: orange;
 }
-      </pre>
-    </section>
-    <section>
-      <h2>Selektor potomka</h2>
-      <pre class="code code--html">
+          </pre>
+        </div>
+      </section>
+      <section>
+        <h2>Selektor potomka</h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
 &lt;a href=&quot;&quot;&gt;Czytaj nasz blog!&lt;/a&gt;
 
 &lt;ul class=&quot;social-links&quot;&gt;
@@ -120,8 +126,8 @@ a {
     &lt;a href=&quot;&quot;&gt;Facebook&lt;/a&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-      </pre>
-      <pre class="code code--css">
+          </pre>
+          <pre class="code code--css code--small">
 <span class="code__comment">/* ❌ Będzie zastosowane do wszystkich linków w dokumencie */</span>
 a {
   color: blue;
@@ -134,11 +140,13 @@ a {
   color: blue;
   text-decoration: none;
 }
-      </pre>
-    </section>
-    <section>
-      <h2>Selektor dziecka/bezpośredniego potomka</h2>
-      <pre class="code code--html">
+          </pre>
+        </div>
+      </section>
+      <section>
+        <h2>Selektor dziecka/bezpośredniego potomka</h2>
+        <div class="comparison">
+          <pre class="code code--html code--small">
 &lt;ul class=&quot;menu&quot;&gt;
   &lt;li&gt;
     Komputery i akcesoria
@@ -165,8 +173,8 @@ a {
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-      </pre>
-      <pre class="code code--css">
+          </pre>
+          <pre class="code code--css code--small">
 <span class="code__comment">/* ❌ Nie rozwiązuje problemu */</span>
 .menu li {
   border: 1px solid tomato;
@@ -176,13 +184,15 @@ a {
 .menu > li {
   border: 1px solid tomato;
 }
-      </pre>
-    </section>
-    <section>
-      <h2>Selektor atrybutu</h2>
+          </pre>
+        </div>
+      </section>
       <section>
-        <h3>Istnienie atrybutu niezależnie od wartości: <code>[attribute]</code></h3>
-        <pre class="code code--html">
+        <h2>Selektor atrybutu</h2>
+        <section>
+          <h3>Istnienie atrybutu niezależnie od wartości: <code>[attribute]</code></h3>
+          <div class="comparison">
+            <pre class="code code--html code--small">
 &lt;a href=&quot;https://htmlreference.io&quot; title=&quot;Przewodnik po tagach&quot;&gt;
   htmlreference.io
 &lt;/a&gt;
@@ -192,49 +202,55 @@ a {
 &lt;/a&gt;
 
 &lt;a href=&quot;https://www.youtube.com&quot;&gt;YouTube &lt;/a&gt;
-      </pre>
-        <pre class="code code--css">
+            </pre>
+            <pre class="code code--css code--small">
 a[title] {
   color: teal;
 }
-      </pre>
+            </pre>
+          </div>
+        </section>
+        <section>
+          <h3>Atrybut i jego konkretna wartość: <code>[attribute="value"]</code></h3>
+          <div class="comparison">
+            <pre class="code code--html code--small">
+&lt;a href=&quot;https://google.com&quot;&gt;foo&lt;/a&gt;
+&lt;a href=&quot;http://google.com&quot;&gt;bar&lt;/a&gt;
+&lt;a href=&quot;https://google.ca&quot;&gt;baz&lt;/a&gt;
+&lt;a href=&quot;https://images.google.com&quot;&gt;foobar&lt;/a&gt;
+            </pre>
+            <pre class="code code--css code--small">
+a[href=&quot;https://google.com&quot;] {
+  color: rebeccapurple;
+}
+
+a[href*=&quot;google.com&quot;] {
+  background-color: tomato;
+}
+
+a[href$=&quot;.ca&quot;] {
+  font-family: fantasy;
+  color: var(--color-accent);
+}
+
+a[href^=&quot;https://images&quot;] {
+  background-image: linear-gradient(red, blue);
+}
+            </pre>
+          </div>
+        </section>
+        <article class="links">
+          <ul>
+            <li><a href="https://google.com">foo</a></li>
+            <li><a href="http://google.com">bar</a></li>
+            <li><a href="https://google.ca">baz</a></li>
+            <li><a href="https://images.google.com">foobar</a></li>
+          </ul>
+        </article>
       </section>
-      <section>
-        <h3>Atrybut i jego konkretna wartość: <code>[attribute="value"]</code></h3>
-        <pre class="code code--html">
-&lt;a href=&quot;https://htmlreference.io&quot; title=&quot;Przewodnik po tagach&quot;&gt;
-  htmlreference.io
-&lt;/a&gt;
-
-&lt;a href=&quot;cssreference.io&quot; title=&quot;Przewodnik po stylach&quot;&gt;
-  cssreference.io
-&lt;/a&gt;
-
-&lt;a href=&quot;https://www.youtube.com&quot;&gt;YouTube&lt;/a&gt;
-        </pre>
-        <pre class="code code--css">
-a[href*="htmlreference.io"] {
-  color: teal;
-}
-
-a[href="https://cssreference.io"] {
-  color: orange;
-}
-
-a[href="https://www.youtube.com"] {
-  color: tomato;
-}
-        </pre>
-      </section>
-    </section>
-    <section class="links">
-      <h2>links pseudo-classes</h2>
-      <a href="https://google.com" class="first" style="color: #1ce1ce">foo</a>
-      <a href="http://google.com" class="second">bar</a>
-      <a href="https://google.ca" class="third">baz</a>
-      <a href="https://images.google.com" class="fourth">foobar</a>
-    </section>
+    </article>
   </main>
+  <script src="../../globals/js/page.js"></script>
 </body>
 
 </html>

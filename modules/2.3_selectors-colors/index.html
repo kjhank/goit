@@ -21,7 +21,7 @@
 <body>
   <nav class="main-navigation">
     <menu>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Wprowadzenie do CSS</a>
+      <li class="main-navigation__item"><a href="./index.html">Wprowadzenie do CSS</a>
       </li>
       <li class="main-navigation__item"><a href="./selectors.html">Selektory</a></li>
       <li class="main-navigation__item"><a href="./pseudo-classes.html">Pseudoklasy stanowe</a></li>
@@ -30,42 +30,45 @@
     </menu>
   </nav>
   <main>
-    <h1>Wprowadzenie do CSS</h1>
-    <section>
-      <h2>Składnia</h2>
-      <pre class="code code--css">
-      <span class="code__comment">
+    <article>
+      <h1>Wprowadzenie do CSS</h1>
+      <section>
+        <h2>Składnia</h2>
+        <pre class="code code--css">
+  <span class="code__comment">
 /* element, .klasa, #id, [atrybut],
-   ::pseudoelement, :pseudoklasa
-   ↓ */</span>
+    ::pseudoelement, :pseudoklasa
+    ↓ */</span>
 selector {
-  property: value; <span class="code__comment">/* ← wartość: rebeccapurple, */</span>
-} <span class="code__comment">/* ↑                  2em 3ch, 'Open Sans', itd.*/</span>
-    <span class="code__comment">to, co chcę zmienić:
-    color, padding,
-    font-family, itd. */</span>
-    </pre>
-    </section>
-    <section>
-      <h2>Dodawanie stylów - style wbudowane, straszna fujka</h2>
-      <pre class="code code--html">
+  property: value; <span class="code__comment">/* ← wartość:  rebeccapurple, */</span>
+} <span class="code__comment">/* ↑                   2em 3ch, 'Open Sans', itd.*/</span>
+<span class="code__comment">właściwość (to, co chcę zmienić):
+  color, padding,
+  font-family, itd. */</span>
+        </pre>
+      </section>
+      <section>
+        <h2>Dodawanie stylów - style wbudowane, straszna fujka</h2>
+        <pre class="code code--html code--small">
 &lt;p style=&quot;font-family: fantasy; font-weight: 600; font-size: min(2vw, 32px); color: hsl(120, 20%, 50%); line-height: calc(1em + 0.5rem)&quot;&gt;
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam voluptates perferendis optio totam quis
-architecto dignissimos. Illo possimus maiores molestiae beatae dolorum amet. Quas quam magnam illum accusantium,
-itaque et.&lt;/p&gt;
-    </pre>
-      <p
-        style="font-family: fantasy; font-weight: 600; font-size: min(2vw, 32px); color: hsl(120, 20%, 50%); line-height: calc(1em + 0.5rem)">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam voluptates perferendis optio totam quis
-        architecto dignissimos. Illo possimus maiores molestiae beatae dolorum amet. Quas quam magnam illum accusantium,
-        itaque et.</p>
-    </section>
-    <section>
-      <h2>Dodawanie stylów - wbudowany arkusz stylów, mniejsza fujka + dobry perf</h2>
-      <pre class="code code--html">
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam voluptates perferendis optio totam quis
+  architecto dignissimos. Illo possimus maiores molestiae beatae dolorum amet. Quas quam magnam illum accusantium,
+  itaque et.
+&lt;/p&gt;
+      </pre>
+        <p
+          style="font-family: fantasy; font-weight: 600; font-size: min(2vw, 32px); color: hsl(120, 20%, 50%); line-height: calc(1em + 0.5rem)">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam voluptates perferendis optio totam quis
+          architecto dignissimos. Illo possimus maiores molestiae beatae dolorum amet. Quas quam magnam illum
+          accusantium,
+          itaque et.</p>
+      </section>
+      <section>
+        <h2>Dodawanie stylów - wbudowany arkusz stylów, mniejsza fujka + dobry perf</h2>
+        <pre class="code code--html code--small">
 &lt;style&gt;
 <span class="code__comment">/* ↑ Atrybut type na elementach style
-     jest deprecated, nie robimy ;-) */</span>
+  jest deprecated, nie robimy ;-) */</span>
 
 section:nth-of-type(3) &gt; p {
   font-weight: 100;
@@ -75,35 +78,47 @@ section:nth-of-type(3) &gt; p {
   color: hsl(240, 30%, 50%);
 }
 &lt;/style&gt;
-    </pre>
-      <p>Jestem ostylowany przez tag &lt;style&gt; w &lt;head&gt; strony</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum quidem ullam velit corporis officia nemo.
-        Ratione, mollitia dolore? Tempore explicabo nobis aspernatur quam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta molestiae placeat accusamus optio porro
-        minus
-        nobis debitis dignissimos atque? Facilis fugit, laborum perspiciatis qui illum magni optio. Eveniet earum
-        voluptatum, perspiciatis vitae asperiores vero minus beatae doloremque repudiandae quas id provident consequatur
-        ipsa libero expedita.</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, accusantium. Necessitatibus hic praesentium
-        qui quas recusandae vitae debitis nostrum, aspernatur cum ullam eaque vel ipsum voluptate reiciendis? Dolore
-        dignissimos, accusamus quia nisi sunt atque autem illum natus optio ullam est laudantium unde, nemo porro?
-        Itaque
-        assumenda quibusdam at aut ullam, beatae quod excepturi aliquam natus corrupti, tempore tempora veritatis
-        consequatur incidunt, dolor voluptas eveniet veniam! Ipsam placeat officia ratione.
-      </p>
-    </section>
-    <section>
-      <h2>Dodawanie stylów - linkowanie do zewnętrznego arkusza CSS</h2>
-      <pre class="code code--html" data-lang="html">
+      </pre>
+        <p>Jestem ostylowany przez tag &lt;style&gt; w &lt;head&gt; strony</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum quidem ullam velit corporis officia nemo.
+          Ratione, mollitia dolore? Tempore explicabo nobis aspernatur quam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta molestiae placeat accusamus optio porro
+          minus
+          nobis debitis dignissimos atque? Facilis fugit, laborum perspiciatis qui illum magni optio. Eveniet earum
+          voluptatum, perspiciatis vitae asperiores vero minus beatae doloremque repudiandae quas id provident
+          consequatur
+          ipsa libero expedita.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, accusantium. Necessitatibus hic
+          praesentium
+          qui quas recusandae vitae debitis nostrum, aspernatur cum ullam eaque vel ipsum voluptate reiciendis? Dolore
+          dignissimos, accusamus quia nisi sunt atque autem illum natus optio ullam est laudantium unde, nemo porro?
+          Itaque
+          assumenda quibusdam at aut ullam, beatae quod excepturi aliquam natus corrupti, tempore tempora veritatis
+          consequatur incidunt, dolor voluptas eveniet veniam! Ipsam placeat officia ratione.
+        </p>
+      </section>
+      <section>
+        <h2>Dodawanie stylów - linkowanie do zewnętrznego arkusza CSS</h2>
+        <div class="comparison">
+          <pre class="code code--html code--small" data-lang="html">
 &lt;head&gt;
   &lt;!-- [...] --&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;./assets/styles.css&quot; id=&quot;myStyleSheet&quot; /&gt;
   &lt;!-- [...] --&gt;
 &lt;/head&gt;
-</pre>
-    </section>
+        </pre>
+        <pre class="code code--small code--css">
+html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+        </pre>
+      </div>
+      </section>
+    </article>
   </main>
+  <script src="../../globals/js/page.js"></script>
 </body>
 
 </html>

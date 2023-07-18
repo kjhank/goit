@@ -1,5 +1,7 @@
 const flipClickHandler = event => {
+  console.log('x');
   const flipTarget = event.currentTarget.closest('section').querySelector('[data-action="flippable"]');
+
 
   if (!flipTarget) return;
 
