@@ -1,4 +1,7 @@
-:root {
+:root,
+*::before,
+*::after,
+*::selection {
   /* colors setup */
   --hue-main: 90;
   --saturation-base: 60%;
