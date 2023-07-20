@@ -1,7 +1,6 @@
 :root,
 *::before,
-*::after,
-*::selection {
+*::after {
   /* colors setup */
   --hue-main: 90;
   --saturation-base: 60%;
@@ -60,4 +59,21 @@
   /* gradients */
   --gradient-dark: linear-gradient(90deg, var(--color-sub-dim), var(--color-accent-dim));
   ;
+}
+
+:root {
+  --color-foreground: pink;
+  --color-background: limegreen;
+
+  --font-heading: 'Raleway', serif;
+  --font-text: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }

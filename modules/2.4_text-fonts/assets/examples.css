@@ -1,3 +1,5 @@
+/* @import url('./fonts/transfonter.org-20230720-180706/stylesheet.css') */
+
 [class^="examples"] {
   text-decoration: initial;
   text-transform: initial;
@@ -73,6 +75,11 @@ code:has(+ p) {
 
 .examples-text-indent--percent {
   text-indent: 10%;
+}
+
+.examples-line-height--multiplier::selection {
+  background-color: var(--color-accent);
+  color: car(--color-main);
 }
 
 .examples-line-height--multiplier {
@@ -216,10 +223,9 @@ code:has(+ p) {
   color: var(--color-neutral-bg);
 }
 
-.examples-pseudoelements--3::first-letter {
+.examples-pseudoelements--3::first-line {
   font-family: fantasy;
 }
-
 
 .examples-pseudoelements--selection-1::selection {
   background-color: var(--color-sub);
@@ -233,6 +239,30 @@ code:has(+ p) {
   -webkit-text-stroke-color: blue;
 }
 
+.examples-font-family--serif {
+  font-family: Karma, serif;
+}
+
+.examples-font-family--sans-serif {
+  font-family: Avenir, sans-serif;
+}
+
+.examples-font-family--cursive {
+  font-family: cursive;
+}
+
+.examples-font-family--fantasy {
+  font-family: fantasy;
+}
+
+.examples-font-family--monospace {
+  font-family: monospace;
+}
+
+.examples-font-family--custom {
+  font-family: 'Roboto', sans-serif
+}
+
 .examples-webfonts--1 {
   font-family: 'Dancing Script', 'Roboto', 'Open Sans', cursive;
 }
@@ -243,4 +273,12 @@ code:has(+ p) {
 
 .examples-webfonts--3 {
   font-family: 'Open-Dyslexic';
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.lighter {
+  font-weight: lighter;
 }

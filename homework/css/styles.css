@@ -1,0 +1,14 @@
+ul button {}
+/* fujka ↑ */
+
+.filter-button {
+  /*  */
+}
+
+.filter-button:focus,
+.filter-button:hover {
+  outline: 2px solid rebeccapurple;
+}
+
+.filters-list .filter-button {}
+

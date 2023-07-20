@@ -122,6 +122,7 @@ body {
   line-height: 1.2;
 }
 
+menu[class],
 ol[class],
 ul[class] {
   list-style: none;
