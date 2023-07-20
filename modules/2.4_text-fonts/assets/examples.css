@@ -139,6 +139,10 @@ code:has(+ p) {
   white-space: pre;
 }
 
+[class*="examples-font-weight"] {
+  font-family: 'Roboto', sans-serif;
+}
+
 .examples-white-space--pre-wrap {
   white-space: pre-wrap;
 }
@@ -234,9 +238,9 @@ code:has(+ p) {
 }
 
 .examples-webfonts--2 {
-  font-family: var(--font-a11y);
+  font-family: 'FONTSPRING DEMO - Nizzoli';
 }
 
 .examples-webfonts--3 {
-  font-family: 'Open-Dyslexic', var(--font-a11y);
+  font-family: 'Open-Dyslexic';
 }
