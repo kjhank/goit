@@ -14,12 +14,6 @@ code:has(+ p,
   padding-inline: 0.25em;
 }
 
-.example-wrapper {
-  outline: 2px dashed var(--color-neutral-fg);
-  padding: 1em 2em;
-  backdrop-filter: saturate(200%);
-}
-
 .examples-width-height--length {
   width: 10ch;
   height: 70ex;
@@ -32,6 +26,10 @@ code:has(+ p,
 
 .examples-width-height--max-content {
   width: max-content;
+}
+
+.examples-width-height--min-content {
+  width: min-content;
 }
 
 .examples-width-height--fit-content {
@@ -53,6 +51,10 @@ code:has(+ p,
 
 .examples-box-sizing--content-box {
   box-sizing: content-box;
+}
+
+.examples-geometry-padding {
+  border: var(--border-default) solid var(--color-accent);
 }
 
 .examples-geometry-padding--length {
@@ -119,7 +121,7 @@ code:has(+ p,
 .examples-element-types--container .container {
   width: min(50vw, 720px);
   margin-inline: auto;
-  outline: 2px dashed var(--color-accent);
+  outline: var(--border-default) dotted color-mix(in hsl, var(--color-sub), transparent 50%);
 }
 
 .examples-element-types--container menu {
@@ -148,6 +150,7 @@ code:has(+ p,
   align-items: center;
   gap: 1em;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .examples-structural-pseudos > * {

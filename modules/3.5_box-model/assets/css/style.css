@@ -1,11 +1,5 @@
-@import url('./reset.css');
-@import url('../fonts/stylesheet.css');
-@import url('./vars.css');
-@import url('./globals.css');
-@import url('./headings.css');
-@import url('./nav.css');
+@import url('../../../../globals/css/globals.css');
 @import url('./examples.css');
-@import url('./media.css');
 
 .code {
   position: relative;
@@ -138,10 +132,14 @@
 .element-types-demo > * {
   position: relative;
   display: revert;
-  width: 50px;
+  /* width: 50px; */
   background-color: var(--color-neutral-bg);
   color: var(--color-neutral-fg);
-  border: 2px solid var(--color-sub);
+  border: var(--border-default) solid var(--color-accent);
+}
+
+.element-types-demo > *:not(:last-child) {
+  margin-block-start: 1em;
 }
 
 .element-types-demo--block > * {

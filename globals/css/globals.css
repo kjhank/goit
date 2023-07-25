@@ -6,8 +6,11 @@
 @import url('./keyframes.css');
 @import url('./fonts/stylesheet.css');
 
+html {
+  scroll-padding-block-start: max(6em, 100px);
+}
+
 body {
-  /* overflow-x: hidden; */
   display: flex;
   flex-direction: column;
   gap: max(2vw, 40px);
@@ -54,6 +57,7 @@ section > p {
 
 section.iframe-embed > iframe {
   margin-block-start: 1em;
+  min-height: 50vh;
 }
 
 section > p:not([class]),
@@ -306,7 +310,7 @@ code:has(+ p,
   margin-block-start: 2em;
 }
 
-.example-wrapper code {
+.example-wrapper code:not(.element-types-demo > code) {
   border: min(2px, 0.1vw) solid var(--color-neutral-fg);
   border-radius: 0.25em;
   padding-inline: 0.25em;

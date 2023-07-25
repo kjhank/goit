@@ -14,7 +14,7 @@
       <li class="main-navigation__item"><a href="./index.html">Model blokowy</a></li>
       <li class="main-navigation__item"><a href="./geometry.html">Geometria elementu</a>
       </li>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./element-types.html">Typy elementów</a>
+      <li class="main-navigation__item"><a href="./element-types.html">Typy elementów</a>
       </li>
       <li class="main-navigation__item"><a href="./structural-pseudos.html">Pseudoklasy strukturalne</a></li>
     </menu>
@@ -24,15 +24,15 @@
       <h1>Typy elementów</h1>
       <article class="example-wrapper">
         <div class="element-types-demo">
-          <div>div</div>
-          <p>p</p>
-          <main>main</main>
-          <p>p</p>
-          <a>a</a>
-          <span>span</span>
-          <h6>h6</h6>
-          <code>code</code>
-          <search>search</search>
+          <div>div: block</div>
+          <p>p: block</p>
+          <blockquote>blockquote: block</blockquote>
+          <p>p: block</p>
+          <a>a: inline</a>
+          <span>span: inline</span>
+          <h6>h6: block</h6>
+          <code>code: inline</code>
+          <kbd>inline</kbd>
         </div>
       </article>
       <section>
@@ -46,34 +46,38 @@
           <div class="element-types-demo element-types-demo--block">
             <div>div</div>
             <p>p</p>
-            <main>main</main>
+            <blockquote>blockquote</blockquote>
             <p>p</p>
             <a>a</a>
             <span>span</span>
             <h6>h6</h6>
             <code>code</code>
-            <search>search</search>
           </div>
         </article>
         <section>
           <h3>Elementy blokowe - środkowanie w "poziomie"</h3>
-          <code>margin-inline: auto</code>
-          <article class="example-wrapper">
+          <pre class="code code--css code--small">
+margin-inline: auto;
+/* = */
+margin-right: auto;
+margin-left: auto;
+/* = */
+margin: 0 auto;
+          </pre>
+          <div class="example-wrapper">
             <p class="examples-element-types examples-element-types--block-centering">Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Voluptates, vel aliquam cupiditate expedita quasi facere excepturi hic
               assumenda sed asperiores pariatur laudantium quod eveniet dolore cum iste eos rem quos!</p>
-          </article>
+          </div>
         </section>
         <section>
           <h3>Elementy blokowe - kontener (pojemnik)</h3>
           <pre class="code code--small code--css">
 .container {
   width: min(50vw, 720px);
-  margin-inline: auto;
-  outline: 2px dashed var(--color-accent);
 }
           </pre>
-          <article class="example-wrapper">
+          <div class="example-wrapper">
             <div class="examples-element-types--container">
               <nav>
                 <div class="container">
@@ -109,7 +113,7 @@
                 </div>
               </footer>
             </div>
-          </article>
+          </div>
         </section>
       </section>
       <section>
@@ -126,30 +130,27 @@
           <div class="element-types-demo element-types-demo--inline">
             <div>div</div>
             <p>p</p>
-            <main>main</main>
+            <blockquote>blockquote</blockquote>
             <p>p</p>
             <a>a</a>
             <span>span</span>
             <h6>h6</h6>
             <code>code</code>
-            <search>search</search>
           </div>
         </article>
         <section>
           <h3>Elementy liniowe i <code class="code">padding</code></h3>
-
           <code>padding-block: 3em</code>
           <article class="example-wrapper">
             <div class="element-types-demo element-types-demo--inline element-types-demo--inline-padding">
               <div>div</div>
               <p>p</p>
-              <main>main</main>
+              <blockquote>blockquote</blockquote>
               <p>p</p>
               <a>a</a>
               <span>span</span>
               <h6>h6</h6>
               <code>code</code>
-              <search>search</search>
             </div>
           </article>
         </section>
@@ -161,25 +162,30 @@ display: inline-block;
 outline: 2px solid var(--color-sub);
 padding: 16px 32px;
         </pre>
-        <article class="example-wrapper">
+        <div class="example-wrapper">
+          <span class="examples-element-types--inline-block">Lorem ipsum dolor sit, amet</span>
           <span class="examples-element-types--inline-block">Lorem ipsum dolor sit, amet
             consectetur adipisicing elit. Vel, quod hic accusantium sequi magnam id. Modi iste eos suscipit! Minima
             perspiciatis provident, maiores voluptatem nobis id inventore animi quia dignissimos.</span>
-        </article>
+        </div>
       </section>
       <section>
         <h2>Ukrywanie elementów za pomocą <code class="code">display: none</code></h2>
-        <code>display: none</code>
-        <article class="example-wrapper">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
-            hic ex cum similique quisquam fugit, dolores sed facilis doloremque harum quam esse, consequatur ullam.
-            Nostrum nihil eaque voluptate sed explicabo!</p>
-          <p class="examples-element-types--display-none">Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Vel, quod hic accusantium sequi magnam id. Modi iste eos suscipit! Minima
-            perspiciatis provident, maiores voluptatem nobis id inventore animi quia dignissimos.</p>
+        <article class="example">
+          <h3><code>display: none</code></h3>
+          <div class="example-wrapper">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
+              hic ex cum similique quisquam fugit, dolores sed facilis doloremque harum quam esse, consequatur ullam.
+              Nostrum nihil eaque voluptate sed explicabo!</p>
+            <p class="examples-element-types--display-none">Lorem ipsum dolor sit, amet
+              consectetur adipisicing elit. Vel, quod hic accusantium sequi magnam id. Modi iste eos suscipit! Minima
+              perspiciatis provident, maiores voluptatem nobis id inventore animi quia dignissimos.</p>
+          </div>
         </article>
       </section>
     </article>
   </main>
+  <script src="../../globals/js/page.js"></script>
 </body>
+
 </html>
