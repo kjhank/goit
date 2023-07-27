@@ -38,6 +38,44 @@
   align-items: center;
   gap: 1.5em;
   flex-wrap: wrap;
+  border-width: var(--border-default);
+  border-style: solid;
+  border-block-end-style: dotted;
+  border-inline-end-style: dotted;
+  border-block-color: var(--color-main);
+  border-inline-color: var(--color-accent);
+}
+
+.examples-flex--legend {
+  position: absolute;
+  inset: auto auto 0.5em 3em;
+}
+
+.examples-flex--legend ul {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  list-style-type: none;
+}
+
+.example-label-badge {
+  border-width: var(--border-default);
+}
+
+.example-label-badge--main-axis {
+  color: var(--color-main);
+}
+
+.example-label-badge--cross-axis {
+  color: var(--color-accent);
+}
+
+.example-label-badge--axis-start {
+  border-style: solid;
+}
+
+.example-label-badge--axis-end {
+  border-style: dotted;
 }
 
 .examples-flex--basics-1 > li {

@@ -262,6 +262,7 @@ code:has(+ p,
 }
 
 .example > .code--small {
+  width: fit-content;
   border: none;
 }
 
