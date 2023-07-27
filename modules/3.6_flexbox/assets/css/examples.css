@@ -216,6 +216,7 @@
 [class*="examples-flex--align-content"] {
   flex-wrap: wrap;
   gap: 1em;
+  min-height: 80vh;
 }
 
 .examples-flex--pseudo-grid {
