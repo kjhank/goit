@@ -24,23 +24,6 @@ code:has(+ p,
   height: 65%;
 }
 
-.examples-width-height--max-content {
-  width: max-content;
-}
-
-.examples-width-height--min-content {
-  width: min-content;
-}
-
-.examples-width-height--fit-content {
-  width: fit-content;
-  /* same as
-  width: auto;
-  min-width: min-content;
-  max-width: max-content;
-   */
-}
-
 .examples-box-sizing {
   width: 200px;
   margin-inline: 23px;
@@ -65,12 +48,19 @@ code:has(+ p,
   padding: 5% 10%;
 }
 
+.examples-geometry-margin--collapse,
+.examples-geometry-margin--collapse-escape {
+  border: var(--border-default) solid var(--color-accent);
+}
+
 .examples-geometry-margin--collapse > li {
-  margin-block: 2em 3em
+  margin-block: 2em 3em;
+  border: var(--border-default) dotted var(--color-main);
 }
 
 .examples-geometry-margin--collapse-escape > li {
   margin-block-start: 5em;
+  border: var(--border-default) dotted var(--color-main);
 }
 
 .examples-geometry-border--top {
@@ -103,6 +93,10 @@ code:has(+ p,
 
 .examples-geometry-border-radius--4 {
   border-radius: 30px / 70px;
+}
+
+.examples-geometry-border-radius--5 {
+  border-top-left-radius: 30px;
 }
 
 .examples-element-types {
@@ -175,6 +169,10 @@ code:has(+ p,
 .examples-structural-pseudos--nth-1 > li:nth-child(n+4) {
   border-color: var(--color-accent);
   scale: 1.2;
+}
+
+.examples-structural-pseudos--not-margin > li:not(:first-child) {
+  margin-top: 5em;
 }
 
 .examples-structural-pseudos--nth-2 > li:nth-child(3n+2) {
