@@ -1,5 +1,5 @@
-@import url('../fonts/stylesheet.css');
 @import url('../../../../globals/css/globals.css');
+@import url('../fonts/stylesheet.css');
 @import url('./examples.css');
 
 .example-wrapper:has(.example-label) {
