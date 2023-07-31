@@ -1,9 +1,11 @@
-.example-bg {
-  aspect-ratio: 1;
+.example-bg,
+.example-object {
+  aspect-ratio: 1 / 1;
   width: max(15vw, 200px);
   display: inline-block;
   padding: 1em;
   border-radius: 0.5em;
+  outline: var(--border-slim) solid var(--color-accent);
 }
 
 .example-bg--color-name {
@@ -127,11 +129,12 @@
 
 .example-bg--size-cover {
   background-size: cover;
+
 }
 
 .example-bg--size-cover-2 {
   background-size: cover;
-  aspect-ratio: 2;
+  aspect-ratio: 2 / 1;
 }
 
 .example-bg--size-cover-3 {
@@ -145,7 +148,7 @@
 
 .example-bg--size-contain-2 {
   background-size: contain;
-  aspect-ratio: 2;
+  aspect-ratio: 2 / 1;
 }
 
 .example-bg--size-contain-3 {
@@ -201,8 +204,8 @@
 
 .example-object {
   width: max(15vw, 200px);
-  aspect-ratio: 1;
-  border: var(--border-thick) solid var(--color-accent);
+  aspect-ratio: 1 / 1;
+  padding: 0;
 }
 
 .example-object--fit-cover {
@@ -266,7 +269,7 @@
   display: inline-block;
   margin-inline-end: 1em;
   width: 2em;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
 }
 
 .example-pseudos--content-3::before {
@@ -274,7 +277,7 @@
       var(--color-main),
       var(--color-sub),
       var(--color-accent));
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   display: inline-block;
   width: 1em;
   border-radius: 50%;
