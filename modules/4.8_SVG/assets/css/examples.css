@@ -71,7 +71,8 @@
   font-size: min(48px, 3em);
 }
 
-.example-svg-usage--inline svg {
+.example-svg-usage--inline svg,
+.example-svg-usage--sprite svg {
   width: max(33%, 200px);
 }
 
@@ -147,13 +148,32 @@
 
 .example-svg-styling--10 circle {
   stroke: hsl(320 80% 50% / 0.6);
-  stroke-width: min(5px, 0.3vw);
+  stroke-width: min(20px, 1vw);
   stroke-opacity: 0.46;
 }
 
 .example-svg-styling--11 line {
   stroke: hsl(320 80% 50% / 0.6);
-  stroke-width: min(5px, 0.3vw);
+  stroke-width: min(20px, 1vw);
   stroke-linecap: round;
 }
 
+.example-svg-styling--12 line {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(20px, 1vw);
+  stroke-linecap: butt;
+}
+
+.example-svg-styling--13 line {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(20px, 1vw);
+  stroke-linecap: square;
+}
+
+.example-svg-usage--sprite {
+  --path-d-fill: pink;
+  --path-c-fill: limegreen;
+  --g-symbol-stroke: rebeccapurple;
+  --path-a-fill: palevioletred;
+  --use-c-opacity: 0.5;
+}
