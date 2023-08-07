@@ -1,0 +1,179 @@
+.example-svg svg,
+.example-svg-file svg,
+.example-svg-styling svg {
+  outline: var(--border-thick) solid var(--color-sub);
+}
+
+.example-svg--2 svg rect {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--3 svg circle {
+  fill: var(--color-accent);
+  stroke: var(--color-sub);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--4 svg ellipse {
+  fill: var(--color-sub);
+  stroke: var(--color-main);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--5 svg line {
+  stroke: var(--color-main);
+  stroke-width: var(--border-slim);
+}
+
+.example-svg--6 svg polygon {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg--7 svg path {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: var(--border-thick);
+}
+
+.example-svg-file circle {
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+  stroke-width: min(2px, 0.1vw)
+}
+
+.example-svg-usage--img {
+  max-width: 100%;
+  fill: var(--color-main);
+  stroke: var(--color-accent);
+}
+
+.example-svg-usage--img:nth-child(1) {
+  width: min(300px, 25%);
+}
+
+.example-svg-usage--img:nth-child(2) {
+  width: min(30px, 2.5%);
+}
+
+.example-svg-usage--img:nth-child(3) {
+  width: min(3000px, 250%);
+}
+
+.example-svg-usage--background p {
+  padding-block: 3em;
+  background: url('../images/svg-logo.svg');
+  background-repeat: no-repeat;
+  font-weight: 700;
+  font-size: min(48px, 3em);
+}
+
+.example-svg-usage--inline svg,
+.example-svg-usage--sprite svg {
+  width: max(33%, 200px);
+}
+
+.example-svg-usage--inline svg path#d,
+#svg-logo path#d {
+  fill: hsl(0 0% 100% / 0.25);
+  transform-origin: center;
+  rotate: z -45deg;
+  translate: -25% -25% 0;
+  scale: 0.3;
+}
+
+.example-svg-usage--inline svg > path#c,
+#svg-logo path#c {
+  fill: transparent;
+}
+
+.example-svg-usage--inline svg path#a,
+#svg-logo path#a {
+  stroke: var(--color-accent);
+  stroke-dasharray: 548;
+  stroke-dashoffset: 548;
+  stroke-width: max(4px, 0.3vw);
+  stroke-linecap: round;
+  animation: dashColor 5s alternate 0.1s linear forwards infinite;
+}
+
+.example-svg-styling--1 circle {
+  fill: rebeccapurple;
+}
+
+.example-svg-styling--2 circle {
+  fill: hsl(115 70% 80% / 0.75)
+}
+
+
+.example-svg-styling--3 circle {
+  fill: hsl(0 0% 100%);
+  fill-opacity: 1;
+}
+
+
+.example-svg-styling--4 circle {
+  fill: hsl(0 0% 100%);
+  fill-opacity: 0.2;
+}
+
+.example-svg-styling--5 circle {
+  stroke: #bad;
+}
+
+.example-svg-styling--6 circle {
+  stroke: hsl(320 80% 50% / 0.6)
+}
+
+
+.example-svg-styling--7 circle {
+  stroke: #bad;
+  stroke-width: 5%;
+}
+
+.example-svg-styling--8 circle {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(5px, 0.3vw);
+}
+
+
+.example-svg-styling--9 circle {
+  stroke: #bad;
+  stroke-width: 5%;
+  stroke-opacity: 0.67;
+}
+
+.example-svg-styling--10 circle {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(20px, 1vw);
+  stroke-opacity: 0.46;
+}
+
+.example-svg-styling--11 line {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(20px, 1vw);
+  stroke-linecap: round;
+}
+
+.example-svg-styling--12 line {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(20px, 1vw);
+  stroke-linecap: butt;
+}
+
+.example-svg-styling--13 line {
+  stroke: hsl(320 80% 50% / 0.6);
+  stroke-width: min(20px, 1vw);
+  stroke-linecap: square;
+}
+
+.example-svg-usage--sprite {
+  --path-d-fill: pink;
+  --path-c-fill: limegreen;
+  --g-symbol-stroke: rebeccapurple;
+  --path-a-fill: palevioletred;
+  --use-c-opacity: 0.5;
+}
