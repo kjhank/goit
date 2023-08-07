@@ -52,3 +52,21 @@ ul {
   font-weight: 600;
   font-size: 32px;
 }
+
+.portfolio-item:hover {
+  box-shadow: 0 5px rebeccapurple;
+}
+
+.filter-item:hover,
+.filter-item:focus {
+  /* some styles */
+}
+
+.social-link:hover svg {
+  fill: var(--my-color);
+}
+
+svg {
+  fill: currentColor;
+}
+
