@@ -11,9 +11,10 @@
 <body>
   <nav class="main-navigation">
     <menu>
-      <li class="main-navigation__item main-navigation__item--current"><a href="./index.html">Pozycjonowanie</a>
+      <li class="main-navigation__item"><a href="./index.html">Pozycjonowanie</a>
       </li>
-      <li class="main-navigation__item"><a href="./z-index.html"><code>z-index</code> i kontekst warstwowy</a>
+      <li class="main-navigation__item"><a href="./z-index-stacking.html"><code class="code">z-index</code> i kontekst
+          warstwowy</a>
       </li>
       <li class="main-navigation__item"><a href="./overflow.html"><code>overflow</code></a></li>
     </menu>
@@ -90,9 +91,14 @@ p {
   position: relative;
 }
 
+p::before,
+p::after {
+  position: absolute;
+}
+
 p::before {
   content: '🍑';
-  inset-inline-start: -1em;
+  inset-inline-start: 5em;
 }
 
 p::after {
@@ -367,6 +373,7 @@ ul ul {
       </section>
     </article>
   </main>
+  <script src="/globals/js/page.js"></script>
 </body>
 
 </html>

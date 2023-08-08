@@ -27,7 +27,7 @@
 
 .example-position--absolute-2::before {
   content: '🍑';
-  inset-inline-start: -1em;
+  inset-inline-start: 5em;
 }
 
 .example-position--absolute-2::after {
@@ -110,7 +110,7 @@
   position: relative;
   padding: 0.5em;
   background-color: var(--color-main);
-  color: var(--color-neutral-bg);
+  color: #000;
   border-radius: 1em;
 }
 
@@ -137,7 +137,7 @@
   inset: 0.1em auto auto 0.1em;
   z-index: 1;
   padding: 1.5em;
-  color: var(--color-neutral-bg);
+  color: #000;
   background-color: var(--color-main);
 }
 

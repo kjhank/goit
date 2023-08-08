@@ -13,11 +13,10 @@
     <menu>
       <li class="main-navigation__item"><a href="./index.html">Pozycjonowanie</a>
       </li>
-      <li class="main-navigation__item"><a href="./z-index.html"><code>z-index</code> i
+      <li class="main-navigation__item"><a href="./z-index-stacking.html"><code class="code">z-index</code> i
           kontekst warstwowy</a>
       </li>
-      <li class="main-navigation__item main-navigation__item--current"><a
-          href="./overflow.html"><code>overflow</code></a></li>
+      <li class="main-navigation__item"><a href="./overflow.html"><code>overflow</code></a></li>
     </menu>
   </nav>
   <main>
@@ -249,8 +248,62 @@ p {
           <h3>Tzw. overlay</h3>
           <div class="code-wrapper">
             <pre class="code code--small code--html">
+&lt;div&gt;
+  &lt;figure&gt;
+    &lt;img src=&quot;https://source.unsplash.com/random/?dog&amp;1&quot; alt=&quot;dog?&quot; /&gt;
+    &lt;figcaption&gt;dog?&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aperiam id odio iure dolorum nobis!
+    Repellendus, dolor quo cum sequi cumque doloremque placeat. Praesentium, quibusdam repellat. Sit
+    voluptates tenetur nesciunt.&lt;/p&gt;
+&lt;/div&gt;
             </pre>
             <pre class="code code--small code--css">
+.example-overflow--3 {
+  aspect-ratio: unset;
+  height: unset;
+  border-radius: 2em;
+  overflow: hidden;
+}
+
+.example-overflow--3 &gt; div &gt; p {
+  padding: 0.5em;
+}
+
+.example-overflow--3 figure {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.example-overflow--3 figure &gt; img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: scale 3s;
+}
+
+.example-overflow--3 figure &gt; figcaption {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0.5em;
+  background-color: hsl(0 0% 0% / 0.75);
+  color: #fff;
+  translate: 0 100% 0;
+  transition: translate var(--transition-fast);
+  text-align: center;
+  font-size: 1.75em;
+}
+
+.example-overflow--3 div:hover figcaption {
+  translate: 0;
+}
+
+.example-overflow--3 div:hover img {
+  scale: 1.1;
+}
             </pre>
           </div>
           <div class="example-wrapper">
@@ -270,6 +323,7 @@ p {
       </section>
     </article>
   </main>
+  <script src="/globals/js/page.js"></script>
 </body>
 
 </html>
