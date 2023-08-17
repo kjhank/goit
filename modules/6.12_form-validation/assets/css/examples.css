@@ -27,12 +27,12 @@
 
 .example-form input[type="checkbox"],
 .example-form input[type="radio"] {
-  appearance: none;
+  /* appearance: none; */
   align-self: flex-start;
 }
 
 .example-form input[type="checkbox"] + label,
-.example-form input[type="radio"] + label{
+.example-form input[type="radio"] + label {
   transition: color var(--transition-fast);
 }
 
@@ -93,7 +93,8 @@
   transition: border-color var(--transition-fast)
 }
 
-.example-form fieldset:has(:focus) { /* :has isn't yet supported in Fx */
+.example-form fieldset:has(:focus) {
+  /* :has isn't yet supported in Fx */
   border-color: var(--color-accent);
 }
 

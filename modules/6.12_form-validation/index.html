@@ -139,9 +139,9 @@
               <label for="myMail">Adres e-mail</label>
               <input id="myMail" name="userMail" required type="email" />
               <label for="startMonth">Miesiąc rozpoczęcia</label>
-              <input id="startMonth" type="month" name="startMonth" />
+              <input id="startMonth" required type="month" name="startMonth" />
               <label for="url">Strona internetowa</label>
-              <input type="url" name="url" id="url" />
+              <input type="url" required name="url" id="url" />
               <label for="age2">Wiek</label>
               <input type="number" name="age2" id="age2" />
               <button type="submit">Wyślij</button>
@@ -170,7 +170,7 @@
               <input type="text" name="username" id="username" pattern="([a-zA-Z]){1,127}" required />
               <label for="myPassword">Hasło (5-255 znaków alfanumerycznych lub <code>!@#$%^&*()_+-=</code>)</label>
               <div class="password-wrapper">
-                <input type="password" name="myPassword" id="myPassword" pattern="[\w!@#$%^&*()_+-=]{5,255}" required />
+                <input type="password" name="myPassword" id="myPassword" pattern="[\w!@#$%^&*\(\)]{5,255}" required />
                 <button type="button">poka</button>
               </div>
               <button type="submit">Wyślij</button>
