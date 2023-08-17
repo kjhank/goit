@@ -4,7 +4,7 @@
   isolation: isolate;
   z-index: 1;
   background: inherit;
-  border: max(2px, 0.1vw) solid var(--color-main);
+  outline: max(2px, 0.1vw) solid var(--color-main);
   border-block-start: none;
   border-end-end-radius: 1em;
   border-end-start-radius: 1em;
@@ -60,4 +60,53 @@
 .navigation-state-toggler {
   position: fixed;
   inset: 0 0 auto auto;
+}
+
+.main-navigation__toc {
+  position: absolute;
+  inset: calc(100% + max(2px, 0.1vw)) 5% auto auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5em;
+  max-height: 50vh;
+  outline: max(2px, 0.1vw) solid var(--color-main);
+  border-end-end-radius: 0.5em;
+  border-end-start-radius: 0.5em;
+  padding: 0.5em;
+  background: inherit;
+  pointer-events: none;
+  translate: 0 -100vh 0;
+  transform-origin: right;
+  transition: translate var(--transition-fast);
+}
+
+.main-navigation__toc--active {
+  translate: none;
+  pointer-events: all;
+}
+
+.main-navigation__toc a {
+  transition: color var(--transition-fast);
+}
+
+
+.main-navigation__toc a:hover {
+  color: var(--color-accent);
+}
+
+.main-navigation__toc-toggle {
+  display: block;
+  margin-block-start: 1em;
+  margin-inline-start: auto;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--color-main);
+  transition: color var(--transition-fast), scale var(--transition-fast);
+}
+
+.main-navigation__toc-toggle:hover {
+  color: var(--color-accent);
+  scale: 1.1;
 }
