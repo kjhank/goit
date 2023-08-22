@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontenery</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <menu>
+      <li class="main-navigation__item "><a href="./index.html">Media queries (zapytania o
+          media)</a></li>
+      <li class="main-navigation__item"><a href="./meta-viewport.html">Metatag <code>viewport</code></a></li>
+      <li class="main-navigation__item"><a href="./containers.html">Kontenery</a></li>
+    </menu>
+  </nav>
+  <main>
+    <article>
+      <h1>Kontenery: responsywne vs adaptacyjne</h1>
+      <section>
+        <h2>Kontener responsywny</h2>
+        <pre class="code code--css code--small">
+.container--responsive {
+  width: min(1200px, 80%);
+}
+        </pre>
+        <article class="example">
+          <h3>Zachowanie kontenera responwynego</h3>
+          <div class="example-wrapper">
+            <div class="example-rwd__container example-rwd__container--responsive">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum at maxime atque! Repellat dignissimos,
+                qui similique necessitatibus tempora alias quod eius, dolor at sequi eos accusamus ab corporis, ea
+                explicabo.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>Kontener adaptacyjny</h2>
+        <pre class="code code--css code--small">
+.container--adaptive {
+  width: 80%;
+  max-width: 480px;
+}
+
+@media (width >= 600px) {
+  .container--adaptive {
+    max-width: 600px;
+  }
+}
+
+@media (width >= 1140px) {
+  .container--adaptive {
+    max-width: 1140px;
+  }
+}
+        </pre>
+        <article class="example">
+          <h3>Zachowanie kontenera adaptacyjnego</h3>
+          <div class="example-wrapper">
+            <div class="example-rwd__container example-rwd__container--adaptive">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum at maxime atque! Repellat dignissimos,
+                qui similique necessitatibus tempora alias quod eius, dolor at sequi eos accusamus ab corporis, ea
+                explicabo.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </article>
+  </main>
+  <script type="module" src="/globals/js/page.js"></script>
+</body>
+
+</html>
