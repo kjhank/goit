@@ -41,7 +41,7 @@
   &lt;source
     srcset=&quot;https://picsum.photos/id/237/800/400 800w, https://picsum.photos/id/237/1600/800 1600w&quot;
     media=&quot;(min-width: 601px)&quot;
-    sizes=&quot;(min-width: 800px) 800px, 100vw&quot;&gt;
+    sizes=&quot;(max-width: 800px) 800px, 100vw&quot;&gt;
   &lt;img
     src=&quot;https://picsum.photos/id/237/300/200&quot;
     alt=&quot;Cute puppy&quot;
@@ -54,9 +54,36 @@
                 <source srcset="https://picsum.photos/id/237/400/600 400w, https://picsum.photos/id/237/800/1200 800w"
                   media="(max-width: 600px)" sizes="(min-width: 480px) 480px, 100vw">
                 <source srcset="https://picsum.photos/id/237/800/400 800w, https://picsum.photos/id/237/1600/800 1600w"
-                  media="(min-width: 601px)" sizes="(min-width: 800px) 800px, 100vw">
+                  media="(min-width: 601px)" sizes="(max-width: 800px) 800px, 100vw">
                 <img src="https://picsum.photos/id/237/300/200" alt="Cute puppy">
               </picture>
+            </div>
+          </div>
+        </article>
+        <article class="example">
+          <h3><code class="code">picture</code> i responsywność</h3>
+          <!-- <pre class="code code--html code--small">
+&lt;picture&gt;
+  &lt;source
+    srcset=&quot;https://picsum.photos/id/237/400/600 400w, https://picsum.photos/id/237/800/1200 800w&quot;
+    media=&quot;(max-width: 600px)&quot;
+    sizes=&quot;(min-width: 480px) 480px, 100vw&quot;&gt;
+  &lt;source
+    srcset=&quot;https://picsum.photos/id/237/800/400 800w, https://picsum.photos/id/237/1600/800 1600w&quot;
+    media=&quot;(min-width: 601px)&quot;
+    sizes=&quot;(max-width: 800px) 800px, 100vw&quot;&gt;
+  &lt;img
+    src=&quot;https://picsum.photos/id/237/300/200&quot;
+    alt=&quot;Cute puppy&quot;
+  &gt;
+&lt;/picture&gt;
+          </pre> -->
+          <div class="example-wrapper">
+            <div class="example-rwd__images">
+              <img
+                srcset="https://images.unsplash.com/photo-1691765612455-4f09cdc93977?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80 2x"
+                src="https://images.unsplash.com/photo-1691715502369-3fae29561ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80"
+                alt="" />
             </div>
           </div>
         </article>

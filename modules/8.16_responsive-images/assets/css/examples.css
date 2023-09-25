@@ -1,5 +1,6 @@
 .example-rwd__images img {
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: 100%;
   height: auto;
 }
 .example-rwd__images--1 {

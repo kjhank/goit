@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: max(2vw, 40px);
-  width: min(1440px, 80vw);
+  /* width: min(1440px, 80vw); */
   margin-inline: auto;
   color: var(--color-neutral-fg);
   font-family: var(--font-text);
