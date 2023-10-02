@@ -1,6 +1,9 @@
 # GoIT HTML code samples
 
-## Sources:
+## Live location
 
-- audio files from https://pixabay.com/music/
+<https://kjhank.github.io/goit/modules/1.1-2_HTML/>
 
+## Sources
+
+- audio files from <https://pixabay.com/music/>
