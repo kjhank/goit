@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+ /* fujka ↓ */
+/* li  {
+
+}
+
+button {
+
+} */
+
+
+.filters-list {
+  color: var(--color-accent);
+}
+
+.filter-button {
+  background-color: var(--color-main);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  background-color: var(--color-example);
+}
+
+.my-text {
+  font-size: 32px;
+  line-height: 1.5;
+}

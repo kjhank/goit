@@ -269,7 +269,8 @@ a[href^="https://images"] {
   color: green;
 }
 
-.example__cascade--2nd #title {
+.example__cascade--2nd #title,
+#title {
   color: orange;
 }
 
@@ -314,6 +315,15 @@ a[href^="https://images"] {
 
 time {
   font-size: 46px;
+  font-style: italic;
+  color: rebeccapurple;
+}
+
+.intro-example-link {
+  color: palevioletred;
+  text-decoration-line: underline;
+  text-decoration-style: double;
+  text-decoration-color: goldenrod;
 }
 
 .example__selectors--class .title {
@@ -342,14 +352,14 @@ time {
   color: red;
 }
 
-.example__selectors--child a {
+.example__selectors--descendant a {
   color: pink;
   text-decoration: none;
 }
 
 .example__selectors--descendant .social-links a {
   color: purple;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .example__selectors--child .menu li {

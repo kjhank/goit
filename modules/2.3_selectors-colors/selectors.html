@@ -25,17 +25,23 @@
       <section>
         <h2>Selektor elementu (znacznika)</h2>
         <pre class="code code--css">
-<span class="code__comment">/* Zastosowane do wszystkich akapitów na stronie */</span>
-p {
-  font-size: 24px;
+<span class="code__comment">/* Zastosowane do wszystkich elementów `time` na stronie */</span>
+time {
+  font-size: 46px;
+  font-style: italic;
+  color: rebeccapurple;
 }
 
-<span class="code__comment">/* Zastosowane do wszystkich linków na stronie */</span>
-a {
-  text-decoration: none;
+<span class="code__comment">/* Zastosowane do wszystkich linków z klasą `intro-example-link` na stronie */</span>
+.intro-example-link {
+  color: palevioletred;
+  text-decoration-line: underline;
+  text-decoration-style: double;
+  text-decoration-color: goldenrod;
 }
       </pre>
-        <time>19:20</time>
+        <time datetime="19:20">19:20</time>
+        <a class="intro-example-link" href="#">I'm a link</a>
       </section>
       <section>
         <h2>Selektor klasy</h2>
@@ -114,7 +120,7 @@ a {
         </div>
       </section>
       <section>
-        <h2>Selektor identyfikatora: <code>#my_id</code></h2>
+        <h2 id="title">Selektor identyfikatora: <code>#my_id</code></h2>
         <div class="comparison">
           <pre class="code code--html code--small">
 &lt;h1 id=&quot;title&quot;&gt;Nag&lstrok;&oacute;wek strony&lt;/h1&gt;
@@ -127,7 +133,7 @@ a {
           </pre>
         </div>
       </section>
-      <section>
+      <section class="example__child">
         <h2>Selektor potomka</h2>
         <div class="comparison">
           <pre class="code code--html code--small">
@@ -156,21 +162,21 @@ a {
    które znajdują się wewnątrz znacznika z klasą social-links */</span>
 .social-links a {
   color: purple;
-  text-decoration: none;
+  text-decoration: underline;
 }
           </pre>
         </div>
         <div class="example-wrapper example__selectors example__selectors--descendant">
-          <a href="">Czytaj nasz blog!</a>
+          <a href="#">Czytaj nasz blog!</a>
           <ul class="social-links">
             <li>
-              <a href="">Twitter</a>
+              <a href="#">Twitter</a>
             </li>
             <li>
-              <a href="">Instagram</a>
+              <a href="#">Instagram</a>
             </li>
             <li>
-              <a href="">Facebook</a>
+              <a href="#">Facebook</a>
             </li>
           </ul>
         </div>

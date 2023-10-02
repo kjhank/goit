@@ -268,11 +268,16 @@ code:has(+ p) {
 }
 
 .examples-webfonts--2 {
-  font-family: 'FONTSPRING DEMO - Nizzoli';
+  font-family: 'FONTSPRING DEMO - Nizzoli', serif;
 }
 
 .examples-webfonts--3 {
-  font-family: 'Open-Dyslexic';
+  font-family: 'Open-Dyslexic', sans-serif;
+}
+
+.examples-webfonts--4 {
+  font-family: 'Chivo Mono', monospace;
+  font-style: italic;
 }
 
 .bolder {
