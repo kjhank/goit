@@ -3,6 +3,8 @@
   height: initial;
 }
 
+/* treść */
+
 code:has(+ p,
   + pre,
   + article) {

@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
- /* fujka ↓ */
+/* fujka ↓ */
 /* li  {
 
 }
@@ -30,4 +30,14 @@ button {
 .my-text {
   font-size: 32px;
   line-height: 1.5;
+}
+
+.container {
+  width: 1158px;
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 120px;
 }

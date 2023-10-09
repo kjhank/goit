@@ -169,6 +169,10 @@
   align-items: flex-start;
 }
 
+.examples-flex--align-items-baseline li:first-child {
+  padding-block-start: 3em;
+}
+
 .examples-flex--align-items-flex-end {
   align-items: flex-end;
 }
