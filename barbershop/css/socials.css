@@ -1,0 +1,9 @@
+.social-icon {
+  --fill: currentColor;
+  --stroke: transparent;
+
+  width: 100%;
+  height: 100%;
+  fill: var(--fill);
+  stroke: var(--stroke);
+}

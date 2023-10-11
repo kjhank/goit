@@ -1,0 +1,13 @@
+.flex-grid {
+  --col-count: 3;
+  --gap-count: calc(var(--col-count) - 1);
+  --gap: 1em;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.flex-grid > li {
+  flex-basis: calc((100% - var(--gap-count) * var(--gap)) / var(--col-count));
+}

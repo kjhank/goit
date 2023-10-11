@@ -1,0 +1,26 @@
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(sprite.svg);
+}
+.icon-facebook {
+  width: 32px;
+  height: 32px;
+  background-position: 0 0;
+}
+.icon-instagram {
+  width: 32px;
+  height: 32px;
+  background-position: -48px 0;
+}
+.icon-linkedin {
+  width: 32px;
+  height: 32px;
+  background-position: -96px 0;
+}
+.icon-twitter {
+  width: 32px;
+  height: 32px;
+  background-position: -144px 0;
+}
+

@@ -1,0 +1,13 @@
+:root {
+  --color-neutral-dark: #303030;
+  --color-neutral-dim: #555;
+  --color-neutral-mid: #9da4bd;
+  --color-neutral-light: #f7f7f7;
+  --color-neutral-lightest: #fff;
+
+  --color-accent: #ff6c00;
+
+  --color-text: var(--color-neutral-dark);
+  --color-bg: var(--color-neutral-light);
+  --color-bg-alt: var(--color-neutral-lightest)
+}

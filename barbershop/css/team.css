@@ -1,0 +1,29 @@
+.section-team {
+  background-color: var(--color-bg);
+}
+
+.team-list {
+  list-style: none;
+}
+
+.team-socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-socials-link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  color: var(--color-text);
+  aspect-ratio: 1;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: var(--color-bg-alt);
+}
+
+.team-socials-link:hover {
+  color: var(--color-accent);
+}
