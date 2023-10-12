@@ -1,7 +1,9 @@
 @import url('./vars.css');
 @import url('./flex-grid.css');
 @import url('./socials.css');
+@import url('./globals.css');
 @import url('./team.css');
+@import url('./footer.css');
 
 .team-socials-link {
   color: var(--color-text);

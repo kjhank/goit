@@ -1,0 +1,15 @@
+.global-footer {
+  padding-block: 120px;
+  background-image: linear-gradient(var(--color-dark-translucent), var(--color-dark-translucent)), url('../images/footer-bg.jpg');
+  background-size: cover;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-wrapper > form,
+.footer-wrapper > .contact {
+  width: 50%;
+}
