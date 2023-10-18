@@ -10,5 +10,8 @@
 
   --color-text: var(--color-neutral-dark);
   --color-bg: var(--color-neutral-light);
-  --color-bg-alt: var(--color-neutral-lightest)
+  --color-bg-alt: var(--color-neutral-lightest);
+
+  --font-text: 'Open Sans', sans-serif;
+  --font-heading: 'Raleway', sans-serif;
 }
