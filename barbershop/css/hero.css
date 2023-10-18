@@ -44,6 +44,13 @@
   text-decoration: none;
 }
 
+.hero-social-links a,
+.hero-header a {
+  transition-property: color;
+  transition-duration: var(--tr-duration);
+  transition-timing-function: var(--tr-fn);
+}
+
 .hero-social-links a:hover {
   color: var(--color-accent);
 }
@@ -97,11 +104,13 @@
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+  transition-property: background-color;
+  transition-duration: var(--tr-duration);
+  transition-timing-function: var(--tr-fn);
 }
 
 .header-contacts .header-booking:hover {
   background-color: var(--color-accent);
-  color: var(--color-neutral-lightest)
 }
 
 .single-slide {

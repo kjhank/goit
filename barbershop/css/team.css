@@ -22,8 +22,39 @@
   padding: 12px;
   border-radius: 50%;
   background-color: var(--color-bg-alt);
+  transition-property: color, scale;
+  transition-duration: var(--tr-duration);
+  transition-timing-function: var(--tr-fn);
 }
 
 .team-socials-link:hover {
   color: var(--color-accent);
+  scale: 1.1;
+}
+
+.team-member > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.team-member-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member-image-wrapper figcaption {
+  position: absolute;
+  inset: 0;
+  background-color: #fff;
+  opacity: 0;
+  translate: 0 100%;
+  transition-property: translate, opacity;
+  transition-duration: var(--tr-duration);
+  transition-timing-function: var(--tr-fn);
+}
+
+.team-member:hover figcaption {
+  opacity: 1;
+  translate: 0;
 }

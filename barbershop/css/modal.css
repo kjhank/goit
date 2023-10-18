@@ -1,0 +1,28 @@
+.modal-window {
+  position: fixed;
+  inset: 0 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
+  background-color: hsl(666deg 10% 5% / 0.5);
+  transition-property: opacity;
+  transition-timing-function: var(--tr-fn);
+  transition-duration: var(--tr-duration);
+}
+
+.modal-window.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal-body {
+  color: var(--color-neutral-dark);
+  background-color: var(--color-neutral-lightest);
+  width: min(512px, 50vw);
+  padding: 1em;
+  border-radius: 0.5em;
+}

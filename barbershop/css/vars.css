@@ -14,4 +14,7 @@
 
   --font-text: 'Open Sans', sans-serif;
   --font-heading: 'Raleway', sans-serif;
+
+  --tr-fn: cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-duration: 0.25s;
 }

@@ -56,7 +56,7 @@
             </nav>
             <div class="header-contacts">
               <a href="tel:+380441111111">+38 044 111 11 11</a>
-              <button class="header-booking" type="button">online booking</button>
+              <button data-modal-open class="header-booking" type="button">online booking</button>
             </div>
           </header>
           <ul class="slides">
@@ -79,7 +79,10 @@
         <ul class="team-list flex-grid">
           <li class="team-list-item">
             <div class="team-member">
-              <img src="./images/person-1.jpg" alt="tattooed person at work" />
+              <figure class="team-member-image-wrapper">
+                <img src="./images/person-1.jpg" alt="tattooed person at work" />
+                <figcaption>lubi placki</figcaption>
+              </figure>
               <h3 class="team-member-name">John Smith</h3>
               <p class="team-member-role">Extreme Barber</p>
               <ul class="team-socials">
@@ -235,6 +238,17 @@
       </div>
     </div>
   </footer>
+  <aside class="modal-window is-hidden" data-modal>
+    <section class="modal-body">
+      <button type="button" data-modal-close>x</button>
+      <h2>
+        I am a modal
+
+      </h2>
+    </section>
+  </aside>
+  <script src="./js/modal.js">
+  </script>
 </body>
 
 </html>

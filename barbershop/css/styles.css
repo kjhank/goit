@@ -5,6 +5,7 @@
 @import url('./hero.css');
 @import url('./team.css');
 @import url('./footer.css');
+@import url('./modal.css');
 
 .team-socials-link {
   color: var(--color-text);

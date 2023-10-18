@@ -312,6 +312,18 @@
   rotate: 2 1 -2 30deg;
 }
 
+.example-transforms--scale > p {
+  scale: 2;
+}
+
+.example-transforms--scale-x > p {
+  scale: 2 1;
+}
+
+.example-transforms--scale-y > p {
+  scale: 1 0.5;
+}
+
 .example-transforms--skew-x > p {
   transform: skew(23deg);
 }
