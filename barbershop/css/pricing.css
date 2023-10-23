@@ -1,0 +1,34 @@
+.pricing-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-name {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.price-name::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: gray;
+  flex-grow: 1;
+}
