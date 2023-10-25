@@ -2,6 +2,11 @@
   padding-block: 120px;
   background-image: linear-gradient(var(--color-dark-translucent), var(--color-dark-translucent)), url('../images/footer-bg.jpg');
   background-size: cover;
+  color: var(--color-neutral-mid);
+}
+
+.global-footer h2 {
+  color: var(--color-neutral-light);
 }
 
 .footer-wrapper {
@@ -12,4 +17,55 @@
 .footer-wrapper > form,
 .footer-wrapper > .contact {
   width: 50%;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper > label {
+  position: absolute;
+  inset: 0 auto auto 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-neutral-mid);
+  translate: 0 50%;
+  transition-property: color, translate, font-size;
+  transition-timing-function: var(--tr-fn);
+  transition-duration: var(--tr-duration);
+}
+
+.input-wrapper:focus-within > label {
+  color: var(--color-neutral-lightest);
+  font-size: 9px;
+  translate: 0 -150%;
+}
+
+.input-wrapper > input,
+.input-wrapper > textarea {
+  border: none;
+  border-bottom: 1px solid var(--color-neutral-lightest);
+  background-color: transparent;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
+.checkbox-wrapper input[type="checkbox"] + label > svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: #fff;
+  border-radius: 2px;
+  fill: transparent;
+  transition-duration: var(--tr-duration);
+  transition-timing-function: var(--tr-fn);
+  transition-property: fill;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label > svg {
+  fill: var(--color-neutral-dark);
 }

@@ -244,12 +244,27 @@
       <div class="footer-wrapper">
         <form action="">
           <h2>Online booking</h2>
-          <label for=""></label>
-          <input type="text">
-          <label for=""></label>
-          <input type="text">
-          <label for=""></label>
-          <textarea></textarea>
+          <div class="input-wrapper">
+            <label for="name">name</label>
+            <input required id="name" name="name" type="text" />
+          </div>
+          <div class="input-wrapper">
+            <label for="phone">phone</label>
+            <input required id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
+          </div>
+          <div class="checkbox-wrapper">
+            <input class="visually-hidden" type="checkbox" name="gdprConsent" id="gdprConsent">
+            <label for="gdprConsent">
+              <svg>
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+              I agree to this and that
+            </label>
+          </div>
+          <div class="input-wrapper">
+            <label for="message">message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
           <button type="submit">send</button>
         </form>
         <section class="contact">
