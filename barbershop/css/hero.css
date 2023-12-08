@@ -17,6 +17,12 @@
   margin: 0 auto;
 }
 
+.hero-logo-link > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .hero-social-links {
   display: flex;
   align-items: center;

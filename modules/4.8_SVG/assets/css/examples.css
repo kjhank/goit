@@ -46,7 +46,7 @@
 }
 
 .example-svg-usage--img {
-  max-width: 100%;
+  /* max-width: 100%; */
   fill: var(--color-main);
   stroke: var(--color-accent);
 }
