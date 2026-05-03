@@ -1,6 +1,6 @@
 # GoIT HTML code samples
 
-** This repo has been migrated to [Codeberg](https://codeberg.org/kjhank/goit) **
+**This repo has been migrated to [Codeberg](https://codeberg.org/kjhank/goit)**
 
 ## Live location
 
